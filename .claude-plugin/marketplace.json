@@ -1,0 +1,21 @@
+{
+  "name": "hamad-business-ai",
+  "owner": {
+    "name": "Hamad Alkhudhari",
+    "url": "https://instagram.com/hmdalkhudhari"
+  },
+  "description": "بلوجنز حمد الخضري: بزنس و AI بالعربي",
+  "plugins": [
+    {
+      "name": "abni-sharikatak",
+      "source": "./plugins/abni-sharikatak",
+      "description": "ابنِ شركتك: شركة تسويق كاملة بهوية شركتك (آيباد، تلفون، كمبيوتر)",
+      "version": "0.2.0"
+    },
+    {
+      "name": "majed-video",
+      "source": { "source": "github", "repo": "majedphotos/video-ad-editor" },
+      "description": "اختياري، للكمبيوتر بس: مونتاج الفيديو المصوّر (بلوجن ماجد الزعابي، MIT)"
+    }
+  ]
+}

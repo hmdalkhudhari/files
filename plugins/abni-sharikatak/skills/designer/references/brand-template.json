@@ -1,0 +1,86 @@
+{
+  "_اقرا_اول": "هذا الملف الوحيد اللي تعدله. غيّر القيم اللي بين علامات التنصيص بس، وخل الأسماء على اليسار مثل ما هي. الألوان بصيغة #RRGGBB.",
+
+  "setup_done": false,
+  "_setup_شرح": "false = أول مرة: Claude يسأل صاحب الشركة عن ألوانه وشعاره ويعبّي هالملف بنفسه، وبعدها يحطها true.",
+
+  "company_name": "اسم الشركة",
+  "handle": "@company_account",
+
+  "colors": {
+    "background": "#101828",
+    "text": "#FFFFFF",
+    "accent": "#F2B33D",
+    "accent_dark": "#C98B18",
+    "muted": "#98A2B3",
+    "_شرح": "background = لون الخلفية بالموشن والكروت. text = لون الكلام. accent = لون التمييز (الكلمة المهمة بالكابشن، التاق، الأرقام). accent_dark = نسخة أغمق منه. muted = رمادي للكلام الصغير."
+  },
+
+  "fonts": {
+    "main": "Tajawal",
+    "handwriting": "Aref Ruqaa",
+    "custom_font_file": "",
+    "_شرح": "main = خط الكابشن والعناوين. الجاهزة بدون تثبيت: Tajawal, Cairo, IBM Plex Sans Arabic, Noto Kufi Arabic, Readex Pro, Lalezar, Aref Ruqaa. خط ثاني؟ حط ملف TTF بمجلد brand/fonts واكتب اسم الملف هني (مثال: fonts/MyFont-Bold.ttf) واكتب اسم الخط بـ main."
+  },
+
+  "logo": {
+    "on_dark": "logo/logo-white.png",
+    "on_light": "logo/logo-dark.png",
+    "show": "cover_only",
+    "corner": "top-right",
+    "size_pct": 12,
+    "_شرح": "حط شعارك PNG بخلفية شفافة بمجلد brand/logo بنفس الأسماء. show: none = ما يطلع أبداً · cover_only = على الغلاف بس (المنصوح) · corner = صغير بالزاوية طول الفيديو · intro = بالمقدمة بس. corner: top-right أو top-left. size_pct = عرضه كنسبة من عرض الفيديو."
+  },
+
+  "captions": {
+    "style": "card",
+    "words_per_line": 3,
+    "position_pct": 75,
+    "highlight_important_word": true,
+    "_شرح": "style: card (كرت بلون الهوية) · shadow (أبيض بظل بدون كرت) · big (كلمة وحدة ضخمة) · underline (خط تحت الكلمة) · bar (شريط بلون التمييز) · type (ماكينة كاتبة). position_pct = مكان الكابشن من فوق (75 = تحت الصدر، فوق اسم الحساب)."
+  },
+
+  "intro": {
+    "on": false,
+    "seconds": 1.5,
+    "text": "",
+    "_شرح": "مقدمة بالشعار قبل الكلام. المنصوح تخليها false لأن أول ثانية لازم تكون كلام أو نتيجة، المقدمة تخلي الناس يطوفون."
+  },
+
+  "outro": {
+    "type": "icons",
+    "big_line": "تابعنا",
+    "small_line": "",
+    "comment_word": "",
+    "_شرح": "type: icons = أيقونات متابعة/لايك/حفظ تطلع على آخر جملة والفيديو يخلص على آخر كلمة (المنصوح) · card = كرت ختام بالشعار والحساب · none = بدون. comment_word = كلمة يكتبونها بالتعليقات عشان يوصلهم شي (اختياري)."
+  },
+
+  "video": {
+    "background_music": false,
+    "speed_up_pct": 1.5,
+    "loudness_lufs": -14,
+    "sounds_per_video": 3,
+    "pace": "normal",
+    "mirror_copy": false,
+    "_شرح": "background_music: false = بدون موسيقى (تنحط من التطبيق وقت النشر). speed_up_pct = تسريع خفيف ما يبين (1-2). sounds_per_video = كم مؤثر صوتي بالفيديو (2-3). pace: normal أو calm."
+  },
+
+  "motion": {
+    "background_pattern": "dots",
+    "glow": true,
+    "caption_lines": 2,
+    "end": "comment_box",
+    "_شرح": "خاص بفيديوهات الموشن (صوت بس بدون وجه). background_pattern: dots أو grid أو plain. glow = إضاءة ناعمة ورا العناصر. end: comment_box (خانة تعليق تنكتب فيها الكلمة) · follow (زر متابعة) · logo (الشعار)."
+  },
+
+  "folders": {
+    "raw": "Videos/Raw",
+    "ready": "Videos/Ready",
+    "_شرح": "وين تحط الفيديوهات الخام ووين يطلع الجاهز. نسبة لمجلد العمل."
+  },
+
+  "house_rules": [
+    "اكتب هني أي قاعدة خاصة فيكم، كل قاعدة بسطر. مثال: لا تحط صور أشخاص بالبي رول.",
+    "مثال: اسم الشركة ينكتب دايماً بالإنجليزي."
+  ]
+}
