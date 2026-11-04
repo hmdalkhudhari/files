@@ -46,7 +46,7 @@ footer a{color:var(--navy)}
 <h1>ابنِ شركتك: <b>شركة تسويق كاملة</b> داخل Claude</h1>
 <p>بلوجن واحد، يتركب برابط، ويتحدث بروحه. ولا ملف تنزله. حوالي ٢٠ دقيقة مرة وحدة.</p>
 <nav class="toc">
-<a href="#need">قبل لا تبدأ</a><a href="#l1">١ الدخول</a><a href="#l2">٢ التركيب</a><a href="#l3">٣ ابنِ شركتك</a><a href="#l4">٤ الأدوات</a><a href="#l5">٥ الاستخدام</a><a href="#l6">٦ الكمبيوتر</a><a href="#faq">إذا طلع لك كذا</a>
+<a href="#need">قبل لا تبدأ</a><a href="#l1">١ الدخول</a><a href="#l2">٢ التركيب</a><a href="#l3">٣ ابنِ شركتك</a><a href="#l4">٤ الأدوات</a><a href="#l5">٥ الاستخدام</a><a href="#l5b">٥+ الطيار الآلي</a><a href="#l6">٦ الكمبيوتر</a><a href="#faq">إذا طلع لك كذا</a>
 </nav>
 </div></header>
 
@@ -96,10 +96,11 @@ footer a{color:var(--navy)}
 <li>افتح تطبيق Claude (آيباد أو تلفون) أو claude.ai، وافتح <b>محادثة جديدة</b>.</li>
 <li>اكتب:
 <div class="copy ar"><code>ابنِ شركتي</code><button data-c="ابنِ شركتي">نسخ</button></div></li>
-<li>جاوب أسئلته وحدة وحدة: مشروعك، عملاءك، لهجتك، ألوانك (رابط حسابك يكفي)، وشعارك إذا عندك.</li>
-<li>بيوريك معاينة تصميم. قول «تمام» أو قول شنو تغيّر.</li>
+<li>يسألك سؤال سؤال، وكل سؤال بخيارات مرقمة: صاحب مشروع ولا صانع محتوى، رابط حسابك (يكفي عشان يعرف اسمك وألوانك)، شعارك (ما عندك؟ يسوي لك)، اسم مديرك، موعد اجتماع الأسبوع وملخص الصبح.</li>
+<li>بيوريك معاينة تصميم. قول «تمام» أو شنو تغيّر.</li>
 <li>يعطيك <b>بطاقة شركتي</b> بمربع. اضغط زر النسخ اللي فوقها.</li>
 <li>روح <span class="path">Settings ← Your Claude</span>، والصقها بخانة <b>Instructions for Claude</b>، واحفظ. (بالشكل القديم اسمها Account.)</li>
+<li>بآخر الإعداد يسلّمك أول بوست جاهز.</li>
 </ol>
 <p class="done">خلص؟ افتح محادثة جديدة واكتب «شنو شركتي؟». إذا عرفها، كل شي تمام.</p>
 </section>
@@ -138,6 +139,21 @@ footer a{color:var(--navy)}
 <div class="note">الصور والفيديو يوصلونك ملفات بالمحادثة: اضغط على الملف ← Share ← Save. ولا شي ينشر أو ينجدول بدون ما تقول «إي».</div>
 </section>
 
+<section id="l5b">
+<h2><span class="n">٥+</span>الطيار الآلي (الشغل يجيك بروحه)</h2>
+<p class="why">بعد الإعداد، المدير يبني مهام مجدولة تشتغل على سيرفرات Claude حتى لو جهازك طافي. إنت تقول «إي» على النشر بس.</p>
+<table>
+<tr><td>ملخص الصبح</td><td>كل يوم بالساعة اللي اخترتها.</td></tr>
+<tr><td>منشور اليوم</td><td>بوست جاهز (صور + كابشن) ينتظر موافقتك.</td></tr>
+<tr><td>الباحث</td><td>كل ٣ أيام: ٥ أفكار من مجالك.</td></tr>
+<tr><td>القياس</td><td>كل منشور بعد ٤٨ ساعة: أرقامه ودرس.</td></tr>
+<tr><td>اجتماع الأسبوع</td><td>النمو، الأفكار، التطوير، خطة الأسبوع.</td></tr>
+<tr><td>التنظيف</td><td>كل يومين يمسح مسوداتنا القديمة داخل مجلد الشركة بس. ما يلمس ملفاتك.</td></tr>
+</table>
+<p>بالكمبيوتر (Cowork) المدير يبنيها بروحه. بالآيباد يعطيك نص كل مهمة، تلصقه مرة وحدة بـ<span class="path">Cowork ← Scheduled ← Set up manually</span>.</p>
+<p>تبي توقفها؟ قول «وقّف الطيار الآلي».</p>
+</section>
+
 <section id="l6">
 <h2><span class="n">٦</span>الكمبيوتر (اختياري)</h2>
 <p class="why">مونتاج فيديو فيه شخص يتكلم، أو موشن على تسجيل صوت، يبي كمبيوتر. الباقي كله يشتغل بالآيباد.</p>
@@ -173,13 +189,14 @@ footer a{color:var(--navy)}
 <tr><td>الأداة مربوطة بس Claude ما يشوفها</td><td>زر + تحت ← Connectors ← فعّلها.</td></tr>
 <tr><td>العربي طالع حروف مقطعة</td><td>قول: «العربي مقطع، ثبّت arabic-reshaper وعيد».</td></tr>
 <tr><td>طلبت مونتاج فيديو مصوّر من الآيباد</td><td>يبي كمبيوتر (الدرس ٦). من الآيباد اطلب «فيديو موشن».</td></tr>
+<tr><td>المهام المجدولة ما اشتغلت</td><td>بالكمبيوتر: Cowork ← Scheduled ← تأكد إنها مو موقوفة. بالآيباد: لازم تضيفها مرة وحدة من المتصفح (الدرس ٥+).</td></tr>
 <tr><td>وصلت الحد (Usage limit)</td><td>انتظر للوقت المكتوب. إذا يصير كل يوم، فكّر بـMax.</td></tr>
 <tr><td>نسيت باسورد إيميلك</td><td>رجّعه من شركة الإيميل نفسها أول. Claude ما يحتاج باسورد، بس يحتاج تفتح الإيميل.</td></tr>
 </table>
 </section>
 
 <footer>
-المصادر الرسمية: <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-claude">Use plugins in Claude</a> · <a href="https://claude.com/docs/plugins/overview">Plugins overview</a> · <a href="https://claude.com/docs/plugins/platform-support">Platform support</a> · <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">Use skills</a> · <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">Connectors</a> · <a href="https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account">Log in</a> · <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features">Instructions for Claude</a> · <a href="https://help.metricool.com/how-to-connect-metricools-mcp-with-claude-0l84v">Metricool + Claude</a> · <a href="https://support.vidiq.com/en/articles/15082430">vidIQ + Claude</a>
+المصادر الرسمية: <a href="https://support.claude.com/en/articles/13837440-use-plugins-in-claude">Use plugins in Claude</a> · <a href="https://claude.com/docs/plugins/overview">Plugins overview</a> · <a href="https://claude.com/docs/plugins/platform-support">Platform support</a> · <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">Use skills</a> · <a href="https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities">Connectors</a> · <a href="https://support.claude.com/en/articles/13189465-log-in-to-your-claude-account">Log in</a> · <a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features">Instructions for Claude</a> · <a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork">Scheduled tasks</a> · <a href="https://help.metricool.com/how-to-connect-metricools-mcp-with-claude-0l84v">Metricool + Claude</a> · <a href="https://support.vidiq.com/en/articles/15082430">vidIQ + Claude</a>
 <br>تحققنا منها ٤ نوفمبر ٢٠٢٦. أسماء الأزرار ممكن تتغير شوي مع التحديثات.
 <br>© حمد الخضري · <a href="https://instagram.com/hmdalkhudhari">@hmdalkhudhari</a>
 </footer>

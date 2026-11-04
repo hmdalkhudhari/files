@@ -10,7 +10,7 @@ claude.ai ← Customize ← Plugins ← Add ← Add marketplace ← الصق `hm
 Claude Code: `/plugin install abni-sharikatak --marketplace hmdalkhudhari/files`
 
 ## فيه
-- **سكلز:** ceo (المدير) · company-builder (بناء الشركة) · designer (المصمم) · motion (الموشن على موسيقى) · growth (Metricool وvidIQ) · tools-map · help (حل المشاكل) · reel-edit و motion-voice (كمبيوتر بس).
+- **سكلز:** ceo (المدير، تسميه إنت) · company-builder (إعداد أول مرة، أسئلة بخيارات) · autopilot (الطيار الآلي: المهام المجدولة) · cleanup (تنظيف ملفاتنا بس) · designer · motion · growth (Metricool وvidIQ) · tools-map · help · reel-edit و motion-voice (كمبيوتر بس).
 - **أوامر:** build-company · checkup · morning · weekly.
 
 ## وين تنحفظ شركتك
