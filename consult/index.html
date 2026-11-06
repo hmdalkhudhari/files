@@ -377,12 +377,15 @@ addEventListener('DOMContentLoaded',()=>{
   <button class="cta" type="submit">أرسل طلبي <span class="arr">←</span></button>
   <p class="rq-note">موعدك مبدئي. نرد عليك على الواتساب خلال ٤٨ ساعة، ويتثبّت بعد ما تدفع.</p>
 </form>
-<div class="req done rise" id="done" hidden>
+<div class="modal" id="done" hidden role="dialog" aria-modal="true" aria-labelledby="doneT">
+  <div class="mbox">
   <span class="ok">✓</span>
-  <h3>وصلنا طلبك</h3>
+  <h3 id="doneT">تم استلام طلبك</h3>
   <p>موعدك المبدئي: <b id="doneSlot"></b></p>
   <p>نقرأ طلبك ونرد عليك على الواتساب خلال ٤٨ ساعة.</p>
   <p class="rq-demo" id="demo" hidden>معاينة: الطلب ما انرسل. الإرسال يشتغل لما تنحط الصفحة على الموقع.</p>
+  <button type="button" class="cta mclose" id="doneClose">تمام</button>
+  </div>
 </div>
 <p class="alt rise">تبي تبدأ بروحك؟ <a href="../system/">شوف نظام التسويق الذكي</a></p>
 </div></section>
@@ -409,7 +412,7 @@ addEventListener('DOMContentLoaded',()=>{
 .rq-err{margin:0;color:#FF8A8A;font-weight:700;text-align:center}
 .rq-note{margin:0;color:var(--muted);font-size:14px;text-align:center}
 .req .cta{width:100%;border:0;font-family:inherit;cursor:pointer}
-.done{text-align:center;justify-items:center}.done h3{margin:0;font-size:24px}.done p{margin:0;color:var(--muted)}.done b{color:var(--gold)}
+[hidden]{display:none!important}.modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(10,14,40,.72);backdrop-filter:blur(6px);animation:mf .25s ease}.mbox{width:100%;max-width:420px;box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 22px;display:grid;gap:12px;text-align:center;justify-items:center;animation:mp .3s cubic-bezier(.2,.9,.3,1.2)}.mbox h3{margin:0;font-size:24px}.mbox p{margin:0;color:var(--muted)}.mbox b{color:var(--gold)}.mclose{width:100%;border:0;font-family:inherit;cursor:pointer;margin-top:6px}@keyframes mf{from{opacity:0}}@keyframes mp{from{opacity:0;transform:scale(.9) translateY(12px)}}
 .ok{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:900}
 .rq-demo{font-size:13px;border:1px dashed var(--line);border-radius:10px;padding:6px 10px}
 </style><script>
@@ -447,11 +450,13 @@ addEventListener('DOMContentLoaded',()=>{
   if(bad){err.textContent='كمّل البيانات المطلوبة';err.hidden=false;bad.focus();return;}
   var data=new FormData(f); data.append('date',sel.d.dataset.d); data.append('time',sel.t); data.append('page','consultation');
   var slot=pick.textContent.replace('موعدك: ','');
-  function done(demo){f.hidden=true;var d=document.getElementById('done');d.hidden=false;d.classList.add('in');document.getElementById('doneSlot').textContent=slot;document.getElementById('demo').hidden=!demo;d.scrollIntoView({block:'center'});}
+  function done(demo){var d=document.getElementById('done');document.getElementById('doneSlot').textContent=slot;document.getElementById('demo').hidden=!demo;d.hidden=false;document.body.style.overflow='hidden';document.getElementById('doneClose').focus();f.reset();sel={d:null,t:null};document.querySelectorAll('#req [aria-checked]').forEach(function(x){x.setAttribute('aria-checked','false')});pick.textContent='ما اخترت موعد للحين';f.querySelector('button[type=submit]').disabled=false;}
   if(!ENDPOINT){done(true);return;}
   var btn=f.querySelector('button[type=submit]');btn.disabled=true;
-  fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:data}).then(function(){done(false)}).catch(function(){btn.disabled=false;err.textContent='صار خطأ بالإرسال. جرّب مرة ثانية';err.hidden=false;});
+  fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(function(){done(false)}).catch(function(){btn.disabled=false;err.textContent='صار خطأ بالإرسال. جرّب مرة ثانية';err.hidden=false;});
  });
+ var dn=document.getElementById('done');function cl(){dn.hidden=true;document.body.style.overflow='';}
+ document.getElementById('doneClose').addEventListener('click',cl);dn.addEventListener('click',function(e){if(e.target===dn)cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!dn.hidden)cl();});
 })();
 </script>
 <div class="bar" aria-hidden="false"><div class="bt"><b><span dir="ltr" style="unicode-bidi:isolate">$149</span> <s><span dir="ltr" style="unicode-bidi:isolate">$199</span></s></b><small>خصم ٢٥٪ · ٦٠ دقيقة</small></div><a class="cta" href="#book">احجز موعدك</a></div>
