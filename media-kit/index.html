@@ -170,6 +170,12 @@ footer{text-align:center;opacity:.5;font-size:12px;padding:30px 0 40px;font-fami
  .final .qr{display:none}
 }
 .plats{position:absolute;top:18px;inset-inline-end:18px;display:flex;gap:6px}.igb{width:36px;height:36px;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+
+.sdiv{height:1px;border:0;margin:0 auto;max-width:1100px;width:calc(100% - 44px);background:linear-gradient(90deg,transparent,rgba(255,255,255,.16) 20%,rgba(242,194,48,.35) 50%,rgba(255,255,255,.16) 80%,transparent)}
+.scrl{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:50;width:44px;height:44px;border-radius:50%;background:rgba(30,42,102,.85);border:1.5px solid rgba(242,194,48,.7);display:flex;align-items:center;justify-content:center;color:#F2C230;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35);backdrop-filter:blur(6px);transition:opacity .35s;animation:bob 1.6s ease-in-out infinite}
+.scrl svg{width:22px;height:22px}
+.scrl.hide{opacity:0;pointer-events:none}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
 </style>
 </head>
 <body>
@@ -226,6 +232,7 @@ footer{text-align:center;opacity:.5;font-size:12px;padding:30px 0 40px;font-fami
  </section>
 
  <!-- WORK -->
+ <hr class="sdiv">
  <section>
   <div class="tag"><span class="ar-only">من شغلنا</span><span class="en-only">Selected work</span></div>
   <h2><span class="ar-only">إعلانات <span class="g">سويناها</span></span><span class="en-only">Brands we <span class="g">worked with</span></span></h2>
@@ -237,6 +244,7 @@ footer{text-align:center;opacity:.5;font-size:12px;padding:30px 0 40px;font-fami
  </section>
 
  <!-- PACKAGES -->
+ <hr class="sdiv">
  <section id="packages">
   <div class="tag"><span class="ar-only">الباقات</span><span class="en-only">Packages</span></div>
   <h2><span class="ar-only">اختار <span class="g">باقتك</span></span><span class="en-only">Choose your <span class="g">package</span></span></h2>
@@ -271,6 +279,7 @@ footer{text-align:center;opacity:.5;font-size:12px;padding:30px 0 40px;font-fami
  </section>
 
  <!-- STEPS -->
+ <hr class="sdiv">
  <section style="padding-top:10px">
   <div class="tag"><span class="ar-only">شلون نشتغل</span><span class="en-only">How it works</span></div>
   <div class="steps">
@@ -281,6 +290,7 @@ footer{text-align:center;opacity:.5;font-size:12px;padding:30px 0 40px;font-fami
  </section>
 
  <!-- FINAL CTA -->
+ <hr class="sdiv">
  <section style="padding-top:10px">
   <div class="card final">
    <img class="hc" src="hamad-head.webp" alt="">
@@ -314,5 +324,7 @@ function setLang(l){
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
 setLang(new URLSearchParams(location.search).get('lang')==='en'?'en':'ar');
 </script>
+<a class="scrl" id="scrl" aria-label="down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+<script>(function(){var b=document.getElementById('scrl');function u(){var e=document.documentElement;b.classList.toggle('hide',window.scrollY+window.innerHeight>=e.scrollHeight-80)}b.onclick=function(){window.scrollBy({top:window.innerHeight*0.8,behavior:'smooth'})};window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u()})();</script>
 </body>
 </html>
