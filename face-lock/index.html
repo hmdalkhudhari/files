@@ -348,7 +348,7 @@ b.setAttribute('aria-expanded',o);b.querySelector('span').textContent=o?'اخف�
 function fallback(r){r.removeAttribute('readonly');r.focus();r.select();r.setSelectionRange(0,r.value.length);
 var ok=false;try{ok=document.execCommand('copy')}catch(e){}r.setAttribute('readonly','');r.blur();return ok}
 document.querySelectorAll('.cp').forEach(function(b){var lbl=b.querySelector('span').textContent;b.addEventListener('click',function(){var r=document.getElementById('r'+b.dataset.i),txt=r.value;
-function done(){b.classList.add('ok');b.querySelector('span').textContent='تم النسخ ✓';say('انسخ وحطه بالأداة، وبدّل اللي بالأحمر');setTimeout(function(){b.classList.remove('ok');b.querySelector('span').textContent=lbl},2200)}
+function done(){b.classList.add('ok');b.querySelector('span').textContent='تم النسخ ✓';say('انسخ وحطه بالأداة، وبدّل اللي بالأصفر');setTimeout(function(){b.classList.remove('ok');b.querySelector('span').textContent=lbl},2200)}
 function fail(){if(fallback(r))done();else{var pc=b.closest('.pc');pc.classList.add('open');var s=window.getSelection(),rg=document.createRange();rg.selectNodeContents(pc.querySelector('.txt'));s.removeAllRanges();s.addRange(rg);say('النص محدد، اضغط نسخ')}}
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fail)}else fail()})});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);fit();window.addEventListener('resize',fit);
