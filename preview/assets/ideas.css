@@ -131,3 +131,54 @@ html.i8 .ix-bar.on~.ixp-btn{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 .ixp .nav a{font-size:12.5px;color:#AEB6DA;text-decoration:none;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:5px 10px}
 .ixp .nav a.cur{background:#F2C230;color:#1E2A66;border-color:#F2C230}
 .ixp .out{margin-top:10px;font-size:12.5px;color:#5BE39A;min-height:16px}
+
+/* ---------- CONSULT in KIT style (K) ---------- */
+html.iK{--card:#2A3680;--bg:#1E2A66;--bg2:#1E2A66}
+html.iK body{background:#1E2A66}
+.ix-orbs{display:none}
+html.iK .ix-orbs{display:block;position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+html.iK .ix-orbs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+html.iK .ix-orbs i:nth-child(1){width:520px;height:520px;background:#3a4bc4;top:-160px;right:-160px;animation:ixo1 18s ease-in-out infinite}
+html.iK .ix-orbs i:nth-child(2){width:420px;height:420px;background:rgba(242,194,48,.38);top:45%;left:-180px;animation:ixo2 22s ease-in-out infinite}
+html.iK .ix-orbs i:nth-child(3){width:460px;height:460px;background:#5b3fb8;bottom:-200px;right:-120px;opacity:.4;animation:ixo3 26s ease-in-out infinite}
+@keyframes ixo1{50%{transform:translate(-120px,140px) scale(1.15)}}@keyframes ixo2{50%{transform:translate(160px,-120px) scale(.9)}}@keyframes ixo3{50%{transform:translate(-140px,-160px) scale(1.1)}}
+html.iK body>*:not(.ix-orbs){position:relative;z-index:1}
+html.iK .hero{background:transparent}
+html.iK .band{background:transparent;border:0}
+html.iK .hero-photo{isolation:isolate}
+html.iK .hero-photo::before{display:none}
+html.iK .hero-photo img{-webkit-mask-image:radial-gradient(ellipse 58% 70% at 50% 38%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 58% 70% at 50% 38%,#000 62%,transparent 100%);animation:ixfl 6s ease-in-out infinite}
+@keyframes ixfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+html.iK .ix-rib{display:block;position:absolute;inset:-5% -15% 0;z-index:-1;pointer-events:none}
+html.iK .ix-rib svg{width:100%;height:100%;overflow:visible;transform:translate(var(--ixx,0px),var(--ixy,0px));transition:transform .4s ease-out}
+html.iK .ix-rib path{fill:none;stroke-linecap:round}
+html.iK .ix-rib .r1{stroke:url(#ixrg2);stroke-width:26;opacity:.5;animation:ixflow 9s ease-in-out infinite}
+html.iK .ix-rib .r2{stroke:url(#ixrg2);stroke-width:14;opacity:.7;animation:ixflow 12s ease-in-out infinite reverse}
+html.iK .ix-rib .r3{stroke:url(#ixrg2);stroke-width:6;opacity:.9;animation:ixflow 7s ease-in-out infinite}
+html.iK,html.iK body{overflow-x:clip}
+html.iK .hero-text .tag{background:var(--card);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:8px;justify-self:start}
+html.iK .hero-text .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:#5BE39A;box-shadow:0 0 0 3px rgba(91,227,154,.2)}
+html.iK .hero h1 em{background:linear-gradient(90deg,#F2C230,#ffe58a,#F2C230);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ixgs 4s linear infinite;font-style:normal}
+@keyframes ixgs{to{background-position:200% center}}
+html.iK .cta{position:relative;overflow:hidden;border-radius:999px;box-shadow:0 14px 40px -14px rgba(242,194,48,.7)}
+html.iK .cta::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:ixshine 3.2s ease-in-out infinite}
+@keyframes ixshine{0%,55%{left:-60%}100%{left:130%}}
+html.iK .hero .how{border-radius:999px;background:rgba(255,255,255,.06);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html.iK .price{background:var(--card);border-radius:22px;padding:20px;border:1px solid rgba(255,255,255,.08)}
+html.iK .stats{grid-template-columns:1fr 1fr;gap:12px}
+html.iK .stats li{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:18px 16px 16px;transition:transform .3s,box-shadow .3s}
+html.iK .stats li:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+html.iK .stats li::before{content:"";position:static;display:block;width:38px;height:38px;border-radius:50%;background:rgba(242,194,48,.14);border:1px solid rgba(242,194,48,.5);margin-bottom:14px;box-shadow:inset 0 0 0 4px var(--card)}
+html.iK .stats li::after{display:none}
+html.iK .stats b{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif;font-weight:700;font-size:clamp(28px,4vw,38px);color:#F2C230;line-height:1}
+html.iK .stats span{font-size:13.5px;margin-top:9px;opacity:.85;font-weight:600;color:#fff}
+html.iK .box,html.iK .steps li,html.iK .wa,html.iK .modal .mbox{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:22px;transition:transform .3s,box-shadow .3s}
+html.iK .box:hover,html.iK .steps li:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+html.iK .steps li{padding:18px 56px 18px 18px;margin-bottom:12px}
+html.iK h2{font-weight:800}
+html.iK h2 em{background:linear-gradient(90deg,#F2C230,#ffe58a,#F2C230);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ixgs 4s linear infinite;font-style:normal}
+html.iK .say{background:var(--card);border-radius:22px;padding:22px;border:1px solid rgba(255,255,255,.08)}
+html.iK .ix-arrow{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(242,194,48,.7);display:grid;place-items:center;color:#F2C230;z-index:40;animation:ixbounce 1.6s ease-in-out infinite;pointer-events:none;background:rgba(30,42,102,.6)}
+@keyframes ixbounce{50%{transform:translate(-50%,8px)}}
+html.iK.ix-scrolled .ix-arrow{display:none}
+@media(min-width:900px){html.iK .hero{display:grid;grid-template-columns:1fr 1fr;align-items:end;max-width:1100px;margin:0 auto}html.iK .hero-photo{order:1;height:min(70svh,620px)}html.iK .hero-text{order:2;margin-top:0;padding-bottom:60px}}

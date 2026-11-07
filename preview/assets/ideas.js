@@ -3,7 +3,7 @@
 var S=document.currentScript, PAGE=S.getAttribute('data-page'), H=document.documentElement;
 var IDEAS={
  home:[['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
- consult:[['5','صورتك تنكشف وين ما يمر الإصبع','طبقة ذهبية تنمسح وترجع'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ consult:[['5','صورتك تنكشف وين ما يمر الإصبع','طبقة ذهبية تنمسح وترجع'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  system:[['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  kit:[['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
@@ -47,6 +47,12 @@ if(PAGE==='consult'){
   var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) return; io.unobserve(en.target); var b=en.target, tn=b.firstChild; if(!tn||tn.nodeType!==3) return; var txt=tn.nodeValue, m=txt.match(/[٠-٩\d]+/); if(!m) return; var target=parseInt(m[0].replace(/[٠-٩]/g,function(c){return AR.indexOf(c)}),10), t0=performance.now();
     (function f(now){ var k=Math.min(1,(now-t0)/1400), e=1-Math.pow(1-k,3); tn.nodeValue=txt.replace(m[0],ar(Math.round(target*e))); if(k<1) requestAnimationFrame(f); })(t0); }); },{threshold:.4});
   document.querySelectorAll('.stats b').forEach(function(b){ io.observe(b); });
+  /* K: kit style */
+  var orbs=el('div','ix-orbs','<i></i><i></i><i></i>'); document.body.insertBefore(orbs,document.body.firstChild);
+  if(ph){ var rib2=el('div','ix-rib','<svg viewBox="0 0 600 700" preserveAspectRatio="none"><defs><linearGradient id="ixrg2" x1="0" x2="1"><stop offset="0" stop-color="#F2C230" stop-opacity="0"/><stop offset=".35" stop-color="#F2C230"/><stop offset=".65" stop-color="#FFE58A"/><stop offset="1" stop-color="#F2C230" stop-opacity="0"/></linearGradient></defs><path class="r1" d="M-60,420 C120,300 220,520 380,400 C500,310 560,360 680,300"/><path class="r2" d="M-60,520 C100,420 260,600 400,470 C520,360 580,420 680,380"/><path class="r3" d="M-60,330 C140,250 240,430 400,330 C520,260 580,300 680,240"/></svg>'); ph.insertBefore(rib2,ph.firstChild);
+    addEventListener('pointermove',function(e){ H.style.setProperty('--ixx',((e.clientX/innerWidth-.5)*40)+'px'); H.style.setProperty('--ixy',((e.clientY/innerHeight-.5)*30)+'px'); },{passive:true}); }
+  document.body.appendChild(el('div','ix-arrow','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>'));
+  addEventListener('scroll',function(){ H.classList.toggle('ix-scrolled',scrollY>160); },{passive:true});
   /* 8: sticky bar */
   var bar=el('div','ix-bar','<a href="#book">احجز الحين <span>←</span></a>'); document.body.appendChild(bar);
   var hh=document.querySelector('.hero'), bk=document.getElementById('book');
