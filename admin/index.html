@@ -71,7 +71,8 @@ h1{margin:0;font-size:21px}
 .when.today{background:var(--gold);border-color:var(--gold)} .when.today b,.when.today small{color:var(--bg)}
 .cancelbar{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border-radius:10px;padding:7px 10px;font-size:13.5px;color:var(--muted)}
 .cancelbar button{margin-inline-start:auto;cursor:pointer;border:0;border-radius:8px;padding:5px 11px;background:var(--gold);color:var(--bg);font-weight:700;font-size:13px}
-.goal .gl{display:block;color:var(--gold);font-size:11.5px;font-weight:700;margin-bottom:3px}
+.goalw{display:grid;gap:5px}
+.glab{color:var(--gold);font-size:12.5px;font-weight:700}
 .goal{margin:0;color:#DDE2F7;font-size:14px;line-height:1.65;background:rgba(0,0,0,.18);border-radius:11px;padding:9px 11px;overflow-wrap:anywhere}
 .acts{display:flex;gap:7px;flex-wrap:wrap}
 .a{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--fg);font-size:13px;font-weight:600;border:1px solid var(--line2);border-radius:9px;padding:6px 10px;background:rgba(255,255,255,.04);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -247,7 +248,7 @@ function card(o){
   var h='<article class="c'+(o.contacted?' done':'')+(o.status==='ملغي'?' cancel':'')+'" data-row="'+o.row+'" data-st="'+esc(o.status)+'">';
   h+='<div class="top"><span class="av">'+esc(String(o.name).trim().charAt(0)||'؟')+'</span><div class="nm"><b>'+esc(o.name)+'</b><small>طلب '+esc(String(o.ts).replace('T',' · '))+'</small></div><div class="when'+(isToday?' today':past?' past':'')+'">'+when+'</div></div>';
   if(o.status==='ملغي')h+='<div class="cancelbar">هالطلب ملغي<button data-restore="1">رجّعه</button></div>';
-  if(o.goal)h+='<p class="goal"><small class="gl">مشكلته / هدفه</small>'+esc(o.goal)+'</p>';
+  h+='<div class="goalw"><span class="glab">مشكلة العميل وهدفه من الاستشارة</span><p class="goal">'+(o.goal?esc(o.goal):'<span style="color:var(--dim)">ما كتب شي</span>')+'</p></div>';
   h+='<div class="acts">';
   if(num)h+='<a class="a wa" target="_blank" rel="noopener" href="https://wa.me/'+num+'"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg><span dir="ltr">'+esc(o.cc+' '+o.wa)+'</span></a>';
   if(o.url)h+='<a class="a p-'+esc(o.platform)+'" target="_blank" rel="noopener" href="'+esc(o.url)+'">'+esc(PL[o.platform]||'حساب')+' · <span dir="ltr">'+esc(o.account)+'</span></a>';
