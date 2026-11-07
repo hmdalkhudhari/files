@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>بزنس ستيتس</title>
+<meta name="description" content="بزنس ستيتس: شركة كويتية مرخّصة مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي. Business Status: project management, marketing and AI solutions, Kuwait.">
+<meta name="theme-color" content="#0E1440">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--navy:#1E2A66;--ink:#0E1440;--ink2:#141C4D;--panel:#1A2460;--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.16);
+ --fg:#fff;--muted:#AEB6DA;--dim:#7F88B5;--gold:#F2C230;--gold-soft:rgba(242,194,48,.12);
+ --ar:"IBM Plex Sans Arabic",system-ui,sans-serif;--en:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--ar);font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html[lang=en] body{font-family:var(--en);letter-spacing:-.005em}
+html[lang=ar] .en,html[lang=en] .ar{display:none!important}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:600;font-size:14px;letter-spacing:.06em}
+html[lang=en] .eyebrow{text-transform:uppercase;font-size:12.5px;letter-spacing:.12em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
+h1,h2,h3{margin:0;font-weight:700;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.15;letter-spacing:-.02em}
+html[lang=ar] h2{letter-spacing:0;line-height:1.3}
+.lead{color:var(--muted);font-size:clamp(17px,1.6vw,19px);max-width:60ch;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:16px;padding:14px 24px;border-radius:12px;transition:transform .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:#FFD24A;transform:translateY(-1px)}
+.btn-line{border:1px solid var(--line2);color:var(--fg);background:rgba(255,255,255,.03)}.btn-line:hover{border-color:var(--gold)}
+.arr{display:inline-block;transition:translate .2s}
+html[lang=en] .arr{rotate:180deg}
+.btn:hover .arr{translate:-4px 0}html[lang=en] .btn:hover .arr{translate:4px 0}
+.hero{position:relative;overflow:hidden;isolation:isolate;min-height:min(100svh,860px);display:flex;align-items:center;padding:140px 0 96px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(900px 520px at 85% -10%,rgba(242,194,48,.14),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(46,62,160,.55),transparent 65%),linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
+.hero .wrap{width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.htext{display:flex;flex-direction:column}
+.hero h1{font-size:clamp(36px,5.2vw,64px);line-height:1.08;letter-spacing:-.035em;margin:18px 0 22px}
+html[lang=ar] .hero h1{letter-spacing:-.01em;line-height:1.25}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.pillars{position:relative;display:grid;gap:16px;padding:20px 0}
+.pil{position:relative;z-index:1;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:20px 22px;border-radius:20px;background:linear-gradient(160deg,rgba(40,53,130,.92),rgba(24,33,90,.92));border:1px solid var(--line2);box-shadow:0 24px 50px -24px rgba(0,0,0,.7);opacity:0;translate:0 14px;animation:in .7s cubic-bezier(.2,.7,.2,1) forwards}
+.p1{margin-inline-end:56px}.p2{margin-inline-start:56px;animation-delay:.2s}.p3{margin-inline-end:28px;animation-delay:.4s;border-color:rgba(242,194,48,.45)}
+.pil .pi{width:52px;height:52px;border-radius:14px;background:var(--gold);color:var(--ink);display:grid;place-items:center}
+.pil .pi svg{width:26px;height:26px}
+.pil b{display:block;font-size:19px;line-height:1.35}.pil small{color:var(--muted);font-size:14px}
+.pil .bar{grid-column:1/-1;height:6px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.pil .bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--gold),#FFD95A);border-radius:4px;transform-origin:left;animation:grow 1.6s .6s cubic-bezier(.2,.7,.2,1) both}
+html[dir=rtl] .pil .bar i{transform-origin:right}
+@keyframes grow{from{scale:0 1}}
+@keyframes in{to{opacity:1;translate:0 0}}
+.core{position:absolute;z-index:0;top:50%;left:50%;translate:-50% -50%;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(242,194,48,.22),transparent);opacity:.9}
+section{padding:112px 0}
+.alt{background:var(--ink2)}
+.head{display:grid;gap:16px;max-width:760px;margin-bottom:56px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.door{position:relative;display:flex;flex-direction:column;gap:14px;padding:40px;border-radius:26px;border:1px solid var(--line2);background:linear-gradient(170deg,rgba(37,49,122,.7),rgba(20,28,77,.5));overflow:hidden;transition:transform .3s,border-color .3s}
+.door::after{content:"";position:absolute;inset:auto -30% -60% auto;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,rgba(242,194,48,.18),transparent);transition:scale .5s}
+.door:hover{transform:translateY(-4px);border-color:rgba(242,194,48,.55)}.door:hover::after{scale:1.3}
+.door.feat{border-color:rgba(242,194,48,.4)}
+.dtag{align-self:flex-start;font-size:13px;font-weight:600;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(242,194,48,.3);border-radius:99px;padding:4px 12px}
+.di{width:60px;height:60px;border-radius:16px;background:var(--gold);color:var(--ink);display:grid;place-items:center}.di svg{width:30px;height:30px}
+.door h3{font-size:clamp(28px,3vw,36px)}
+.door p{margin:0;color:var(--muted);font-size:17px;max-width:44ch}
+.go{margin-top:12px;display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--gold)}
+.door:hover .arr{translate:-6px 0}html[lang=en] .door:hover .arr{translate:6px 0}
+.js .reveal{opacity:0;translate:0 24px;transition:opacity .8s ease,translate .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.pil{opacity:1;translate:0 0}.js .reveal{opacity:1;translate:0 0}}
+@media (max-width:980px){.hero{min-height:0;padding:110px 0 72px}.hero .wrap{grid-template-columns:1fr;gap:48px}.pillars{padding:0}.p1,.p2,.p3{margin-inline:0}.doors{grid-template-columns:1fr}.door{padding:28px 22px}section{padding:80px 0}}
+@media (max-width:560px){body{font-size:16px}.hero .ctas .btn{flex:1 1 100%}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="../assets/ideas.css"><meta name="robots" content="noindex"></head>
+<body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MB5WZZ4LGR"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-MB5WZZ4LGR");</script><style>
+.bsn{--bsn-ink:#0E1440;--bsn-gold:#F2C230;--bsn-line:rgba(255,255,255,.10);--bsn-muted:#AEB6DA;
+  position:fixed;inset:0 0 auto;z-index:1000;font-family:"IBM Plex Sans Arabic","Tajawal",system-ui,sans-serif;color:#fff;
+  padding-top:env(safe-area-inset-top,0px);transition:background .35s,border-color .35s,box-shadow .35s;border-bottom:1px solid transparent}
+html[lang=en] .bsn{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif}
+.bsn.on{background:rgba(14,20,64,.82);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-color:var(--bsn-line);box-shadow:0 10px 30px -20px rgba(0,0,0,.8)}
+.bsn *{box-sizing:border-box}
+.bsn a{color:inherit;text-decoration:none}
+.bsn-in{max-width:1180px;margin:0 auto;height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));transition:height .35s}
+.bsn.on .bsn-in{height:64px}
+.bsn-brand{justify-self:start;display:flex;align-items:center;gap:10px;font-family:"Inter",system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;direction:ltr;white-space:nowrap}
+.bsn-brand svg{width:30px;height:30px;flex:none;transition:rotate .5s}
+.bsn-brand:hover svg{rotate:-8deg}
+.bsn-links{display:flex;align-items:center;gap:6px;position:relative}
+.bsn-links a{position:relative;font-weight:600;font-size:15.5px;color:var(--bsn-muted);padding:10px 16px;white-space:nowrap;transition:color .2s}
+.bsn-links a::after{content:"";position:absolute;inset-inline:16px;bottom:2px;height:2px;border-radius:2px;background:var(--bsn-gold);scale:0 1;transition:scale .3s cubic-bezier(.2,.7,.2,1)}
+.bsn-links a:hover{color:#fff}
+.bsn-links a:hover::after{scale:1 1}
+.bsn-links a[aria-current=page]{color:#fff}
+.bsn-links a[aria-current=page]::after{scale:1 1}
+.bsn-end{justify-self:end;display:flex;align-items:center;gap:10px}
+.bsn-lang{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--bsn-line);background:rgba(255,255,255,.03);color:#fff;font:600 14px "Inter","IBM Plex Sans Arabic",sans-serif;cursor:pointer;transition:border-color .2s}
+.bsn-lang:hover{border-color:var(--bsn-gold)}
+.bsn-lang svg{width:16px;height:16px;opacity:.8}
+.bsn-cta{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 20px;border-radius:11px;background:var(--bsn-gold);color:var(--bsn-ink)!important;font-weight:700;font-size:15px;white-space:nowrap;box-shadow:0 8px 24px -10px rgba(242,194,48,.7);transition:transform .2s,box-shadow .2s}
+.bsn-cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px -10px rgba(242,194,48,.85)}
+.bsn-burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--bsn-line);background:rgba(255,255,255,.04);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.bsn-burger span{display:block;width:18px;height:2px;border-radius:2px;background:#fff;transition:translate .3s,rotate .3s,opacity .2s}
+.bsn-burger span+span{margin-top:5px}
+.bsn.open .bsn-burger span:nth-child(1){translate:0 7px;rotate:45deg}
+.bsn.open .bsn-burger span:nth-child(2){opacity:0}
+.bsn.open .bsn-burger span:nth-child(3){translate:0 -7px;rotate:-45deg}
+.bsn-sheet{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#0E1440 0%,#141C4D 100%);padding:calc(92px + env(safe-area-inset-top,0px)) 24px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:6px;overflow-y:auto;
+  opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.bsn-sheet::before{content:"";position:fixed;inset:0;background:radial-gradient(500px 300px at 100% 0,rgba(242,194,48,.16),transparent 70%);pointer-events:none}
+.bsn.open .bsn-sheet{opacity:1;visibility:visible}
+.bsn-sheet a.l{position:relative;display:flex;align-items:center;gap:16px;padding:16px 4px;border-bottom:1px solid var(--bsn-line);font-size:22px;font-weight:700;translate:0 12px;opacity:0;transition:translate .45s cubic-bezier(.2,.7,.2,1),opacity .45s}
+.bsn.open .bsn-sheet a.l{translate:0 0;opacity:1}
+.bsn.open .bsn-sheet a.l:nth-of-type(2){transition-delay:.05s}.bsn.open .bsn-sheet a.l:nth-of-type(3){transition-delay:.1s}
+.bsn-sheet a.l small{font-family:"Inter",sans-serif;font-size:13px;font-weight:700;color:var(--bsn-gold);letter-spacing:.08em}
+.bsn-sheet a.l[aria-current=page]{color:var(--bsn-gold)}
+.bsn-sheet a.l::after{content:"←";margin-inline-start:auto;color:var(--bsn-muted);font-size:20px}
+html[dir=ltr] .bsn-sheet a.l::after{content:"→"}
+.bsn-contact{margin-top:26px;display:grid;gap:12px}
+.bsn-contact h4{margin:0;font-size:13.5px;font-weight:600;color:var(--bsn-muted);letter-spacing:.04em}
+.bsn-contact .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bsn-contact a{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:14px;border:1px solid var(--bsn-line);background:rgba(255,255,255,.04);font-weight:700;font-size:15.5px;transition:border-color .2s,background .2s}
+.bsn-contact a svg{width:22px;height:22px;flex:none}
+.bsn-contact a.wa{color:#5BE39A;border-color:rgba(91,227,154,.35)}
+.bsn-contact a.wa:hover{background:rgba(91,227,154,.1)}
+.bsn-contact a.em{color:var(--bsn-gold);border-color:rgba(242,194,48,.35)}
+.bsn-contact a.em:hover{background:rgba(242,194,48,.1)}
+.bsn-sheet .bsn-cta{margin-top:22px;height:54px;justify-content:center;font-size:17px}
+.bsn-sheet .bsn-lang{align-self:flex-start;margin-top:14px}
+.bsn-sheet .foot{margin-top:auto;padding-top:20px;color:var(--bsn-muted);font-size:13px}
+@media (max-width:900px){
+  .bsn-in{grid-template-columns:1fr auto;height:64px}
+  .bsn-links,.bsn-end>.bsn-lang,.bsn-end>.bsn-cta{display:none}
+  .bsn-burger{display:flex}
+}
+@media (min-width:901px){.bsn-sheet{display:none}}
+@media (prefers-reduced-motion:reduce){.bsn,.bsn *{transition:none!important}}
+html[lang=ar] .bsn .en,html[lang=en] .bsn .ar{display:none!important}
+</style>
+<header class="bsn" id="bsn">
+  <div class="bsn-in">
+    <a class="bsn-brand" data-home href="../home/" aria-label="Business Status"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F2C230"/></svg>Business Status</a>
+    <nav class="bsn-links" aria-label="الأقسام"><a data-home data-p="home" href="../home/"><span class="ar">الرئيسية</span><span class="en">Home</span></a><a data-p="consult" href="../consult/"><span class="ar">الاستشارة الخاصة</span><span class="en">Consultation</span></a><a data-p="system" href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a></nav>
+    <div class="bsn-end">
+      <button class="bsn-lang" type="button" data-lang><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span class="ar">English</span><span class="en">عربي</span></button>
+      <a class="bsn-cta" href="../consult/"><span class="ar">احجز استشارة</span><span class="en">Book a consultation</span></a>
+      <button class="bsn-burger" type="button" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="bsn-sheet">
+    <a class="l" data-home data-p="home" href="../home/"><small>01</small><span class="ar">الرئيسية</span><span class="en">Home</span></a><a class="l" data-p="consult" href="../consult/"><small>02</small><span class="ar">الاستشارة الخاصة</span><span class="en">Consultation</span></a><a class="l" data-p="system" href="../system/"><small>03</small><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a>
+    <div class="bsn-contact"><h4><span class="ar">تواصل معنا</span><span class="en">Contact us</span></h4><div class="row"><a class="wa" href="https://wa.me/message/D6QAVYNNKNQZA1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5 0 1.7-.7 2-1.4.2-.7.2-1.2.1-1.3l-.5-.3-1.8-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.6l-.8-2c-.2-.5-.4-.4-.6-.4z"/></svg><span class="ar">واتساب</span><span class="en">WhatsApp</span></a><a class="em" href="mailto:info@bznstatus.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="ar">إيميل</span><span class="en">Email</span></a></div></div>
+    <a class="bsn-cta" href="../consult/"><span class="ar">احجز استشارة</span><span class="en">Book a consultation</span></a>
+    <button class="bsn-lang" type="button" data-lang><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span class="ar">English</span><span class="en">عربي</span></button>
+    <span class="foot">Business Status · <span class="ar">شركة مرخّصة في الكويت</span><span class="en">Licensed in Kuwait</span></span>
+  </div>
+</header>
+<script>
+(function(){
+  var n=document.getElementById('bsn'), page='home';
+  if(/bznstatus\.com$/.test(location.hostname)) n.querySelectorAll('[data-home]').forEach(function(a){a.setAttribute('href','/')});
+  n.querySelectorAll('[data-p="'+page+'"]').forEach(function(a){a.setAttribute('aria-current','page')});
+  var b=n.querySelector('.bsn-burger');
+  function close(){n.classList.remove('open');b.setAttribute('aria-expanded','false');document.documentElement.style.overflow=''}
+  b.addEventListener('click',function(){var o=!n.classList.contains('open');n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':''});
+  n.querySelectorAll('.bsn-sheet a').forEach(function(a){a.addEventListener('click',close)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  var s=function(){n.classList.toggle('on',scrollY>10||n.classList.contains('open'))};addEventListener('scroll',s,{passive:true});s();
+})();
+</script>
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="htext">
+    <span class="eyebrow"><span class="ar">بزنس ستيتس · شركة كويتية مرخّصة</span><span class="en">Business Status · Licensed in Kuwait</span></span>
+    <h1><span class="ar">إدارة المشاريع، والتسويق، <em>وحلول الذكاء الاصطناعي.</em></span><span class="en">Project management, marketing <em>and AI solutions.</em></span></h1>
+    <p class="lead"><span class="ar">شركة كويتية مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي. نساعد أصحاب المشاريع وصنّاع المحتوى يرتّبون شغلهم ويوصلون لعملاء أكثر.</span><span class="en">A Kuwaiti company specializing in project management, marketing and AI solutions. We help business owners and creators organize their work and reach more customers.</span></p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="../consult/"><span class="ar">اطلب استشارة</span><span class="en">Request a consultation</span> <span class="arr">←</span></a>
+      <a class="btn btn-line" href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a>
+    </div>
+  </div>
+  <div class="pillars" aria-hidden="true">
+    <div class="pil p1"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6M15 14h1"/></svg></span><div><b><span class="ar">إدارة المشاريع</span><span class="en">Project management</span></b><small><span class="ar">خطة، أولويات، ومتابعة</span><span class="en">Plans, priorities, follow-through</span></small></div><span class="bar"><i style="--w:86%"></i></span></div>
+    <div class="pil p2"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><path d="M6 16l4-5 3 3 5-7"/></svg></span><div><b><span class="ar">التسويق</span><span class="en">Marketing</span></b><small><span class="ar">محتوى، إعلانات، ونمو</span><span class="en">Content, ads, growth</span></small></div><span class="bar"><i style="--w:72%"></i></span></div>
+    <div class="pil p3"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span><div><b><span class="ar">حلول الذكاء الاصطناعي</span><span class="en">AI solutions</span></b><small><span class="ar">أنظمة تشتغل لمشروعك</span><span class="en">Systems that work for you</span></small></div><span class="bar"><i style="--w:94%"></i></span></div>
+    <span class="core"></span>
+  </div>
+</div></section>
+
+<section id="solutions" class="alt"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow"><span class="ar">حلولنا</span><span class="en">Our solutions</span></span><h2><span class="ar">من وين تبي تبدأ؟</span><span class="en">Where would you like to start?</span></h2></div>
+  <div class="doors">
+    <a class="door reveal" href="../consult/">
+      <span class="dtag"><span class="ar">جلسة خاصة · أونلاين</span><span class="en">Private session · Online</span></span><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <h3><span class="ar">الاستشارة الخاصة</span><span class="en">Private Consultation</span></h3>
+      <p><span class="ar">ساعة أونلاين نشخّص فيها مشكلة مشروعك أو محتواك، وتطلع بحلول واضحة تطبّقها.</span><span class="en">One hour online to diagnose your business or content, and leave with clear solutions you apply.</span></p>
+      <span class="go"><span class="ar">اعرف أكثر</span><span class="en">Learn more</span> <span class="arr">←</span></span>
+    </a>
+    <a class="door feat reveal" href="../system/">
+      <span class="dtag"><span class="ar">تطبّقه بنفسك</span><span class="en">Do it yourself</span></span><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span>
+      <h3><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></h3>
+      <p><span class="ar">فريق تسويق كامل بالذكاء الاصطناعي، تبنيه بنفسك خطوة بخطوة.</span><span class="en">A full AI marketing team you build yourself, step by step.</span></p>
+      <span class="go"><span class="ar">اعرف أكثر</span><span class="en">Learn more</span> <span class="arr">←</span></span>
+    </a>
+  </div>
+</div></section>
+</main>
+<style>
+.bsf{border-top:1px solid rgba(255,255,255,.10);background:#0E1440;color:#AEB6DA;font-size:15px;font-family:"IBM Plex Sans Arabic","Tajawal",system-ui,sans-serif;padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px))}
+html[lang=en] .bsf{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif}
+.bsf *{box-sizing:border-box}
+.bsf a{color:inherit;text-decoration:none}
+.bsf-in{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px}
+.bsf h4{margin:0 0 14px;color:#fff;font-size:15px;font-weight:600}
+.bsf ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bsf a:hover{color:#fff}
+.bsf-brand{display:flex;align-items:center;gap:10px;font-family:"Inter",system-ui,sans-serif;font-weight:700;font-size:17px;color:#fff;direction:ltr;margin-bottom:14px}
+.bsf-brand svg{width:30px;height:30px}
+.bsf-about p{margin:0;max-width:40ch;line-height:1.7}
+.bsf .c{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.bsf .c .ic{display:inline-flex;gap:6px;color:#F2C230}
+.bsf .c svg{width:20px;height:20px;flex:none}
+.bsf .c .wa svg{color:#5BE39A}
+.bsf .c bdi,.bsf .c span.v{font-family:"Inter",system-ui,sans-serif;font-weight:600;color:#fff;direction:ltr;unicode-bidi:isolate;letter-spacing:.01em}
+.bsf-legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.10);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13.5px;color:#7F88B5}
+@media (max-width:980px){.bsf-in{grid-template-columns:1fr 1fr}.bsf-about{grid-column:1/-1}}
+@media (max-width:560px){.bsf-in{grid-template-columns:1fr;gap:30px}.bsf{padding-top:44px}}
+html[lang=ar] .bsf .en,html[lang=en] .bsf .ar{display:none!important}
+</style>
+<footer class="bsf">
+  <div class="bsf-in">
+    <div class="bsf-about">
+      <a class="bsf-brand" data-home href="../home/"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F2C230"/></svg>Business Status</a>
+      <p><span class="ar">شركة كويتية مرخّصة مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي.</span><span class="en">A licensed Kuwaiti company specializing in project management, marketing and AI solutions.</span></p>
+    </div>
+    <div>
+      <h4><span class="ar">حلولنا</span><span class="en">Solutions</span></h4>
+      <ul><li><a href="../consult/"><span class="ar">الاستشارة الخاصة</span><span class="en">Private Consultation</span></a></li><li><a href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a></li></ul>
+    </div>
+    <div>
+      <h4><span class="ar">تواصل معنا</span><span class="en">Contact us</span></h4>
+      <ul>
+        <li><a class="c" href="https://wa.me/message/D6QAVYNNKNQZA1" target="_blank" rel="noopener"><span class="ic"><span class="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5 0 1.7-.7 2-1.4.2-.7.2-1.2.1-1.3l-.5-.3-1.8-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.6l-.8-2c-.2-.5-.4-.4-.6-.4z"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><bdi>00965-90000937</bdi></a></li>
+        <li><a class="c" href="https://www.instagram.com/bznstatus" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><bdi>@bznstatus</bdi></a></li>
+        <li><a class="c" href="mailto:info@bznstatus.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><bdi>info@bznstatus.com</bdi></a></li>
+      </ul>
+    </div>
+    <div class="bsf-legal"><span>© 2026 Business Status</span><span><span class="ar">شركة مرخّصة في دولة الكويت</span><span class="en">Licensed in the State of Kuwait</span></span></div>
+  </div>
+</footer>
+<script>if(/bznstatus\.com$/.test(location.hostname))document.querySelectorAll('.bsf [data-home]').forEach(function(a){a.setAttribute('href','/')});</script>
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  function setLang(l){root.lang=l;root.dir=l==='ar'?'rtl':'ltr';document.title=l==='ar'?'بزنس ستيتس':'Business Status';try{localStorage.setItem('bz-lang',l)}catch(e){}}
+  var q=new URLSearchParams(location.search).get('lang'),saved=null;try{saved=localStorage.getItem('bz-lang')}catch(e){}
+  if(location.hash==='#en')q='en';
+  setLang(q==='en'||q==='ar'?q:(saved||'ar'));
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(root.lang==='ar'?'en':'ar')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+<script src="../assets/ideas.js" data-page="home"></script></body>
+</html>
