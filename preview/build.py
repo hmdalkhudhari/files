@@ -5,9 +5,10 @@ FONT='<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+
 for page,src in PAGES.items():
     d=f'{OUT}/{page}'; os.makedirs(d,exist_ok=True)
     s=open(f'{ROOT}/{src}/index.html',encoding='utf-8').read()
-    inject=FONT+'<link rel="stylesheet" href="../assets/ideas.css"><meta name="robots" content="noindex">'
+    V=str(int(__import__('time').time()))
+    inject=FONT+'<link rel="stylesheet" href="../assets/ideas.css?v='+V+'"><meta name="robots" content="noindex">'
     s=re.sub(r'</head>', inject+'</head>', s, count=1)
-    s=re.sub(r'</body>', f'<script src="../assets/ideas.js" data-page="{page}"></script></body>', s, count=1)
+    s=re.sub(r'</body>', f'<script src="../assets/ideas.js?v={V}" data-page="{page}"></script></body>', s, count=1)
     # strip netlify badge script if any
     s=re.sub(r'<script[^>]*netlify[^>]*>.*?</script>','',s,flags=re.S|re.I)
     # home: links to ../site/ -> ../home/
