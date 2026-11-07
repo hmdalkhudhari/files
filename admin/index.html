@@ -73,7 +73,19 @@ h1{margin:0;font-size:22px}
 .sts button.on[data-s="تمت"]{background:#1E7A4C;border-color:#1E7A4C;color:#fff}
 .sts button.on[data-s="ملغي"]{background:#5A607E;border-color:#5A607E;color:#fff}
 .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 20px;border:1.5px dashed var(--line2);border-radius:20px}
-.toast{position:fixed;bottom:20px;left:50%;translate:-50% 0;background:var(--gold);color:var(--bg);font-weight:700;border-radius:12px;padding:10px 18px;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;translate:-50% 0;background:var(--gold);color:var(--bg);font-weight:700;border-radius:12px;padding:10px 14px 10px 18px;opacity:0;transition:opacity .3s;pointer-events:none;display:flex;align-items:center;gap:12px;white-space:nowrap;z-index:40}
+.toast button{font:inherit;font-weight:800;cursor:pointer;border:0;background:var(--bg);color:var(--gold);border-radius:8px;padding:5px 11px}
+.toast.show{pointer-events:auto}
+.filters{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.fr{display:flex;align-items:center;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.fr::-webkit-scrollbar{display:none}
+.fr span{flex:none;color:var(--muted);font-size:12.5px;font-weight:600;margin-inline-end:4px}
+.fr button{flex:none;font:inherit;cursor:pointer;font-size:13px;font-weight:600;border-radius:99px;padding:6px 12px;border:1px solid var(--line2);background:rgba(255,255,255,.04);color:var(--muted)}
+.fr button.on{background:var(--gold);border-color:var(--gold);color:var(--bg)}
+.fr button.on[data-s="ملغي"]{background:#5A607E;border-color:#5A607E;color:#fff}
+.a.tt{background:#111;border-color:#333}.a.sc{background:#FFFC00;border-color:#FFFC00;color:#111}.a.x{background:#000;border-color:#444}.a.yt{background:#E62117;border-color:#E62117}.a.web{background:var(--card2)}
+.a.back{background:rgba(242,194,48,.15);border-color:var(--gold);color:var(--gold)}
+.c.cancel .acts,.c.cancel .goal{opacity:.6}
 .toast.show{opacity:1}
 .saving{opacity:.6;pointer-events:none}
 .login{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:var(--bg)}
@@ -107,23 +119,39 @@ h1{margin:0;font-size:22px}
   </div>
 
   <div class="bar">
-    <div class="tabs" id="tabs"><button class="on" data-t="up">المواعيد الجاية</button><button data-t="all">كل الطلبات</button></div>
+    <div class="tabs" id="tabs"><button class="on" data-t="up">المواعيد الجاية</button><button data-t="today">اليوم</button><button data-t="week">هالأسبوع</button><button data-t="all">الكل</button></div>
     <input class="search" id="q" type="search" placeholder="ابحث بالاسم أو الرقم أو الحساب">
   </div>
 
+  <div class="filters">
+    <div class="fr" id="fst"><span>الحالة</span><button class="on" data-s="all">الكل</button><button data-s="جديد">جديد</button><button data-s="تواصلنا">تواصلنا</button><button data-s="دفع">دفع</button><button data-s="تمت">تمت</button><button data-s="ملغي">ملغي</button></div>
+    <div class="fr" id="fpl"><span>المنصة</span><button class="on" data-p="all">الكل</button><button data-p="instagram">انستقرام</button><button data-p="tiktok">تيك توك</button><button data-p="snapchat">سناب</button><button data-p="x">X</button><button data-p="youtube">يوتيوب</button><button data-p="website">موقع</button></div>
+  </div>
   <div class="list" id="list"><div class="empty">جاري التحميل…</div></div>
 </div>
 <div class="toast" id="toast"></div>
 <div class="login" id="login" hidden><form id="lf"><svg viewBox="0 0 64 64" width="44" height="44" style="justify-self:center"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F2C230"/></svg><h2>لوحة الطلبات</h2><p>اكتب كلمة السر مرة وحدة، والجهاز يتذكرها.</p><input id="pw" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="كلمة السر"><label style="display:flex;gap:8px;align-items:center;justify-content:center;color:var(--muted);font-size:14px;cursor:pointer"><input type="checkbox" id="showpw" style="width:auto;display:inline">أظهر كلمة السر</label><span class="err" id="lerr"></span><button type="submit">دخول</button></form></div>
 
 <script>
-var DATA=[], F='all', T='up', Q='';
+var DATA=[], F='all', T='up', S='all', P='all', Q='';
 var STS=['جديد','تواصلنا','دفع','تمت','ملغي'];
 var DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
 var MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function toast(t){var x=$('toast');x.textContent=t;x.classList.add('show');setTimeout(function(){x.classList.remove('show')},1800)}
+var toastT;function toast(t,undo){var x=$('toast');clearTimeout(toastT);x.textContent='';x.appendChild(document.createTextNode(t));
+  if(undo){var b=document.createElement('button');b.textContent='تراجع';b.onclick=function(){x.classList.remove('show');undo()};x.appendChild(b)}
+  x.classList.add('show');toastT=setTimeout(function(){x.classList.remove('show')},undo?6000:1800)}
+var PLAT={instagram:{l:'انستقرام',c:'ig'},tiktok:{l:'تيك توك',c:'tt'},snapchat:{l:'سناب',c:'sc'},x:{l:'X',c:'x'},youtube:{l:'يوتيوب',c:'yt'},website:{l:'موقع',c:'web'}};
+function plat(acc){var v=String(acc||'').trim();if(!v)return null;var lv=v.toLowerCase();
+  function u(re){var m=lv.match(re);return m?v.slice(m.index+m[0].length).replace(/[\/?#].*$/,''):null}
+  var h;if((h=u(/tiktok\.com\/@?/))!==null)return{k:'tiktok',h:'@'+h,url:'https://tiktok.com/@'+h};
+  if((h=u(/snapchat\.com\/add\//))!==null)return{k:'snapchat',h:h,url:'https://snapchat.com/add/'+h};
+  if((h=u(/(?:x|twitter)\.com\//))!==null)return{k:'x',h:'@'+h,url:'https://x.com/'+h};
+  if((h=u(/youtube\.com\/@?/))!==null)return{k:'youtube',h:'@'+h,url:'https://youtube.com/@'+h};
+  if((h=u(/instagram\.com\//))!==null)return{k:'instagram',h:'@'+h,url:'https://instagram.com/'+h};
+  if(/^https?:\/\//.test(lv))return{k:'website',h:v.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,''),url:v};
+  var a=v.replace(/^@/,'').replace(/[^A-Za-z0-9._]/g,'');if(!a)return{k:'other',h:v,url:''};return{k:'instagram',h:'@'+a,url:'https://instagram.com/'+a}}
 function pd(s){var m=String(s).match(/(\d{4})-(\d{1,2})-(\d{1,2})/);return m?new Date(+m[1],+m[2]-1,+m[3]):null}
 function today(){var d=new Date();d.setHours(0,0,0,0);return d}
 function fmtTime(t){var m=String(t).match(/(\d{1,2}):(\d{2})/);if(!m)return esc(t);var h=+m[1];var ap=h>=12?'م':'ص';h=h%12||12;return h+':'+m[2]+' '+ap}
@@ -157,8 +185,12 @@ function pass(o){
   if(F==='notc'&&(o.contacted||o.status==='ملغي'))return false;
   if(F==='paid'&&!(o.status==='دفع'||o.status==='تمت'))return false;
   if(F==='week'){var d=pd(o.ts);if(!d||d<weekStart())return false}
+  if(S!=='all'&&o.status!==S)return false;
+  if(P!=='all'){var pl=plat(o.account);if(!pl||pl.k!==P)return false}
   if(T==='up'){var dd=pd(o.date);if(!dd||dd<today()||o.status==='ملغي')return false}
-  if(Q){var s=(o.name+' '+o.cc+o.wa+' '+o.account+' '+o.email).toLowerCase();if(s.indexOf(Q)<0)return false}
+  if(T==='today'){var dt=pd(o.date);if(!dt||dt.getTime()!==today().getTime())return false}
+  if(T==='week'){var dw=pd(o.ts);if(!dw||dw<weekStart())return false}
+  if(Q){var s=(o.name+' '+o.cc+o.wa+' '+o.account+' '+o.email+' '+o.goal).toLowerCase();if(s.indexOf(Q)<0)return false}
   return true;
 }
 
@@ -166,14 +198,16 @@ function card(o){
   var d=pd(o.date), past=!d||d<today();
   var when=d?('<b>'+DAYS[d.getDay()]+' '+d.getDate()+' '+MONTHS[d.getMonth()]+'</b><small>'+fmtTime(o.time)+'</small>'):'<b>بدون موعد</b>';
   var num=(o.cc==='other'?'':String(o.cc).replace(/\D/g,''))+String(o.wa).replace(/\D/g,'').replace(/^0+/,'');
-  var acc=String(o.account).replace(/^.*instagram\.com\//i,'').replace(/^@/,'').replace(/[^A-Za-z0-9._]/g,'');
+  var pl=plat(o.account);
   var cls='c'+(o.contacted?' done':'')+(o.status==='ملغي'?' cancel':'');
   var h='<article class="'+cls+'" data-row="'+o.row+'">';
   h+='<div class="top"><span class="av">'+esc(String(o.name).trim().charAt(0)||'؟')+'</span><div class="nm"><b>'+esc(o.name)+'</b><small>طلب '+esc(String(o.ts).replace('T',' '))+'</small></div><div class="when'+(past?' past':'')+'">'+when+'</div></div>';
   if(o.goal)h+='<p class="goal">'+esc(o.goal)+'</p>';
   h+='<div class="acts">';
   if(num)h+='<a class="a wa" target="_blank" href="https://wa.me/'+num+'"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg><span dir="ltr">'+esc(o.cc+' '+o.wa)+'</span></a>';
-  if(acc)h+='<a class="a ig" target="_blank" href="https://instagram.com/'+acc+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>@'+esc(acc)+'</a>';
+  if(pl&&pl.url)h+='<a class="a '+(PLAT[pl.k]||{c:''}).c+'" target="_blank" href="'+esc(pl.url)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>'+esc((PLAT[pl.k]||{l:''}).l)+' '+esc(pl.h)+'</a>';
+  else if(pl)h+='<span class="a">'+esc(pl.h)+'</span>';
+  if(o.status==='ملغي')h+='<button class="a back" data-restore="1">↩ رجّعه</button>';
   if(o.email)h+='<a class="a" target="_blank" href="mailto:'+esc(o.email)+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>'+esc(o.email)+'</a>';
   h+='</div><div class="row2"><label class="tg"><input type="checkbox" class="ct"'+(o.contacted?' checked':'')+'><span class="sw"></span>كلمناه</label><div class="sts">';
   STS.forEach(function(s){h+='<button data-s="'+s+'"'+(o.status===s?' class="on"':'')+'>'+s+'</button>'});
@@ -190,24 +224,28 @@ function render(){
   $('list').innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">'+(T==='up'?'ما فيه مواعيد جاية بهالفلتر.':'ما فيه طلبات بهالفلتر.')+'</div>';
 }
 
+function setStatus(el,o,s,withUndo){var prev=o.status;if(el)el.classList.add('saving');
+  api({action:'status',row:o.row,name:o.name,s:s}).then(function(){o.status=s;render();
+    toast(s==='ملغي'?'ملغي (تلقاه بفلتر «ملغي»)':'الحالة: '+s,withUndo?function(){setStatus(null,o,prev,false)}:null)})
+    .catch(function(err){if(el)el.classList.remove('saving');toast('ما انحفظ: '+err.message)})}
 function find(row){for(var i=0;i<DATA.length;i++)if(DATA[i].row==row)return DATA[i]}
 
 $('list').addEventListener('change',function(e){
   if(!e.target.classList.contains('ct'))return;
   var el=e.target.closest('.c'),o=find(el.dataset.row),v=e.target.checked;
   el.classList.add('saving');
-  api({action:'contacted',row:o.row,name:o.name,val:v?'1':'0'}).then(function(){o.contacted=v;render();toast(v?'تم: كلمناه ✓':'تم الإلغاء')})
+  api({action:'contacted',row:o.row,name:o.name,val:v?'1':'0'}).then(function(){o.contacted=v;render();toast(v?'تم: كلمناه ✓':'تم الإلغاء',function(){api({action:'contacted',row:o.row,name:o.name,val:v?'0':'1'}).then(function(){o.contacted=!v;render()})})})
     .catch(function(err){el.classList.remove('saving');e.target.checked=!v;toast('ما انحفظ: '+err.message)});
 });
 $('list').addEventListener('click',function(e){
-  var b=e.target.closest('.sts button');if(!b)return;
-  var el=b.closest('.c'),o=find(el.dataset.row),s=b.dataset.s;if(o.status===s)return;
-  el.classList.add('saving');
-  api({action:'status',row:o.row,name:o.name,s:s}).then(function(){o.status=s;render();toast('الحالة: '+s)})
-    .catch(function(err){el.classList.remove('saving');toast('ما انحفظ: '+err.message)});
+  var r=e.target.closest('[data-restore]');var b=e.target.closest('.sts button');if(!b&&!r)return;
+  var el=(b||r).closest('.c'),o=find(el.dataset.row),s=r?'جديد':b.dataset.s;if(o.status===s)return;
+  setStatus(el,o,s,true);
 });
 $('kpis').addEventListener('click',function(e){var b=e.target.closest('.kpi');if(!b)return;F=b.dataset.f;document.querySelectorAll('.kpi').forEach(function(x){x.classList.toggle('on',x===b)});render()});
 $('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;T=b.dataset.t;document.querySelectorAll('#tabs button').forEach(function(x){x.classList.toggle('on',x===b)});render()});
+$('fst').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;S=b.dataset.s;document.querySelectorAll('#fst button').forEach(function(x){x.classList.toggle('on',x===b)});if(S==='ملغي'&&T==='up'){T='all';document.querySelectorAll('#tabs button').forEach(function(x){x.classList.toggle('on',x.dataset.t==='all')})}render()});
+$('fpl').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;P=b.dataset.p;document.querySelectorAll('#fpl button').forEach(function(x){x.classList.toggle('on',x===b)});render()});
 $('q').addEventListener('input',function(){Q=this.value.trim().toLowerCase();render()});
 $('ref').addEventListener('click',function(){load();toast('تحدّث')});
 load();
@@ -215,4 +253,3 @@ setInterval(function(){if(!document.hidden&&!document.querySelector('.saving'))l
 </script>
 </body>
 </html>
-<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="97546b6f-3fee-40b6-bff2-5837fb0257f2" data-app-host="app.netlify.com" data-account-tier="free"></script>

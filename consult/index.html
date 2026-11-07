@@ -468,7 +468,7 @@ html[lang=ar] .bsn .en,html[lang=en] .bsn .ar{display:none!important}
     <label>الاسم<input name="name" required autocomplete="name"></label>
     <label>رقم الواتساب<span class="tel"><select name="cc" aria-label="رمز الدولة"><option value="+965">🇰🇼 +965 الكويت</option><option value="+966">🇸🇦 +966 السعودية</option><option value="+971">🇦🇪 +971 الإمارات</option><option value="+974">🇶🇦 +974 قطر</option><option value="+973">🇧🇭 +973 البحرين</option><option value="+968">🇴🇲 +968 عُمان</option><option value="+20">🇪🇬 +20 مصر</option><option value="+962">🇯🇴 +962 الأردن</option><option value="+964">🇮🇶 +964 العراق</option><option value="+961">🇱🇧 +961 لبنان</option><option value="+963">🇸🇾 +963 سوريا</option><option value="+970">🇵🇸 +970 فلسطين</option><option value="+967">🇾🇪 +967 اليمن</option><option value="+249">🇸🇩 +249 السودان</option><option value="+218">🇱🇾 +218 ليبيا</option><option value="+216">🇹🇳 +216 تونس</option><option value="+213">🇩🇿 +213 الجزائر</option><option value="+212">🇲🇦 +212 المغرب</option><option value="other">دولة ثانية</option></select><input name="whatsapp" required inputmode="tel" dir="ltr" autocomplete="tel-national" placeholder="xxxx xxxx"></span></label>
     <label>الإيميل<input name="email" type="email" required dir="ltr" autocomplete="email"></label>
-    <label>حسابك أو حساب المشروع<input name="account" required dir="ltr" placeholder="@"></label>
+    <label>حسابك أو حساب المشروع<span class="tel"><select name="platform" id="platform" aria-label="المنصة"><option value="instagram">📸 انستقرام</option><option value="tiktok">🎵 تيك توك</option><option value="snapchat">👻 سناب شات</option><option value="x">✖️ X</option><option value="youtube">▶️ يوتيوب</option><option value="website">🌐 موقع</option><option value="other">ثاني</option></select><input name="account" id="account" required dir="ltr" placeholder="@username" autocomplete="username"></span></label>
     <label>وصف مختصر لهدفك من الاستشارة<textarea name="problem" required rows="3" placeholder="سطرين يكفون"></textarea></label>
   </div>
   <p class="rq-pick" id="pick">ما اخترت موعد للحين</p>
@@ -486,7 +486,7 @@ html[lang=ar] .bsn .en,html[lang=en] .bsn .ar{display:none!important}
   <button type="button" class="cta mclose" id="doneClose">تمام</button>
   </div>
 </div>
-<p class="alt rise">تبي تبدأ بروحك؟ <a href="../system/">شوف نظام التسويق الذكي</a></p>
+<p class="alt rise">تبي تبدأ بروحك؟ <a href="library.html">شوف نظام التسويق الذكي</a></p>
 </div></section>
 <style>
 .bsf{border-top:1px solid rgba(255,255,255,.10);background:#0E1440;color:#AEB6DA;font-size:15px;font-family:"IBM Plex Sans Arabic","Tajawal",system-ui,sans-serif;padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px))}
@@ -561,6 +561,12 @@ html[lang=ar] .bsf .en,html[lang=en] .bsf .ar{display:none!important}
 (function(){
  var ENDPOINT="https://script.google.com/macros/s/AKfycbw2gJUS7_nDwOSdCSCBbV7eF4j4kjRlxblMczYSpjOZh6CuDnVlrDhmS9oarSC3NcOy/exec", HOL=["2027-01-06", "2027-03-10", "2027-05-17", "2027-05-18", "2027-05-19"], MIN_DAYS=5, MAX_DAYS=60, WD=[1,2,3];
  var f=document.getElementById('req'); if(!f) return;
+ var PH={instagram:'@username',tiktok:'@username',snapchat:'username',x:'@username',youtube:'@channel',website:'example.com',other:'اكتب الحساب'};
+ var pf=document.getElementById('platform'),ac=document.getElementById('account');
+ pf.addEventListener('change',function(){ac.placeholder=PH[pf.value]||'@';ac.dir=pf.value==='other'?'rtl':'ltr';});
+ function accUrl(p,v){v=String(v||'').trim();if(/^https?:\/\//i.test(v))return v;var u=v.replace(/^@/,'').replace(/^.*\.com\//,'').replace(/\/.*$/,'');
+  if(p==='instagram')return 'https://instagram.com/'+u;if(p==='tiktok')return 'https://tiktok.com/@'+u;if(p==='snapchat')return 'https://snapchat.com/add/'+u;
+  if(p==='x')return 'https://x.com/'+u;if(p==='youtube')return 'https://youtube.com/@'+u;if(p==='website')return 'https://'+v.replace(/^https?:\/\//,'');return v;}
  var daysEl=document.getElementById('days'), pick=document.getElementById('pick'), err=document.getElementById('err');
  var sel={d:null,t:null};
  function kwNow(){var n=new Date();return new Date(n.getTime()+(n.getTimezoneOffset()+180)*60000);}
@@ -590,7 +596,7 @@ html[lang=ar] .bsf .en,html[lang=en] .bsf .ar{display:none!important}
   f.querySelectorAll('[required]').forEach(function(x){var ok=x.value.trim()&&(x.type!=='email'||/\S+@\S+\.\S+/.test(x.value));x.setAttribute('aria-invalid',ok?'false':'true');if(!ok&&!bad)bad=x;});
   if(!sel.d||!sel.t){err.textContent='اختار اليوم والساعة أول';err.hidden=false;return;}
   if(bad){err.textContent='كمّل البيانات المطلوبة';err.hidden=false;bad.focus();return;}
-  var data=new FormData(f); data.append('date',sel.d.dataset.d); data.append('time',sel.t); data.append('page','consultation');
+  var data=new FormData(f); data.set('account',accUrl(f.platform.value,f.account.value)); data.append('date',sel.d.dataset.d); data.append('time',sel.t); data.append('page','consultation');
   var slot=pick.textContent.replace('موعدك: ','');
   function done(demo){var d=document.getElementById('done');document.getElementById('doneSlot').textContent=slot;document.getElementById('demo').hidden=!demo;d.hidden=false;document.body.style.overflow='hidden';document.getElementById('doneClose').focus();f.reset();sel={d:null,t:null};document.querySelectorAll('#req [aria-checked]').forEach(function(x){x.setAttribute('aria-checked','false')});pick.textContent='ما اخترت موعد للحين';f.querySelector('button[type=submit]').disabled=false;}
   if(!ENDPOINT){done(true);return;}
