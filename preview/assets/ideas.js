@@ -2,7 +2,7 @@
 (function(){
 var S=document.currentScript, PAGE=S.getAttribute('data-page'), H=document.documentElement;
 var IDEAS={
- home:[['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية بالهيدر','تطلع بالكمبيوتر فقط'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
+ home:[['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
  consult:[['5','صورتك تنكشف وين ما يمر الإصبع','طبقة ذهبية تنمسح وترجع'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  system:[['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  kit:[['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
@@ -26,7 +26,8 @@ if(PAGE==='home'){
   if(hero) hero.insertAdjacentElement('afterend',t);
   var end=document.querySelector('.bsn-end');
   if(end){ var c=el('span','ix-clock','<i></i>الكويت <b>--:--</b>'); end.insertBefore(c,end.firstChild);
-    function tick(){ try{ c.querySelector('b').textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuwait',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); }catch(e){} } tick(); setInterval(tick,1000); }
+    var c2=el('div','ix-clock2','<i></i>الكويت الحين <b>--:--</b>'); var ht=document.querySelector('.hero .htext'); if(ht) ht.insertBefore(c2,ht.firstChild);
+    function tick(){ try{ var v=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuwait',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); c.querySelector('b').textContent=v; c2.querySelector('b').textContent=v; }catch(e){} } tick(); setInterval(tick,1000); }
   var h1=document.querySelector('.hero h1 .ar');
   if(h1){ var orig=h1.innerHTML; var alt='سوّق <em class="ix-gw">أذكى</em>، مو أكثر.';
     function setH(){ h1.innerHTML = H.classList.contains('i4')?alt:orig; } setH(); document.addEventListener('ix-change',setH); }
