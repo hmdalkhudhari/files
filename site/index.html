@@ -4,344 +4,265 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>بزنس ستيتس</title>
-<meta name="description" content="بزنس ستيتس: حلول الذكاء الاصطناعي لأصحاب المشاريع الصغيرة وصنّاع المحتوى. نظام التسويق الذكي واستشارات خاصة.">
-<meta name="theme-color" content="#0A0F2E">
-<link rel="icon" href="data:image/png;base64,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">
+<meta name="description" content="بزنس ستيتس: شركة كويتية مرخّصة مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي. Business Status: project management, marketing and AI solutions, Kuwait.">
+<meta name="theme-color" content="#0E1440">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
-:root{--bg:#0A0F2E;--bg2:#0E1540;--panel:rgba(255,255,255,.045);--panel2:rgba(255,255,255,.07);--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.18);
---fg:#fff;--mut:#AEB6DD;--dim:#7680B0;--gold:#F2C230;--gold2:#FFD95A;--navy:#1E2A66;--indigo:#7C8CFF;color-scheme:dark}
+:root{--navy:#1E2A66;--ink:#0E1440;--ink2:#141C4D;--panel:#1A2460;--line:rgba(255,255,255,.10);--line2:rgba(255,255,255,.16);
+ --fg:#fff;--muted:#AEB6DA;--dim:#7F88B5;--gold:#F2C230;--gold-soft:rgba(242,194,48,.12);
+ --ar:"IBM Plex Sans Arabic",system-ui,sans-serif;--en:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif;color-scheme:dark}
 *{box-sizing:border-box}
-[hidden]{display:none!important}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:"Tajawal",system-ui,sans-serif;font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-html[lang=en] body{font-family:"Manrope","Tajawal",system-ui,sans-serif;font-size:16.5px}
-html[lang=ar] .en,html[lang=en] .ar{display:none}
-a{color:inherit}
-img{max-width:100%}
-.w{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-section{padding-block:clamp(72px,10vw,120px);position:relative}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;letter-spacing:.02em;color:var(--gold);padding:6px 14px;border:1px solid rgba(242,194,48,.3);border-radius:99px;background:rgba(242,194,48,.06)}
-html[lang=en] .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:12px}
-.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
-h1,h2,h3{margin:0;line-height:1.2;text-wrap:balance}
-h2{font-size:clamp(32px,5vw,52px);font-weight:900;letter-spacing:-.01em}
-html[lang=en] h2{letter-spacing:-.03em;font-weight:800}
-h2 em,h1 em{font-style:normal;padding-block:.08em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:linear-gradient(90deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{color:var(--mut);font-size:clamp(17px,2vw,19px);max-width:62ch;margin:18px 0 0}
-.head{display:grid;justify-items:start;gap:14px;margin-bottom:clamp(36px,5vw,56px);max-width:760px}
-
-/* nav */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:.3s}
-.nav.s{background:rgba(10,15,46,.72);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid var(--line)}
-.nav .w{display:flex;align-items:center;gap:24px;height:72px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;text-decoration:none;font-family:"Manrope",sans-serif;letter-spacing:-.01em}
-.brand img{width:30px;height:30px;flex:none}
-.brand>span{white-space:nowrap;line-height:1.15}
-
-.brand small{display:block;font-size:10.5px;font-weight:600;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;line-height:1}
-.links{display:flex;gap:4px;margin-inline-start:auto;padding:4px;border:1px solid var(--line2);border-radius:14px;background:var(--panel)}
-.links a{text-decoration:none;font-size:15px;font-weight:800;color:#fff;padding:8px 16px;border-radius:10px;text-align:center;white-space:nowrap;transition:background .2s,color .2s}.links a:hover{background:var(--gold);color:#141a45}
-.lang{font:inherit;font-size:13px;font-weight:800;color:#fff;background:var(--panel2);border:1px solid var(--line2);border-radius:99px;padding:7px 14px;cursor:pointer;font-family:"Manrope","Tajawal",sans-serif}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;text-decoration:none;border-radius:14px;padding:14px 26px;font-size:16px;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
-.btn.g{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#141a45;box-shadow:0 10px 30px -10px rgba(242,194,48,.6),inset 0 1px 0 rgba(255,255,255,.5)}
-.btn.g:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(242,194,48,.7)}
-.btn.o{border:1px solid var(--line2);background:var(--panel);color:#fff}
-.btn.o:hover{background:var(--panel2)}
-.btn.sm{padding:9px 16px;font-size:14px;border-radius:11px}
-.arr{display:inline-block;transition:transform .2s}
-html[lang=en] .arr{transform:scaleX(-1)}
-.btn:hover .arr{transform:translateX(-4px)}
-html[lang=en] .btn:hover .arr{transform:scaleX(-1) translateX(-4px)}
-@media(max-width:860px){.nav .w{flex-wrap:wrap;height:auto;padding-block:10px;row-gap:10px}.nav .lang{margin-inline-start:auto}.links{order:3;width:100%;display:grid;grid-template-columns:1fr 1fr;margin:0}.links a{font-size:14px;padding:9px 6px;white-space:normal;line-height:1.3}}
-@media(max-width:440px){.nav .w{gap:10px}.nav .brand{font-size:15px;gap:8px}.nav .brand small{display:none}.nav .lang{padding:6px 10px}}
-
-/* hero */
-.hero{padding-top:clamp(36px,6vw,70px);padding-bottom:40px;overflow:hidden}
-.bgfx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.bgfx::before{content:"";position:absolute;inset:-1px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.35;mask-image:radial-gradient(70% 60% at 50% 30%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000 20%,transparent 75%)}
-.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;animation:float 14s ease-in-out infinite}
-.orb.a{width:520px;height:520px;background:#2B3BA8;top:-180px;inset-inline-end:-120px}
-.orb.b{width:380px;height:380px;background:rgba(242,194,48,.35);top:180px;inset-inline-start:-160px;animation-delay:-5s}
-.orb.c{width:300px;height:300px;background:#5B3FD0;bottom:-120px;inset-inline-end:30%;opacity:.35;animation-delay:-9s}
-@keyframes float{50%{transform:translate(30px,-24px) scale(1.06)}}
-.hgrid{position:relative;display:grid;gap:40px;align-items:center}
-@media(min-width:980px){.hgrid{grid-template-columns:1.05fr .95fr}}
-.hero h1{text-wrap:balance;line-height:1.3;font-size:clamp(36px,6vw,72px);font-weight:900;letter-spacing:-.015em;margin-top:22px}
-html[lang=en] .hero h1{letter-spacing:-.045em;font-weight:800;line-height:1.05}
-.hero .lead{font-size:clamp(17px,2vw,20px)}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:34px;color:var(--mut);font-size:14px}
-.trust span{display:inline-flex;align-items:center;gap:8px}
-.trust svg{color:var(--gold);flex:none}
-
-/* network visual */
-.pls{position:relative;display:grid;gap:14px;max-width:520px;margin-inline:auto;padding:28px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid var(--line2);box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 8px rgba(255,255,255,.015)}
-.pls::before{content:"";position:absolute;inset-inline-start:58px;top:96px;bottom:48px;width:2px;background:linear-gradient(var(--gold),rgba(124,140,255,.4));opacity:.5}
-.plogo{display:flex;align-items:center;gap:10px;font-family:"Manrope",sans-serif;font-weight:800;font-size:15px;color:var(--mut);padding-bottom:10px;border-bottom:1px solid var(--line)}
-.plogo img{width:26px;height:26px}
-.pl{position:relative;display:flex;align-items:center;gap:16px;padding:18px;padding-inline-end:44px;border-radius:18px;background:rgba(18,26,80,.75);border:1px solid var(--line2);animation:plg 4.5s ease-in-out infinite;animation-delay:calc(var(--i)*1.5s)}
-@keyframes plg{0%,100%{border-color:var(--line2);box-shadow:none}15%,35%{border-color:rgba(242,194,48,.6);box-shadow:0 0 0 4px rgba(242,194,48,.08),0 20px 40px -20px rgba(242,194,48,.5)}}
-.pn{position:absolute;inset-inline-end:16px;top:12px;font-family:"Manrope",sans-serif;font-size:12px;font-weight:800;color:var(--dim)}
-.pi{flex:none;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:var(--gold);background:rgba(242,194,48,.1);border:1px solid rgba(242,194,48,.3);position:relative;z-index:1}
-.pl b{display:block;font-size:clamp(17px,2vw,20px);line-height:1.35}.pl small{display:block;color:var(--mut);font-size:14.5px;line-height:1.5}
-.net{position:relative;width:100%;max-width:560px;aspect-ratio:520/500;margin-inline:auto}
-.net svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.ring{fill:none;stroke:var(--line2);stroke-dasharray:3 7}
-.ring.r2{stroke:rgba(242,194,48,.18);stroke-dasharray:none}
-.ln{fill:none;stroke:url(#lg);stroke-width:1.6;stroke-dasharray:6 10;animation:flow 2.4s linear infinite;animation-delay:var(--d)}
-@keyframes flow{to{stroke-dashoffset:-64}}
-.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34%;aspect-ratio:1;border-radius:50%;display:grid;place-content:center;justify-items:center;text-align:center;gap:2px;
-background:radial-gradient(circle at 30% 25%,#3346B8,#1A2366 70%);border:1px solid rgba(242,194,48,.45);box-shadow:0 0 0 10px rgba(242,194,48,.05),0 30px 80px -20px rgba(242,194,48,.45)}
-.core img{width:30%;margin-bottom:4px}
-.core b{font-size:clamp(15px,2vw,19px)}.core small{font-size:clamp(10.5px,1.3vw,12.5px);color:var(--mut)}
-.pulse{position:absolute;inset:-1px;border-radius:50%;border:1px solid rgba(242,194,48,.6);animation:pl 2.8s ease-out infinite}
-@keyframes pl{to{transform:scale(1.5);opacity:0}}
-.nd{position:absolute;transform:translate(-50%,-50%);min-width:104px;padding:9px 14px;border-radius:14px;text-align:center;background:rgba(18,26,80,.82);backdrop-filter:blur(10px);border:1px solid var(--line2);box-shadow:0 14px 30px -14px rgba(0,0,0,.7);animation:bob 6s ease-in-out infinite;animation-delay:calc(var(--i)*-1s)}
-.nd b{display:block;font-size:14.5px;line-height:1.3}.nd small{display:block;font-size:11.5px;color:var(--mut);line-height:1.4}
-@keyframes bob{50%{transform:translate(-50%,calc(-50% - 6px))}}
-@media(max-width:520px){.nd{min-width:84px;padding:7px 9px}.nd b{font-size:12.5px}.nd small{font-size:10px}}
-
-/* marquee */
-.mq{border-block:1px solid var(--line);overflow:hidden;padding-block:18px;background:rgba(255,255,255,.015);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.mq ul{display:flex;gap:48px;width:max-content;margin:0;padding:0;list-style:none;animation:mq 38s linear infinite}
-html[dir=rtl] .mq ul{animation-name:mqr}
-.mq li{font-size:clamp(18px,2.4vw,24px);font-weight:800;color:var(--mut);display:flex;align-items:center;gap:48px;white-space:nowrap}
-.mq li::after{content:"✦";color:var(--gold);font-size:.7em}
-@keyframes mq{to{transform:translateX(-50%)}}
-@keyframes mqr{to{transform:translateX(50%)}}
-
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
-@media(min-width:860px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stats div{background:var(--bg);padding:28px 24px;min-width:0}
-.stats b{display:block;font-size:clamp(30px,4.4vw,46px);font-weight:900;line-height:1.1;background:linear-gradient(180deg,#fff,#C9D0F5);-webkit-background-clip:text;background-clip:text;color:transparent;font-family:"Manrope","Tajawal",sans-serif;letter-spacing:-.02em}
-.stats span{display:block;color:var(--mut);font-size:14.5px;margin-top:6px}
-
-/* solutions */
-.sol{display:grid;gap:20px}
-@media(min-width:980px){.sol{grid-template-columns:1fr 1fr}}
-.card{position:relative;border-radius:28px;padding:clamp(24px,3vw,36px);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);overflow:hidden;display:grid;gap:18px;align-content:start;min-width:0;isolation:isolate;transition:border-color .3s,transform .3s}
-.card:hover{border-color:rgba(242,194,48,.35);transform:translateY(-4px)}
-.card::before{content:"";position:absolute;inset:auto -20% -40% auto;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(242,194,48,.16),transparent 65%);z-index:-1}
-.card .tag{justify-self:start;font-size:12.5px;font-weight:800;color:var(--gold);border:1px solid rgba(242,194,48,.35);border-radius:99px;padding:3px 12px}
-.card h3{font-size:clamp(26px,3vw,34px);font-weight:900}
-.card p{margin:0;color:var(--mut)}
-.mock{border-radius:18px;background:rgba(6,10,36,.6);border:1px solid var(--line);padding:16px;display:grid;gap:10px;font-size:14px}
-.mrow{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
-.mrow .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none;box-shadow:0 0 10px var(--gold)}
-.mrow .ok{margin-inline-start:auto;font-size:12px;font-weight:800;color:#5BE39A;background:rgba(91,227,154,.1);border-radius:99px;padding:1px 10px}
-.mrow .bar{margin-inline-start:auto;width:38%;height:6px;border-radius:9px;background:rgba(255,255,255,.08);overflow:hidden}
-.mrow .bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:9px}
-.mhead{display:flex;justify-content:space-between;color:var(--dim);font-size:12.5px;font-weight:700}
-.price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.price b{font-size:44px;font-weight:900;font-family:"Manrope",sans-serif;letter-spacing:-.03em;line-height:1}
-.price s{color:var(--dim);font-size:19px;font-family:"Manrope",sans-serif}
-.price small{color:var(--mut);font-size:14px}
-.card .btn{justify-self:start}
-.note{font-size:13px;color:var(--dim)}
-
-/* why bento */
-.bento{display:grid;gap:16px}
-@media(min-width:860px){.bento{grid-template-columns:repeat(6,1fr)}.bento .x1{grid-column:span 4}.bento .x2{grid-column:span 2}.bento .x3{grid-column:span 3}}
-.tile{border-radius:24px;padding:28px;background:var(--panel);border:1px solid var(--line);display:grid;gap:10px;align-content:start;min-width:0}
-.tile .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(242,194,48,.1);color:var(--gold);border:1px solid rgba(242,194,48,.25)}
-.tile h3{font-size:21px;font-weight:800}
-.tile p{margin:0;color:var(--mut)}
-.tile.big{background:linear-gradient(135deg,rgba(51,70,184,.45),rgba(255,255,255,.03))}
-.tile.big h3{font-size:clamp(24px,3vw,30px)}
-
-/* steps */
-.steps{display:grid;gap:16px;counter-reset:s}
-@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
-.step{padding:30px 26px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);position:relative;min-width:0}
-.step .n{font-family:"Manrope",sans-serif;font-size:64px;font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(242,194,48,.55)}
-.step h3{font-size:21px;margin-top:14px}.step p{margin:8px 0 0;color:var(--mut)}
-
-/* about */
-.about{display:grid;gap:36px;align-items:center}
-@media(min-width:980px){.about{grid-template-columns:1fr 1fr}}
-.panel{border-radius:28px;padding:clamp(26px,3vw,40px);background:radial-gradient(120% 120% at 100% 0%,rgba(242,194,48,.12),transparent 50%),var(--panel);border:1px solid var(--line);display:grid;gap:18px}
-.facts{display:grid;gap:1px;background:var(--line);border-radius:16px;overflow:hidden;border:1px solid var(--line)}
-.facts div{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;background:var(--bg2);font-size:15px}
-.facts span{color:var(--mut)}.facts b{text-align:end}
-
-/* faq */
-.faq{display:grid;gap:12px;max-width:860px}
-.faq details{border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
-.faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:800;font-size:17.5px;display:flex;justify-content:space-between;align-items:center;gap:14px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary i{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--line2);position:relative}
-.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:var(--gold);transform:translate(-50%,-50%);transition:.25s}
-.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
-.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
-.faq p{margin:0;padding:0 22px 20px;color:var(--mut)}
-
-/* final */
-.final{border-radius:32px;padding:clamp(36px,6vw,72px);text-align:center;position:relative;overflow:hidden;isolation:isolate;
-background:radial-gradient(80% 120% at 50% 0%,#3346B8 0%,#1A2366 55%,#10164A 100%);border:1px solid rgba(242,194,48,.25)}
-.final::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;opacity:.3;z-index:-1;mask-image:radial-gradient(60% 70% at 50% 40%,#000,transparent);-webkit-mask-image:radial-gradient(60% 70% at 50% 40%,#000,transparent)}
-.final .ctas{justify-content:center}
-.final .lead{margin-inline:auto}
-
-/* footer */
-footer{border-top:1px solid var(--line);padding-block:48px 36px;color:var(--mut);font-size:14.5px}
-.fgrid{display:grid;gap:28px}
-@media(min-width:860px){.fgrid{grid-template-columns:2fr 1fr 1fr}}
-footer h4{margin:0 0 10px;color:#fff;font-size:14px}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-footer a{text-decoration:none}footer a:hover{color:#fff}
-.copy{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:13px;color:var(--dim)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--ar);font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html[lang=en] body{font-family:var(--en);letter-spacing:-.005em}
+html[lang=ar] .en,html[lang=en] .ar{display:none!important}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:600;font-size:14px;letter-spacing:.06em}
+html[lang=en] .eyebrow{text-transform:uppercase;font-size:12.5px;letter-spacing:.12em}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold);border-radius:2px}
+h1,h2,h3{margin:0;font-weight:700;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.15;letter-spacing:-.02em}
+html[lang=ar] h2{letter-spacing:0;line-height:1.3}
+.lead{color:var(--muted);font-size:clamp(17px,1.6vw,19px);max-width:60ch;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:16px;padding:14px 24px;border-radius:12px;transition:transform .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn-gold{background:var(--gold);color:var(--ink)}.btn-gold:hover{background:#FFD24A;transform:translateY(-1px)}
+.btn-line{border:1px solid var(--line2);color:var(--fg);background:rgba(255,255,255,.03)}.btn-line:hover{border-color:var(--gold)}
+.arr{display:inline-block;transition:translate .2s}
+html[lang=en] .arr{rotate:180deg}
+.btn:hover .arr{translate:-4px 0}html[lang=en] .btn:hover .arr{translate:4px 0}
+.hero{position:relative;overflow:hidden;isolation:isolate;min-height:min(100svh,860px);display:flex;align-items:center;padding:140px 0 96px}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(900px 520px at 85% -10%,rgba(242,194,48,.14),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(46,62,160,.55),transparent 65%),linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
+.hero .wrap{width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.htext{display:flex;flex-direction:column}
+.hero h1{font-size:clamp(36px,5.2vw,64px);line-height:1.08;letter-spacing:-.035em;margin:18px 0 22px}
+html[lang=ar] .hero h1{letter-spacing:-.01em;line-height:1.25}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.pillars{position:relative;display:grid;gap:16px;padding:20px 0}
+.pil{position:relative;z-index:1;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:20px 22px;border-radius:20px;background:linear-gradient(160deg,rgba(40,53,130,.92),rgba(24,33,90,.92));border:1px solid var(--line2);box-shadow:0 24px 50px -24px rgba(0,0,0,.7);opacity:0;translate:0 14px;animation:in .7s cubic-bezier(.2,.7,.2,1) forwards}
+.p1{margin-inline-end:56px}.p2{margin-inline-start:56px;animation-delay:.2s}.p3{margin-inline-end:28px;animation-delay:.4s;border-color:rgba(242,194,48,.45)}
+.pil .pi{width:52px;height:52px;border-radius:14px;background:var(--gold);color:var(--ink);display:grid;place-items:center}
+.pil .pi svg{width:26px;height:26px}
+.pil b{display:block;font-size:19px;line-height:1.35}.pil small{color:var(--muted);font-size:14px}
+.pil .bar{grid-column:1/-1;height:6px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.pil .bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--gold),#FFD95A);border-radius:4px;transform-origin:left;animation:grow 1.6s .6s cubic-bezier(.2,.7,.2,1) both}
+html[dir=rtl] .pil .bar i{transform-origin:right}
+@keyframes grow{from{scale:0 1}}
+@keyframes in{to{opacity:1;translate:0 0}}
+.core{position:absolute;z-index:0;top:50%;left:50%;translate:-50% -50%;width:420px;height:420px;border-radius:50%;background:radial-gradient(closest-side,rgba(242,194,48,.22),transparent);opacity:.9}
+section{padding:112px 0}
+.alt{background:var(--ink2)}
+.head{display:grid;gap:16px;max-width:760px;margin-bottom:56px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.door{position:relative;display:flex;flex-direction:column;gap:14px;padding:40px;border-radius:26px;border:1px solid var(--line2);background:linear-gradient(170deg,rgba(37,49,122,.7),rgba(20,28,77,.5));overflow:hidden;transition:transform .3s,border-color .3s}
+.door::after{content:"";position:absolute;inset:auto -30% -60% auto;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,rgba(242,194,48,.18),transparent);transition:scale .5s}
+.door:hover{transform:translateY(-4px);border-color:rgba(242,194,48,.55)}.door:hover::after{scale:1.3}
+.door.feat{border-color:rgba(242,194,48,.4)}
+.dtag{align-self:flex-start;font-size:13px;font-weight:600;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(242,194,48,.3);border-radius:99px;padding:4px 12px}
+.di{width:60px;height:60px;border-radius:16px;background:var(--gold);color:var(--ink);display:grid;place-items:center}.di svg{width:30px;height:30px}
+.door h3{font-size:clamp(28px,3vw,36px)}
+.door p{margin:0;color:var(--muted);font-size:17px;max-width:44ch}
+.go{margin-top:12px;display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--gold)}
+.door:hover .arr{translate:-6px 0}html[lang=en] .door:hover .arr{translate:6px 0}
+.js .reveal{opacity:0;translate:0 24px;transition:opacity .8s ease,translate .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.pil{opacity:1;translate:0 0}.js .reveal{opacity:1;translate:0 0}}
+@media (max-width:980px){.hero{min-height:0;padding:110px 0 72px}.hero .wrap{grid-template-columns:1fr;gap:48px}.pillars{padding:0}.p1,.p2,.p3{margin-inline:0}.doors{grid-template-columns:1fr}.door{padding:28px 22px}section{padding:80px 0}}
+@media (max-width:560px){body{font-size:16px}.hero .ctas .btn{flex:1 1 100%}}
 </style>
 </head>
 <body>
-
-<header class="nav"><div class="w">
-  <a class="brand" href="#top"><img src="data:image/png;base64,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" alt=""><span>Business Status<small>AI Solutions</small></span></a>
-  <nav class="links"><a href="../consult/"><span class="ar">الاستشارة الخاصة</span><span class="en">Private consultation</span></a><a href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">Smart Marketing System</span></a></nav>
-  <button class="lang" type="button" aria-label="Language">EN</button>
-</div></header>
-
-<main id="top">
-<section class="hero"><div class="bgfx"><span class="orb a"></span><span class="orb b"></span><span class="orb c"></span></div>
- <div class="w hgrid">
-  <div class="rv">
-   <span class="eyebrow"><span class="ar">بزنس ستيتس · شركة كويتية</span><span class="en">Business Status · A Kuwaiti company</span></span>
-   <h1><span class="ar">إدارة المشاريع والتسويق<br><em>وحلول الذكاء الاصطناعي</em></span><span class="en">Project management, marketing <em>&amp; AI solutions</em></span></h1>
-   <p class="lead"><span class="ar">بزنس ستيتس شركة مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي. نساعد أصحاب المشاريع الصغيرة وصنّاع المحتوى يرتّبون شغلهم ويقوّون تسويقهم بأدوات الذكاء الاصطناعي.</span><span class="en">Business Status specializes in project management, marketing and AI solutions. We help small business owners and content creators organize their work and strengthen their marketing with AI tools.</span></p>
-   <div class="ctas"><a class="btn g" href="../consult/"><span class="ar">الاستشارة الخاصة</span><span class="en">Private consultation</span> <span class="arr">←</span></a><a class="btn o" href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">Smart Marketing System</span></a></div>
-   <div class="trust"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span class="ar">شركة مرخّصة في الكويت</span><span class="en">Licensed in Kuwait</span></span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg><span class="ar">دفع آمن بكي نت أو بطاقة</span><span class="en">Secure KNET or card payment</span></span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="ar">أونلاين بالكامل</span><span class="en">Fully online</span></span></div>
+<style>
+.bsn{--bsn-ink:#0E1440;--bsn-gold:#F2C230;--bsn-line:rgba(255,255,255,.10);--bsn-muted:#AEB6DA;
+  position:fixed;inset:0 0 auto;z-index:1000;font-family:"IBM Plex Sans Arabic","Tajawal",system-ui,sans-serif;color:#fff;
+  padding-top:env(safe-area-inset-top,0px);transition:background .35s,border-color .35s,box-shadow .35s;border-bottom:1px solid transparent}
+html[lang=en] .bsn{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif}
+.bsn.on{background:rgba(14,20,64,.82);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-color:var(--bsn-line);box-shadow:0 10px 30px -20px rgba(0,0,0,.8)}
+.bsn *{box-sizing:border-box}
+.bsn a{color:inherit;text-decoration:none}
+.bsn-in{max-width:1180px;margin:0 auto;height:76px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));transition:height .35s}
+.bsn.on .bsn-in{height:64px}
+.bsn-brand{justify-self:start;display:flex;align-items:center;gap:10px;font-family:"Inter",system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;direction:ltr;white-space:nowrap}
+.bsn-brand svg{width:30px;height:30px;flex:none;transition:rotate .5s}
+.bsn-brand:hover svg{rotate:-8deg}
+.bsn-links{display:flex;align-items:center;gap:6px;position:relative}
+.bsn-links a{position:relative;font-weight:600;font-size:15.5px;color:var(--bsn-muted);padding:10px 16px;white-space:nowrap;transition:color .2s}
+.bsn-links a::after{content:"";position:absolute;inset-inline:16px;bottom:2px;height:2px;border-radius:2px;background:var(--bsn-gold);scale:0 1;transition:scale .3s cubic-bezier(.2,.7,.2,1)}
+.bsn-links a:hover{color:#fff}
+.bsn-links a:hover::after{scale:1 1}
+.bsn-links a[aria-current=page]{color:#fff}
+.bsn-links a[aria-current=page]::after{scale:1 1}
+.bsn-end{justify-self:end;display:flex;align-items:center;gap:10px}
+.bsn-lang{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--bsn-line);background:rgba(255,255,255,.03);color:#fff;font:600 14px "Inter","IBM Plex Sans Arabic",sans-serif;cursor:pointer;transition:border-color .2s}
+.bsn-lang:hover{border-color:var(--bsn-gold)}
+.bsn-lang svg{width:16px;height:16px;opacity:.8}
+.bsn-cta{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 20px;border-radius:11px;background:var(--bsn-gold);color:var(--bsn-ink)!important;font-weight:700;font-size:15px;white-space:nowrap;box-shadow:0 8px 24px -10px rgba(242,194,48,.7);transition:transform .2s,box-shadow .2s}
+.bsn-cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px -10px rgba(242,194,48,.85)}
+.bsn-burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--bsn-line);background:rgba(255,255,255,.04);cursor:pointer;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.bsn-burger span{display:block;width:18px;height:2px;border-radius:2px;background:#fff;transition:translate .3s,rotate .3s,opacity .2s}
+.bsn-burger span+span{margin-top:5px}
+.bsn.open .bsn-burger span:nth-child(1){translate:0 7px;rotate:45deg}
+.bsn.open .bsn-burger span:nth-child(2){opacity:0}
+.bsn.open .bsn-burger span:nth-child(3){translate:0 -7px;rotate:-45deg}
+.bsn-sheet{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,#0E1440 0%,#141C4D 100%);padding:calc(92px + env(safe-area-inset-top,0px)) 24px calc(28px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:6px;overflow-y:auto;
+  opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.bsn-sheet::before{content:"";position:fixed;inset:0;background:radial-gradient(500px 300px at 100% 0,rgba(242,194,48,.16),transparent 70%);pointer-events:none}
+.bsn.open .bsn-sheet{opacity:1;visibility:visible}
+.bsn-sheet a.l{position:relative;display:flex;align-items:center;gap:16px;padding:16px 4px;border-bottom:1px solid var(--bsn-line);font-size:22px;font-weight:700;translate:0 12px;opacity:0;transition:translate .45s cubic-bezier(.2,.7,.2,1),opacity .45s}
+.bsn.open .bsn-sheet a.l{translate:0 0;opacity:1}
+.bsn.open .bsn-sheet a.l:nth-of-type(2){transition-delay:.05s}.bsn.open .bsn-sheet a.l:nth-of-type(3){transition-delay:.1s}
+.bsn-sheet a.l small{font-family:"Inter",sans-serif;font-size:13px;font-weight:700;color:var(--bsn-gold);letter-spacing:.08em}
+.bsn-sheet a.l[aria-current=page]{color:var(--bsn-gold)}
+.bsn-sheet a.l::after{content:"←";margin-inline-start:auto;color:var(--bsn-muted);font-size:20px}
+html[dir=ltr] .bsn-sheet a.l::after{content:"→"}
+.bsn-contact{margin-top:26px;display:grid;gap:12px}
+.bsn-contact h4{margin:0;font-size:13.5px;font-weight:600;color:var(--bsn-muted);letter-spacing:.04em}
+.bsn-contact .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bsn-contact a{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:14px;border:1px solid var(--bsn-line);background:rgba(255,255,255,.04);font-weight:700;font-size:15.5px;transition:border-color .2s,background .2s}
+.bsn-contact a svg{width:22px;height:22px;flex:none}
+.bsn-contact a.wa{color:#5BE39A;border-color:rgba(91,227,154,.35)}
+.bsn-contact a.wa:hover{background:rgba(91,227,154,.1)}
+.bsn-contact a.em{color:var(--bsn-gold);border-color:rgba(242,194,48,.35)}
+.bsn-contact a.em:hover{background:rgba(242,194,48,.1)}
+.bsn-sheet .bsn-cta{margin-top:22px;height:54px;justify-content:center;font-size:17px}
+.bsn-sheet .bsn-lang{align-self:flex-start;margin-top:14px}
+.bsn-sheet .foot{margin-top:auto;padding-top:20px;color:var(--bsn-muted);font-size:13px}
+@media (max-width:900px){
+  .bsn-in{grid-template-columns:1fr auto;height:64px}
+  .bsn-links,.bsn-end>.bsn-lang,.bsn-end>.bsn-cta{display:none}
+  .bsn-burger{display:flex}
+}
+@media (min-width:901px){.bsn-sheet{display:none}}
+@media (prefers-reduced-motion:reduce){.bsn,.bsn *{transition:none!important}}
+html[lang=ar] .bsn .en,html[lang=en] .bsn .ar{display:none!important}
+</style>
+<header class="bsn" id="bsn">
+  <div class="bsn-in">
+    <a class="bsn-brand" data-home href="../site/" aria-label="Business Status"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F2C230"/></svg>Business Status</a>
+    <nav class="bsn-links" aria-label="الأقسام"><a data-home data-p="home" href="../site/"><span class="ar">الرئيسية</span><span class="en">Home</span></a><a data-p="consult" href="../consult/"><span class="ar">الاستشارة الخاصة</span><span class="en">Consultation</span></a><a data-p="system" href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a></nav>
+    <div class="bsn-end">
+      <button class="bsn-lang" type="button" data-lang><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span class="ar">English</span><span class="en">عربي</span></button>
+      <a class="bsn-cta" href="../consult/"><span class="ar">احجز استشارة</span><span class="en">Book a consultation</span></a>
+      <button class="bsn-burger" type="button" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </div>
-  <div class="rv" data-d="150"><div class="pls"><div class="plogo"><img src="data:image/png;base64,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" alt=""><span>Business Status</span></div><div class="pl" style="--i:0"><span class="pn">01</span><span class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h6"/><path d="M17 15l2 2 3-4"/></svg></span><div><b><span class="ar">إدارة المشاريع</span><span class="en">Project management</span></b><small><span class="ar">خطة واضحة وخطوات مرتّبة</span><span class="en">A clear plan and ordered steps</span></small></div></div><div class="pl" style="--i:1"><span class="pn">02</span><span class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-6v14L3 13z"/><path d="M7 13v5h3"/></svg></span><div><b><span class="ar">التسويق</span><span class="en">Marketing</span></b><small><span class="ar">محتوى يجيب عملاء ومبيعات</span><span class="en">Content that brings customers and sales</span></small></div></div><div class="pl" style="--i:2"><span class="pn">03</span><span class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9.5 15h5"/></svg></span><div><b><span class="ar">حلول الذكاء الاصطناعي</span><span class="en">AI solutions</span></b><small><span class="ar">أدوات تشتغل بدالك كل يوم</span><span class="en">Tools that work for you every day</span></small></div></div></div></div>
- </div>
-</section>
-
-<div class="mq" aria-hidden="true"><ul><li><span class="ar">البحث عن الأفكار</span><span class="en">Idea research</span></li><li><span class="ar">كتابة السكربتات</span><span class="en">Scriptwriting</span></li><li><span class="ar">التصميم</span><span class="en">Design</span></li><li><span class="ar">المونتاج</span><span class="en">Video editing</span></li><li><span class="ar">النشر والجدولة</span><span class="en">Publishing</span></li><li><span class="ar">الرد على العملاء</span><span class="en">Customer replies</span></li><li><span class="ar">قراءة الأرقام</span><span class="en">Analytics</span></li><li><span class="ar">خطط المحتوى</span><span class="en">Content plans</span></li><li><span class="ar">البحث عن الأفكار</span><span class="en">Idea research</span></li><li><span class="ar">كتابة السكربتات</span><span class="en">Scriptwriting</span></li><li><span class="ar">التصميم</span><span class="en">Design</span></li><li><span class="ar">المونتاج</span><span class="en">Video editing</span></li><li><span class="ar">النشر والجدولة</span><span class="en">Publishing</span></li><li><span class="ar">الرد على العملاء</span><span class="en">Customer replies</span></li><li><span class="ar">قراءة الأرقام</span><span class="en">Analytics</span></li><li><span class="ar">خطط المحتوى</span><span class="en">Content plans</span></li></ul></div>
-
-<section style="padding-block:clamp(56px,7vw,88px)"><div class="w">
- <div class="stats rv">
-  <div><b data-to="39" data-pre="+" data-k="1">+39</b><span><span class="ar">ألف متابع لمحتوى «بزنس و AI»</span><span class="en">Followers of our “Business & AI” content</span></span></div>
-  <div><b data-to="10" data-pre="+">+10</b><span><span class="ar">سنوات خبرة في إدارة المشاريع والتسويق</span><span class="en">Years in project management & marketing</span></span></div>
-  <div><b data-to="7">7</b><span><span class="ar">أقسام تسويق يشغّلها النظام</span><span class="en">Marketing roles the system runs</span></span></div>
-  <div><b data-to="2">2</b><span><span class="ar">أيام وتكون شركتك شغّالة</span><span class="en">Days to get your system running</span></span></div>
- </div>
-</div></section>
-
-<section id="solutions" style="padding-top:0"><div class="w">
- <div class="head rv"><span class="eyebrow"><span class="ar">الحلول</span><span class="en">Solutions</span></span><h2><span class="ar">طريقين، <em>وهدف واحد</em></span><span class="en">Two paths, <em>one goal</em></span></h2>
-  <p class="lead" style="margin:0"><span class="ar">تسويق أقوى بجهد أقل. اختار اللي يناسب مرحلتك.</span><span class="en">Stronger marketing with less effort. Pick what fits where you are.</span></p></div>
- <div class="sol">
-  <article class="card rv">
-   <span class="tag"><span class="ar">تطبّقه بنفسك</span><span class="en">Do it yourself</span></span>
-   <h3><span class="ar">نظام التسويق الذكي</span><span class="en">Smart Marketing System</span></h3>
-   <p><span class="ar">شركة تسويق كاملة تشتغل معك: مدير تكلّمه أنت بس، وأقسام تبحث وتكتب وتصمم وتنشر وترد. ٦ دروس تطبّقها في يومين.</span><span class="en">A full marketing company working with you: one manager you talk to, and teams that research, write, design, publish and reply. Six lessons you finish in two days.</span></p>
-   <div class="mock"><div class="mhead"><span><span class="ar">مهام اليوم</span><span class="en">Today’s tasks</span></span><span><span class="ar">تلقائي</span><span class="en">Automatic</span></span></div>
-    <div class="mrow"><span class="dot"></span><span class="ar">الباحث: ٥ أفكار جديدة</span><span class="en">Research: 5 new ideas</span><span class="ok"><span class="ar">تم</span><span class="en">Done</span></span></div>
-    <div class="mrow"><span class="dot"></span><span class="ar">الكاتب: سكربت ريل</span><span class="en">Writer: reel script</span><span class="ok"><span class="ar">تم</span><span class="en">Done</span></span></div>
-    <div class="mrow"><span class="dot"></span><span class="ar">الناشر: جدولة الأسبوع</span><span class="en">Publisher: week scheduled</span><span class="ok"><span class="ar">تم</span><span class="en">Done</span></span></div>
-   </div>
-   <div class="price"><b><bdi>$75</bdi></b><s><bdi>$125</bdi></s><small><span class="ar">دفعة وحدة · عرض لين ٣١ ديسمبر</span><span class="en">One-time · offer until Dec 31</span></small></div>
-   <a class="btn g" href="../system/"><span class="ar">شوف النظام</span><span class="en">See the system</span> <span class="arr">←</span></a>
-  </article>
-  <article class="card rv" data-d="120">
-   <span class="tag"><span class="ar">مع خبير</span><span class="en">With an expert</span></span>
-   <h3><span class="ar">استشارة خاصة</span><span class="en">Private Consultation</span></h3>
-   <p><span class="ar">ساعة أونلاين مع حمد الخضري، نشخّص فيها المشكلة الحقيقية في مشروعك أو محتواك، وتطلع بحلول واضحة تطبّقها بالذكاء الاصطناعي.</span><span class="en">One online hour with Hamad Alkhudhari to diagnose the real problem in your business or content. You leave with clear solutions you apply with AI.</span></p>
-   <div class="mock"><div class="mhead"><span><span class="ar">تقرير الجلسة</span><span class="en">Session report</span></span><span><span class="ar">٦٠ دقيقة</span><span class="en">60 min</span></span></div>
-    <div class="mrow"><span class="ar">تشخيص المشكلة</span><span class="en">Diagnosis</span><span class="bar"><i style="--w:92%"></i></span></div>
-    <div class="mrow"><span class="ar">حلول بالذكاء الاصطناعي</span><span class="en">AI solutions</span><span class="bar"><i style="--w:78%"></i></span></div>
-    <div class="mrow"><span class="ar">خطة أول ٣٠ يوم</span><span class="en">30-day plan</span><span class="bar"><i style="--w:64%"></i></span></div>
-   </div>
-   <div class="price"><b><bdi>$149</bdi></b><s><bdi>$199</bdi></s><small><span class="ar">٦٠ دقيقة · أونلاين</span><span class="en">60 minutes · online</span></small></div>
-   <a class="btn g" href="../consult/"><span class="ar">اطلب استشارتك</span><span class="en">Request your consultation</span> <span class="arr">←</span></a>
-  </article>
- </div>
- <p class="note en" style="margin-top:14px">Product pages are currently in Arabic.</p>
-</div></section>
-
-<section id="why" style="background:linear-gradient(180deg,transparent,rgba(30,42,102,.35),transparent)"><div class="w">
- <div class="head rv"><span class="eyebrow"><span class="ar">ليش بزنس ستيتس</span><span class="en">Why Business Status</span></span><h2><span class="ar">مبني للي <em>يبي نتيجة</em></span><span class="en">Built for people who <em>want results</em></span></h2></div>
- <div class="bento">
-  <div class="tile big x1 rv"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16M7 15l3-8 4 6 3-4 3 6"/></svg></span><h3><span class="ar">عملي، مو نظري</span><span class="en">Practical, not theory</span></h3><p><span class="ar">كل شي نقدّمه نطبّقه على حساباتنا أول. النظام اللي تتعلمه هو نفسه اللي يشغّل حساباتنا اليوم.</span><span class="en">Everything we offer runs on our own accounts first. The system you learn is the one running ours today.</span></p></div>
-  <div class="tile x2 rv" data-d="80"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><h3><span class="ar">بلغتك</span><span class="en">In your language</span></h3><p><span class="ar">بالعربي، وبأمثلة من سوقنا.</span><span class="en">In Arabic, with examples from our market.</span></p></div>
-  <div class="tile x3 rv"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18h5v-5h5V8h6"/></svg></span><h3><span class="ar">بدون تقنية</span><span class="en">No tech skills needed</span></h3><p><span class="ar">خطوة بخطوة، بدون ما تكون مبرمج أو تقني.</span><span class="en">Step by step. No programmer, no technical background.</span></p></div>
-  <div class="tile x3 rv" data-d="80"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 10.5c0-1 1-1.5 2.5-1.5s2.5.6 2.5 1.6c0 2.4-5 1.2-5 3.6 0 1 1 1.8 2.5 1.8s2.5-.6 2.5-1.6"/></svg></span><h3><span class="ar">بتكلفة أقل</span><span class="en">A fraction of the cost</span></h3><p><span class="ar">أقل من عُشر اللي تدفعه لشركة تسويق كل شهر.</span><span class="en">Less than a tenth of what a marketing agency charges every month.</span></p></div>
- </div>
-</div></section>
-
-<section><div class="w">
- <div class="head rv"><span class="eyebrow"><span class="ar">شلون نشتغل</span><span class="en">How it works</span></span><h2><span class="ar">ثلاث خطوات <em>وتبدأ</em></span><span class="en">Three steps <em>to start</em></span></h2></div>
- <div class="steps">
-  <div class="step rv"><span class="n">01</span><h3><span class="ar">اختار طريقك</span><span class="en">Choose your path</span></h3><p><span class="ar">النظام إذا تبي تشتغل بنفسك، والاستشارة إذا تبي أحد يقرأ حالتك.</span><span class="en">The system to do it yourself, or a consultation to have your case reviewed.</span></p></div>
-  <div class="step rv" data-d="100"><span class="n">02</span><h3><span class="ar">ادفع برابط آمن</span><span class="en">Pay securely</span></h3><p><span class="ar">بكي نت أو بالبطاقة، ويوصلك كل شي على الواتساب.</span><span class="en">By KNET or card. Everything reaches you on WhatsApp.</span></p></div>
-  <div class="step rv" data-d="200"><span class="n">03</span><h3><span class="ar">طبّق وشوف الفرق</span><span class="en">Apply and grow</span></h3><p><span class="ar">تبدأ تطبّق من أول يوم، بخطوات واضحة.</span><span class="en">Start applying from day one, with clear steps.</span></p></div>
- </div>
-</div></section>
-
-<section id="about"><div class="w about">
- <div class="rv"><span class="eyebrow"><span class="ar">عن الشركة</span><span class="en">About us</span></span>
-  <h2 style="margin-top:16px"><span class="ar">شركة كويتية <em>لحلول الذكاء الاصطناعي</em></span><span class="en">A Kuwaiti <em>AI solutions</em> company</span></h2>
-  <p class="lead"><span class="ar">بزنس ستيتس شركة مرخّصة في دولة الكويت، متخصصة في حلول الذكاء الاصطناعي لأصحاب المشاريع الصغيرة وصنّاع المحتوى. أسسها حمد الخضري، بخبرة أكثر من ١٠ سنوات في إدارة المشاريع والتسويق.</span><span class="en">Business Status is a licensed company in the State of Kuwait, specialised in AI solutions for small business owners and content creators. It was founded by Hamad Alkhudhari, with more than 10 years in project management and marketing.</span></p>
- </div>
- <div class="panel rv" data-d="120">
-  <div class="facts">
-   <div><span><span class="ar">الاسم</span><span class="en">Name</span></span><b>Business Status</b></div>
-   <div><span><span class="ar">المجال</span><span class="en">Field</span></span><b><span class="ar">حلول الذكاء الاصطناعي</span><span class="en">AI Solutions</span></b></div>
-   <div><span><span class="ar">المقر</span><span class="en">Based in</span></span><b><span class="ar">دولة الكويت</span><span class="en">State of Kuwait</span></b></div>
-   <div><span><span class="ar">الترخيص</span><span class="en">License</span></span><b><span class="ar">شركة مرخّصة</span><span class="en">Licensed company</span></b></div>
-   <div><span><span class="ar">المؤسس</span><span class="en">Founder</span></span><b><span class="ar">حمد الخضري</span><span class="en">Hamad Alkhudhari</span></b></div>
+  <div class="bsn-sheet">
+    <a class="l" data-home data-p="home" href="../site/"><small>01</small><span class="ar">الرئيسية</span><span class="en">Home</span></a><a class="l" data-p="consult" href="../consult/"><small>02</small><span class="ar">الاستشارة الخاصة</span><span class="en">Consultation</span></a><a class="l" data-p="system" href="../system/"><small>03</small><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a>
+    <div class="bsn-contact"><h4><span class="ar">تواصل معنا</span><span class="en">Contact us</span></h4><div class="row"><a class="wa" href="https://wa.me/message/D6QAVYNNKNQZA1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5 0 1.7-.7 2-1.4.2-.7.2-1.2.1-1.3l-.5-.3-1.8-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.6l-.8-2c-.2-.5-.4-.4-.6-.4z"/></svg><span class="ar">واتساب</span><span class="en">WhatsApp</span></a><a class="em" href="mailto:info@bznstatus.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="ar">إيميل</span><span class="en">Email</span></a></div></div>
+    <a class="bsn-cta" href="../consult/"><span class="ar">احجز استشارة</span><span class="en">Book a consultation</span></a>
+    <button class="bsn-lang" type="button" data-lang><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span class="ar">English</span><span class="en">عربي</span></button>
+    <span class="foot">Business Status · <span class="ar">شركة مرخّصة في الكويت</span><span class="en">Licensed in Kuwait</span></span>
   </div>
- </div>
-</div></section>
-
-<section id="faq" style="padding-top:0"><div class="w">
- <div class="head rv"><span class="eyebrow"><span class="ar">الأسئلة</span><span class="en">FAQ</span></span><h2><span class="ar">أسئلة <em>شائعة</em></span><span class="en">Common <em>questions</em></span></h2></div>
- <div class="faq"><details class="rv"><summary><span class="ar">أي حل أبدأ فيه؟</span><span class="en">Which one should I start with?</span><i></i></summary><p><span class="ar">إذا تبي تشتغل بنفسك وبتكلفة أقل، ابدأ بنظام التسويق الذكي. وإذا تبي أحد يقرأ حالتك بالذات ويعطيك حلول، اطلب استشارة خاصة.</span><span class="en">If you want to do it yourself at a lower cost, start with the Smart Marketing System. If you want someone to look at your case and hand you solutions, request a private consultation.</span></p></details><details class="rv"><summary><span class="ar">أحتاج خبرة تقنية؟</span><span class="en">Do I need technical experience?</span><i></i></summary><p><span class="ar">لا. كل شي خطوة بخطوة، بدون ما تكون مبرمج أو تقني.</span><span class="en">No. Everything is step by step. You don't need to be a programmer or technical.</span></p></details><details class="rv"><summary><span class="ar">شلون أدفع؟</span><span class="en">How do I pay?</span><i></i></summary><p><span class="ar">برابط دفع آمن، بكي نت أو بالبطاقة.</span><span class="en">Through a secure payment link, by KNET or card.</span></p></details><details class="rv"><summary><span class="ar">الشركة مرخّصة؟</span><span class="en">Is the company licensed?</span><i></i></summary><p><span class="ar">إي. بزنس ستيتس شركة مرخّصة في دولة الكويت.</span><span class="en">Yes. Business Status is a licensed company in the State of Kuwait.</span></p></details></div>
-</div></section>
-
-<section style="padding-top:0"><div class="w">
- <div class="final rv">
-  <h2><span class="ar">جاهز تبني تسويقك <em>بالذكاء الاصطناعي؟</em></span><span class="en">Ready to build your marketing <em>with AI?</em></span></h2>
-  <p class="lead"><span class="ar">ابدأ بالنظام، أو خلنا نقرأ حالتك في استشارة خاصة.</span><span class="en">Start with the system, or let us review your case in a private consultation.</span></p>
-  <div class="ctas"><a class="btn g" href="../system/"><span class="ar">شوف النظام</span><span class="en">See the system</span> <span class="arr">←</span></a><a class="btn o" href="../consult/"><span class="ar">اطلب استشارة</span><span class="en">Book a consultation</span></a></div>
- </div>
-</div></section>
-</main>
-
-<footer><div class="w">
- <div class="fgrid">
-  <div><a class="brand" href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAKJElEQVR4nO2dbYxcVRnHf8+5d9jZdnd2SymgvKkgRgq0BD6BdLcKagEb37YaX4galQ8mEBUxBk1bjVEjoqIf/AAm6AdNF1EgNLwI2woaJAgtFSJIQyRFpdCu7XbfZu49fz/cezv70lc6szN3ub9kMnfv7Nxz5vmfl+ee+5xzjHmEwNCAMxuMASYeW36Oj1mN0e8953jPEqDcpLS9wZiklwJnTwahHp5U7a7ei5/dDaANA4GtSfI1FWtGZlqBhJlDCEYfveAi5/i6pCvKHW6B91CLRBQLqXl5cA5KoVEKDC+oRf4lg1++sju+5Yyrtg0fSATXvOzMHWvX4szQ0MN94eifl/8gCPhrudN9NPYsGBmL49Fx76s1qZnGB/AeJqvyI+NJmmZ2esfCcN1Ji4On9gydf5WtGYy1YSCY+p3c1wCtxdl6/Gsbz6os6Om+o7M7uHzvcCQh78wcLfyNEhKKOztcGATGyJj/2qK+LTdpqC+0lZsjyHkNkLDBpZhe7CuXK913d3a5y/cO12oAziygxQXMDHNm4fik9+MTPu7tCX646+Hzv2IrN0dDQ30hrc7gsaINBLaG+H9Dy27vWVy6es/uWs05K7U6XwdCQkFAXO5w4b7xaFXviqfv04aBILcCDK3tC1eu3xwNb77gI73d7o6RfVEN2tP4GRK+3GFWrenfUaRze/u37sllEySw/nWb4xeHzig7/PerVUmy4LBfbDFmuPFJH3dVwlPM7DozlEsBGOoLzNAi611d6Q7PmpiMvVk++jNn5ibHYpnxhd0PXtiTi0zPor/fAzjjU4nnnyvcZFVa0OlOcaX4ytz1ARJmhnY/cWGPG422d5Tc4mpNMsuPQyEUVxYEbu+Y35DHGmAAbsS//bjQLa5G+TI+ADJXrclMLM+hAAOJAIE/tdxhgHyLM3TUmGG1WAi9OX8CbNppAIIuC7LD/OE9gC3MnwAZOXA7D4cZLr8CzBMKAVpMIUCLCRtxEUkNdQPNLJcd6+vhqAVIjZ2Ns3sz8402mKTAzGY9vpuPHLEAkgKA1DDxjM/KR3OtQ2Fm+8wslmRvhJpwWKNJyYBdViIlnQhcAvQB7wROBnqBzmPMi5LLaydwq5ndkqat+SzEIQWY2hRI6geuAS4DTmhink4CfirpTWb2jbTmzdvm6IBekCST5NKm4FxJdwFDwMdJjB8DUfru05ca9MqauBsknZnmYd56a7N+WObRmJmXdC3wOLCaunEEBCS1J0ivkXXKjXhld7gOODc9ztdg21EwrQma4k6apFuBz6V/xySGmevb/6yAzH8BpriXHhgEPgzUqJf0gibgoG78tMO9jbrxS8zj0tcOZFU863CvBT5L3fgFTcalbp6XtBS4iaS9b8hNVcHhmXqjczP1Ul80O3OES93Ni4H3knTARYc7h2R9wJdI/PvcPV/NO07SycAqpt8EFcwRDrgcWERS+ou2f45xwErq4zD5IX8RcbMQSWzoMurjMO3GrCHuTem7QxPpEGA75vuwWJLrSQeclp1rWW5mk5XuyswP+l89UQARvBpFQljuRkolFDrDYJcDutPz7SRAxumzzjwzKABvpRfGJ/1E6DDlrfkElUoG8JyjSdM2G8TZ6ft+A9t6vIQdv+KJHaBt5bKT5c19Nsk5wPRAu1bfLF/LJB2XPSPe/+mmZH6A9/aHoGTW/PmPDUWBMzc6Fo8rtjvbVQAjKfVvA94x5RwA6zZt9gCR4l+NjsSjYeiccuIVeckvXBiYF/f29G/5ZzsLEJPUhCvTc/vzun49XhoITli5bUcc65YFXYETavvnxhIKA2NiwsfO3HdEe3sQWYn/RPpMeIaBB7201lUm9d19e6N/dC0IQu/bXQRFCythUJ2Mv9e94qmn0YBr9/bTk5T8VWZ238yALQlnhh8eWra8XHaPGHRNVH2czhFuK+RVqywqlfbuie6vXLrlCgYHjIFB3841AOrezzcP9KEZXhsGgkUrt27ZNx590BwjXZ1BIKnWLn2ChJcUV44vlcZGok1VNz4AiIFBn4dZkllM0CWSPp16Q9MeFtmawVgaCJa8e9tDe0ejlbVYz1Z6S6UgwISixABzK0a2RIGX4s6yc5XuMBgfiW/bWRteteRdz42wLpnnBkn0Q1uUlEOQ+fivkgyb7ATMzKb5/tlKJM9vPKtyWk/Xjea4pqMz7ImrnomqJ4qRmbL4pWZhyFwpNOssOzCYnPDP1GL/7e5Lt26AZGGR9evr9y15EADqYTH3m9n701oQzwxZzPoEgOGhZW/pLLtPRrFWA0uPK7mFpdCaG5Afw2TNE8fa5QL+Is9vduzZd+fZV7wwKWVPH6cXgLwIAHURfmJmXz6ECAb1RZsA9Nh5p4774My4qpMssHLsmzDsYt6bMVoOSy9PlNheuehvr+1P/yCLNaUZzhW19P1bad4DHSRsUWtxGuoL1aIxLgknDQQ6zGhtnmpARkQStfEjM7seQFJoZtHBvqC1OJYO2KYlO62/mTnrP1EMQubhHMlX8igA1Juje4Avmtl/05pgeZvY0e5u6MHI3NMPAI8rcVH9lFD6UJJTg6dONYO81oCMrCYAbAZ+DNwz1UVVEnj2eoUQSdxU04a78y4A1MNpMiG2kgQX3ws8a2bVY06giXPW5oMAGTFJSZ/arL5AIsjz6fHwEV4rs4kHnjGz7Y3K5EzmkwAZ2YydRsW3TpA0bTdygDvwY2U+CpAxc+oTvL6+IJv981Uzu7nRzdF8FqBRZMbeDpxDOjbVqJmbeXVD5xJH0sH3Ap2NnjJbCHDkNOWeohCgxRQCtJhCgBZTCNBiCgFaTCFAiykEaDGFAC2mEKDFFAK0mEKAFlMI0GIKAVpMIUCLKQRoMYUALcYBk63ORJuTPQGbIAmLbCgOGJmRUMGB2Qccc4zRTBzwcnpcCHBgMrvsSBe3co18LuyALeRxtZS5I7PN39O/G9pvOuAh2ne1lHYgs82fmnFxB/yRJGTPUdSCmWTLNO8GHknPNTRG1JnZf4AHqK8NXVAns8dGM9uVRsU1JS7o58wObC2o2+NnTUsg7dUfBR5MEyxqQUK2VsU9ZvZ4aqeG28bSCQyeZKn4J6nXhDdyp5zNOYhI5iY/TxMio6G+YLczs20kSwIENOGOL2dEJHa4wcyeI13gthkJJZsxTlk9XdJvgY/xxl3AO/vdt5vZZ5o5OwamNDOpCFnz83vgKur7B7wRmqPMCwyB3wFrqG/V1TT3fL/XkyaSZeJDwK+p7x8w3zvmbHpTSLJ/QrKiSZONDzPczimJxWZ2NXA9yWhp1lFne8jMB7LClk3wmwCuM7PPZ//Qsu2zlO6ilB4vl7RxxpIBsaQoffcNWYSg+XhNz/dU7pZ0Xvp753R+8SET0vR9xC4j2UfsPSRrTeed3STDML8wsyFozRaKh1VaM3azk/RW4H3ACuA8kpV3F9Leu26MkTz3eAV4mmRc534z+xdM2y1wztcf/T/SoCBkE+9PPAAAAABJRU5ErkJggg==" alt=""><span>Business Status<small>AI Solutions</small></span></a>
-   <p style="margin:14px 0 0;max-width:42ch"><span class="ar">حلول الذكاء الاصطناعي لأصحاب المشاريع الصغيرة وصنّاع المحتوى.</span><span class="en">AI solutions for small business owners and content creators.</span></p></div>
-  <div><h4><span class="ar">الحلول</span><span class="en">Solutions</span></h4><ul><li><a href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">Smart Marketing System</span></a></li><li><a href="../consult/"><span class="ar">استشارة خاصة</span><span class="en">Private Consultation</span></a></li></ul></div>
-  <div><h4><span class="ar">الشركة</span><span class="en">Company</span></h4><ul><li><a href="#about"><span class="ar">عن الشركة</span><span class="en">About</span></a></li><li><a href="#faq"><span class="ar">الأسئلة</span><span class="en">FAQ</span></a></li></ul></div>
- </div>
- <div class="copy"><span>© 2026 Business Status. <span class="ar">جميع الحقوق محفوظة.</span><span class="en">All rights reserved.</span></span><span><span class="ar">شركة مرخّصة في دولة الكويت</span><span class="en">Licensed in the State of Kuwait</span></span></div>
-</div></footer>
-
+</header>
 <script>
 (function(){
- var H=document.documentElement;
- function setLang(l){H.lang=l;H.dir=l==='ar'?'rtl':'ltr';document.title=l==='ar'?'بزنس ستيتس':'Business Status';
-  document.querySelectorAll('.lang').forEach(function(b){b.textContent=l==='ar'?'EN':'عربي'});try{localStorage.setItem('bs-lang',l)}catch(e){}
-  document.querySelectorAll('[data-to]').forEach(function(el){el.textContent=fmt(el,+el.dataset.to)})}
- var saved=null;try{saved=localStorage.getItem('bs-lang')}catch(e){}
- if(location.hash==='#en')saved='en';
- setLang(saved==='en'?'en':'ar');
- document.querySelectorAll('.lang').forEach(function(b){b.addEventListener('click',function(){setLang(H.lang==='ar'?'en':'ar')})});
- var nav=document.querySelector('.nav');addEventListener('scroll',function(){nav.classList.toggle('s',scrollY>10)},{passive:true});
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
- document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(el.dataset.d||0)+'ms';io.observe(el)});
- function fmt(el,v){var p=el.dataset.pre||'';return H.lang==='en'?v+(el.dataset.k?'K':'')+p:p+v}
- var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,to=+el.dataset.to,pre=el.dataset.pre||'',st=performance.now();
-  function f(n){var k=Math.min(1,(n-st)/1400),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=fmt(el,v);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f);co.unobserve(el)})},{threshold:.6});
- document.querySelectorAll('[data-to]').forEach(function(el){co.observe(el)});
+  var n=document.getElementById('bsn'), page='home';
+  if(/bznstatus\.com$/.test(location.hostname)) n.querySelectorAll('[data-home]').forEach(function(a){a.setAttribute('href','/')});
+  n.querySelectorAll('[data-p="'+page+'"]').forEach(function(a){a.setAttribute('aria-current','page')});
+  var b=n.querySelector('.bsn-burger');
+  function close(){n.classList.remove('open');b.setAttribute('aria-expanded','false');document.documentElement.style.overflow=''}
+  b.addEventListener('click',function(){var o=!n.classList.contains('open');n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.documentElement.style.overflow=o?'hidden':''});
+  n.querySelectorAll('.bsn-sheet a').forEach(function(a){a.addEventListener('click',close)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  var s=function(){n.classList.toggle('on',scrollY>10||n.classList.contains('open'))};addEventListener('scroll',s,{passive:true});s();
+})();
+</script>
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="htext">
+    <span class="eyebrow"><span class="ar">بزنس ستيتس · شركة كويتية مرخّصة</span><span class="en">Business Status · Licensed in Kuwait</span></span>
+    <h1><span class="ar">إدارة المشاريع، والتسويق، <em>وحلول الذكاء الاصطناعي.</em></span><span class="en">Project management, marketing <em>and AI solutions.</em></span></h1>
+    <p class="lead"><span class="ar">شركة كويتية مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي. نساعد أصحاب المشاريع وصنّاع المحتوى يرتّبون شغلهم ويوصلون لعملاء أكثر.</span><span class="en">A Kuwaiti company specializing in project management, marketing and AI solutions. We help business owners and creators organize their work and reach more customers.</span></p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="../consult/"><span class="ar">اطلب استشارة</span><span class="en">Request a consultation</span> <span class="arr">←</span></a>
+      <a class="btn btn-line" href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a>
+    </div>
+  </div>
+  <div class="pillars" aria-hidden="true">
+    <div class="pil p1"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6M15 14h1"/></svg></span><div><b><span class="ar">إدارة المشاريع</span><span class="en">Project management</span></b><small><span class="ar">خطة، أولويات، ومتابعة</span><span class="en">Plans, priorities, follow-through</span></small></div><span class="bar"><i style="--w:86%"></i></span></div>
+    <div class="pil p2"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20h18"/><path d="M6 16l4-5 3 3 5-7"/></svg></span><div><b><span class="ar">التسويق</span><span class="en">Marketing</span></b><small><span class="ar">محتوى، إعلانات، ونمو</span><span class="en">Content, ads, growth</span></small></div><span class="bar"><i style="--w:72%"></i></span></div>
+    <div class="pil p3"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span><div><b><span class="ar">حلول الذكاء الاصطناعي</span><span class="en">AI solutions</span></b><small><span class="ar">أنظمة تشتغل لمشروعك</span><span class="en">Systems that work for you</span></small></div><span class="bar"><i style="--w:94%"></i></span></div>
+    <span class="core"></span>
+  </div>
+</div></section>
+
+<section id="solutions" class="alt"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow"><span class="ar">حلولنا</span><span class="en">Our solutions</span></span><h2><span class="ar">من وين تبي تبدأ؟</span><span class="en">Where would you like to start?</span></h2></div>
+  <div class="doors">
+    <a class="door reveal" href="../consult/">
+      <span class="dtag"><span class="ar">جلسة خاصة · أونلاين</span><span class="en">Private session · Online</span></span><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8V5a1 1 0 011-1h3M16 4h3a1 1 0 011 1v3M20 16v3a1 1 0 01-1 1h-3M8 20H5a1 1 0 01-1-1v-3"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <h3><span class="ar">الاستشارة الخاصة</span><span class="en">Private Consultation</span></h3>
+      <p><span class="ar">ساعة أونلاين نشخّص فيها مشكلة مشروعك أو محتواك، وتطلع بحلول واضحة تطبّقها.</span><span class="en">One hour online to diagnose your business or content, and leave with clear solutions you apply.</span></p>
+      <span class="go"><span class="ar">اعرف أكثر</span><span class="en">Learn more</span> <span class="arr">←</span></span>
+    </a>
+    <a class="door feat reveal" href="../system/">
+      <span class="dtag"><span class="ar">تطبّقه بنفسك</span><span class="en">Do it yourself</span></span><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span>
+      <h3><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></h3>
+      <p><span class="ar">فريق تسويق كامل بالذكاء الاصطناعي، تبنيه بنفسك خطوة بخطوة.</span><span class="en">A full AI marketing team you build yourself, step by step.</span></p>
+      <span class="go"><span class="ar">اعرف أكثر</span><span class="en">Learn more</span> <span class="arr">←</span></span>
+    </a>
+  </div>
+</div></section>
+</main>
+<style>
+.bsf{border-top:1px solid rgba(255,255,255,.10);background:#0E1440;color:#AEB6DA;font-size:15px;font-family:"IBM Plex Sans Arabic","Tajawal",system-ui,sans-serif;padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px))}
+html[lang=en] .bsf{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif}
+.bsf *{box-sizing:border-box}
+.bsf a{color:inherit;text-decoration:none}
+.bsf-in{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px}
+.bsf h4{margin:0 0 14px;color:#fff;font-size:15px;font-weight:600}
+.bsf ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bsf a:hover{color:#fff}
+.bsf-brand{display:flex;align-items:center;gap:10px;font-family:"Inter",system-ui,sans-serif;font-weight:700;font-size:17px;color:#fff;direction:ltr;margin-bottom:14px}
+.bsf-brand svg{width:30px;height:30px}
+.bsf-about p{margin:0;max-width:40ch;line-height:1.7}
+.bsf .c{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.bsf .c .ic{display:inline-flex;gap:6px;color:#F2C230}
+.bsf .c svg{width:20px;height:20px;flex:none}
+.bsf .c .wa svg{color:#5BE39A}
+.bsf .c bdi,.bsf .c span.v{font-family:"Inter",system-ui,sans-serif;font-weight:600;color:#fff;direction:ltr;unicode-bidi:isolate;letter-spacing:.01em}
+.bsf-legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.10);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13.5px;color:#7F88B5}
+@media (max-width:980px){.bsf-in{grid-template-columns:1fr 1fr}.bsf-about{grid-column:1/-1}}
+@media (max-width:560px){.bsf-in{grid-template-columns:1fr;gap:30px}.bsf{padding-top:44px}}
+html[lang=ar] .bsf .en,html[lang=en] .bsf .ar{display:none!important}
+</style>
+<footer class="bsf">
+  <div class="bsf-in">
+    <div class="bsf-about">
+      <a class="bsf-brand" data-home href="../site/"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F2C230"/></svg>Business Status</a>
+      <p><span class="ar">شركة كويتية مرخّصة مختصة في إدارة المشاريع والتسويق وحلول الذكاء الاصطناعي.</span><span class="en">A licensed Kuwaiti company specializing in project management, marketing and AI solutions.</span></p>
+    </div>
+    <div>
+      <h4><span class="ar">حلولنا</span><span class="en">Solutions</span></h4>
+      <ul><li><a href="../consult/"><span class="ar">الاستشارة الخاصة</span><span class="en">Private Consultation</span></a></li><li><a href="../system/"><span class="ar">نظام التسويق الذكي</span><span class="en">AI Marketing System</span></a></li></ul>
+    </div>
+    <div>
+      <h4><span class="ar">تواصل معنا</span><span class="en">Contact us</span></h4>
+      <ul>
+        <li><a class="c" href="https://wa.me/message/D6QAVYNNKNQZA1" target="_blank" rel="noopener"><span class="ic"><span class="wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5 0 1.7-.7 2-1.4.2-.7.2-1.2.1-1.3l-.5-.3-1.8-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.6l-.8-2c-.2-.5-.4-.4-.6-.4z"/></svg></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><bdi>00965-90000937</bdi></a></li>
+        <li><a class="c" href="https://www.instagram.com/bznstatus" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><bdi>@bznstatus</bdi></a></li>
+        <li><a class="c" href="mailto:info@bznstatus.com"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><bdi>info@bznstatus.com</bdi></a></li>
+      </ul>
+    </div>
+    <div class="bsf-legal"><span>© 2026 Business Status</span><span><span class="ar">شركة مرخّصة في دولة الكويت</span><span class="en">Licensed in the State of Kuwait</span></span></div>
+  </div>
+</footer>
+<script>if(/bznstatus\.com$/.test(location.hostname))document.querySelectorAll('.bsf [data-home]').forEach(function(a){a.setAttribute('href','/')});</script>
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  function setLang(l){root.lang=l;root.dir=l==='ar'?'rtl':'ltr';document.title=l==='ar'?'بزنس ستيتس':'Business Status';try{localStorage.setItem('bz-lang',l)}catch(e){}}
+  var q=new URLSearchParams(location.search).get('lang'),saved=null;try{saved=localStorage.getItem('bz-lang')}catch(e){}
+  if(location.hash==='#en')q='en';
+  setLang(q==='en'||q==='ar'?q:(saved||'ar'));
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(root.lang==='ar'?'en':'ar')})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 })();
 </script>
 </body>
