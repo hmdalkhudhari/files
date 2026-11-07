@@ -29,7 +29,7 @@ html.i3 .ix-clock i{width:7px;height:7px;border-radius:50%;background:#5BE39A;bo
 @keyframes ixblink{50%{opacity:.35}}
 @media(max-width:720px){html.i3 .bsn-end .ix-clock{display:none}}
 .ix-clock2{display:none}
-@media(max-width:720px){html.i3 .ix-clock2{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:12.5px;color:#AEB6DA;margin-bottom:14px}html.i3 .ix-clock2 b{color:#fff;font-family:"Inter",system-ui,sans-serif;font-weight:600;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}html.i3 .ix-clock2 i{width:7px;height:7px;border-radius:50%;background:#5BE39A;box-shadow:0 0 0 3px rgba(91,227,154,.2);animation:ixblink 2s infinite}}
+@media(max-width:720px){html.i3 .ix-clock2{display:inline-flex;width:max-content;align-self:flex-start;justify-self:start;align-items:center;gap:8px;padding:6px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:12.5px;color:#AEB6DA;margin-bottom:14px}html.i3 .ix-clock2 b{color:#fff;font-family:"Inter",system-ui,sans-serif;font-weight:600;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}html.i3 .ix-clock2 i{width:7px;height:7px;border-radius:50%;background:#5BE39A;box-shadow:0 0 0 3px rgba(91,227,154,.2);animation:ixblink 2s infinite}}
 
 html.i4 .hero h1 .ix-gw{color:var(--ixg);font-style:normal;display:inline-block;opacity:0;transform:translateY(.4em);animation:ixgw .7s cubic-bezier(.2,.7,.2,1) .9s forwards}
 @keyframes ixgw{to{opacity:1;transform:none}}
