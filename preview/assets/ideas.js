@@ -2,10 +2,10 @@
 (function(){
 var S=document.currentScript, PAGE=S.getAttribute('data-page'), H=document.documentElement;
 var IDEAS={
- home:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية (مرة بالجلسة)'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
- consult:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- system:[['G','كرة أرضية 3D حقيقية تلف','الخليج يضوي ذهبي وتغطس مع السكرول'],['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- kit:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
+ home:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
+ consult:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ system:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['G','كرة أرضية ليلية 3D','الخليج يضوي ذهبي وتغطس مع السكرول'],['3','ساعة حية فوق الكرة','توقيت الكويت بالثواني'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ kit:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
 var list=IDEAS[PAGE]||[], KEY='ix-'+PAGE, state={};
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
@@ -17,6 +17,7 @@ var AR=['٠','١','٢','٣','٤','٥','٦','٧','٨','٩']; function ar(n){retur
 function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
 
 ready(function(){
+if(PAGE!=='home'){ document.body.insertBefore(el('div','ix-bg'),document.body.firstChild); }
 /* ================= HOME ================= */
 if(PAGE==='home'){
   var hero=document.querySelector('.hero');
@@ -56,8 +57,6 @@ if(PAGE==='consult'){
   var orbs=el('div','ix-orbs','<i></i><i></i><i></i>'); document.body.insertBefore(orbs,document.body.firstChild);
   if(ph){ var rib2=el('div','ix-rib','<svg viewBox="0 0 600 700" preserveAspectRatio="none"><defs><linearGradient id="ixrg2" x1="0" x2="1"><stop offset="0" stop-color="#F2C230" stop-opacity="0"/><stop offset=".35" stop-color="#F2C230"/><stop offset=".65" stop-color="#FFE58A"/><stop offset="1" stop-color="#F2C230" stop-opacity="0"/></linearGradient></defs><path class="r1" d="M-60,420 C120,300 220,520 380,400 C500,310 560,360 680,300"/><path class="r2" d="M-60,520 C100,420 260,600 400,470 C520,360 580,420 680,380"/><path class="r3" d="M-60,330 C140,250 240,430 400,330 C520,260 580,300 680,240"/></svg>'); ph.insertBefore(rib2,ph.firstChild);
     addEventListener('pointermove',function(e){ H.style.setProperty('--ixx',((e.clientX/innerWidth-.5)*40)+'px'); H.style.setProperty('--ixy',((e.clientY/innerHeight-.5)*30)+'px'); },{passive:true}); }
-  document.body.appendChild(el('div','ix-arrow','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>'));
-  addEventListener('scroll',function(){ H.classList.toggle('ix-scrolled',scrollY>160); },{passive:true});
   /* 8: sticky bar */
   var bar=el('div','ix-bar','<a href="#book">احجز الحين <span>←</span></a>'); document.body.appendChild(bar);
   var hh=document.querySelector('.hero'), bk=document.getElementById('book');
@@ -86,6 +85,7 @@ if(PAGE==='system'){
   var lis=document.querySelectorAll('.steps li'); lis.forEach(function(li,k){ li.style.setProperty('--k',k); var d=el('span','ix-dep','DEPT_'+String(k+1).padStart(2,'0')); li.appendChild(d); });
   var io3=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('ix-in'); io3.unobserve(en.target);} }); },{threshold:.2}); lis.forEach(function(li){io3.observe(li)});
   var hv=document.querySelector('.hero-visual'); if(hv){ var gl=el('div','ix-globe'); hv.appendChild(gl); var started=false;
+    var gc=el('div','ix-gclock','<i></i>لايف · الكويت <b>--:--:--</b>'); gl.appendChild(gc); (function tk(){ try{ gc.querySelector('b').textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuwait',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); }catch(e){} setTimeout(tk,1000); })();
     function startGlobe(){ if(started||!H.classList.contains('iG')) return; started=true; var sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; sc.onload=function(){ var T=window.THREE; var W=gl.clientWidth||520, Hh=gl.clientHeight||520;
       var ren=new T.WebGLRenderer({antialias:true,alpha:true}); ren.setPixelRatio(Math.min(2,devicePixelRatio)); ren.setSize(W,Hh); gl.appendChild(ren.domElement);
       var scene=new T.Scene(), cam=new T.PerspectiveCamera(38,W/Hh,.1,100); cam.position.set(0,0.3,4.9);
@@ -123,13 +123,16 @@ if(PAGE==='kit'){
   document.body.appendChild(el('div','ix-pkglow'));
   document.querySelectorAll('.pk').forEach(function(pk){ pk.addEventListener('click',function(e){ if(e.target.closest('a')) return; var on=pk.classList.contains('ix-on'); document.querySelectorAll('.pk').forEach(function(p){p.classList.remove('ix-on')}); if(on){ H.classList.remove('ix-focus'); } else { pk.classList.add('ix-on'); H.classList.add('ix-focus'); } }); });
 }
+/* ================= A: arrow ================= */
+document.body.appendChild(el('div','ix-arrow','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>'));
+addEventListener('scroll',function(){ H.classList.toggle('ix-scrolled',scrollY>160); },{passive:true});
 /* ================= L: intro + transitions ================= */
-var intro=el('div','ix-intro','<svg viewBox="0 0 64 64"><path class="p1" d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z"/><rect class="p2" x="31" y="8" width="25" height="25" rx="8"/></svg><div class="w">Business Status</div><i></i>');
+var intro=el('div','ix-intro','<svg viewBox="0 0 64 64"><path class="p1" d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z"/><rect class="p2" x="31" y="8" width="25" height="25" rx="8"/></svg><div class="w">Business Status</div><div class="w2">بزنس ستيتس</div><i></i>');
 document.body.appendChild(intro);
 var seen=false; try{ seen=sessionStorage.getItem('ix-intro')==='1'; }catch(e){}
 if(H.classList.contains('iL') && !seen){ intro.classList.add('play'); try{ sessionStorage.setItem('ix-intro','1'); }catch(e){} setTimeout(function(){ intro.classList.remove('play'); intro.classList.add('done'); },2100); } else { intro.classList.add('done'); }
 H.classList.add('ix-ready');
-document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!H.classList.contains('iL')) return; var href=a.getAttribute('href'); if(!href||href.charAt(0)==='#'||a.target==='_blank'||/^(https?:|mailto:|tel:|wa\.me)/.test(href)&&!/hmdalkhudhari\.github\.io\/files\/preview/.test(href)) return; e.preventDefault(); intro.classList.remove('done'); intro.classList.add('out'); setTimeout(function(){ location.href=a.href; },420); });
+document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!H.classList.contains('iL')) return; var href=a.getAttribute('href'); if(!href||href.charAt(0)==='#'||a.target==='_blank'||/^(https?:|mailto:|tel:|wa\.me)/.test(href)&&!/hmdalkhudhari\.github\.io\/files\/preview/.test(href)) return; e.preventDefault(); intro.classList.remove('done'); intro.classList.add('out'); setTimeout(function(){ location.href=a.href; },700); });
 addEventListener('pageshow',function(ev){ if(ev.persisted||intro.classList.contains('out')){ intro.classList.remove('out'); intro.classList.add('done'); } });
 /* ================= PANEL ================= */
 var pages=[['home','الرئيسية'],['consult','الاستشارة'],['system','النظام'],['kit','الكت']];
