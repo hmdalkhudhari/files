@@ -3,7 +3,7 @@
 var S=document.currentScript, PAGE=S.getAttribute('data-page'), H=document.documentElement;
 var IDEAS={
  home:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية (مرة بالجلسة)'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
- consult:[['S','قصة بالسكرول قبل الحجز','الشاشة تثبت و٣ مشاهد تتبدل'],['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ consult:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  system:[['G','كرة أرضية 3D حقيقية تلف','الخليج يضوي ذهبي وتغطس مع السكرول'],['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  kit:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
@@ -89,22 +89,23 @@ if(PAGE==='system'){
     function startGlobe(){ if(started||!H.classList.contains('iG')) return; started=true; var sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; sc.onload=function(){ var T=window.THREE; var W=gl.clientWidth||520, Hh=gl.clientHeight||520;
       var ren=new T.WebGLRenderer({antialias:true,alpha:true}); ren.setPixelRatio(Math.min(2,devicePixelRatio)); ren.setSize(W,Hh); gl.appendChild(ren.domElement);
       var scene=new T.Scene(), cam=new T.PerspectiveCamera(38,W/Hh,.1,100); cam.position.set(0,0.3,4.9);
-      scene.add(new T.AmbientLight(0x8fa0ff,.55)); var dl=new T.DirectionalLight(0xfff2c0,1.3); dl.position.set(3,2,4); scene.add(dl); var gd=new T.PointLight(0xF2C230,1.2,6); gd.position.set(1.3,0.9,1.6); scene.add(gd);
+      scene.add(new T.AmbientLight(0x6f80d0,.9)); var dl=new T.DirectionalLight(0xdfe6ff,.9); dl.position.set(-3,2,4); scene.add(dl); var gd=new T.PointLight(0xF2C230,.8,7); gd.position.set(1.6,1.0,1.8); scene.add(gd);
       var grp=new T.Group(); scene.add(grp);
       var tex=new T.TextureLoader(); tex.crossOrigin='anonymous';
-      var mat=new T.MeshStandardMaterial({color:0x5566cc,roughness:.75,metalness:.15});
-      tex.load('https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/textures/planets/earth_atmos_2048.jpg',function(t){ mat.map=t; mat.color.set(0x7f8fe8); mat.needsUpdate=true; });
-      var earth=new T.Mesh(new T.SphereGeometry(1.5,64,64),mat); grp.add(earth);
-      var atm=new T.Mesh(new T.SphereGeometry(1.56,64,64),new T.MeshBasicMaterial({color:0x4a63ff,transparent:true,opacity:.12,side:T.BackSide})); grp.add(atm);
-      var glow=new T.Mesh(new T.SphereGeometry(1.75,48,48),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.05,side:T.BackSide})); grp.add(glow);
+      var mat=new T.MeshStandardMaterial({color:0x0b1540,roughness:.9,metalness:.05,emissive:new T.Color(0xF2C230),emissiveIntensity:0});
+      tex.load('https://cdn.jsdelivr.net/npm/three-globe@2.24.6/example/img/earth-night.jpg',function(t){ mat.map=t; mat.emissiveMap=t; mat.emissive.set(0xFFE2A0); mat.emissiveIntensity=.75; mat.color.set(0x3a4a9c); mat.needsUpdate=true; });
+      var earth=new T.Mesh(new T.SphereGeometry(1.5,96,96),mat); grp.add(earth);
+      var wire=new T.Mesh(new T.SphereGeometry(1.503,36,24),new T.MeshBasicMaterial({color:0xF2C230,wireframe:true,transparent:true,opacity:.02})); grp.add(wire);
+      var atm=new T.Mesh(new T.SphereGeometry(1.56,64,64),new T.MeshBasicMaterial({color:0x5b74ff,transparent:true,opacity:.10,side:T.BackSide})); grp.add(atm);
+      var glow=new T.Mesh(new T.SphereGeometry(1.68,48,48),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.035,side:T.BackSide})); grp.add(glow);
       function ll(lat,lon,r){ var ph=(90-lat)*Math.PI/180, th=(lon+180)*Math.PI/180; return new T.Vector3(-r*Math.sin(ph)*Math.cos(th), r*Math.cos(ph), r*Math.sin(ph)*Math.sin(th)); }
       var cities=[[29.37,47.98,1],[25.2,55.27,.6],[24.7,46.7,.6],[25.28,51.53,.5],[26.4,50.1,.5]]; var pins=[];
-      cities.forEach(function(c){ var m=new T.Mesh(new T.SphereGeometry(.018+.012*c[2],12,12),new T.MeshBasicMaterial({color:0xF2C230})); m.position.copy(ll(c[0],c[1],1.505)); grp.add(m);
+      cities.forEach(function(c){ var m=new T.Mesh(new T.SphereGeometry(.012+.01*c[2],12,12),new T.MeshBasicMaterial({color:0xF2C230})); m.position.copy(ll(c[0],c[1],1.505)); grp.add(m);
         var ring=new T.Mesh(new T.RingGeometry(.02,.03,32),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.8,side:T.DoubleSide})); ring.position.copy(ll(c[0],c[1],1.51)); ring.lookAt(new T.Vector3(0,0,0)); grp.add(ring); pins.push({r:ring,t:Math.random()*3,s:c[2]}); });
       // face the Gulf (lon ~50) toward camera
       grp.rotation.y=-(50+180)*Math.PI/180+Math.PI/2; grp.rotation.x=.25;
       var t0=performance.now();
-      (function loop(now){ var dt=(now-t0)/1000; grp.rotation.y+=0.0012; pins.forEach(function(p){ var k=((dt+p.t)%3)/3; p.r.scale.setScalar(1+k*5*p.s); p.r.material.opacity=.8*(1-k); }); var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; grp.rotation.x=.25+sy*.5; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
+      (function loop(now){ var dt=(now-t0)/1000; grp.rotation.y+=0.0012; pins.forEach(function(p){ var k=((dt+p.t)%3)/3; p.r.scale.setScalar(1+k*4*p.s); p.r.material.opacity=.6*(1-k); }); var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; grp.rotation.x=.25+sy*.5; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
       addEventListener('resize',function(){ var W=gl.clientWidth, Hh=gl.clientHeight; cam.aspect=W/Hh; cam.updateProjectionMatrix(); ren.setSize(W,Hh); }); }; document.head.appendChild(sc); }
     startGlobe(); document.addEventListener('ix-change',startGlobe); }
   var cta=document.querySelector('a.cta[href="#"]'); if(cta){ var waurl='https://wa.me/96590000937?text='+encodeURIComponent('السلام عليكم، أبي أشتري نظام التسويق الذكي ($75)'); function setC(){ cta.setAttribute('href', H.classList.contains('i12')?waurl:'#'); cta.target=H.classList.contains('i12')?'_blank':''; } setC(); document.addEventListener('ix-change',setC); }
