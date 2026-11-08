@@ -288,3 +288,21 @@ html.iM.i2 .ix-trust{display:none}
 
 /* phone: no empty gap above hero (Hamad 11-08) */
 @media (max-width:980px){.hero{padding-top:28px!important}}
+
+/* ===== Hamad 11-08 round 2 ===== */
+html{scroll-behavior:auto!important}
+html.iA .ix-arrow{position:fixed!important}
+html.i3 .bsn-end .ix-clock{display:none!important}
+html.i3 .ix-clock2{display:flex!important;justify-content:center;width:100%!important;margin:0!important;padding:6px 0 0!important;border:0!important;background:transparent}
+html.i3 .ix-clock2>span{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:12px;color:#AEB6DA;background:rgba(14,20,64,.5)}
+html.i3 .ix-clock2 b{color:#fff;font-family:"Inter",system-ui,sans-serif;font-weight:600;direction:ltr;unicode-bidi:isolate;font-variant-numeric:tabular-nums}
+html.i3 .ix-clock2 i{width:7px;height:7px;border-radius:50%;background:#5BE39A;box-shadow:0 0 0 3px rgba(91,227,154,.2);animation:ixblink 2s infinite}
+html.i3 .ix-clock2{padding-top:6px!important}
+html.i3 .ix-clock2>span{padding:3px 10px}
+html.i3 .hero{padding-top:118px!important}
+@media(min-width:721px){html.i3 .hero{padding-top:170px!important}}
+
+@media(max-width:720px){.bsn-end>.bsn-cta.ix-topcta{display:inline-flex!important;height:38px;padding:0 14px;font-size:14px;margin:0}
+ .bsn-end{display:flex;align-items:center;gap:8px}}
+.ix-jump{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:11px;background:#F2C230;color:#0F1538!important;font-weight:700;font-size:14px;text-decoration:none;margin-inline-start:auto;margin-inline-end:10px;white-space:nowrap}
+.wrap>.top{display:flex;align-items:center}
