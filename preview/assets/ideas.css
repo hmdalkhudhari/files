@@ -236,7 +236,8 @@ html.iG .ix-map{display:none!important}
 html.iB .ix-bg{display:block;position:fixed!important;inset:0;z-index:0!important;pointer-events:none;background:radial-gradient(900px 520px at 85% -10%,rgba(242,194,48,.14),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(46,62,160,.55),transparent 65%),linear-gradient(180deg,#0A0F30 0%,#0F1640 100%)}
 html.iB .ix-bg::after{content:"";position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
 html.iB body{background:transparent!important}
-html.iB body>*:not(.ix-bg){position:relative;z-index:1}
+html.iB body>*:not(.ix-bg):not(.bsn){position:relative;z-index:1}
+html.iB .bsn{z-index:60}
 html.iB .hero,html.iB .band,html.iB .hero-wrap,html.iB section{background:transparent!important}
 html.iB .orbs,html.iB .ix-orbs{z-index:0}
 html.iB .ix-glow{z-index:0}
@@ -284,3 +285,6 @@ html.iM .ix-mq .t:hover{transform:translateY(-3px)}
 html.iM .ix-mq::before,html.iM .ix-mq::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
 html.iM .ix-mq::before{left:0;background:linear-gradient(90deg,#0A0F30,transparent)}html.iM .ix-mq::after{right:0;background:linear-gradient(-90deg,#0A0F30,transparent)}
 html.iM.i2 .ix-trust{display:none}
+
+/* phone: no empty gap above hero (Hamad 11-08) */
+@media (max-width:980px){.hero{padding-top:28px!important}}

@@ -19,6 +19,10 @@ function ready(fn){ if(document.readyState!=='loading') fn(); else document.addE
 
 ready(function(){
 document.body.insertBefore(el('div','ix-bg'),document.body.firstChild);
+/* ads link in nav + footer (Hamad 11-08) */
+(function(){ var nl=document.querySelector('.bsn-links'); if(nl&&!nl.querySelector('[data-p="kit"]')){ var a=el('a',null,'<span class="ar">الإعلانات والتعاون</span><span class="en">Ads & Partnerships</span>'); a.setAttribute('data-p','kit'); a.href='../kit/'; if(PAGE==='kit') a.setAttribute('aria-current','page'); nl.appendChild(a); }
+  var sh=document.querySelector('.bsn-sheet'); if(sh&&!sh.querySelector('[data-p="kit"]')){ var last=sh.querySelector('a.l:last-of-type'); var k=el('a','l','<small>04</small><span class="ar">الإعلانات والتعاون</span><span class="en">Ads & Partnerships</span>'); k.setAttribute('data-p','kit'); k.href='../kit/'; if(last) last.insertAdjacentElement('afterend',k); }
+  var fu=document.querySelector('.bsf ul'); if(fu&&!fu.querySelector('a[href="../kit/"]')){ var li=el('li',null,'<a href="../kit/"><span class="ar">الإعلانات والتعاون (Media Kit)</span><span class="en">Ads & Partnerships (Media Kit)</span></a>'); fu.appendChild(li); } })();
 /* M: marquee */
 var LOGOS=[['dozzie.webp','Dozzie'],['ghrelin.webp','Ghrelin'],['hair-affair.webp','Hair Affair'],['kham.webp','Kham'],['liva.webp','Liva'],['loyac.webp','LOYAC'],['mushtari.webp','Mushtari'],['noun-line.webp','Noun Line'],['pine-wood.webp','Pine Wood'],['positive-coffee.webp','Positive Coffee'],['selvix.webp','Selvix'],['skala-spa.webp','Skála Spa'],['ymh-trading.webp','YMH Trading'],['a7rf.webp','لعبة أحرف'],['bravo.webp','Bravo'],['jakh.webp','Jakh Fabrics'],['lumen-pro.webp','Lumen Pro'],['miel.webp','Miel Salon'],['jacquard.webp','Jacquard'],['novel.webp','Novel']];
 var tiles=LOGOS.map(function(l){ return l[0]? '<span class="t"><img src="../assets/logos/'+l[0]+'" alt="'+l[1]+'"></span>' : '<span class="t txt">'+l[1]+'</span>'; }).join('');
