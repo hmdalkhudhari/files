@@ -270,8 +270,8 @@ html.iH .hero .btn:not(.ghost):after{animation:ixshine2 2.8s ease-in-out infinit
 
 /* ---------- M: clients logo marquee ---------- */
 .ix-mq{display:none}
-html.iM .ix-mq{display:block;padding:26px 0 30px;overflow:hidden;position:relative}
-html.iM .ix-mq .lbl{text-align:center;font-size:12.5px;color:#8E97C2;letter-spacing:.08em;margin-bottom:16px}
+html.iM .ix-mq{display:block;padding:26px 0 30px;overflow:hidden;position:relative;direction:ltr}
+html.iM .ix-mq .lbl{direction:rtl;text-align:center;font-size:12.5px;color:#8E97C2;letter-spacing:.08em;margin-bottom:16px}
 html.iM .ix-mq .track{display:flex;gap:14px;width:max-content;animation:ixmq 38s linear infinite;direction:ltr}
 html.iM .ix-mq:hover .track{animation-play-state:paused}
 @keyframes ixmq{to{transform:translateX(-50%)}}
