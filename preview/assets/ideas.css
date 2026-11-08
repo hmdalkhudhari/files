@@ -299,10 +299,22 @@ html.i3 .ix-clock2 b{color:#fff;font-family:"Inter",system-ui,sans-serif;font-we
 html.i3 .ix-clock2 i{width:7px;height:7px;border-radius:50%;background:#5BE39A;box-shadow:0 0 0 3px rgba(91,227,154,.2);animation:ixblink 2s infinite}
 html.i3 .ix-clock2{padding-top:6px!important}
 html.i3 .ix-clock2>span{padding:3px 10px}
-html.i3 .hero{padding-top:118px!important}
-@media(min-width:721px){html.i3 .hero{padding-top:170px!important}}
+html.pg-home.i3 .hero{padding-top:118px!important}
+@media(min-width:721px){html.pg-home.i3 .hero{padding-top:170px!important}}
 
 @media(max-width:720px){.bsn-end>.bsn-cta.ix-topcta{display:inline-flex!important;height:38px;padding:0 14px;font-size:14px;margin:0}
  .bsn-end{display:flex;align-items:center;gap:8px}}
 .ix-jump{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:11px;background:#F2C230;color:#0F1538!important;font-weight:700;font-size:14px;text-decoration:none;margin-inline-start:auto;margin-inline-end:10px;white-space:nowrap}
 .wrap>.top{display:flex;align-items:center}
+
+/* 11-08 round 3 */
+html.i3 .ix-clock2.ix-static{padding:4px 0 10px!important}
+html.iG.i3 .ix-gclock{padding:10px 20px!important;font-size:16px!important;gap:10px!important}
+html.iG.i3 .ix-gclock b{font-size:20px!important}
+html.iG.i3 .ix-gclock i{width:9px!important;height:9px!important}
+html.iG .hero-wrap{padding-top:calc(66px + env(safe-area-inset-top,0px))!important}
+html.iG .hero-visual{padding-top:6px!important}
+@media(min-width:960px){html.iG .hero{align-items:center!important;min-height:0!important}html.iG .hero-visual{align-self:center!important;padding-top:10px!important}}
+html:not([lang=en]) .bsn .en,html:not([lang=en]) .bsf .en,html[lang=en] .bsn .ar,html[lang=en] .bsf .ar{display:none!important}
+@media(min-width:960px){html.pg-consult .hero-photo{align-self:start!important;position:sticky;top:90px}}
+@media(min-width:960px){html.pg-consult .hero-photo::after{display:none!important}html.pg-consult .hero-photo img{-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}}
