@@ -5,7 +5,7 @@ var IDEAS={
  home:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['B','خلفية الرئيسية أغمق شوي','نفس الخلفية بكل الصفحات'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
  consult:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  system:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['G','كرة أرضية ليلية 3D','الخليج يضوي ذهبي وتغطس مع السكرول'],['3','ساعة حية فوق الكرة','توقيت الكويت بالثواني'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- kit:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
+ kit:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
 var list=IDEAS[PAGE]||[], KEY='ix-'+PAGE, state={};
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
@@ -28,7 +28,7 @@ var LOGOS=[['dozzie.webp','Dozzie'],['ghrelin.webp','Ghrelin'],['hair-affair.web
 var tiles=LOGOS.map(function(l){ return l[0]? '<span class="t"><img src="../assets/logos/'+l[0]+'" alt="'+l[1]+'"></span>' : '<span class="t txt">'+l[1]+'</span>'; }).join('');
 var mq=el('section','ix-mq','<div class="lbl">اشتغلنا مع</div><div class="track">'+tiles+tiles+'</div>');
 var anchor=document.querySelector('.hero, header.hero'); if(PAGE==='kit') anchor=document.querySelector('.stats')||anchor;
-if(anchor) anchor.insertAdjacentElement('afterend',mq);
+if(anchor && PAGE!=='kit') anchor.insertAdjacentElement('afterend',mq);
 mq.addEventListener('click',function(){ var tr=mq.querySelector('.track'); tr.style.animationPlayState='paused'; clearTimeout(mq._t); mq._t=setTimeout(function(){ tr.style.animationPlayState='running'; },3000); });
 /* ================= HOME ================= */
 if(PAGE==='home'){
@@ -37,7 +37,7 @@ if(PAGE==='home'){
     addEventListener('scroll',function(){ H.style.setProperty('--ixs', (-scrollY*0.35)+'px'); },{passive:true}); }
   var end=document.querySelector('.bsn-end');
   if(end){ var c=el('span','ix-clock','<i></i>الكويت <b>--:--</b>'); end.insertBefore(c,end.firstChild);
-    var c2=el('div','ix-clock2','<i></i>الكويت <b>--:--</b>'); var ht=document.querySelector('.hero .htext'); if(ht) ht.insertBefore(c2,ht.firstChild);
+    var c2=el('div','ix-clock2','<span><i></i>الكويت <b>--:--</b></span>'); var hb=document.querySelector('header.bsn'); if(hb) hb.insertBefore(c2,hb.firstChild);
     function tick(){ try{ var v=kwt(false); c.querySelector('b').textContent=v; c2.querySelector('b').textContent=v; }catch(e){} } tick(); setInterval(tick,1000); }
   var h1=document.querySelector('.hero h1 .ar');
   if(h1){ var orig=h1.innerHTML; var alt='سوّق <em class="ix-gw">أذكى</em>، مو أكثر.';
@@ -133,13 +133,18 @@ if(PAGE==='kit'){
   document.body.appendChild(el('div','ix-pkglow'));
   document.querySelectorAll('.pk').forEach(function(pk){ pk.addEventListener('click',function(e){ if(e.target.closest('a')) return; var on=pk.classList.contains('ix-on'); document.querySelectorAll('.pk').forEach(function(p){p.classList.remove('ix-on')}); if(on){ H.classList.remove('ix-focus'); } else { pk.classList.add('ix-on'); H.classList.add('ix-focus'); } }); });
 }
+/* top button to the product/packages on every page (Hamad 11-08) */
+(function(){ if(PAGE==='kit'){ var tp=document.querySelector('.top'), lg=tp&&tp.querySelector('.lang'); if(tp&&lg&&!tp.querySelector('.ix-jump')){ var j=el('a','ix-jump','<span class="ar-only">الباقات</span><span class="en-only">Packages</span>'); j.href='#packages'; tp.insertBefore(j,lg); } }
+  var bc=document.querySelector('.bsn-end>.bsn-cta'); if(bc){ bc.classList.add('ix-topcta'); if(PAGE==='system'){ bc.setAttribute('href','#buy'); bc.textContent='اشترِ الآن'; } } })();
+/* direct jump to product/packages (Hamad 11-08: no scrolling animation) */
+document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return; var id=a.getAttribute('href').slice(1); if(!id) return; var t=document.getElementById(id); if(!t) return; e.preventDefault(); var hb=document.querySelector('header.bsn'), off=hb&&getComputedStyle(hb).position!=='static'?hb.offsetHeight:0; window.scrollTo({top:t.getBoundingClientRect().top+scrollY-off-8,behavior:'instant'}); },true);
 /* ================= A: arrow ================= */
 document.body.appendChild(el('div','ix-arrow','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>'));
 addEventListener('scroll',function(){ H.classList.toggle('ix-scrolled',scrollY>160); },{passive:true});
 /* ================= L: intro + transitions ================= */
 var intro=el('div','ix-intro','<svg viewBox="0 0 64 64"><path class="p1" d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z"/><rect class="p2" x="31" y="8" width="25" height="25" rx="8"/></svg><div class="w">Business Status</div><div class="w2">بزنس ستيتس</div><i></i>');
 document.body.appendChild(intro);
-var seen=false; try{ seen=sessionStorage.getItem('ix-intro')==='1'; }catch(e){}
+var seen=false; /* Hamad 11-08: logo intro on every page */
 if(H.classList.contains('iL') && !seen){ intro.classList.add('play'); try{ sessionStorage.setItem('ix-intro','1'); }catch(e){} setTimeout(function(){ intro.classList.remove('play'); intro.classList.add('done'); },2100); } else { intro.classList.add('done'); }
 H.classList.add('ix-ready');
 document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!H.classList.contains('iL')) return; var href=a.getAttribute('href'); if(!href||href.charAt(0)==='#'||a.target==='_blank'||/^(https?:|mailto:|tel:|wa\.me)/.test(href)&&!/hmdalkhudhari\.github\.io\/files\/preview/.test(href)) return; e.preventDefault(); intro.classList.remove('done'); intro.classList.add('out'); setTimeout(function(){ location.href=a.href; },700); });
