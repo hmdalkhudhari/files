@@ -10,8 +10,7 @@ html.i1 .hero{position:relative;overflow:hidden}
 html.i1 .ix-wm{display:block;position:absolute;left:50%;bottom:-2%;transform:translateX(calc(-50% + var(--ixs,0px)));font-family:"Inter",system-ui,sans-serif;font-weight:800;font-size:clamp(84px,19vw,300px);line-height:1;letter-spacing:-.04em;color:#fff;opacity:.07;white-space:nowrap;pointer-events:none;user-select:none;direction:ltr;transition:transform .25s linear}
 html.i1 .hero .wrap{position:relative;z-index:1}
 
-.ix-trust{display:none}
-html.i2 .ix-trust{display:block;padding:14px 0 34px}
+
 .ix-trust .in{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .ix-trust .stars{display:flex;align-items:center;gap:10px;font-size:14.5px;color:#D6DAEE}
 .ix-trust .stars b{color:var(--ixg);letter-spacing:2px;font-size:16px}
@@ -234,12 +233,12 @@ html.iG .ix-map{display:none!important}
 
 /* ---------- B: home grid background everywhere ---------- */
 .ix-bg{display:none}
-html.iB .ix-bg{display:block;position:fixed!important;inset:0;z-index:0!important;pointer-events:none;background:radial-gradient(900px 520px at 85% -10%,rgba(242,194,48,.14),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(46,62,160,.55),transparent 65%),linear-gradient(180deg,#0E1440 0%,#141C4D 100%)}
+html.iB .ix-bg{display:block;position:fixed!important;inset:0;z-index:0!important;pointer-events:none;background:radial-gradient(900px 520px at 85% -10%,rgba(242,194,48,.14),transparent 60%),radial-gradient(800px 600px at 0% 100%,rgba(46,62,160,.55),transparent 65%),linear-gradient(180deg,#0A0F30 0%,#0F1640 100%)}
 html.iB .ix-bg::after{content:"";position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.10) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
 html.iB body{background:transparent!important}
 html.iB body>*:not(.ix-bg){position:relative;z-index:1}
 html.iB .hero,html.iB .band,html.iB .hero-wrap,html.iB section{background:transparent!important}
-html.iB .orbs,html.iB .ix-orbs{display:none!important}
+html.iB .orbs,html.iB .ix-orbs{z-index:0}
 html.iB .ix-glow{z-index:0}
 /* live clock over the globe */
 .ix-gclock{display:none}
@@ -275,10 +274,13 @@ html.iM .ix-mq .lbl{direction:rtl;text-align:center;font-size:12.5px;color:#8E97
 html.iM .ix-mq .track{display:flex;gap:14px;width:max-content;animation:ixmq 38s linear infinite;direction:ltr}
 html.iM .ix-mq:hover .track{animation-play-state:paused}
 @keyframes ixmq{to{transform:translateX(-50%)}}
-html.iM .ix-mq .t{flex:none;width:128px;height:72px;border-radius:16px;background:#fff;display:grid;place-items:center;padding:10px;filter:grayscale(1) opacity(.72);transition:.35s;overflow:hidden}
-html.iM .ix-mq .t img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-html.iM .ix-mq .t.txt{font:700 14px "IBM Plex Sans Arabic","Inter",system-ui,sans-serif;color:#1E2A66;letter-spacing:.02em}
-html.iM .ix-mq .t:hover{filter:none;transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(242,194,48,.8)}
+html.iM .ix-mq .t{flex:none;height:60px;min-width:60px;max-width:170px;display:grid;place-items:center;padding:0 10px;transition:.35s;cursor:pointer}
+html.iM .ix-mq .t.sq{padding:0}
+html.iM .ix-mq .t.sq img{height:60px;width:60px;border-radius:14px;object-fit:cover}
+html.iM .ix-mq .track{gap:30px}
+html.iM .ix-mq .t img{max-width:150px;max-height:52px;width:auto;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+html.iM .ix-mq .t.txt{color:#fff!important;font:700 15px "IBM Plex Sans Arabic","Inter",system-ui,sans-serif;color:#1E2A66;letter-spacing:.02em}
+html.iM .ix-mq .t:hover{transform:translateY(-3px)}
 html.iM .ix-mq::before,html.iM .ix-mq::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-html.iM .ix-mq::before{left:0;background:linear-gradient(90deg,#0E1440,transparent)}html.iM .ix-mq::after{right:0;background:linear-gradient(-90deg,#0E1440,transparent)}
+html.iM .ix-mq::before{left:0;background:linear-gradient(90deg,#0A0F30,transparent)}html.iM .ix-mq::after{right:0;background:linear-gradient(-90deg,#0A0F30,transparent)}
 html.iM.i2 .ix-trust{display:none}
