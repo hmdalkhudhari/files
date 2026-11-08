@@ -2,10 +2,10 @@
 (function(){
 var S=document.currentScript, PAGE=S.getAttribute('data-page'), H=document.documentElement;
 var IDEAS={
- home:[['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
- consult:[['5','صورتك تنكشف وين ما يمر الإصبع','طبقة ذهبية تنمسح وترجع'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- system:[['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- kit:[['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
+ home:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية (مرة بالجلسة)'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['2','شريط «اشتغلنا مع» + نجوم','Lumen Pro · Bravo · Jakh Fabrics'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
+ consult:[['S','قصة بالسكرول قبل الحجز','الشاشة تثبت و٣ مشاهد تتبدل'],['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ system:[['G','كرة أرضية 3D حقيقية تلف','الخليج يضوي ذهبي وتغطس مع السكرول'],['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ kit:[['L','افتتاحية ٢ ثانية + انتقال ناعم','اللوقو ينرسم ومسحة ذهبية'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
 var list=IDEAS[PAGE]||[], KEY='ix-'+PAGE, state={};
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
@@ -47,6 +47,11 @@ if(PAGE==='consult'){
   var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) return; io.unobserve(en.target); var b=en.target, tn=b.firstChild; if(!tn||tn.nodeType!==3) return; var txt=tn.nodeValue, m=txt.match(/[٠-٩\d]+/); if(!m) return; var target=parseInt(m[0].replace(/[٠-٩]/g,function(c){return AR.indexOf(c)}),10), t0=performance.now();
     (function f(now){ var k=Math.min(1,(now-t0)/1400), e=1-Math.pow(1-k,3); tn.nodeValue=txt.replace(m[0],ar(Math.round(target*e))); if(k<1) requestAnimationFrame(f); })(t0); }); },{threshold:.4});
   document.querySelectorAll('.stats b').forEach(function(b){ io.observe(b); });
+  /* S: scroll story */
+  if(img){ var story=el('section','ix-story','<div class="st"><div class="sc sc1"><img alt=""><h2>ساعة وحدة <em>معي</em></h2></div><div class="sc sc2"><div class="nums"><div><b>+٣٩</b><span>ألف متابع</span></div><div><b>+١٠</b><span>سنوات خبرة</span></div><div><b>٦٠</b><span>دقيقة أونلاين</span></div></div></div><div class="sc sc3"><h2>تطلع <em>بحلول تطبّقها</em></h2><p>مو كلام عام. خطة لمشروعك أنت.</p><a class="cta" href="#book">احجز موعدك المجاني ←</a></div><div class="bar"><i></i></div></div>');
+    story.querySelector('img').src=img.src; var hdr=document.querySelector('header.hero'); if(hdr) hdr.insertAdjacentElement('afterend',story);
+    function st(){ if(!H.classList.contains('iS')) return; var r=story.getBoundingClientRect(); var p=Math.min(1,Math.max(0,-r.top/(r.height-innerHeight))); story.style.setProperty('--p',p); story.classList.toggle('s1',p<.33); story.classList.toggle('s2',p>=.33&&p<.66); story.classList.toggle('s3',p>=.66); }
+    addEventListener('scroll',st,{passive:true}); st(); }
   /* K: kit style */
   var orbs=el('div','ix-orbs','<i></i><i></i><i></i>'); document.body.insertBefore(orbs,document.body.firstChild);
   if(ph){ var rib2=el('div','ix-rib','<svg viewBox="0 0 600 700" preserveAspectRatio="none"><defs><linearGradient id="ixrg2" x1="0" x2="1"><stop offset="0" stop-color="#F2C230" stop-opacity="0"/><stop offset=".35" stop-color="#F2C230"/><stop offset=".65" stop-color="#FFE58A"/><stop offset="1" stop-color="#F2C230" stop-opacity="0"/></linearGradient></defs><path class="r1" d="M-60,420 C120,300 220,520 380,400 C500,310 560,360 680,300"/><path class="r2" d="M-60,520 C100,420 260,600 400,470 C520,360 580,420 680,380"/><path class="r3" d="M-60,330 C140,250 240,430 400,330 C520,260 580,300 680,240"/></svg>'); ph.insertBefore(rib2,ph.firstChild);
@@ -80,6 +85,28 @@ if(PAGE==='system'){
   var secs=[].slice.call(document.querySelectorAll('header.hero, body>section')); var io2=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ var k=secs.indexOf(en.target); H.style.setProperty('--ixc',cols[k%3]); } }); },{threshold:.35}); secs.forEach(function(s){io2.observe(s)});
   var lis=document.querySelectorAll('.steps li'); lis.forEach(function(li,k){ li.style.setProperty('--k',k); var d=el('span','ix-dep','DEPT_'+String(k+1).padStart(2,'0')); li.appendChild(d); });
   var io3=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('ix-in'); io3.unobserve(en.target);} }); },{threshold:.2}); lis.forEach(function(li){io3.observe(li)});
+  var hv=document.querySelector('.hero-visual'); if(hv){ var gl=el('div','ix-globe'); hv.appendChild(gl); var started=false;
+    function startGlobe(){ if(started||!H.classList.contains('iG')) return; started=true; var sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; sc.onload=function(){ var T=window.THREE; var W=gl.clientWidth||520, Hh=gl.clientHeight||520;
+      var ren=new T.WebGLRenderer({antialias:true,alpha:true}); ren.setPixelRatio(Math.min(2,devicePixelRatio)); ren.setSize(W,Hh); gl.appendChild(ren.domElement);
+      var scene=new T.Scene(), cam=new T.PerspectiveCamera(38,W/Hh,.1,100); cam.position.set(0,0.3,4.9);
+      scene.add(new T.AmbientLight(0x8fa0ff,.55)); var dl=new T.DirectionalLight(0xfff2c0,1.3); dl.position.set(3,2,4); scene.add(dl); var gd=new T.PointLight(0xF2C230,1.2,6); gd.position.set(1.3,0.9,1.6); scene.add(gd);
+      var grp=new T.Group(); scene.add(grp);
+      var tex=new T.TextureLoader(); tex.crossOrigin='anonymous';
+      var mat=new T.MeshStandardMaterial({color:0x5566cc,roughness:.75,metalness:.15});
+      tex.load('https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/textures/planets/earth_atmos_2048.jpg',function(t){ mat.map=t; mat.color.set(0x7f8fe8); mat.needsUpdate=true; });
+      var earth=new T.Mesh(new T.SphereGeometry(1.5,64,64),mat); grp.add(earth);
+      var atm=new T.Mesh(new T.SphereGeometry(1.56,64,64),new T.MeshBasicMaterial({color:0x4a63ff,transparent:true,opacity:.12,side:T.BackSide})); grp.add(atm);
+      var glow=new T.Mesh(new T.SphereGeometry(1.75,48,48),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.05,side:T.BackSide})); grp.add(glow);
+      function ll(lat,lon,r){ var ph=(90-lat)*Math.PI/180, th=(lon+180)*Math.PI/180; return new T.Vector3(-r*Math.sin(ph)*Math.cos(th), r*Math.cos(ph), r*Math.sin(ph)*Math.sin(th)); }
+      var cities=[[29.37,47.98,1],[25.2,55.27,.6],[24.7,46.7,.6],[25.28,51.53,.5],[26.4,50.1,.5]]; var pins=[];
+      cities.forEach(function(c){ var m=new T.Mesh(new T.SphereGeometry(.018+.012*c[2],12,12),new T.MeshBasicMaterial({color:0xF2C230})); m.position.copy(ll(c[0],c[1],1.505)); grp.add(m);
+        var ring=new T.Mesh(new T.RingGeometry(.02,.03,32),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.8,side:T.DoubleSide})); ring.position.copy(ll(c[0],c[1],1.51)); ring.lookAt(new T.Vector3(0,0,0)); grp.add(ring); pins.push({r:ring,t:Math.random()*3,s:c[2]}); });
+      // face the Gulf (lon ~50) toward camera
+      grp.rotation.y=-(50+180)*Math.PI/180+Math.PI/2; grp.rotation.x=.25;
+      var t0=performance.now();
+      (function loop(now){ var dt=(now-t0)/1000; grp.rotation.y+=0.0012; pins.forEach(function(p){ var k=((dt+p.t)%3)/3; p.r.scale.setScalar(1+k*5*p.s); p.r.material.opacity=.8*(1-k); }); var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; grp.rotation.x=.25+sy*.5; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
+      addEventListener('resize',function(){ var W=gl.clientWidth, Hh=gl.clientHeight; cam.aspect=W/Hh; cam.updateProjectionMatrix(); ren.setSize(W,Hh); }); }; document.head.appendChild(sc); }
+    startGlobe(); document.addEventListener('ix-change',startGlobe); }
   var cta=document.querySelector('a.cta[href="#"]'); if(cta){ var waurl='https://wa.me/96590000937?text='+encodeURIComponent('السلام عليكم، أبي أشتري نظام التسويق الذكي ($75)'); function setC(){ cta.setAttribute('href', H.classList.contains('i12')?waurl:'#'); cta.target=H.classList.contains('i12')?'_blank':''; } setC(); document.addEventListener('ix-change',setC); }
 }
 /* ================= KIT ================= */
@@ -95,6 +122,14 @@ if(PAGE==='kit'){
   document.body.appendChild(el('div','ix-pkglow'));
   document.querySelectorAll('.pk').forEach(function(pk){ pk.addEventListener('click',function(e){ if(e.target.closest('a')) return; var on=pk.classList.contains('ix-on'); document.querySelectorAll('.pk').forEach(function(p){p.classList.remove('ix-on')}); if(on){ H.classList.remove('ix-focus'); } else { pk.classList.add('ix-on'); H.classList.add('ix-focus'); } }); });
 }
+/* ================= L: intro + transitions ================= */
+var intro=el('div','ix-intro','<svg viewBox="0 0 64 64"><path class="p1" d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z"/><rect class="p2" x="31" y="8" width="25" height="25" rx="8"/></svg><div class="w">Business Status</div><i></i>');
+document.body.appendChild(intro);
+var seen=false; try{ seen=sessionStorage.getItem('ix-intro')==='1'; }catch(e){}
+if(H.classList.contains('iL') && !seen){ intro.classList.add('play'); try{ sessionStorage.setItem('ix-intro','1'); }catch(e){} setTimeout(function(){ intro.classList.remove('play'); intro.classList.add('done'); },2100); } else { intro.classList.add('done'); }
+H.classList.add('ix-ready');
+document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!H.classList.contains('iL')) return; var href=a.getAttribute('href'); if(!href||href.charAt(0)==='#'||a.target==='_blank'||/^(https?:|mailto:|tel:|wa\.me)/.test(href)&&!/hmdalkhudhari\.github\.io\/files\/preview/.test(href)) return; e.preventDefault(); intro.classList.remove('done'); intro.classList.add('out'); setTimeout(function(){ location.href=a.href; },420); });
+addEventListener('pageshow',function(ev){ if(ev.persisted||intro.classList.contains('out')){ intro.classList.remove('out'); intro.classList.add('done'); } });
 /* ================= PANEL ================= */
 var pages=[['home','الرئيسية'],['consult','الاستشارة'],['system','النظام'],['kit','الكت']];
 var btn=el('button','ixp-btn','✦ الأفكار <span>('+list.length+')</span>'); btn.type='button';
