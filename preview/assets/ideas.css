@@ -277,7 +277,7 @@ html.iM .ix-mq:hover .track{animation-play-state:paused}
 @keyframes ixmq{to{transform:translateX(-50%)}}
 html.iM .ix-mq .t{flex:none;width:128px;height:72px;border-radius:16px;background:#fff;display:grid;place-items:center;padding:10px;filter:grayscale(1) opacity(.72);transition:.35s;overflow:hidden}
 html.iM .ix-mq .t img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-html.iM .ix-mq .t.txt{font:700 14px "Inter",system-ui,sans-serif;color:#1E2A66;letter-spacing:.02em}
+html.iM .ix-mq .t.txt{font:700 14px "IBM Plex Sans Arabic","Inter",system-ui,sans-serif;color:#1E2A66;letter-spacing:.02em}
 html.iM .ix-mq .t:hover{filter:none;transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(242,194,48,.8)}
 html.iM .ix-mq::before,html.iM .ix-mq::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
 html.iM .ix-mq::before{left:0;background:linear-gradient(90deg,#0E1440,transparent)}html.iM .ix-mq::after{right:0;background:linear-gradient(-90deg,#0E1440,transparent)}
