@@ -121,19 +121,20 @@ if(PAGE==='system'){
       var pins=[], arcs=[];
       function ring(lat,lon,s){ var r=new T.Mesh(new T.RingGeometry(.02,.03,32),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:0,side:T.DoubleSide})); r.position.copy(ll(lat,lon,R*1.01)); r.lookAt(new T.Vector3(0,0,0)); grp.add(r); return {r:r,s:s}; }
       var hubRing=ring(KW[0],KW[1],1.2); hubRing.t=0; pins.push(hubRing);
-      dests.forEach(function(dst,k){ var a=ll(KW[0],KW[1],R), b=ll(dst[0],dst[1],R), dist=a.distanceTo(b), mid=a.clone().add(b).multiplyScalar(.5).normalize().multiplyScalar(R+dist*.45);
-        var curve=new T.QuadraticBezierCurve3(a,mid,b), pts=curve.getPoints(90), g=new T.BufferGeometry().setFromPoints(pts);
-        var line=new T.Line(g,new T.LineBasicMaterial({color:0xF2C230,transparent:true,opacity:.9})); g.setDrawRange(0,0); grp.add(line);
-        var head=new T.Mesh(new T.SphereGeometry(.022,10,10),new T.MeshBasicMaterial({color:0xFFE58A})); grp.add(head);
-        var land=ring(dst[0],dst[1],1); var dot=new T.Mesh(new T.SphereGeometry(.016,10,10),new T.MeshBasicMaterial({color:0xF2C230})); dot.position.copy(ll(dst[0],dst[1],R*1.004)); grp.add(dot);
-        arcs.push({g:g,line:line,head:head,pts:pts,land:land,off:k*.55,dur:2.4+Math.random()*.8}); });
+      dests.forEach(function(dst,k){ var a=ll(KW[0],KW[1],R), b=ll(dst[0],dst[1],R), dist=a.distanceTo(b), mid=a.clone().add(b).multiplyScalar(.5).normalize().multiplyScalar(R+dist*.22);
+        var curve=new T.QuadraticBezierCurve3(a,mid,b), pts=curve.getPoints(120);
+        /* steady data line */
+        grp.add(new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:0xF2C230,transparent:true,opacity:.28})));
+        /* packets: short bright segments streaming along the line */
+        var pk=[]; for(var j=0;j<3;j++){ var g=new T.BufferGeometry().setFromPoints(pts); g.setDrawRange(0,0); var ln=new T.Line(g,new T.LineBasicMaterial({color:0xFFE58A,transparent:true,opacity:.95})); grp.add(ln); pk.push({g:g,ph:j/3}); }
+        var dot=new T.Mesh(new T.SphereGeometry(.014,10,10),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.9})); dot.position.copy(ll(dst[0],dst[1],R*1.004)); grp.add(dot);
+        arcs.push({pk:pk,n:pts.length,dot:dot,spd:.22+Math.random()*.12,off:Math.random()}); });
       grp.rotation.y=-(48+180)*Math.PI/180+Math.PI/2; grp.rotation.x=.3;
-      var t0=performance.now(), CYC=8;
+      var t0=performance.now();
       (function loop(now){ var dt=Math.max(0,(now-t0)/1000); grp.rotation.y+=0.0011;
-        var hk=(dt%1.6)/1.6; hubRing.r.scale.setScalar(1+hk*5); hubRing.r.material.opacity=.7*(1-hk);
-        arcs.forEach(function(A){ var t=((dt+A.off)%CYC); var n=A.pts.length, p=t/A.dur;
-          if(p<=1){ var e=Math.max(1,Math.min(n-1,Math.floor(p*n))), tail=Math.max(0,e-36); A.g.setDrawRange(tail,e-tail); A.head.visible=true; A.head.position.copy(A.pts[Math.min(n-1,e)]); A.line.material.opacity=.95; A.land.r.material.opacity=0; }
-          else { A.head.visible=false; var q=(t-A.dur)/1.2; if(q<1){ A.g.setDrawRange(0,n); A.line.material.opacity=.35*(1-q); A.land.r.scale.setScalar(1+q*4); A.land.r.material.opacity=.8*(1-q);} else { A.g.setDrawRange(0,0); A.land.r.material.opacity=0; } } });
+        var hk=(dt%2.4)/2.4; hubRing.r.scale.setScalar(1+hk*3); hubRing.r.material.opacity=.45*(1-hk);
+        arcs.forEach(function(A){ A.pk.forEach(function(P){ var u=(dt*A.spd+A.off+P.ph)%1, e=Math.floor(u*A.n), L=10, st=Math.max(0,e-L); P.g.setDrawRange(st,Math.max(0,e-st)); });
+          A.dot.material.opacity=.55+.45*Math.sin(dt*3+A.off*6); });
         var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
       addEventListener('resize',function(){ var W=gl.clientWidth, Hh=gl.clientHeight; cam.aspect=W/Hh; cam.updateProjectionMatrix(); ren.setSize(W,Hh); }); }; document.head.appendChild(sc); }
     startGlobe(); document.addEventListener('ix-change',startGlobe); }
