@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>٥ قوالب تطلع لك إعلانك · حمد الخضري</title>
+<meta name="description" content="اختار قالب، جاوب على كم سؤال، وانسخ البرومبت. يطلع لك إعلانك بثلاث صياغات.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1E2A66;--card:#2A3680;--gold:#F2C230}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--navy)}
+body{background:var(--navy);background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px);background-size:20px 20px;color:#fff;font-family:Tajawal,sans-serif;-webkit-font-smoothing:antialiased;padding-bottom:70px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+.g{color:var(--gold)}
+.en{font-family:Poppins;direction:ltr;unicode-bidi:isolate}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.top img{height:32px}
+.top .ig{font:700 13px Poppins;opacity:.8}
+.hero{padding:18px 0 6px}
+.kick{display:inline-block;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 14px;font-weight:800;font-size:13px;color:var(--gold)}
+h1{font-size:clamp(32px,8vw,48px);font-weight:900;line-height:1.15;margin-top:14px}
+.hero p{font-size:16px;opacity:.85;margin-top:10px;font-weight:700;line-height:1.6}
+.gl{position:relative;display:block;margin:26px 0 6px;padding:18px 18px 16px;border-radius:16px;background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border:1.5px solid rgba(255,90,95,.9);box-shadow:0 0 0 4px rgba(255,90,95,.15)}
+.gl .tg{position:absolute;top:-12px;right:16px;background:#FF5A5F;color:#fff;font-weight:800;font-size:12px;padding:3px 12px;border-radius:999px}
+.gl .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gl b{font-weight:800;font-size:18px;line-height:1.35}
+.gl b i{display:block;font-style:normal;font-family:Poppins;font-weight:800;font-size:36px;color:#FF5A5F;line-height:1.1}
+.gl .bt{flex:0 0 auto;background:#fff;color:var(--navy);font-weight:800;font-size:14px;padding:10px 16px;border-radius:12px}
+.sdiv{height:1px;border:0;margin:30px 0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16) 20%,rgba(242,194,48,.35) 50%,rgba(255,255,255,.16) 80%,transparent)}
+.step{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.step .sn{width:32px;height:32px;border-radius:10px;background:var(--gold);color:var(--navy);font:800 15px Poppins;display:flex;align-items:center;justify-content:center;flex:none}
+.step h2{font-size:22px;font-weight:900}
+.tpls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.tp{min-width:0;text-align:right;background:var(--card);border:2px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 14px 12px;color:#fff;font-family:inherit;cursor:pointer;transition:transform .15s,border-color .2s}
+.tp:active{transform:scale(.98)}
+.tp .tg{font-size:12px;font-weight:800;color:var(--gold);opacity:.9}
+.tp .nm{font-size:18px;font-weight:900;margin-top:4px;line-height:1.3}
+.tp .ex{font-size:13px;opacity:.72;margin-top:6px;line-height:1.5;font-weight:700}
+.tp.on{border-color:var(--gold);background:#33408f}
+.tp:last-child{grid-column:1/-1}
+.q{background:var(--card);border-radius:16px;padding:16px;margin-bottom:10px;border:1px solid rgba(255,255,255,.08);min-width:0}
+.q label{display:block;font-size:16px;font-weight:800;margin-bottom:10px}
+.q label small{font-size:12px;opacity:.6;font-weight:700;margin-inline-start:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid rgba(255,255,255,.22);background:transparent;color:#fff;font:700 14px Tajawal;padding:8px 13px;border-radius:999px;cursor:pointer;transition:all .15s}
+.chip.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.q input{width:100%;margin-top:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.16);border-radius:12px;padding:12px 14px;color:#fff;font:700 15px Tajawal;outline:none}
+.q input:focus{border-color:var(--gold)}
+.q input::placeholder{color:rgba(255,255,255,.4)}
+.q .solo{margin-top:0}
+.hid{display:none}
+.out{background:#fff;color:var(--navy);border-radius:18px;padding:16px;position:relative}
+.out pre{white-space:pre-wrap;word-break:break-word;font:700 14px/1.75 Tajawal;max-height:240px;overflow:auto}
+.out .miss{font-size:13px;font-weight:800;color:#b5860b;margin-bottom:8px}
+.acts{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:12px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--navy);font:800 17px Tajawal;padding:15px 18px;border-radius:14px;border:0;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;width:100%}
+.btn:after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-70%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);animation:shine 2.8s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-70%}100%{left:130%}}
+.btn.done{background:#3ddc84}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.btn.gh{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);font-size:15px;padding:12px}
+.btn.gh:after{display:none}
+.hint{font-size:13px;opacity:.7;margin-top:10px;font-weight:700;line-height:1.6}
+.end{text-align:center;padding:10px 0}
+.end h3{font-size:22px;font-weight:900}
+.end .two{margin-top:14px}
+footer{text-align:center;opacity:.45;font:600 11px Poppins;letter-spacing:2px;padding:26px 0 0}
+.scrl{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:50;width:44px;height:44px;border-radius:50%;background:rgba(30,42,102,.9);border:1.5px solid rgba(242,194,48,.7);display:flex;align-items:center;justify-content:center;color:var(--gold);cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.35);transition:opacity .35s;animation:bob 1.6s ease-in-out infinite}
+.scrl svg{width:22px;height:22px}
+.scrl.hide{opacity:0;pointer-events:none}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.btn:after,.scrl{animation:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="top"><img src="logo.png" alt="Hamad Alkhudhari"><a class="ig en" href="https://www.instagram.com/hmdalkhudhari/" target="_blank" rel="noopener">@hmdalkhudhari</a></div>
+
+ <div class="hero">
+  <span class="kick">ملف مجاني</span>
+  <h1>٥ قوالب <span class="g">تطلع لك إعلانك</span></h1>
+  <p>اختار قالب، جاوب بضغطات، انسخ، والـAI يكتب لك ٣ صياغات.</p>
+  <a class="gl" href="https://bznstatus.com/consult/"><span class="tg">عرض خاص</span><div class="row"><b>لكم خصم خاص<i>٢٥٪</i></b><span class="bt">اضغط هنا ←</span></div></a>
+ </div>
+
+ <hr class="sdiv">
+ <section class="rv">
+  <div class="step"><span class="sn">1</span><h2>اختار القالب</h2></div>
+  <div class="tpls" id="tpls">
+   <button class="tp on" data-t="pain"><div class="tg">مشكلة وحل</div><div class="nm">الألم</div><div class="ex">«تعبت تدوّر باركن؟»</div></button>
+   <button class="tp" data-t="ba"><div class="tg">مشكلة وحل</div><div class="nm">قبل وبعد</div><div class="ex">«كان… وصار…»</div></button>
+   <button class="tp" data-t="obj"><div class="tg">مشكلة وحل</div><div class="nm">الاعتراض</div><div class="ex">«تقول غالي؟»</div></button>
+   <button class="tp" data-t="cur"><div class="tg">فضول</div><div class="nm">الشي اللي ما يعرفه</div><div class="ex">«٣ أشياء ما يقولها لك أحد»</div></button>
+   <button class="tp" data-t="hook"><div class="tg">قواعد الهوكات العالمية</div><div class="nm">هوك مثل الريلات اللي ضربت بالملايين</div><div class="ex">نتيجة أو رقم بأول ٣ ثواني</div></button>
+  </div>
+ </section>
+
+ <hr class="sdiv">
+ <section class="rv">
+  <div class="step"><span class="sn">2</span><h2>عن مشروعك</h2></div>
+
+  <div class="q"><label>شنو تبيع؟</label><input class="solo" id="prod" placeholder="مثال: قهوة مختصة، عبايات، تنظيف سيارات"></div>
+
+  <div class="q"><label>نوع مشروعك</label><div class="chips" data-k="biz">
+   <button class="chip">مطعم أو كافيه</button><button class="chip">ملابس وعبايات</button><button class="chip">عطور</button><button class="chip">تجميل وصالون</button><button class="chip">عيادة</button><button class="chip">متجر أونلاين</button><button class="chip">خدمات</button><button class="chip">عقار</button></div></div>
+
+  <div class="q"><label>عميلك منو؟</label><div class="chips" data-k="who" data-multi="1">
+   <button class="chip">موظفين</button><button class="chip">أمهات</button><button class="chip">شباب</button><button class="chip">بنات</button><button class="chip">أصحاب مشاريع</button><button class="chip">عوايل</button></div></div>
+
+  <div class="q t-pain t-obj t-hook"><label>شنو مشكلة عميلك؟</label><div class="chips" data-k="prob">
+   <button class="chip">ما عنده وقت</button><button class="chip">يحس السعر غالي</button><button class="chip">مو واثق بالجودة</button><button class="chip">جرب غيرك وما عجبه</button><button class="chip">ما يدري إنك موجود</button><button class="chip">المكان بعيد عنه</button></div>
+   <input id="probx" placeholder="أو اكتبها بكلامك"></div>
+
+  <div class="q t-ba hid"><label>حال عميلك قبل</label><input class="solo" id="before" placeholder="مثال: يقعد ساعة يدور باركن"></div>
+  <div class="q t-ba hid"><label>حاله بعد</label><input class="solo" id="after" placeholder="مثال: يوقف قدام الباب ويطلع بخمس دقايق"></div>
+
+  <div class="q t-obj hid"><label>شنو يقول العميل؟</label><div class="chips" data-k="objn">
+   <button class="chip">«غالي»</button><button class="chip">«ما أحتاجه»</button><button class="chip">«جربت غيرك»</button><button class="chip">«بفكر وأرد عليك»</button><button class="chip">«ألقاه أونلاين أرخص»</button></div></div>
+
+  <div class="q t-cur hid"><label>شكل الفضول</label><div class="chips" data-k="curf">
+   <button class="chip">٣ أشياء ما يعرفها عن مجالك</button><button class="chip">الغلط اللي يسويه الكل</button><button class="chip">السبب الحقيقي ورا مشكلة</button><button class="chip">شي مخفي ما أحد يقوله</button></div>
+   <input id="curx" placeholder="معلومة حقيقية تعرفها أنت بمجالك (اختياري)"></div>
+
+  <div class="q t-hook hid"><label>نوع الهوك</label><div class="chips" data-k="hk">
+   <button class="chip">الكشف: رقم صغير ← رقم كبير</button><button class="chip">الطريقة: إذا سويت كذا يطلع لك كذا</button><button class="chip">الخسارة: إذا تسوي كذا تخسر</button><button class="chip">الألم: كل ما… تسألوني</button></div>
+   <input id="nums" placeholder="رقم حقيقي عندك؟ مثال: من ٣ طلبات صار ٤٠ (اختياري)"></div>
+
+  <div class="q"><label>عندك عرض؟</label><div class="chips" data-k="offer">
+   <button class="chip">خصم</button><button class="chip">هدية</button><button class="chip">توصيل مجاني</button><button class="chip">تجربة مجانية</button><button class="chip">بدون عرض</button></div>
+   <input id="offx" placeholder="التفاصيل: مثال ٢٠٪ لين الخميس"></div>
+
+  <div class="q"><label>وين بتنشره؟</label><div class="chips" data-k="where">
+   <button class="chip">ريل</button><button class="chip">ستوري</button><button class="chip">بوست</button><button class="chip">إعلان ممول</button><button class="chip">واتساب</button></div></div>
+
+  <div class="q"><label>النبرة</label><div class="chips" data-k="tone">
+   <button class="chip">كويتي ودي</button><button class="chip">خليجي عام</button><button class="chip">فخم</button><button class="chip">مرح</button></div></div>
+ </section>
+
+ <hr class="sdiv">
+ <section class="rv">
+  <div class="step"><span class="sn">3</span><h2>انسخ والصق</h2></div>
+  <div class="out"><div class="miss" id="miss"></div><pre id="prompt"></pre></div>
+  <div class="acts">
+   <button class="btn" id="copy">انسخ البرومبت</button>
+   <div class="two"><a class="btn gh" href="https://chatgpt.com/" target="_blank" rel="noopener">افتح ChatGPT</a><a class="btn gh" href="https://claude.ai/new" target="_blank" rel="noopener">افتح Claude</a></div>
+  </div>
+  <p class="hint">الصقه وبيطلع لك ٣ صياغات. خذ اللي يعجبك، أو قول له «أقوى» أو «أقصر».</p>
+ </section>
+
+ <hr class="sdiv">
+ <div class="end">
+  <h3>إذا مو متابعني، <span class="g">تابعني</span></h3>
+  <div class="two"><a class="btn" href="https://www.instagram.com/hmdalkhudhari/" target="_blank" rel="noopener">انستقرام</a><a class="btn gh" href="https://wa.me/message/D6QAVYNNKNQZA1" target="_blank" rel="noopener">واتساب</a></div>
+ </div>
+ <footer>HAMAD ALKHUDHARI · BUSINESS &amp; AI</footer>
+</div>
+
+<a class="scrl" id="scrl" aria-label="down"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+
+<script>
+(function(){
+var T='pain',S={};
+var NAMES={pain:'الألم (مشكلة وحل)',ba:'قبل وبعد (مشكلة وحل)',obj:'الرد على الاعتراض (مشكلة وحل)',cur:'الفضول',hook:'قواعد الهوكات العالمية'};
+var $=function(i){return document.getElementById(i)};
+function v(id){var e=$(id);return e?e.value.trim():''}
+function pick(k){return (S[k]||[]).join('، ')}
+function both(k,id){var a=pick(k),b=v(id);return [a,b].filter(Boolean).join('، ')}
+
+document.querySelectorAll('.tp').forEach(function(b){b.onclick=function(){
+ document.querySelectorAll('.tp').forEach(function(x){x.classList.toggle('on',x===b)});T=b.dataset.t;
+ document.querySelectorAll('.q').forEach(function(q){var c=[].slice.call(q.classList).filter(function(x){return x.indexOf('t-')===0});if(!c.length)return;q.classList.toggle('hid',c.indexOf('t-'+T)<0)});
+ render();}});
+document.querySelectorAll('.chips').forEach(function(g){var k=g.dataset.k,m=g.dataset.multi;g.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){
+ if(!m){g.querySelectorAll('.chip').forEach(function(x){if(x!==c)x.classList.remove('on')})}
+ c.classList.toggle('on');S[k]=[].slice.call(g.querySelectorAll('.chip.on')).map(function(x){return x.textContent});render();}})});
+document.querySelectorAll('input').forEach(function(i){i.oninput=render});
+
+function render(){
+ var prod=v('prod'),biz=pick('biz'),who=pick('who'),where=pick('where')||'ريل أو بوست',tone=pick('tone')||'كويتي ودي',offer=both('offer','offx');
+ var miss=[];if(!prod)miss.push('شنو تبيع');
+ var L=[];
+ L.push('إنت كاتب إعلانات محترف للسوق الكويتي والخليجي. اكتب لي إعلان على قالب «'+NAMES[T]+'».');
+ L.push('');L.push('معلومات مشروعي:');
+ L.push('- أبيع: '+(prod||'[اكتب شنو تبيع]')+(biz?' ('+biz+')':''));
+ if(who)L.push('- عميلي: '+who);
+ if(T==='pain'||T==='obj'||T==='hook'){var p=both('prob','probx');if(p)L.push('- مشكلة عميلي: '+p);else if(T!=='hook')miss.push('مشكلة عميلك')}
+ if(T==='ba'){var bf=v('before'),af=v('after');L.push('- حال العميل قبل: '+(bf||'[قبل]'));L.push('- حاله بعد: '+(af||'[بعد]'));if(!bf||!af)miss.push('قبل وبعد')}
+ if(T==='obj'){var o=pick('objn');L.push('- العميل يقول: '+(o||'[الاعتراض]'));if(!o)miss.push('شنو يقول العميل')}
+ if(T==='cur'){var cf=pick('curf');L.push('- شكل الفضول: '+(cf||'[اختار شكل]'));if(v('curx'))L.push('- معلومة حقيقية من مجالي: '+v('curx'));if(!cf)miss.push('شكل الفضول')}
+ if(T==='hook'){var hk=pick('hk');L.push('- نوع الهوك: '+(hk||'[اختار نوع]'));if(v('nums'))L.push('- رقم حقيقي عندي: '+v('nums'));if(!hk)miss.push('نوع الهوك')}
+ if(offer&&offer!=='بدون عرض')L.push('- العرض: '+offer);
+ L.push('- مكان النشر: '+where);
+ L.push('- النبرة: '+tone);
+ L.push('');L.push('طريقة القالب:');
+ var R={
+  pain:'ابدأ بالمشكلة اللي يعيشها عميلي بكلامه هو، كأنك تشوف يومه. بعدها منتجي هو الحل بجملة وحدة واضحة. لا تبدأ باسم المحل ولا بالعرض.',
+  ba:'ابدأ بحال العميل قبل بصورة يتخيلها، وبعدها حاله بعد. الفرق لازم ينشاف، والمنتج هو اللي سوّى الفرق.',
+  obj:'ابدأ بالجملة اللي يقولها العميل نفسها، ورد عليها بحقيقة أو مقارنة بسيطة، مو بدفاع. خل العميل يحس إنك فاهمه.',
+  cur:'ابدأ بشي يخلي العميل يبي يكمل: معلومة ما يعرفها أو غلط يسويه. لا تكشف كل شي بأول سطر. الجواب يكون عن منتجي بالنهاية. لا تألف معلومة؛ إذا ما عطيتك معلومة حقيقية، خلها عامة ومنطقية.',
+  hook:'استخدم نوع الهوك اللي اخترته بالضبط. أول سطر يبدأ بالنتيجة أو برقم أو بـ«إنت»، مو بمقدمة. إذا الهوك يحتاج رقم وأنا ما عطيتك رقم حقيقي، اكتب [الرقم] ولا تألف.'
+ };
+ L.push(R[T]);
+ L.push('');L.push('القواعد:');
+ L.push('- أول سطر من ٥ إلى ١٢ كلمة، يكلم العميل بـ«إنت» أو يبدأ بمشكلته أو بالنتيجة.');
+ L.push('- كل جملة شي ينشاف أو يصير، مو مدح.');
+ L.push('- لا تألف أرقام أو آراء عملاء.');
+ L.push('- ممنوع: تخيل، هل تعلم، سر النجاح، يغير حياتك، الأفضل، لا تفوت الفرصة، وهنا تجي العبقرية.');
+ L.push('- آخر سطر دعوة وحدة واضحة للفعل تناسب '+where+'.');
+ L.push('');L.push('أبي ٣ صياغات مختلفة. كل صياغة فيها: أول سطر، نص الإعلان (٣ إلى ٥ أسطر)، ودعوة للفعل. وبعدها قول لي أي وحدة أقوى وليش بسطر.');
+ $('prompt').textContent=L.join('\n');
+ $('miss').textContent=miss.length?'ناقص: '+miss.join('، '):'';
+}
+$('copy').onclick=function(){var t=$('prompt').textContent,b=this;
+ function ok(){b.textContent='✓ انتسخ';b.classList.add('done');setTimeout(function(){b.textContent='انسخ البرومبت';b.classList.remove('done')},1800)}
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,fb)}else fb();
+ function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);ok()}};
+render();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+var sb=$('scrl');function u(){sb.classList.toggle('hide',scrollY+innerHeight>=document.documentElement.scrollHeight-80)}
+sb.onclick=function(){scrollBy({top:innerHeight*.8,behavior:'smooth'})};addEventListener('scroll',u,{passive:true});u();
+})();
+</script>
+</body>
+</html>
