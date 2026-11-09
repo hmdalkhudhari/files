@@ -2,39 +2,43 @@
 (function(){
 var S=document.currentScript, PAGE=S.getAttribute('data-page'), H=document.documentElement;
 var IDEAS={
- home:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['M','شريط لوجوات العملاء يتحرك','١٦ شركة، يوقف لما تمر عليه'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
- consult:[['M','شريط لوجوات العملاء يتحرك','١٦ شركة، يوقف لما تمر عليه'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- system:[['M','شريط لوجوات العملاء يتحرك','١٦ شركة، يوقف لما تمر عليه'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['G','كرة أرضية ليلية 3D','الخليج يضوي ذهبي وتغطس مع السكرول'],['3','ساعة حية فوق الكرة','توقيت الكويت بالثواني'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- kit:[['M','شريط لوجوات العملاء يتحرك','١٦ شركة، يوقف لما تمر عليه'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
+ home:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['B','خلفية الرئيسية أغمق شوي','نفس الخلفية بكل الصفحات'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
+ consult:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ system:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['G','كرة أرضية ليلية 3D','الخليج يضوي ذهبي وتغطس مع السكرول'],['3','ساعة حية فوق الكرة','توقيت الكويت بالثواني'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
+ kit:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
-var list=IDEAS[PAGE]||[], KEY='ix-'+PAGE, state={};
+H.classList.add('pg-'+PAGE); var list=IDEAS[PAGE]||[], KEY='ix-'+PAGE, state={};
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 list.forEach(function(it){ if(!(it[0] in state)) state[it[0]]=true; });
 function apply(){ list.forEach(function(it){ H.classList.toggle('i'+it[0], !!state[it[0]]); }); try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){} }
 apply();
 function el(tag,cls,html){var e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;}
 var AR=['٠','١','٢','٣','٤','٥','٦','٧','٨','٩']; function ar(n){return String(n).replace(/\d/g,function(d){return AR[d]})}
+function kwt(sec){ try{ var p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Kuwait',hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true}).formatToParts(new Date()),o={}; p.forEach(function(x){o[x.type]=x.value}); return o.hour+':'+o.minute+(sec?':'+o.second:'')+' '+(o.dayPeriod==='PM'?'م':'ص'); }catch(e){return '--:--'} }
 function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded',fn); }
 
 ready(function(){
-if(PAGE!=='home'){ document.body.insertBefore(el('div','ix-bg'),document.body.firstChild); }
+document.body.insertBefore(el('div','ix-bg'),document.body.firstChild);
+/* ads link in nav + footer (Hamad 11-08) */
+(function(){ var nl=document.querySelector('.bsn-links'); if(nl&&!nl.querySelector('[data-p="kit"]')){ var a=el('a',null,'<span class="ar">الإعلانات والتعاون</span><span class="en">Ads & Partnerships</span>'); a.setAttribute('data-p','kit'); a.href='../kit/'; if(PAGE==='kit') a.setAttribute('aria-current','page'); nl.appendChild(a); }
+  var sh=document.querySelector('.bsn-sheet'); if(sh&&!sh.querySelector('[data-p="kit"]')){ var ls=sh.querySelectorAll('a.l'), last=ls[ls.length-1]; var k=el('a','l','<small>04</small><span class="ar">الإعلانات والتعاون</span><span class="en">Ads & Partnerships</span>'); k.setAttribute('data-p','kit'); k.href='../kit/'; if(last) last.insertAdjacentElement('afterend',k); }
+  var fu=document.querySelector('.bsf ul'); if(fu&&!fu.querySelector('a[href="../kit/"]')){ var li=el('li',null,'<a href="../kit/"><span class="ar">الإعلانات والتعاون (Media Kit)</span><span class="en">Ads & Partnerships (Media Kit)</span></a>'); fu.appendChild(li); } })();
 /* M: marquee */
-var LOGOS=[['dozzie.webp','Dozzie'],['ghrelin.webp','Ghrelin'],['hair-affair.webp','Hair Affair'],['kham.webp','Kham'],['liva.webp','Liva'],['loyac.webp','LOYAC'],['mushtari.webp','Mushtari'],['noun-line.webp','Noun Line'],['pine-wood.webp','Pine Wood'],['positive-coffee.webp','Positive Coffee'],['selvix.webp','Selvix'],['skala-spa.webp','Skála Spa'],['ymh-trading.webp','YMH Trading'],[null,'Lumen Pro'],[null,'Bravo'],[null,'Jakh Fabrics']];
-var tiles=LOGOS.map(function(l){ return l[0]? '<span class="t"><img src="../assets/logos/'+l[0]+'" alt="'+l[1]+'" loading="lazy"></span>' : '<span class="t txt">'+l[1]+'</span>'; }).join('');
+var LOGOS=[['dozzie.webp','Dozzie'],['ghrelin.webp','Ghrelin'],['hair-affair.webp','Hair Affair'],['kham.webp','Kham'],['liva.webp','Liva'],['loyac.webp','LOYAC'],['mushtari.webp','Mushtari'],['noun-line.webp','Noun Line'],['pine-wood.webp','Pine Wood'],['positive-coffee.webp','Positive Coffee'],['selvix.webp','Selvix'],['skala-spa.webp','Skála Spa'],['ymh-trading.webp','YMH Trading'],['a7rf.webp','لعبة أحرف'],['bravo.webp','Bravo'],['jakh.webp','Jakh Fabrics'],['lumen-pro.webp','Lumen Pro'],['miel.webp','Miel Salon'],['jacquard.webp','Jacquard'],['novel.webp','Novel']];
+var tiles=LOGOS.map(function(l){ return l[0]? '<span class="t"><img src="../assets/logos/'+l[0]+'" alt="'+l[1]+'"></span>' : '<span class="t txt">'+l[1]+'</span>'; }).join('');
 var mq=el('section','ix-mq','<div class="lbl">اشتغلنا مع</div><div class="track">'+tiles+tiles+'</div>');
 var anchor=document.querySelector('.hero, header.hero'); if(PAGE==='kit') anchor=document.querySelector('.stats')||anchor;
-if(anchor) anchor.insertAdjacentElement('afterend',mq);
+if(anchor && PAGE!=='kit') anchor.insertAdjacentElement('afterend',mq);
+mq.addEventListener('click',function(){ var tr=mq.querySelector('.track'); tr.style.animationPlayState='paused'; clearTimeout(mq._t); mq._t=setTimeout(function(){ tr.style.animationPlayState='running'; },3000); });
 /* ================= HOME ================= */
 if(PAGE==='home'){
   var hero=document.querySelector('.hero');
   if(hero){ hero.appendChild(el('div','ix-wm','BUSINESS STATUS'));
     addEventListener('scroll',function(){ H.style.setProperty('--ixs', (-scrollY*0.35)+'px'); },{passive:true}); }
-  var t=el('section','ix-trust','<div class="in"><span class="stars"><b>★★★★★</b> خبرة أكثر من ١٠ سنوات</span><span class="lbl">اشتغلنا مع</span><span class="logos"><span><img src="../assets/lumen.jpg" alt="">Lumen Pro</span><span><img src="../assets/bravo.jpg" alt="">Bravo</span><span><img src="../assets/jakh.jpg" alt="">Jakh Fabrics</span></span></div>');
-  if(hero) hero.insertAdjacentElement('afterend',t);
   var end=document.querySelector('.bsn-end');
   if(end){ var c=el('span','ix-clock','<i></i>الكويت <b>--:--</b>'); end.insertBefore(c,end.firstChild);
-    var c2=el('div','ix-clock2','<i></i>الكويت الحين <b>--:--</b>'); var ht=document.querySelector('.hero .htext'); if(ht) ht.insertBefore(c2,ht.firstChild);
-    function tick(){ try{ var v=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuwait',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); c.querySelector('b').textContent=v; c2.querySelector('b').textContent=v; }catch(e){} } tick(); setInterval(tick,1000); }
+    var c2=el('div','ix-clock2','<span><i></i>الكويت <b>--:--</b></span>'); var hb=document.querySelector('header.bsn'); if(hb) hb.insertBefore(c2,hb.firstChild);
+    function tick(){ try{ var v=kwt(false); c.querySelector('b').textContent=v; c2.querySelector('b').textContent=v; }catch(e){} } tick(); setInterval(tick,1000); }
   var h1=document.querySelector('.hero h1 .ar');
   if(h1){ var orig=h1.innerHTML; var alt='سوّق <em class="ix-gw">أذكى</em>، مو أكثر.';
     function setH(){ h1.innerHTML = H.classList.contains('i4')?alt:orig; } setH(); document.addEventListener('ix-change',setH); }
@@ -91,27 +95,47 @@ if(PAGE==='system'){
   var lis=document.querySelectorAll('.steps li'); lis.forEach(function(li,k){ li.style.setProperty('--k',k); var d=el('span','ix-dep','DEPT_'+String(k+1).padStart(2,'0')); li.appendChild(d); });
   var io3=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('ix-in'); io3.unobserve(en.target);} }); },{threshold:.2}); lis.forEach(function(li){io3.observe(li)});
   var hv=document.querySelector('.hero-visual'); if(hv){ var gl=el('div','ix-globe'); hv.appendChild(gl); var started=false;
-    var gc=el('div','ix-gclock','<i></i>لايف · الكويت <b>--:--:--</b>'); gl.appendChild(gc); (function tk(){ try{ gc.querySelector('b').textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuwait',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date()); }catch(e){} setTimeout(tk,1000); })();
+    var gc=el('div','ix-gclock','<i></i>الكويت <b>--:--:--</b>'); gl.appendChild(gc); (function tk(){ try{ gc.querySelector('b').textContent=kwt(true); }catch(e){} setTimeout(tk,1000); })();
     function startGlobe(){ if(started||!H.classList.contains('iG')) return; started=true; var sc=document.createElement('script'); sc.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'; sc.onload=function(){ var T=window.THREE; var W=gl.clientWidth||520, Hh=gl.clientHeight||520;
       var ren=new T.WebGLRenderer({antialias:true,alpha:true}); ren.setPixelRatio(Math.min(2,devicePixelRatio)); ren.setSize(W,Hh); gl.appendChild(ren.domElement);
       var scene=new T.Scene(), cam=new T.PerspectiveCamera(38,W/Hh,.1,100); cam.position.set(0,0.3,4.9);
       scene.add(new T.AmbientLight(0x6f80d0,.9)); var dl=new T.DirectionalLight(0xdfe6ff,.9); dl.position.set(-3,2,4); scene.add(dl); var gd=new T.PointLight(0xF2C230,.8,7); gd.position.set(1.6,1.0,1.8); scene.add(gd);
       var grp=new T.Group(); scene.add(grp);
-      var tex=new T.TextureLoader(); tex.crossOrigin='anonymous';
-      var mat=new T.MeshStandardMaterial({color:0x0b1540,roughness:.9,metalness:.05,emissive:new T.Color(0xF2C230),emissiveIntensity:0});
-      tex.load('https://cdn.jsdelivr.net/npm/three-globe@2.24.6/example/img/earth-night.jpg',function(t){ mat.map=t; mat.emissiveMap=t; mat.emissive.set(0xFFE2A0); mat.emissiveIntensity=.75; mat.color.set(0x3a4a9c); mat.needsUpdate=true; });
-      var earth=new T.Mesh(new T.SphereGeometry(1.5,96,96),mat); grp.add(earth);
-      var wire=new T.Mesh(new T.SphereGeometry(1.503,36,24),new T.MeshBasicMaterial({color:0xF2C230,wireframe:true,transparent:true,opacity:.02})); grp.add(wire);
-      var atm=new T.Mesh(new T.SphereGeometry(1.56,64,64),new T.MeshBasicMaterial({color:0x5b74ff,transparent:true,opacity:.10,side:T.BackSide})); grp.add(atm);
-      var glow=new T.Mesh(new T.SphereGeometry(1.68,48,48),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.035,side:T.BackSide})); grp.add(glow);
+      /* Hamad 11-08: dotted globe + live arcs from Kuwait to far cities */
       function ll(lat,lon,r){ var ph=(90-lat)*Math.PI/180, th=(lon+180)*Math.PI/180; return new T.Vector3(-r*Math.sin(ph)*Math.cos(th), r*Math.cos(ph), r*Math.sin(ph)*Math.sin(th)); }
-      var cities=[[29.37,47.98,1],[25.2,55.27,.6],[24.7,46.7,.6],[25.28,51.53,.5],[26.4,50.1,.5]]; var pins=[];
-      cities.forEach(function(c){ var m=new T.Mesh(new T.SphereGeometry(.012+.01*c[2],12,12),new T.MeshBasicMaterial({color:0xF2C230})); m.position.copy(ll(c[0],c[1],1.505)); grp.add(m);
-        var ring=new T.Mesh(new T.RingGeometry(.02,.03,32),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.8,side:T.DoubleSide})); ring.position.copy(ll(c[0],c[1],1.51)); ring.lookAt(new T.Vector3(0,0,0)); grp.add(ring); pins.push({r:ring,t:Math.random()*3,s:c[2]}); });
-      // face the Gulf (lon ~50) toward camera
-      grp.rotation.y=-(50+180)*Math.PI/180+Math.PI/2; grp.rotation.x=.25;
+      var R=1.5;
+      grp.add(new T.Mesh(new T.SphereGeometry(R*.985,64,64),new T.MeshBasicMaterial({color:0x0c1440,transparent:true,opacity:.92})));
+      grp.add(new T.Mesh(new T.SphereGeometry(R*1.06,48,48),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.04,side:T.BackSide})));
+      grp.add(new T.Mesh(new T.SphereGeometry(R*1.03,48,48),new T.MeshBasicMaterial({color:0x5b74ff,transparent:true,opacity:.08,side:T.BackSide})));
+      var img=new Image(); img.crossOrigin='anonymous';
+      img.onload=function(){ var c=document.createElement('canvas'); c.width=360; c.height=180; var x=c.getContext('2d'); x.drawImage(img,0,0,360,180); var d=x.getImageData(0,0,360,180).data;
+        var N=14000, pos=[], col=[], gold=new T.Color(0xF2C230), wh=new T.Color(0x9aa6d8);
+        for(var i=0;i<N;i++){ var y=1-(i/(N-1))*2, rr=Math.sqrt(1-y*y), th=Math.PI*(3-Math.sqrt(5))*i; var lat=Math.asin(y)*180/Math.PI, lon=((Math.atan2(Math.sin(th)*rr,Math.cos(th)*rr)*180/Math.PI)+540)%360-180;
+          var px=Math.min(359,Math.max(0,Math.floor((lon+180))))|0, py=Math.min(179,Math.max(0,Math.floor(90-lat)))|0; if(d[(py*360+px)*4]>128) continue;
+          var v=ll(lat,lon,R); pos.push(v.x,v.y,v.z); var near=Math.abs(lat-26)<14&&Math.abs(lon-48)<18; var cc=near?gold:wh; col.push(cc.r,cc.g,cc.b); }
+        var g=new T.BufferGeometry(); g.setAttribute('position',new T.Float32BufferAttribute(pos,3)); g.setAttribute('color',new T.Float32BufferAttribute(col,3));
+        grp.add(new T.Points(g,new T.PointsMaterial({size:.022,vertexColors:true,transparent:true,opacity:.95}))); };
+      img.src='https://cdn.jsdelivr.net/npm/three-globe@2.24.6/example/img/earth-water.png';
+      var KW=[29.37,47.98], dests=[[51.5,-0.12],[40.7,-74],[35.7,139.7],[-33.9,151.2],[48.85,2.35],[1.35,103.8],[19.07,72.88],[-23.5,-46.6],[30.04,31.24],[55.75,37.6],[43.65,-79.38],[25.2,55.27],[24.7,46.7]];
+      var hub=new T.Mesh(new T.SphereGeometry(.03,16,16),new T.MeshBasicMaterial({color:0xF2C230})); hub.position.copy(ll(KW[0],KW[1],R*1.005)); grp.add(hub);
+      var pins=[], arcs=[];
+      function ring(lat,lon,s){ var r=new T.Mesh(new T.RingGeometry(.02,.03,32),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:0,side:T.DoubleSide})); r.position.copy(ll(lat,lon,R*1.01)); r.lookAt(new T.Vector3(0,0,0)); grp.add(r); return {r:r,s:s}; }
+      var hubRing=ring(KW[0],KW[1],1.2); hubRing.t=0; pins.push(hubRing);
+      dests.forEach(function(dst,k){ var a=ll(KW[0],KW[1],R), b=ll(dst[0],dst[1],R), dist=a.distanceTo(b), mid=a.clone().add(b).multiplyScalar(.5).normalize().multiplyScalar(R+dist*.22);
+        var curve=new T.QuadraticBezierCurve3(a,mid,b), pts=curve.getPoints(120);
+        /* steady data line */
+        grp.add(new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:0xF2C230,transparent:true,opacity:.28})));
+        /* packets: short bright segments streaming along the line */
+        var pk=[]; for(var j=0;j<3;j++){ var g=new T.BufferGeometry().setFromPoints(pts); g.setDrawRange(0,0); var ln=new T.Line(g,new T.LineBasicMaterial({color:0xFFE58A,transparent:true,opacity:.95})); grp.add(ln); pk.push({g:g,ph:j/3}); }
+        var dot=new T.Mesh(new T.SphereGeometry(.014,10,10),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.9})); dot.position.copy(ll(dst[0],dst[1],R*1.004)); grp.add(dot);
+        arcs.push({pk:pk,n:pts.length,dot:dot,spd:.22+Math.random()*.12,off:Math.random()}); });
+      grp.rotation.y=-(48+180)*Math.PI/180+Math.PI/2; grp.rotation.x=.3;
       var t0=performance.now();
-      (function loop(now){ var dt=(now-t0)/1000; grp.rotation.y+=0.0012; pins.forEach(function(p){ var k=((dt+p.t)%3)/3; p.r.scale.setScalar(1+k*4*p.s); p.r.material.opacity=.6*(1-k); }); var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; grp.rotation.x=.25+sy*.5; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
+      (function loop(now){ var dt=Math.max(0,(now-t0)/1000); grp.rotation.y+=0.0011;
+        var hk=(dt%2.4)/2.4; hubRing.r.scale.setScalar(1+hk*3); hubRing.r.material.opacity=.45*(1-hk);
+        arcs.forEach(function(A){ A.pk.forEach(function(P){ var u=(dt*A.spd+A.off+P.ph)%1, e=Math.floor(u*A.n), L=10, st=Math.max(0,e-L); P.g.setDrawRange(st,Math.max(0,e-st)); });
+          A.dot.material.opacity=.55+.45*Math.sin(dt*3+A.off*6); });
+        var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
       addEventListener('resize',function(){ var W=gl.clientWidth, Hh=gl.clientHeight; cam.aspect=W/Hh; cam.updateProjectionMatrix(); ren.setSize(W,Hh); }); }; document.head.appendChild(sc); }
     startGlobe(); document.addEventListener('ix-change',startGlobe); }
   var cta=document.querySelector('a.cta[href="#"]'); if(cta){ var waurl='https://wa.me/96590000937?text='+encodeURIComponent('السلام عليكم، أبي أشتري نظام التسويق الذكي ($75)'); function setC(){ cta.setAttribute('href', H.classList.contains('i12')?waurl:'#'); cta.target=H.classList.contains('i12')?'_blank':''; } setC(); document.addEventListener('ix-change',setC); }
@@ -129,13 +153,21 @@ if(PAGE==='kit'){
   document.body.appendChild(el('div','ix-pkglow'));
   document.querySelectorAll('.pk').forEach(function(pk){ pk.addEventListener('click',function(e){ if(e.target.closest('a')) return; var on=pk.classList.contains('ix-on'); document.querySelectorAll('.pk').forEach(function(p){p.classList.remove('ix-on')}); if(on){ H.classList.remove('ix-focus'); } else { pk.classList.add('ix-on'); H.classList.add('ix-focus'); } }); });
 }
+/* clock on every design (Hamad 11-08) */
+if(PAGE==='consult'||PAGE==='kit'){ H.classList.add('i3'); var ck=el('div','ix-clock2','<span><i></i>الكويت <b>--:--</b></span>'); var hb2=document.querySelector('header.bsn'); if(hb2) hb2.insertBefore(ck,hb2.firstChild); else { var wr=document.querySelector('.wrap'); if(wr) wr.insertBefore(ck,wr.firstChild); ck.classList.add('ix-static'); }
+  (function tk(){ try{ ck.querySelector('b').textContent=kwt(false); }catch(e){} setTimeout(tk,1000); })(); }
+/* top button to the product/packages on every page (Hamad 11-08) */
+(function(){ if(PAGE==='kit'){ var tp=document.querySelector('.top'), lg=tp&&tp.querySelector('.lang'); if(tp&&lg&&!tp.querySelector('.ix-jump')){ var j=el('a','ix-jump','<span class="ar-only">الباقات</span><span class="en-only">Packages</span>'); j.href='#packages'; tp.insertBefore(j,lg); } }
+  var bc=document.querySelector('.bsn-end>.bsn-cta'); if(bc){ bc.classList.add('ix-topcta'); if(PAGE==='system'){ bc.setAttribute('href','#buy'); bc.textContent='اشترِ الآن'; } } })();
+/* direct jump to product/packages (Hamad 11-08: no scrolling animation) */
+document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return; var id=a.getAttribute('href').slice(1); if(!id) return; var t=document.getElementById(id); if(!t) return; e.preventDefault(); var hb=document.querySelector('header.bsn'), off=hb&&getComputedStyle(hb).position!=='static'?hb.offsetHeight:0; window.scrollTo({top:t.getBoundingClientRect().top+scrollY-off-8,behavior:'instant'}); },true);
 /* ================= A: arrow ================= */
 document.body.appendChild(el('div','ix-arrow','<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>'));
 addEventListener('scroll',function(){ H.classList.toggle('ix-scrolled',scrollY>160); },{passive:true});
 /* ================= L: intro + transitions ================= */
 var intro=el('div','ix-intro','<svg viewBox="0 0 64 64"><path class="p1" d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z"/><rect class="p2" x="31" y="8" width="25" height="25" rx="8"/></svg><div class="w">Business Status</div><div class="w2">بزنس ستيتس</div><i></i>');
 document.body.appendChild(intro);
-var seen=false; try{ seen=sessionStorage.getItem('ix-intro')==='1'; }catch(e){}
+var seen=false; /* Hamad 11-08: logo intro on every page */
 if(H.classList.contains('iL') && !seen){ intro.classList.add('play'); try{ sessionStorage.setItem('ix-intro','1'); }catch(e){} setTimeout(function(){ intro.classList.remove('play'); intro.classList.add('done'); },2100); } else { intro.classList.add('done'); }
 H.classList.add('ix-ready');
 document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!H.classList.contains('iL')) return; var href=a.getAttribute('href'); if(!href||href.charAt(0)==='#'||a.target==='_blank'||/^(https?:|mailto:|tel:|wa\.me)/.test(href)&&!/hmdalkhudhari\.github\.io\/files\/preview/.test(href)) return; e.preventDefault(); intro.classList.remove('done'); intro.classList.add('out'); setTimeout(function(){ location.href=a.href; },700); });
