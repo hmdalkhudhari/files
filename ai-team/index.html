@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>فريقك من ٥ ايجنتس — خطوات التركيب</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0F24;--card:#121A3A;--navy:#1E2A66;--gold:#F2C230;--ink:#fff;--mute:#AAB3D6;--line:#2A3566}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--ink);font-family:"Tajawal",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.7;font-size:17px}
+.wrap{max-width:980px;margin:0 auto;padding:28px 18px 80px}
+.hero{text-align:center;padding:44px 0 26px}
+.hero h1{font-size:clamp(30px,6vw,48px);font-weight:800;line-height:1.25}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{color:var(--mute);margin-top:10px;font-size:19px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:var(--gold);color:#0A0F24;font-weight:800;font-size:19px;padding:15px 28px;border-radius:14px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.cta:hover{filter:brightness(1.07)}
+.cta small{font-weight:500;font-size:13px;opacity:.75}
+.jump{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.jump a{color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-weight:700;font-size:15px;background:var(--card)}
+.jump a:hover{border-color:var(--gold);color:var(--gold)}
+.arrow{display:block;text-align:center;color:var(--gold);font-size:28px;margin:18px 0 0;animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 6px}
+.pick div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.pick b{color:var(--gold);display:block;font-size:18px}
+.pick span{color:var(--mute);font-size:15px}
+h2{font-size:26px;font-weight:800;margin:46px 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+h2 .tag{background:var(--gold);color:#0A0F24;border-radius:8px;padding:0 10px;font-size:18px}
+h2 .sub{color:var(--mute);font-size:15px;font-weight:500;width:100%}
+.flow{list-style:none;margin-top:14px;display:grid;gap:10px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 14px;display:grid;grid-template-columns:34px 1fr 1px 1fr;gap:14px;align-items:start}
+.st .n{width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:800;display:grid;place-items:center}
+.st .div{background:var(--line);align-self:stretch}
+.s-ar{font-size:16.5px}
+.s-en{font-size:15px;color:#C9D0EE;text-align:left}
+.s-ar b,.s-en b{color:#fff}
+.nw{white-space:nowrap}
+.cmdrow{grid-column:1/-1;margin-top:2px}
+.cmd{display:flex;gap:10px;align-items:flex-start;background:#070B1A;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.cmd code{flex:1;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;color:#E8ECFF;white-space:pre-wrap;word-break:break-word;text-align:left}
+.copy{flex:none;background:var(--navy);color:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-family:inherit;font-weight:700;cursor:pointer;font-size:13px}
+.copy:hover{border-color:var(--gold)}
+.copy.ok{background:var(--gold);color:#0A0F24;border-color:var(--gold)}
+.conn{margin-top:14px;display:grid;gap:8px}
+.crow{display:grid;grid-template-columns:34px 1fr 1fr;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.crow .cn i{color:var(--mute);font-style:normal;font-size:13px;margin-inline-start:6px}
+.crow .cv{color:var(--gold);font-weight:700;text-align:left;font-size:14.5px}
+.fix .n{background:#3a2a10;color:var(--gold)}
+.note{margin-top:14px;color:var(--mute);font-size:14.5px}
+footer{margin-top:50px;border-top:1px solid var(--line);padding-top:18px;color:var(--mute);font-size:13.5px}
+footer a{color:var(--gold)}
+@media(max-width:700px){
+ .pick{grid-template-columns:1fr}
+ .st{grid-template-columns:34px 1fr}
+ .st .div{display:none}
+ .s-en{grid-column:2;border-top:1px dashed var(--line);padding-top:8px}
+ .crow{grid-template-columns:30px 1fr}
+ .crow .cv{grid-column:2;text-align:right}
+ .cmd{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>فريقك من <em>٥ ايجنتس</em> في ملف واحد</h1>
+  <p>Your 5-agent AI team in one file</p>
+  <a class="cta" href="./AI-TEAM.md" download="AI-TEAM.md">⬇ حمّل الملف <small dir="ltr">AI-TEAM.md</small></a>
+  <div class="jump">
+    <a href="#a"><bdi dir="ltr">A · Projects</bdi> (الأسهل)</a>
+    <a href="#b"><bdi dir="ltr">B · Claude Code</bdi> (للمونتير)</a>
+  </div>
+  <span class="arrow">⬇</span>
+</header>
+
+<section class="pick" aria-label="choose">
+  <div><b dir="ltr">A · Projects</b><span>جوال وكمبيوتر · كل الايجنتس · المونتير يخطط بس<br><span dir="ltr">Phone + computer · all agents · Editor plans only</span></span></div>
+  <div><b dir="ltr">B · Claude Code</b><span>كمبيوتر فقط · المونتير يقص ويعدل فيديو فعلي<br><span dir="ltr">Computer only · Editor really cuts and edits video</span></span></div>
+</section>
+<p class="note">الأفضل: ابدأ بـ <bdi dir="ltr">A</bdi>. أضف <bdi dir="ltr">B</bdi> إذا تبي المونتير يشتغل على فيديوهاتك. تحتاج خطة مدفوعة (<bdi dir="ltr">Pro</bdi> أو أعلى) للبحث العميق ولتشغيل <bdi dir="ltr">Claude Code</bdi>.</p>
+<p class="note" dir="ltr">Best: start with A, add B for real video editing. Research and Claude Code need a paid plan (Pro or higher).</p>
+
+<h2 id="a"><span class="tag">A</span> Claude Projects <span class="sub">الأسهل · The easy way</span></h2>
+<ol class="flow">
+<li class="st"><span class="n">1</span><span class="s-ar">افتح <b><bdi dir="ltr" class="nw">claude.ai/projects</bdi></b> واضغط <b><bdi dir="ltr" class="nw">+ New project</bdi></b>، وسمّه «<bdi dir="ltr" class="nw">My AI Team</bdi>».</span><span class="div"></span><span class="s-en" dir="ltr">Open <b>claude.ai/projects</b> → <b>+ New project</b> → name it “My AI Team”.</span></li>
+<li class="st"><span class="n">2</span><span class="s-ar">حمّل الملف من الزر فوق. داخل المشروع اضغط <b>+</b> وارفع <b><bdi dir="ltr" class="nw">AI-TEAM.md</bdi></b>.</span><span class="div"></span><span class="s-en" dir="ltr">Download the file above. In the project click <b>+</b> and upload <b>AI-TEAM.md</b>.</span></li>
+<li class="st"><span class="n">3</span><span class="s-ar">اضغط <b><bdi dir="ltr" class="nw">Set project instructions</bdi></b>، الصق هذا النص، ثم <b><bdi dir="ltr" class="nw">Save instructions</bdi></b>.</span><span class="div"></span><span class="s-en" dir="ltr">Click <b>Set project instructions</b>, paste this text, then <b>Save instructions</b>.</span><div class=cmdrow><div class="cmd"><code dir="ltr">Your operating manual is the file AI-TEAM.md in this project&#x27;s knowledge. Before your first reply in EVERY chat, read it completely and follow it. Also read profile.md if it exists. If AI-TEAM.md is missing, tell me before doing anything else.</code><button class="copy" data-copy="Your operating manual is the file AI-TEAM.md in this project&#x27;s knowledge. Before your first reply in EVERY chat, read it completely and follow it. Also read profile.md if it exists. If AI-TEAM.md is missing, tell me before doing anything else." type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">4</span><span class="s-ar">افتح <b><bdi dir="ltr">Customize → Connectors → Discover</bdi></b>. ابحث عن كل كونكتر واضغط <b><bdi dir="ltr" class="nw">Connect</bdi></b> ووافق. القائمة تحت.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Customize → Connectors → Discover</b>. Search each connector → <b>Connect</b> → approve. List below.</span></li>
+<li class="st"><span class="n">5</span><span class="s-ar">تأكد من <b><bdi dir="ltr" class="nw">Settings → Capabilities</bdi></b> إن خيار <b><bdi dir="ltr">Code execution and file creation</bdi></b> (أو <b><bdi dir="ltr" class="nw">Create and edit files</bdi></b>) شغّال. هذا اللي يسوي ملفات <bdi dir="ltr" class="nw">PowerPoint</bdi> و <bdi dir="ltr" class="nw">Word</bdi>.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Settings → Capabilities</b>: make sure <b>Code execution and file creation</b> (or <b>Create and edit files</b>) is on. It creates PowerPoint and Word files.</span></li>
+<li class="st"><span class="n">6</span><span class="s-ar">للبحث العميق: داخل المحادثة اضغط <b>+</b> ثم <b><bdi dir="ltr" class="nw">Research</bdi></b>. يحتاج <bdi dir="ltr" class="nw">Web search</bdi> وخطة مدفوعة.</span><span class="div"></span><span class="s-en" dir="ltr">For deep research: in a chat click <b>+</b> → <b>Research</b>. Needs web search and a paid plan.</span></li>
+<li class="st"><span class="n">7</span><span class="s-ar">افتح محادثة جديدة داخل المشروع واكتب هذي الكلمة، وجاوب على الأسئلة.</span><span class="div"></span><span class="s-en" dir="ltr">Open a new chat inside the project, send this word, answer the questions.</span><div class=cmdrow><div class="cmd"><code dir="ltr">Start</code><button class="copy" data-copy="Start" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">8</span><span class="s-ar">بعد الأسئلة يعطيك <b><bdi dir="ltr" class="nw">Profile Card</bdi></b>. انسخه واحفظه باسم <b><bdi dir="ltr" class="nw">profile.md</bdi></b> وارفعه للمشروع (نفس زر <b>+</b>). بدونه ما يتذكر ذوقك بالمحادثات الجاية.</span><span class="div"></span><span class="s-en" dir="ltr">You get a <b>Profile Card</b>. Save it as <b>profile.md</b> and upload it to the project (same <b>+</b>). Without it, new chats forget your taste.</span></li>
+</ol>
+
+<h2 id="b"><span class="tag">B</span> Claude Code <span class="sub">للمونتير · For the Editor</span></h2>
+<ol class="flow">
+<li class="st"><span class="n">1</span><span class="s-ar">نزّل تطبيق <b><bdi dir="ltr" class="nw">Claude</bdi></b> للكمبيوتر وسجّل دخول بحسابك المدفوع، ثم افتح تبويب <b><bdi dir="ltr" class="nw">Code</bdi></b>. ما تحتاج تيرمنال.</span><span class="div"></span><span class="s-en" dir="ltr">Install the <b>Claude</b> desktop app, sign in with your paid account, open the <b>Code</b> tab. No terminal needed.</span></li>
+<li class="st"><span class="n">2</span><span class="s-ar">سوّ مجلد اسمه <b><bdi dir="ltr" class="nw">My-AI-Team</bdi></b>، حط فيه <b><bdi dir="ltr" class="nw">AI-TEAM.md</bdi></b> وغيّر اسمه إلى <b><bdi dir="ltr" class="nw">CLAUDE.md</bdi></b>.</span><span class="div"></span><span class="s-en" dir="ltr">Create a folder <b>My-AI-Team</b>, put <b>AI-TEAM.md</b> in it, rename it to <b>CLAUDE.md</b>.</span></li>
+<li class="st"><span class="n">3</span><span class="s-ar">ركّب <b><bdi dir="ltr" class="nw">FFmpeg</bdi></b> (للمونتير). <bdi dir="ltr" class="nw">Windows</bdi>: افتح <bdi dir="ltr" class="nw">PowerShell</bdi> وشغّل هذا الأمر.</span><span class="div"></span><span class="s-en" dir="ltr">Install <b>FFmpeg</b> (for the Editor). Windows: open PowerShell and run this.</span><div class=cmdrow><div class="cmd"><code dir="ltr">winget install -e --id Gyan.FFmpeg</code><button class="copy" data-copy="winget install -e --id Gyan.FFmpeg" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">4</span><span class="s-ar"><bdi dir="ltr" class="nw">Mac</bdi>: ركّب <bdi dir="ltr" class="nw">Homebrew</bdi> أولا من <b><bdi dir="ltr" class="nw">brew.sh</bdi></b>، ثم شغّل هذا الأمر بالتيرمنال.</span><span class="div"></span><span class="s-en" dir="ltr">Mac: install Homebrew first from <b>brew.sh</b>, then run this in Terminal.</span><div class=cmdrow><div class="cmd"><code dir="ltr">brew install ffmpeg</code><button class="copy" data-copy="brew install ffmpeg" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">5</span><span class="s-ar">اقفل التيرمنال وافتحه من جديد، واكتب هذا الأمر. لازم يطلع رقم نسخة.</span><span class="div"></span><span class="s-en" dir="ltr">Close and reopen the terminal, then run this. It must print a version number.</span><div class=cmdrow><div class="cmd"><code dir="ltr">ffmpeg -version</code><button class="copy" data-copy="ffmpeg -version" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">6</span><span class="s-ar">بتبويب <b><bdi dir="ltr" class="nw">Code</bdi></b>: اختر <b><bdi dir="ltr" class="nw">Local</bdi></b>، ثم <b><bdi dir="ltr" class="nw">Open folder…</bdi></b> واختر <b><bdi dir="ltr" class="nw">My-AI-Team</bdi></b>. اكتب <b><bdi dir="ltr" class="nw">Start</bdi></b>.</span><span class="div"></span><span class="s-en" dir="ltr">In the <b>Code</b> tab: choose <b>Local</b> → <b>Open folder…</b> → pick <b>My-AI-Team</b>. Type <b>Start</b>.</span></li>
+<li class="st"><span class="n">7</span><span class="s-ar">الكونكترز اللي ربطتها بـ <bdi dir="ltr" class="nw">claude.ai</bdi> تظهر هنا بنفس الحساب. <bdi dir="ltr" class="nw">Metricool</bdi> ممكن تضيفه بأمر واحد.</span><span class="div"></span><span class="s-en" dir="ltr">Connectors you added on claude.ai show up here with the same account. Metricool can be added with one command.</span><div class=cmdrow><div class="cmd"><code dir="ltr">claude mcp add --transport http metricool https://ai.metricool.com/mcp</code><button class="copy" data-copy="claude mcp add --transport http metricool https://ai.metricool.com/mcp" type="button">نسخ · Copy</button></div></div></li>
+</ol>
+
+<h2>الكونكترز · Connectors</h2>
+<div class="conn">
+<div class="crow"><span class="ic">🎬</span><span class="cn">المونتير <i dir="ltr">Editor</i></span><span class="cv" dir="ltr">FFmpeg</span></div>
+<div class="crow"><span class="ic">🎨</span><span class="cn">المصمم والكاتب <i dir="ltr">Designer & Writer</i></span><span class="cv" dir="ltr">Canva</span></div>
+<div class="crow"><span class="ic">📥</span><span class="cn">الموظف اليومي <i dir="ltr">Daily Assistant</i></span><span class="cv" dir="ltr">Gmail · Google Calendar · Drive · Notion</span></div>
+<div class="crow"><span class="ic">📣</span><span class="cn">الناشر <i dir="ltr">Publisher</i></span><span class="cv" dir="ltr">Metricool</span></div>
+<div class="crow"><span class="ic">🔎</span><span class="cn">الباحث <i dir="ltr">Researcher</i></span><span class="cv" dir="ltr">Research (+) · Drive · Notion</span></div>
+</div>
+<p class="note">ركّبها من الكمبيوتر أو الويب (التركيب على الجوال لسه تجريبي): <a style="color:var(--gold)" href="https://claude.ai/customize/connectors" target="_blank" rel="noopener"><bdi dir="ltr">claude.ai/customize/connectors</bdi></a></p>
+<p class="note" dir="ltr">Add them on web or desktop (mobile install is beta).</p>
+
+<h2>إذا صار خلل · If something breaks</h2>
+<ol class="flow">
+<li class="st fix"><span class="n">!</span><span class="s-ar"><b>ما شغّل الاجنتس / رد عادي</b><br>تأكد إن <bdi dir="ltr" class="nw">AI-TEAM.md</bdi> مرفوع بالمشروع وإنك فتحت المحادثة <b>داخل</b> المشروع.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Replies like a normal chat</b><br>Check AI-TEAM.md is in the project and the chat was opened <b>inside</b> it.</span></li>
+<li class="st fix"><span class="n">!</span><span class="s-ar"><b>الكونكتر ما يشتغل</b><br><b><bdi dir="ltr" class="nw">Customize → Connectors</bdi></b>: افصله واربطه من جديد، وبالمحادثة شغّله من قائمة <bdi dir="ltr" class="nw">Connectors</bdi>.</span><span class="div"></span><span class="s-en" dir="ltr"><b>A connector does not work</b><br><b>Customize → Connectors</b>: disconnect, reconnect, then switch it on from the chat’s Connectors menu.</span></li>
+<li class="st fix"><span class="n">!</span><span class="s-ar"><b>المونتير يقول ما يقدر يقص الفيديو</b><br>المونتير يقص بس بمسار <bdi dir="ltr" class="nw">Claude Code</bdi> (الخطوات <bdi dir="ltr" class="nw">B</bdi>). في <bdi dir="ltr" class="nw">Projects</bdi> يعطيك خطة وأوامر.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Editor says it cannot cut video</b><br>Cutting works only in Claude Code (path B). In Projects it gives you a plan and commands.</span></li>
+</ol>
+
+<footer>
+  تم التحقق من الخطوات من المصادر الرسمية بتاريخ ٢٠٢٦‑١١‑١١ · <span dir="ltr">Steps verified against official sources on 2026-11-11</span><br>
+  <span dir="ltr"><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Projects</a> · <a href="https://claude.com/docs/connectors/getting-started" target="_blank" rel="noopener">Connectors</a> · <a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener">Research</a> · <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank" rel="noopener">Create and edit files</a> · <a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener">Claude Code desktop</a> · <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">CLAUDE.md</a> · <a href="https://help.metricool.com/how-to-connect-metricools-mcp-with-claude-0l84v" target="_blank" rel="noopener">Metricool + Claude</a> · <a href="https://www.canva.com/help/mcp-agent-setup" target="_blank" rel="noopener">Canva + Claude</a> · <a href="https://ffmpeg-cookbook.com/en/articles/install-ffmpeg" target="_blank" rel="noopener">FFmpeg (winget / brew)</a></span>
+</footer>
+
+</div>
+<script>
+document.addEventListener('click',function(e){
+  var b=e.target.closest('.copy'); if(!b) return;
+  var t=b.getAttribute('data-copy');
+  function done(){var o=b.textContent;b.textContent='✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1400)}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+  function fallback(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(_){}document.body.removeChild(a);done()}
+});
+</script>
+</body>
+</html>
