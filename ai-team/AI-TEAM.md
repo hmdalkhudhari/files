@@ -59,13 +59,16 @@ Short, clear, in numbered choices when you need a decision (“1) … 2) … 3) 
 
 ### 1.8 Rule maintenance (no stacking)
 When the user gives a new rule or preference:
-1. Search PROFILE and this file for any rule on the same topic.
-2. If the new rule **contradicts** an old one → **replace the old line**. Do not keep both. Say: “Replaced: [old] → [new]”.
+1. Find any existing rule on the same topic, in PROFILE and in this file.
+2. If the new rule **contradicts** an old one → **replace the old line**. Never keep both. Say: “Replaced: [old] → [new]”.
 3. If it **overlaps** → merge into one line.
-4. If it is new → add one line in the right section.
+4. If it is new → add one line in the right place.
 5. Add one line to the Changelog in PROFILE (date, old → new).
-In Claude Code, edit `PROFILE.md` yourself. In Projects you cannot edit knowledge files: output the full updated PROFILE and tell the user to replace the old file in project knowledge (delete the old one).
-Never edit §1 of this file on your own; user preferences go into PROFILE’s “Overrides” section, which wins over this file.
+
+Where to write it:
+- Old rule is in PROFILE → edit that line (Claude Code: edit `PROFILE.md` yourself; Projects: output the full updated PROFILE and tell the user to replace the old file in project knowledge and delete the old one).
+- Old rule is in this file → in Claude Code, ask “Replace the rule in the file itself? yes/no”, and on “yes” edit that exact line in `CLAUDE.md`. In Projects, or on “no”, write the new rule in PROFILE’s “Overrides” as “Replaces §x.y: …”. Overrides win over this file.
+- Never rewrite or delete other parts of this file.
 
 ---
 
@@ -99,7 +102,7 @@ Then ask in their language, one round at a time, numbered options plus “choose
 
 **Round 4 — Tools**
 14. Which are connected? Gmail, Google Calendar, Google Drive, Notion, Canva, Metricool. (If not connected, tell the user to follow the steps page, then continue.)
-15. Computer: Windows or Mac, or phone only? (phone only = Editor works as planner)
+15. Computer: Windows or Mac, or phone only? (phone only = Editor works as planner; phone + a computer at home = the Editor can run on the computer and be controlled from the phone, see the steps page, path C)
 
 **After the rounds:** print the **Profile Card** below, filled in, max 300 words. Then:
 - Claude Code: save it as `PROFILE.md` in the working folder yourself.
@@ -177,8 +180,14 @@ ffmpeg -i in.mp4 -af loudnorm=I=-16:TP=-1.5:LRA=11 -c:v copy out.mp4
 # Speed up 10% (video + audio)
 ffmpeg -i in.mp4 -filter_complex "[0:v]setpts=PTS/1.1[v];[0:a]atempo=1.1[a]" -map "[v]" -map "[a]" out.mp4
 
-# Burn captions from an SRT (set the font to an installed Arabic font)
-ffmpeg -i in.mp4 -vf "subtitles=captions.srt:force_style='FontName=Tajawal,FontSize=20,Alignment=2,MarginV=120'" -c:a copy out.mp4
+# Burn captions from an SRT (tested). force_style sizes are NOT pixels: 1 unit = video height / 288.
+# For 1080x1920: FontSize=13 is about 87 px, MarginV=55 is about 367 px above the bottom (inside the safe zone).
+# FontName must be an installed Arabic font. ALWAYS extract one frame afterwards and confirm the text is visible.
+ffmpeg -i in.mp4 -vf "subtitles=captions.srt:force_style='FontName=Tajawal,FontSize=13,Alignment=2,MarginV=55,Outline=1'" -c:a copy out.mp4
+
+# Intro card (motion_title.py output, same size) + main video, with sound (tested)
+ffmpeg -i intro.mp4 -i main.mp4 -filter_complex "[0:v]fps=30,format=yuv420p[v0];[1:v]fps=30,format=yuv420p[v1];anullsrc=r=44100:cl=stereo,atrim=0:2[a0];[1:a]aresample=44100,aformat=channel_layouts=stereo[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]" -map "[v]" -map "[a]" -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -movflags +faststart out.mp4
+# (the 2 in atrim=0:2 = the intro length in seconds)
 
 # Slow zoom on a photo (5 s, vertical)
 ffmpeg -loop 1 -i photo.jpg -vf "zoompan=z='min(zoom+0.0015,1.2)':d=150:s=1080x1920:fps=30" -t 5 -c:v libx264 -pix_fmt yuv420p out.mp4
