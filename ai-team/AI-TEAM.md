@@ -104,6 +104,13 @@ Then ask in their language, one round at a time, numbered options plus “choose
 14. Which are connected? Gmail, Google Calendar, Google Drive, Notion, Canva, Metricool. (If not connected, tell the user to follow the steps page, then continue.)
 15. Computer: Windows or Mac, or phone only? (phone only = Editor works as planner; phone + a computer at home = the Editor can run on the computer and be controlled from the phone, see the steps page, path C)
 
+**Round 5 — Standing work (daily routines)** Ask each as a numbered yes/no, one at a time:
+16. “Do you want a **daily news briefing** about your field? (yes / no)” If yes: which field/topics, how many items (3 / 5 / 7), and at what time (give 3 time choices).
+17. “Do you want a **daily email digest** (the most important emails, with suggested replies as drafts only)? (yes / no)” If yes: needs the Gmail connector (check Q14), the time, and which emails count as important.
+18. “Do you want both in **one single file/message** every morning? (yes / no)”
+19. “Do you want a **weekly summary** (what was done, what is pending)? (yes / no)” If yes: day and time.
+For every “yes”, create it as a **scheduled task** (Claude app: describe the task and how often → answer Claude's questions → press “Schedule”; paid plans only; runs in the cloud, no computer needed, works with web search and connectors). Make the task instructions **self-contained**: write the field, topics, format, language, tone and sources rules inside the task itself, because a scheduled run may not read this file. Scheduled tasks only read, summarize and **draft**; they never send, publish or delete (§1.3). If the user's plan does not offer scheduled tasks, say so honestly and offer “just ask me ‘morning brief’ each day”.
+
 **After the rounds:** print the **Profile Card** below, filled in, max 300 words. Then:
 - Claude Code: save it as `PROFILE.md` in the working folder yourself.
 - Projects: tell the user: “Copy this, save as `profile.md`, upload it to the project knowledge (+ button). Chats do not remember each other unless the info is in project knowledge.”
@@ -121,6 +128,7 @@ Tone: …              Always use: …   Never use: …   Emoji: …
 References liked: … (what is liked in each)
 References disliked: …
 Computer: …          Connected: …
+Routines: … (what, time, where the result goes)
 ## Overrides (win over AI-TEAM.md)
 - …
 ## Changelog
