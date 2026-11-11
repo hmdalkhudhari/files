@@ -76,16 +76,17 @@ footer a{color:var(--gold)}
   <div class="jump">
     <a href="#a"><bdi dir="ltr">A · Projects</bdi> (الأسهل)</a>
     <a href="#b"><bdi dir="ltr">B · Claude Code</bdi> (للمونتير)</a>
+    <a href="#c"><bdi dir="ltr">C · Phone</bdi> (من الجوال)</a>
   </div>
   <span class="arrow">⬇</span>
 </header>
 
 <section class="pick" aria-label="choose">
   <div><b dir="ltr">A · Projects</b><span>جوال وكمبيوتر · كل الايجنتس · المونتير يخطط بس<br><span dir="ltr">Phone + computer · all agents · Editor plans only</span></span></div>
-  <div><b dir="ltr">B · Claude Code</b><span>كمبيوتر فقط · المونتير يقص ويعدل فيديو فعلي<br><span dir="ltr">Computer only · Editor really cuts and edits video</span></span></div>
+  <div><b dir="ltr">B · Claude Code</b><span>كمبيوتر · المونتير يقص فيديو ويسوي موشن جرافيكس فعلي<br><span dir="ltr">Computer · Editor really cuts video and makes motion graphics</span></span></div>
 </section>
-<p class="note">الأفضل: ابدأ بـ <bdi dir="ltr">A</bdi>. أضف <bdi dir="ltr">B</bdi> إذا تبي المونتير يشتغل على فيديوهاتك. تحتاج خطة مدفوعة (<bdi dir="ltr">Pro</bdi> أو أعلى) للبحث العميق ولتشغيل <bdi dir="ltr">Claude Code</bdi>.</p>
-<p class="note" dir="ltr">Best: start with A, add B for real video editing. Research and Claude Code need a paid plan (Pro or higher).</p>
+<p class="note">الأفضل: ابدأ بـ <bdi dir="ltr">A</bdi>. أضف <bdi dir="ltr">B</bdi> إذا تبي المونتير يشتغل على فيديوهاتك، و<bdi dir="ltr">C</bdi> إذا تبي تشغله من الجوال. تحتاج خطة مدفوعة (<bdi dir="ltr">Pro</bdi> أو أعلى) للبحث العميق ولتشغيل <bdi dir="ltr">Claude Code</bdi>.</p>
+<p class="note" dir="ltr">Best: start with A, add B for real video editing, add C to run it from your phone. Research and Claude Code need a paid plan (Pro or higher).</p>
 
 <h2 id="a"><span class="tag">A</span> Claude Projects <span class="sub">الأسهل · The easy way</span></h2>
 <ol class="flow">
@@ -110,6 +111,17 @@ footer a{color:var(--gold)}
 <li class="st"><span class="n">7</span><span class="s-ar">الكونكترز اللي ربطتها بـ <bdi dir="ltr" class="nw">claude.ai</bdi> تظهر هنا بنفس الحساب. <bdi dir="ltr" class="nw">Metricool</bdi> ممكن تضيفه بأمر واحد.</span><span class="div"></span><span class="s-en" dir="ltr">Connectors you added on claude.ai show up here with the same account. Metricool can be added with one command.</span><div class=cmdrow><div class="cmd"><code dir="ltr">claude mcp add --transport http metricool https://ai.metricool.com/mcp</code><button class="copy" data-copy="claude mcp add --transport http metricool https://ai.metricool.com/mcp" type="button">نسخ · Copy</button></div></div></li>
 </ol>
 
+<h2 id="c"><span class="tag">C</span> المونتير من الجوال <span class="sub">Editor from your phone (Remote Control)</span></h2>
+<ol class="flow">
+<li class="st"><span class="n">1</span><span class="s-ar">أولا خلص مسار <b><bdi dir="ltr" class="nw">B</bdi></b> (الكمبيوتر لازم يكون شغال ومفتوح عليه المجلد).</span><span class="div"></span><span class="s-en" dir="ltr">Finish path <b>B</b> first (your computer must stay on).</span></li>
+<li class="st"><span class="n">2</span><span class="s-ar">ركّب <b><bdi dir="ltr" class="nw">Claude Code</bdi></b> بالتيرمنال. <bdi dir="ltr" class="nw">Windows PowerShell</bdi>:</span><span class="div"></span><span class="s-en" dir="ltr">Install <b>Claude Code</b> in a terminal. Windows PowerShell:</span><div class=cmdrow><div class="cmd"><code dir="ltr">irm https://claude.ai/install.ps1 | iex</code><button class="copy" data-copy="irm https://claude.ai/install.ps1 | iex" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">3</span><span class="s-ar"><bdi dir="ltr" class="nw">Mac</bdi> (<bdi dir="ltr" class="nw">Terminal</bdi>):</span><span class="div"></span><span class="s-en" dir="ltr">Mac (Terminal):</span><div class=cmdrow><div class="cmd"><code dir="ltr">curl -fsSL https://claude.ai/install.sh | bash</code><button class="copy" data-copy="curl -fsSL https://claude.ai/install.sh | bash" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">4</span><span class="s-ar">افتح تيرمنال داخل مجلد <b><bdi dir="ltr" class="nw">My-AI-Team</bdi></b> واكتب <b><bdi dir="ltr" class="nw">claude</bdi></b>، وسجّل دخول. بعدها اكتب هذا الأمر داخل الجلسة.</span><span class="div"></span><span class="s-en" dir="ltr">Open a terminal inside <b>My-AI-Team</b>, run <b>claude</b>, sign in. Then type this inside the session.</span><div class=cmdrow><div class="cmd"><code dir="ltr">/remote-control</code><button class="copy" data-copy="/remote-control" type="button">نسخ · Copy</button></div></div></li>
+<li class="st"><span class="n">5</span><span class="s-ar">على الجوال: نزّل تطبيق <b><bdi dir="ltr" class="nw">Claude</bdi></b> (<bdi dir="ltr" class="nw">iOS</bdi> أو <bdi dir="ltr" class="nw">Android</bdi>)، سجّل بنفس الحساب، اضغط <b><bdi dir="ltr" class="nw">Code</bdi></b> واختر الجلسة.</span><span class="div"></span><span class="s-en" dir="ltr">On your phone: install the <b>Claude</b> app (iOS or Android), sign in with the same account, tap <b>Code</b>, pick the session.</span></li>
+<li class="st"><span class="n">6</span><span class="s-ar">صوّر أو أرفق الفيديو من الجوال بالتطبيق. ينتقل للكمبيوتر والمونتير يشتغل عليه هناك، والنتيجة تنحفظ بمجلد <b><bdi dir="ltr" class="nw">My-AI-Team</bdi></b>.</span><span class="div"></span><span class="s-en" dir="ltr">Attach the video from your phone in the app. It is downloaded to your computer, the Editor works on it there, the result is saved in <b>My-AI-Team</b>.</span></li>
+</ol>
+<p class="note">الجوال يتحكم بالجلسة اللي على كمبيوترك. إذا قفلت الكمبيوتر أو انقطع النت يوقف. · <span dir="ltr">Your phone controls the session running on your computer. If the computer is off or offline it stops.</span> <a style="color:var(--gold)" href="https://code.claude.com/docs/en/remote-control" target="_blank" rel="noopener" dir="ltr">docs</a></p>
+
 <h2>الكونكترز · Connectors</h2>
 <div class="conn">
 <div class="crow"><span class="ic">🎬</span><span class="cn">المونتير <i dir="ltr">Editor</i></span><span class="cv" dir="ltr">FFmpeg</span></div>
@@ -125,12 +137,12 @@ footer a{color:var(--gold)}
 <ol class="flow">
 <li class="st fix"><span class="n">!</span><span class="s-ar"><b>ما شغّل الاجنتس / رد عادي</b><br>تأكد إن <bdi dir="ltr" class="nw">AI-TEAM.md</bdi> مرفوع بالمشروع وإنك فتحت المحادثة <b>داخل</b> المشروع.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Replies like a normal chat</b><br>Check AI-TEAM.md is in the project and the chat was opened <b>inside</b> it.</span></li>
 <li class="st fix"><span class="n">!</span><span class="s-ar"><b>الكونكتر ما يشتغل</b><br><b><bdi dir="ltr" class="nw">Customize → Connectors</bdi></b>: افصله واربطه من جديد، وبالمحادثة شغّله من قائمة <bdi dir="ltr" class="nw">Connectors</bdi>.</span><span class="div"></span><span class="s-en" dir="ltr"><b>A connector does not work</b><br><b>Customize → Connectors</b>: disconnect, reconnect, then switch it on from the chat’s Connectors menu.</span></li>
-<li class="st fix"><span class="n">!</span><span class="s-ar"><b>المونتير يقول ما يقدر يقص الفيديو</b><br>المونتير يقص بس بمسار <bdi dir="ltr" class="nw">Claude Code</bdi> (الخطوات <bdi dir="ltr" class="nw">B</bdi>). في <bdi dir="ltr" class="nw">Projects</bdi> يعطيك خطة وأوامر.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Editor says it cannot cut video</b><br>Cutting works only in Claude Code (path B). In Projects it gives you a plan and commands.</span></li>
+<li class="st fix"><span class="n">!</span><span class="s-ar"><b>المونتير يقول ما يقدر يقص الفيديو</b><br>المونتير يقص بس بمسار <bdi dir="ltr" class="nw">Claude Code</bdi> (الخطوات <bdi dir="ltr" class="nw">B</bdi>). في <bdi dir="ltr" class="nw">Projects</bdi> يعطيك خطة وأوامر.</span><span class="div"></span><span class="s-en" dir="ltr"><b>Editor says it cannot cut video</b><br>Cutting works only in Claude Code (path B, or from your phone via C). In Projects it gives you a plan and commands.</span></li>
 </ol>
 
 <footer>
   تم التحقق من الخطوات من المصادر الرسمية بتاريخ ٢٠٢٦‑١١‑١١ · <span dir="ltr">Steps verified against official sources on 2026-11-11</span><br>
-  <span dir="ltr"><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Projects</a> · <a href="https://claude.com/docs/connectors/getting-started" target="_blank" rel="noopener">Connectors</a> · <a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener">Research</a> · <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank" rel="noopener">Create and edit files</a> · <a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener">Claude Code desktop</a> · <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">CLAUDE.md</a> · <a href="https://help.metricool.com/how-to-connect-metricools-mcp-with-claude-0l84v" target="_blank" rel="noopener">Metricool + Claude</a> · <a href="https://www.canva.com/help/mcp-agent-setup" target="_blank" rel="noopener">Canva + Claude</a> · <a href="https://ffmpeg-cookbook.com/en/articles/install-ffmpeg" target="_blank" rel="noopener">FFmpeg (winget / brew)</a></span>
+  <span dir="ltr"><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Projects</a> · <a href="https://claude.com/docs/connectors/getting-started" target="_blank" rel="noopener">Connectors</a> · <a href="https://support.claude.com/en/articles/11088861-use-research-on-claude" target="_blank" rel="noopener">Research</a> · <a href="https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude" target="_blank" rel="noopener">Create and edit files</a> · <a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener">Claude Code desktop</a> · <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">CLAUDE.md</a> · <a href="https://help.metricool.com/how-to-connect-metricools-mcp-with-claude-0l84v" target="_blank" rel="noopener">Metricool + Claude</a> · <a href="https://www.canva.com/help/mcp-agent-setup" target="_blank" rel="noopener">Canva + Claude</a> · <a href="https://code.claude.com/docs/en/remote-control" target="_blank" rel="noopener">Remote Control</a> · <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">Claude Code install</a> · <a href="https://ffmpeg-cookbook.com/en/articles/install-ffmpeg" target="_blank" rel="noopener">FFmpeg (winget / brew)</a></span>
 </footer>
 
 </div>

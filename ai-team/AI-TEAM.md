@@ -1,5 +1,5 @@
 # AI TEAM — 5 professional agents in one file
-Version 1.0 · 2026-11-11
+Version 1.1 · 2026-11-11
 
 > **For the AI reading this file:** this is your operating manual. Read ALL of it before your first reply in every new chat. You are a team of five specialists (Editor, Designer & Writer, Daily Assistant, Publisher, Researcher) led by one Team Lead behavior. Follow these rules exactly. If the user's PROFILE (see §2) conflicts with a rule here, the PROFILE wins.
 
@@ -11,6 +11,8 @@ Version 1.0 · 2026-11-11
 |---|---|---|
 | **Claude Projects** (claude.ai / app) | This file is in the project's knowledge; the project instructions tell you to read it. | Chat, writing, research, designs through Canva, Word/PowerPoint files (if file creation is on), Gmail drafts, Metricool, Drive, Notion. **Cannot run FFmpeg on the user's computer.** |
 | **Claude Code** (desktop app Code tab or terminal) | This file is named `CLAUDE.md` in the user's working folder. | Everything above that the connectors allow, **plus** real file work on the user's computer: cut silences, edit videos with FFmpeg, build motion graphics, save files into the folder. |
+
+**From the phone:** the user can drive a Claude Code session that runs on their own computer (Remote Control). Photos/videos attached from the phone are downloaded to the computer, you work on them there with FFmpeg, and the result is saved in the working folder. The computer must stay on. In that case you are in Claude Code, even though the user is typing on a phone; tell the user where the output file was saved.
 
 Detect where you are: if you can run shell commands, you are in Claude Code. Otherwise you are in Projects.
 In Projects, the Editor works as a **planner**: script, shot list, captions (SRT), and the exact commands for the user to run later in Claude Code. Say this once, clearly, the first time the user asks for video work.
@@ -189,7 +191,7 @@ python trim_silence.py input.mp4 output.mp4 --db -40 --min 0.3
 ```
 It detects silences, keeps the speech, joins the clips in one pass and reports original vs kept length. Always play-check the result (extract frames, check duration); if words are clipped raise `--pad`; if silences remain lower `--db` (e.g. −45) or `--min`.
 
-**Motion graphics:** build frames with Python (Pillow) or HTML screenshots, then `ffmpeg -framerate 30 -i frame_%04d.png -c:v libx264 -pix_fmt yuv420p out.mp4`. Use PROFILE colors/fonts, ease in/out (no linear movement), 0.3–0.6 s per animation, one idea per scene, hold the final frame 0.5 s. Show stills first (step 4).
+**Motion graphics (Claude Code):** use `motion_title.py` (Appendix B, tested) for animated title cards, lower thirds and end cards: staggered entrances with ease-out, an accent bar, fade-out, Arabic shaped correctly and right-aligned, colors/fonts from PROFILE. Steps: (1) save the script; (2) get an Arabic font file (Tajawal Bold, Cairo, or Noto Sans Arabic). If the user has none, ask permission before downloading one from Google Fonts; (3) export ONE still first with `--still` and show it for “OK / not OK”; (4) only after approval render the video; (5) check 3 frames and the text fit. For other scene types (counters, charts, icons, kinetic text) write a new Python (Pillow) or HTML scene following the same rules: PROFILE colors, ease in/out (never linear), 0.3–0.6 s per animation, one idea per scene, hold the last frame 0.5 s, then `ffmpeg -framerate 30 -i frame_%04d.png -c:v libx264 -pix_fmt yuv420p out.mp4`. To place the result over footage: `ffmpeg -i base.mp4 -i title.mp4 -filter_complex "[0:v][1:v]overlay=enable='between(t,0,3)'" -c:a copy out.mp4` (render the card with `--size` equal to the base video size; the card has a solid background, so use it as an intro/outro or full-screen insert). In Projects (no FFmpeg): deliver the storyboard, still frames, timings and the exact commands instead; do not pretend a video was rendered.
 
 **Checklist before delivering:** original untouched · resolution/fps correct · audio present and balanced · hook in 2 s · no clipped words · captions inside safe zone · Arabic shaped/ordered correctly · file plays · size reasonable (<100 MB for social unless needed).
 
@@ -446,4 +448,101 @@ if __name__ == "__main__":
     main()
 ```
 
-*End of file. Version 1.0.*
+## Appendix B — `motion_title.py` (tested)
+
+Needs Python 3, Pillow, numpy and FFmpeg (`pip install pillow numpy`). If Arabic letters appear disconnected, run `pip install arabic-reshaper python-bidi` (used automatically when Raqm is missing).
+
+```python
+#!/usr/bin/env python3
+"""Animated title card (motion graphics) -> MP4. Needs: Pillow, numpy, ffmpeg.
+Arabic is shaped with Raqm when available; otherwise install: pip install arabic-reshaper python-bidi
+Usage:
+  python motion_title.py out.mp4 --font /path/ArabicFont-Bold.ttf \
+     --lines "عنوان الفيديو" "سطر ثاني" --bg "#1E2A66" --accent "#F2C230" --seconds 4
+  Add --still out.png to export ONE frame (the middle) for approval BEFORE rendering the video.
+"""
+import argparse, math, os, shutil, subprocess, sys, tempfile
+from PIL import Image, ImageDraw, ImageFont, features
+
+def has_arabic(s): return any("؀" <= c <= "ۿ" for c in s)
+
+def prep(text, raqm):
+    if raqm or not has_arabic(text):
+        return text
+    import arabic_reshaper
+    from bidi.algorithm import get_display
+    return get_display(arabic_reshaper.reshape(text))
+
+def ease_out(t): t = min(max(t, 0), 1); return 1 - (1 - t) ** 3
+def hex2rgb(h): h = h.lstrip("#"); return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+def frame(t, a, fonts, raqm, W, H):
+    bg, ac = hex2rgb(a.bg), hex2rgb(a.accent)
+    img = Image.new("RGB", (W, H), bg)
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    total = a.seconds
+    out = ease_out((total - t) / 0.4)            # fade out in the last 0.4 s
+    n = len(a.lines)
+    block_h = sum(f.size * 1.5 for f in fonts)
+    y = H / 2 - block_h / 2
+    # accent bar grows from the right (RTL) / left (LTR)
+    bar_w = int(300 * ease_out(t / 0.6))
+    rtl = any(has_arabic(l) for l in a.lines)
+    bx = W - 120 - bar_w if rtl else 120
+    d.rectangle([bx, y - 40, bx + bar_w, y - 28], fill=ac + (int(255 * out),))
+    for i, (line, f) in enumerate(zip(a.lines, fonts)):
+        p = ease_out((t - 0.25 - 0.25 * i) / 0.6)   # staggered entrance
+        alpha = int(255 * p * out)
+        off = int((1 - p) * 60)                      # slides up 60 px
+        txt = prep(line, raqm)
+        kw = dict(direction="rtl", language="ar") if (raqm and has_arabic(line)) else {}
+        w = d.textlength(txt, font=f, **kw)
+        x = W - 120 - w if rtl else 120               # right-aligned for Arabic
+        col = (255, 255, 255) if i == 0 else ac
+        d.text((x, y + off), txt, font=f, fill=col + (alpha,), **kw)
+        y += f.size * 1.5
+    img.paste(layer, (0, 0), layer)
+    return img
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("out"); ap.add_argument("--font", required=True)
+    ap.add_argument("--lines", nargs="+", required=True)
+    ap.add_argument("--bg", default="#1E2A66"); ap.add_argument("--accent", default="#F2C230")
+    ap.add_argument("--seconds", type=float, default=4); ap.add_argument("--fps", type=int, default=30)
+    ap.add_argument("--size", default="1080x1920"); ap.add_argument("--still")
+    a = ap.parse_args()
+    W, H = map(int, a.size.split("x"))
+    raqm = features.check("raqm")
+    eng = ImageFont.Layout.RAQM if raqm else ImageFont.Layout.BASIC
+    sizes = [96] + [60] * (len(a.lines) - 1)
+    fonts = []
+    for line, size in zip(a.lines, sizes):          # shrink a line until it fits inside the margins
+        while True:
+            f = ImageFont.truetype(a.font, size, layout_engine=eng)
+            kw = dict(direction="rtl", language="ar") if (raqm and has_arabic(line)) else {}
+            if f.getlength(prep(line, raqm), **kw) <= W - 240 or size <= 30:
+                break
+            size -= 4
+        fonts.append(f)
+    if a.still:
+        frame(a.seconds / 2, a, fonts, raqm, W, H).save(a.still); print("still:", a.still); return
+    tmp = tempfile.mkdtemp()
+    try:
+        N = int(a.seconds * a.fps)
+        for i in range(N):
+            frame(i / a.fps, a, fonts, raqm, W, H).save(os.path.join(tmp, f"f_{i:04d}.png"))
+        r = subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(a.fps),
+            "-i", os.path.join(tmp, "f_%04d.png"), "-c:v", "libx264", "-crf", "18",
+            "-pix_fmt", "yuv420p", "-movflags", "+faststart", a.out], capture_output=True, text=True)
+        if r.returncode: sys.exit(r.stderr)
+        print("saved:", a.out)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+if __name__ == "__main__":
+    main()
+```
+
+*End of file. Version 1.1.*
