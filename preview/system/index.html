@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
+<head><script>document.documentElement.classList.add("ix-pre")</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>نظام التسويق الذكي</title>
@@ -266,7 +266,7 @@ addEventListener('DOMContentLoaded',()=>{
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 });
 </script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="../assets/ideas.css?v=1794145331"><meta name="robots" content="noindex"></head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="../assets/ideas.css?v=1794341596"><meta name="robots" content="noindex"><link rel="stylesheet" href="../assets/v2.css?v=1794341596"><link rel="stylesheet" href="../assets/waitlist.css?v=1"></head>
 <body>
 <div class="hero-wrap"><script async src="https://www.googletagmanager.com/gtag/js?id=G-MB5WZZ4LGR"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-MB5WZZ4LGR");</script><style>
 .bsn{--bsn-ink:#0E1440;--bsn-gold:#F2C230;--bsn-line:rgba(255,255,255,.10);--bsn-muted:#AEB6DA;
@@ -464,7 +464,7 @@ html[lang=ar] .bsn .en,html[lang=en] .bsn .ar{display:none!important}
 
 <section><div class="col">
 <h2 class="rise">من يقدّم <em>النظام؟</em></h2>
-<div class="about rise"><div><p><strong>حمد الخضري</strong>، أكثر من ١٠ سنوات خبرة في إدارة المشاريع والتسويق مع شركات ومشاريع في الكويت، وصانع محتوى «بزنس و AI» يتابعه أكثر من ٤١ ألف شخص.</p><p>نفس الشركة اللي تتعلمها هي اللي تشغّل حسابه اليوم. كل درس طبّقه بنفسه قبل لا يضيفه.</p></div></div>
+<div class="about rise"><div><p><strong>حمد الخضري</strong>، أكثر من ١٠ سنوات خبرة في إدارة المشاريع والتسويق مع شركات ومشاريع في الكويت، وصانع محتوى «بزنس و AI» يتابعه أكثر من ٤١٬٥٠٠ شخص.</p><p>نفس الشركة اللي تتعلمها هي اللي تشغّل حسابه اليوم. كل درس طبّقه بنفسه قبل لا يضيفه.</p></div></div>
 </div></section>
 
 <section><div class="col">
@@ -478,14 +478,22 @@ html[lang=ar] .bsn .en,html[lang=en] .bsn .ar{display:none!important}
 </div></section>
 
 <section class="band" id="buy"><div class="col final">
-<h2 class="rise">ابدأ <em>اليوم</em></h2>
+<h2 class="rise">كن من <em>الأوائل</em></h2>
 <div class="price rise" style="width:100%;text-align:right">
   <div class="timer" data-end="2026-12-31T23:59:00+03:00"><em>ينتهي العرض خلال</em><div class="tu"><span><b data-u="d">--</b><small>يوم</small></span><span><b data-u="h">--</b><small>ساعة</small></span><span><b data-u="m">--</b><small>دقيقة</small></span><span><b data-u="s">--</b><small>ثانية</small></span></div></div>
   <div class="pr"><div class="amount" data-full='<span dir="ltr" style="unicode-bidi:isolate">$125</span>'><span dir="ltr" style="unicode-bidi:isolate">$75</span></div><span class="was"><span dir="ltr" style="unicode-bidi:isolate">$125</span></span><span class="save">خصم ٤٠٪</span></div>
   <ul class="ticks"><li>٦ دروس بالفيديو، تطبّقها في يومين</li><li>التطبيق سهل خطوة بخطوة، بدون ما تكون مبرمج أو تقني</li><li>أقل من عُشر اللي تدفعه لشركة تسويق في شهر واحد</li><li>ملفات كل موظف جاهزة</li><li>٤ هدايا: قوالب، خطة ٣٠ يومًا، دليل الحساب، وتحديثات مجانية</li><li>ضمان استرجاع ١٤ يومًا</li></ul>
 </div>
-<a class="cta rise" href="#">احصل على النظام الآن <span class="arr">←</span></a>
-<p class="alt rise">بعد انتهاء العرض يرجع السعر إلى <span dir="ltr" style="unicode-bidi:isolate">$125</span>. تبي أحد يقرأ حالتك؟ <a href="../consult/">اطلب استشارة خاصة</a></p>
+<div class="wl rise" id="wl"><h3>قائمة الانتظار</h3><p class="sub">النظام ينفتح قريبًا. سجّل اسمك ونرسل لك رسالة أول ما ينفتح التسجيل، وتكون من الأوائل.</p>
+<form id="wlf" name="system-waitlist" method="POST" data-netlify="true" netlify-honeypot="company" novalidate>
+<input type="hidden" name="form-name" value="system-waitlist">
+<label>الاسم<input name="name" required autocomplete="name"></label>
+<label>رقم الواتساب<span class="tel"><select name="cc" aria-label="رمز الدولة"><option value="+965">🇰🇼 +965</option><option value="+966">🇸🇦 +966</option><option value="+971">🇦🇪 +971</option><option value="+974">🇶🇦 +974</option><option value="+973">🇧🇭 +973</option><option value="+968">🇴🇲 +968</option><option value="+20">🇪🇬 +20</option><option value="+962">🇯🇴 +962</option><option value="+964">🇮🇶 +964</option></select><input name="phone" type="tel" inputmode="tel" required autocomplete="tel-national" dir="ltr"></span></label>
+<label>الإيميل (اختياري)<input name="email" type="email" dir="ltr" autocomplete="email"></label>
+<input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="err" hidden></p>
+<button type="submit">سجّل اسمي بقائمة الانتظار</button></form>
+<div class="ok"><b>تم تسجيلك ✅</b>نرسل لك على الواتساب أول ما ينفتح التسجيل.<br><small hidden>(معاينة: ما أُرسل شي)</small></div></div>
 </div></section>
 <style>
 .bsf{border-top:1px solid rgba(255,255,255,.10);background:#0E1440;color:#AEB6DA;font-size:15px;font-family:"IBM Plex Sans Arabic","Tajawal",system-ui,sans-serif;padding:56px 0 calc(40px + env(safe-area-inset-bottom,0px))}
@@ -533,5 +541,5 @@ html[lang=ar] .bsf .en,html[lang=en] .bsf .ar{display:none!important}
 <script>if(/bznstatus\.com$/.test(location.hostname))document.querySelectorAll('.bsf [data-home]').forEach(function(a){a.setAttribute('href','/')});</script>
 <div class="bar" aria-hidden="false"><div class="bt"><b><span dir="ltr" style="unicode-bidi:isolate">$75</span> <s><span dir="ltr" style="unicode-bidi:isolate">$125</span></s></b><small>خصم ٤٠٪ · لين نهاية السنة</small></div><a class="cta" href="#buy">احصل عليه</a></div>
 
-<script src="../assets/ideas.js?v=1794145331" data-page="system"></script></body>
+<script src="../assets/ideas.js?v=1794341596" data-page="system"></script><script src="../assets/v2.js?v=1794341596"></script><script src="../assets/waitlist.js?v=1"></script></body>
 </html>
