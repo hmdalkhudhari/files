@@ -1,0 +1,64 @@
+/* ===== v2 (Hamad 11-10 notes) ===== */
+
+/* first black screen: hide the page until the logo intro takes over */
+html.ix-pre{background:#0E1440}
+html.ix-pre body>*{visibility:hidden}
+html.ix-pre body>.ix-intro{visibility:visible}
+
+/* fixed top bar on every page (other layout rules were forcing it to relative) */
+html body>header.bsn{position:fixed!important;z-index:1000!important;top:0;left:0;right:0}
+
+/* logo intro: bigger, glowing, draws like an icon */
+.ix-intro svg{width:104px;height:104px;filter:drop-shadow(0 0 22px rgba(242,194,48,.35))}
+.ix-intro .p1,.ix-intro .p2{stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* gold shine on every gold button (same as the hero one) */
+.ix-gs{position:relative;overflow:hidden}
+.ix-gs::after{content:"";position:absolute;top:-20%;bottom:-20%;width:36%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);animation:ixshine3 3s ease-in-out infinite;pointer-events:none}
+@keyframes ixshine3{0%{left:-60%}45%,100%{left:130%}}
+
+/* blinking buttons / badges */
+@keyframes ixbtnblink{0%,100%{filter:none;box-shadow:0 0 0 0 rgba(242,194,48,.55)}50%{filter:brightness(1.18);box-shadow:0 0 0 12px rgba(242,194,48,0)}}
+.ix-blink{animation:ixbtnblink 1.4s ease-in-out infinite!important}
+@keyframes ixdotblink{0%,45%{opacity:1;box-shadow:0 0 0 4px rgba(91,227,154,.28),0 0 14px rgba(91,227,154,.9)}55%,100%{opacity:.1;box-shadow:none}}
+html.iK .hero-text .tag::before,.tag::before{animation:ixdotblink 1.2s linear infinite!important}
+html.iK .hero-text .tag{box-shadow:0 0 0 1px rgba(91,227,154,.25)}
+
+/* small sticky booking pill that follows the user (all screen sizes) */
+html.i8 .ix-bar,.ix-bar{display:block!important;left:auto;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:auto;padding:0;background:none;opacity:0;pointer-events:none;transform:translateY(24px);transition:opacity .3s,transform .35s cubic-bezier(.2,.7,.2,1)}
+html.i8 .ix-bar.on{opacity:1;pointer-events:auto;transform:none}
+html.i8 .ix-bar a{padding:12px 18px;font-size:14.5px;border-radius:999px;gap:8px}
+html.iS .ix-bar.on{display:block!important}
+@media(min-width:900px){html.i8 .ix-bar{display:block!important}}
+
+/* clients logo strip lives on the ads page only */
+.ix-mq{margin-top:10px}
+html.pg-kit .ix-mq{display:block;margin:34px -22px 0;padding:22px 0 24px;border-block:1px solid rgba(255,255,255,.1)}
+html.pg-kit .ix-mq::before{background:linear-gradient(90deg,#0F1640,transparent)}
+html.pg-kit .ix-mq::after{background:linear-gradient(-90deg,#0F1640,transparent)}
+html.pg-kit .ix-mq .lbl{display:none}
+
+/* kit: bring back the original dashed circle behind the photo, no gold ribbons */
+html.pg-kit .photo:after{display:block}
+html.pg-kit .ix-rib{display:none!important}
+html.pg-kit .top{display:none!important}
+html.pg-kit .wrap{padding-top:calc(76px + env(safe-area-inset-top,0px))}
+@media(max-width:900px){html.pg-kit .wrap{padding-top:calc(64px + env(safe-area-inset-top,0px))}}
+html.pg-kit .bsn-end .lang{margin:0}
+html.pg-kit .bsn-end .lang button{padding:6px 11px}
+@media(max-width:900px){html.pg-kit .bsn-end>.lang{display:none}html.pg-kit .bsn-sheet .lang{align-self:flex-start;margin-top:14px;display:flex}}
+@media(min-width:901px){html.pg-kit .bsn-sheet .lang{display:none}}
+html.pg-kit .scrl{display:none!important}
+
+/* system: globe wrapper keeps the lines soft */
+html.pg-system .ix-globe canvas{filter:saturate(1.05)}
+
+/* reviews / rating call-to-action (consult) */
+.rate-box{border:1.5px dashed rgba(242,194,48,.5);border-radius:18px;padding:22px;display:grid;gap:12px;text-align:center}
+.rate-box p{margin:0;color:#D6DAEE;font-size:15.5px;line-height:1.7}
+.rate-box a.rate-cta{justify-self:center;display:inline-flex;align-items:center;gap:8px;background:#F2C230;color:#1E2A66;font-weight:800;border-radius:999px;padding:13px 24px;text-decoration:none}
+
+/* other layout rules (html.iB/iK body>*{position:relative}) were un-fixing these overlays */
+html body>.ix-intro{position:fixed!important;inset:0!important;z-index:5000!important}
+html body>.ix-bar{position:fixed!important;z-index:60!important}
+html.pg-kit,html.pg-kit body{overflow-x:clip}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>قيّم جلستك · Business Status</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E1440">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Inter:wght@500;700&display=swap">
+<style>
+:root{--ink:#0E1440;--navy:#1E2A66;--card:#2A3680;--gold:#F2C230;--muted:#AEB6DA;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:linear-gradient(180deg,#0A0F30,#0F1640);color:#fff;font:400 16px/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif;min-height:100svh}
+.wrap{max-width:640px;margin:0 auto;padding:22px max(18px,env(safe-area-inset-right)) 60px max(18px,env(safe-area-inset-left))}
+.brand{display:flex;align-items:center;gap:10px;direction:ltr;font:700 17px "Inter",system-ui,sans-serif;margin:6px 0 26px}
+.brand svg{width:30px;height:30px}
+h1{font-size:clamp(28px,7vw,40px);line-height:1.3;margin:0 0 8px;font-weight:800}
+h1 em{font-style:normal;color:var(--gold)}
+.sub{color:var(--muted);margin:0 0 24px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px}
+.q h3{margin:0 0 4px;font-size:16.5px}
+.q small{display:block;color:var(--muted);margin-bottom:12px;font-size:13px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opts label{flex:1 1 0;min-width:52px}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:grid;place-items:center;height:46px;border-radius:12px;border:1.5px solid var(--line);background:rgba(255,255,255,.04);font-weight:700;cursor:pointer;transition:.2s;padding:0 8px;text-align:center;font-size:14.5px}
+.opts input:checked+span{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.opts.wide label{flex:1 1 30%}
+textarea,input[type=text]{width:100%;background:rgba(255,255,255,.06);border:1.5px solid var(--line);border-radius:12px;color:#fff;font:inherit;padding:12px 14px}
+textarea{min-height:110px;resize:vertical}
+textarea:focus,input[type=text]:focus{outline:none;border-color:var(--gold)}
+.consent{display:grid;gap:8px}
+.consent label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;font-size:14.5px}
+.consent input{margin-top:5px;accent-color:#F2C230}
+button.go{width:100%;margin-top:8px;border:0;border-radius:999px;background:var(--gold);color:var(--navy);font:800 17px "IBM Plex Sans Arabic",system-ui,sans-serif;padding:16px;cursor:pointer;position:relative;overflow:hidden}
+button.go::after{content:"";position:absolute;top:-20%;bottom:-20%;width:36%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);animation:sh 3s ease-in-out infinite}
+@keyframes sh{0%{left:-60%}45%,100%{left:130%}}
+.note{color:var(--muted);font-size:13px;text-align:center;margin-top:12px}
+.done{display:none;text-align:center;padding:40px 10px}
+.done .ok{width:64px;height:64px;border-radius:50%;background:rgba(91,227,154,.15);border:2px solid #5BE39A;color:#5BE39A;display:grid;place-items:center;font-size:30px;margin:0 auto 16px}
+.demo{display:none;margin-top:14px;padding:12px;border:1.5px dashed rgba(242,194,48,.5);border-radius:12px;color:var(--gold);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <a class="brand" href="../consult/" style="color:#fff;text-decoration:none"><svg viewBox="0 0 64 64"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F2C230"/></svg>Business Status</a>
+ <form id="f" novalidate>
+  <h1>قيّم <em>جلستك</em></h1>
+  <p class="sub">٥ أسئلة سريعة وكلها اختيارية، ورأيك الحر لو تبي. ما ننشر أي شي إلا بموافقتك.</p>
+
+  <div class="q"><h3>١) شلون كانت الجلسة بشكل عام؟</h3><small>من ١ إلى ٥</small>
+   <div class="opts"><label><input type="radio" name="overall" value="1"><span>١</span></label><label><input type="radio" name="overall" value="2"><span>٢</span></label><label><input type="radio" name="overall" value="3"><span>٣</span></label><label><input type="radio" name="overall" value="4"><span>٤</span></label><label><input type="radio" name="overall" value="5"><span>٥</span></label></div></div>
+
+  <div class="q"><h3>٢) وضّحنا لك وين المشكلة؟</h3><small>تشخيص حالتك</small>
+   <div class="opts wide"><label><input type="radio" name="clear" value="yes"><span>إي، واضح</span></label><label><input type="radio" name="clear" value="partly"><span>إلى حد ما</span></label><label><input type="radio" name="clear" value="no"><span>لا</span></label></div></div>
+
+  <div class="q"><h3>٣) طلعت بحلول تقدر تطبّقها؟</h3><small>مو كلام عام</small>
+   <div class="opts wide"><label><input type="radio" name="actionable" value="yes"><span>إي، طبّقت أو بطبّق</span></label><label><input type="radio" name="actionable" value="partly"><span>جزء منها</span></label><label><input type="radio" name="actionable" value="no"><span>لا</span></label></div></div>
+
+  <div class="q"><h3>٤) توصي غيرك بالجلسة؟</h3><small>&nbsp;</small>
+   <div class="opts wide"><label><input type="radio" name="recommend" value="yes"><span>أكيد</span></label><label><input type="radio" name="recommend" value="maybe"><span>يمكن</span></label><label><input type="radio" name="recommend" value="no"><span>لا</span></label></div></div>
+
+  <div class="q"><h3>٥) المدة (٦٠ دقيقة) كانت؟</h3><small>&nbsp;</small>
+   <div class="opts wide"><label><input type="radio" name="length" value="short"><span>قصيرة</span></label><label><input type="radio" name="length" value="right"><span>مناسبة</span></label><label><input type="radio" name="length" value="long"><span>طويلة</span></label></div></div>
+
+  <div class="q"><h3>تعليقك الحر</h3><small>اختياري. شنو أفادك أكثر؟ وشنو نقدر نحسّنه؟</small>
+   <textarea name="comment" placeholder="اكتب بكلامك"></textarea></div>
+
+  <div class="q"><h3>اسمك</h3><small>اختياري</small>
+   <input type="text" name="name" autocomplete="name" placeholder="مثال: سارة"></div>
+
+  <div class="q"><h3>نعرض رأيك بالموقع؟</h3><small>ما ننشر شي بدون موافقتك</small>
+   <div class="consent">
+    <label><input type="radio" name="consent" value="name"><span>إي، باسمي</span></label>
+    <label><input type="radio" name="consent" value="anon"><span>إي، بدون اسم</span></label>
+    <label><input type="radio" name="consent" value="no" checked><span>لا، للشركة بس</span></label>
+   </div></div>
+
+  <button class="go" type="submit">أرسل التقييم</button>
+  <p class="note">شكرًا لوقتك 🌷 · Business Status</p>
+  <p class="demo" id="demo">معاينة: التقييم ما ينحفظ. يشتغل لما نربط الصفحة بالشيت بعد موافقة حمد.</p>
+ </form>
+ <div class="done" id="done"><div class="ok">✓</div><h1>وصل تقييمك</h1><p class="sub">شكرًا، يفيدنا ويفيد غيرك.</p><a href="../consult/" style="color:#F2C230">رجوع للصفحة</a></div>
+</div>
+<script>
+/* Set RATE_ENDPOINT to the Apps Script /exec URL once approved (see rate-apps-script.gs). Empty = preview only. */
+var RATE_ENDPOINT='';
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var fd=new FormData(e.target), o={}; fd.forEach(function(v,k){o[k]=v});
+ o.action='rate'; o.page='consult'; o.ts=new Date().toISOString();
+ function ok(){ document.getElementById('f').style.display='none'; document.getElementById('done').style.display='block'; scrollTo(0,0); }
+ if(!RATE_ENDPOINT){ document.getElementById('demo').style.display='block'; setTimeout(ok,900); return; }
+ fetch(RATE_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(o)}).then(ok).catch(ok);
+});
+</script>
+</body>
+</html>
