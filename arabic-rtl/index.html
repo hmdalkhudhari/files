@@ -39,6 +39,9 @@ h3{margin:0;font-family:var(--fl);font-size:18px;font-weight:700;flex:1;text-ali
 .cp{flex:none;display:flex;align-items:center;gap:5px;border:0;background:var(--y);color:var(--navy);font:800 13px 'Tajawal',sans-serif;padding:8px 11px;border-radius:9px;cursor:pointer}
 .cp svg{width:15px;height:15px;fill:none;stroke:var(--navy);stroke-width:2}
 .cp.ok{background:#1FA855;color:#fff}.cp.ok svg{stroke:#fff}
+.pr p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+.pr.open p{display:block;-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
+.mo{display:block;width:100%;margin-top:8px;border:1px dashed #C9CDE3;background:#fff;color:var(--navy);font:800 13.5px 'Tajawal',sans-serif;padding:8px;border-radius:10px;cursor:pointer}
 .hint{font-size:12.5px;color:var(--soft);margin-top:6px}
 .src{display:block;margin-top:10px;font-size:13px;color:var(--navy);font-weight:700;text-decoration:none;overflow-wrap:anywhere}
 .src span{text-decoration:underline}
@@ -57,8 +60,12 @@ footer h2{margin:0 0 4px;color:#fff}footer p{margin:0 0 16px;color:#D9DBE6;font-
 <a class="gl" href="https://bznstatus.com/consult/"><b>لكم خصم خاص<i>٢٥٪</i></b><span>اضغط هنا ←</span></a>
 </div></header>
 <main class="wrap">
-<h2>١. انسخ التعليمات</h2>
-<p class="lead">زر واحد، وبعدها حطها بمكانها تحت.</p>
+<h2>١. افتح مكان التعليمات</h2>
+<p class="lead">اختر برنامجك، مرة وحدة بس.</p>
+<ol><li class="card"><div class="top"><b class="n">1</b><h3 dir="ltr">ChatGPT</h3></div><div class="bi"><span class="a">الإعدادات ← التخصيص ← تعليمات مخصصة ← الصق واحفظ</span><span class="e" dir="ltr">Settings → Personalization → Custom instructions → paste, Save</span></div></li><li class="card"><div class="top"><b class="n">2</b><h3 dir="ltr">Claude</h3></div><div class="bi"><span class="a">الإعدادات ← الملف الشخصي ← تفضيلاتك الشخصية ← الصق</span><span class="e" dir="ltr">Settings → Profile → Personal preferences → paste</span></div></li><li class="card"><div class="top"><b class="n">3</b><h3 dir="ltr">Gemini</h3></div><div class="bi"><span class="a">الإعدادات ← المعلومات المحفوظة ← الصق</span><span class="e" dir="ltr">Settings → Saved info → paste</span></div></li></ol>
+<p class="hint" style="margin-top:10px">السبب: الشاشة تقرا أول حرف بالسطر. إذا بدأ بإنجليزي أو رقم ينقلب السطر يسار. التعليمات تخليه يبدأ كل سطر بكلمة عربية.</p>
+<h2>٢. انسخ التعليمات والصقها</h2>
+<p class="lead">انسخها والصقها بالمكان اللي فتحته فوق.</p>
 <ul><li class="ask"><div class="bi"><span class="a">التعليمات</span><span class="e" dir="ltr">The instructions</span></div><div class="pr code"><p dir=ltr>Whenever you reply in Arabic, format it so it displays correctly right-to-left (RTL) and copies cleanly:<br>1. The first letter of a line decides its direction. So every heading, paragraph, bullet, numbered item and table header must start with an Arabic word, never with an English word, a number, a symbol or an emoji.<br>   Wrong: &quot;- **ChatGPT**: يكتب لك المحتوى&quot;<br>   Right: &quot;- أداة **ChatGPT**: تكتب لك المحتوى&quot;<br>2. Keep English words, brand names and numbers inside the sentence, not at the start or end of a line.<br>3. Write prices and units in words after the number: &quot;٢٠ دولار&quot; not &quot;$20&quot; or &quot;20$&quot;. Write percentages as &quot;٣٠٪&quot;.<br>4. Put code, commands, formulas and links in separate code blocks, never inside an Arabic sentence.<br>5. Use Arabic punctuation (، ؛ ؟) and «» for quotes, with no space before a punctuation mark.<br>6. Tables: Arabic headers, short cells, no empty cells.<br>7. One idea per line, with consistent headings, numbering and bullets.<br>8. When I give you Arabic text to format, keep my exact wording and order and fix the layout only.<br>Apply this automatically to every Arabic reply, and never mention these rules.</p><button class="cp" data-t="Whenever you reply in Arabic, format it so it displays correctly right-to-left (RTL) and copies cleanly:
 1. The first letter of a line decides its direction. So every heading, paragraph, bullet, numbered item and table header must start with an Arabic word, never with an English word, a number, a symbol or an emoji.
    Wrong: &quot;- **ChatGPT**: يكتب لك المحتوى&quot;
@@ -70,11 +77,7 @@ footer h2{margin:0 0 4px;color:#fff}footer p{margin:0 0 16px;color:#D9DBE6;font-
 6. Tables: Arabic headers, short cells, no empty cells.
 7. One idea per line, with consistent headings, numbering and bullets.
 8. When I give you Arabic text to format, keep my exact wording and order and fix the layout only.
-Apply this automatically to every Arabic reply, and never mention these rules."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>نسخ</button></div><p class="hint">بالإنجليزي عمداً: يفهمها أدق، والردود تطلع عربي.</p></li></ul>
-<h2>٢. حطها مرة وحدة</h2>
-<p class="lead">اختر برنامجك.</p>
-<ol><li class="card"><div class="top"><b class="n">1</b><h3 dir="ltr">ChatGPT</h3></div><div class="bi"><span class="a">الإعدادات ← التخصيص ← تعليمات مخصصة ← الصق واحفظ</span><span class="e" dir="ltr">Settings → Personalization → Custom instructions → paste, Save</span></div></li><li class="card"><div class="top"><b class="n">2</b><h3 dir="ltr">Claude</h3></div><div class="bi"><span class="a">الإعدادات ← الملف الشخصي ← تفضيلاتك الشخصية ← الصق</span><span class="e" dir="ltr">Settings → Profile → Personal preferences → paste</span></div></li><li class="card"><div class="top"><b class="n">3</b><h3 dir="ltr">Gemini</h3></div><div class="bi"><span class="a">الإعدادات ← المعلومات المحفوظة ← الصق</span><span class="e" dir="ltr">Settings → Saved info → paste</span></div></li></ol>
-<p class="hint" style="margin-top:10px">السبب: الشاشة تقرا أول حرف بالسطر. إذا بدأ بإنجليزي أو رقم ينقلب السطر يسار. التعليمات تخليه يبدأ كل سطر بكلمة عربية.</p>
+Apply this automatically to every Arabic reply, and never mention these rules."><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>نسخ</span></button></div><button class="mo" type="button">اعرض كامل ▾</button><p class="hint">بالإنجليزي عمداً: يفهمها أدق، والردود تطلع عربي.</p></li></ul>
 <h2>٣. عندك نص متلخبط؟</h2>
 <p class="lead">الصق هذا وتحته النص.</p>
 <ul><li class="ask"><div class="bi"><span class="a">رتب لي النص</span><span class="e" dir="ltr">Fix my Arabic text</span></div><div class="pr"><p>رتب لي النص العربي اللي تحت من اليمين لليسار بدون ما تغير ولا كلمة ولا ترتيب الأفكار.<br>خل كل سطر يبدأ بكلمة عربية، وحط الكلمات الإنجليزية والأرقام بنص الجملة، واكتب الأسعار «٢٠ دولار» مو «$20»، واستخدم الفاصلة العربية «،» وعلامة الاستفهام «؟».<br>عطني النتيجة جاهزة للنسخ بس، بدون أي شرح.<br><br>النص:<br>[الصق النص هني]</p><button class="cp" data-t="رتب لي النص العربي اللي تحت من اليمين لليسار بدون ما تغير ولا كلمة ولا ترتيب الأفكار.
@@ -82,12 +85,13 @@ Apply this automatically to every Arabic reply, and never mention these rules.">
 عطني النتيجة جاهزة للنسخ بس، بدون أي شرح.
 
 النص:
-[الصق النص هني]"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>نسخ</button></div></li></ul>
+[الصق النص هني]"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>نسخ</span></button></div><button class="mo" type="button">اعرض كامل ▾</button></li></ul>
 </main>
 <footer><div class="wrap">
 <h2>جربها وعطني رايك</h2><p>كل يوم أنزل شي جديد بالبزنس والـAI.</p>
 <div class="btns"><a class="btn ig" href="https://www.instagram.com/hmdalkhudhari/">تابعني بانستقرام</a><a class="btn wa" href="https://wa.me/message/D6QAVYNNKNQZA1">كلمني واتساب</a></div>
-<p class="fine">جربناها بـChatGPT وClaude وGemini. آخر تأكد: ١٠ نوفمبر ٢٠٢٦.</p>
+<p class="fine">جربناها بـChatGPT وClaude وGemini. آخر تأكد: ١٢ نوفمبر ٢٠٢٦.</p>
 </div></footer>
-<script>document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.t)}catch(e){const t=document.createElement('textarea');t.value=b.dataset.t;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}b.classList.add('ok');b.querySelector('span').textContent='انتسخ ✓';setTimeout(()=>{b.classList.remove('ok');b.querySelector('span').textContent='انسخ'},1600)})</script>
+<script>document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.t)}catch(e){const t=document.createElement('textarea');t.value=b.dataset.t;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}const l=b.querySelector('span');b.classList.add('ok');l.textContent='انتسخ ✓';setTimeout(()=>{b.classList.remove('ok');l.textContent='نسخ'},1600)});
+document.querySelectorAll('.mo').forEach(m=>{const pr=m.previousElementSibling,p=pr.querySelector('p');if(p.scrollHeight<=p.clientHeight+2){m.hidden=true;return}m.onclick=()=>{const o=pr.classList.toggle('open');m.textContent=o?'صغّره ▴':'اعرض كامل ▾'}})</script>
 </body></html>
