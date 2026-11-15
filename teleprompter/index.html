@@ -27,12 +27,12 @@ button.big{font-size:20px;padding:16px}
 /* camera */
 #cam{background:#000}
 video#live{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#prompt{position:absolute;left:0;right:0;top:max(60px,calc(env(safe-area-inset-top) + 50px));height:48%;overflow:hidden;touch-action:none;
+#prompt{position:absolute;left:0;right:0;top:max(60px,calc(env(safe-area-inset-top) + 50px));height:30%;overflow:hidden;touch-action:none;
  -webkit-mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent)}
 #bg{position:absolute;inset:0;background:#000}
 #content{position:absolute;left:0;right:0;top:0;padding:0 18px;will-change:transform;font-weight:700;line-height:1.55;text-shadow:0 1px 4px #000}
 #content p{margin:0 0 .7em;white-space:pre-wrap}
-#line{position:absolute;left:0;right:0;top:30%;height:0;border-top:2px solid var(--gold);opacity:.8;pointer-events:none}
+#line{position:absolute;left:0;right:0;top:18%;height:0;border-top:2px solid var(--gold);opacity:.8;pointer-events:none}
 #top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 12px 8px;z-index:3}
 #top button{padding:8px 12px;background:rgba(30,42,102,.85)}
 #timer{background:rgba(0,0,0,.6);padding:6px 12px;border-radius:12px;font-variant-numeric:tabular-nums;font-weight:700}
@@ -68,6 +68,8 @@ video#live{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
  <div class="row"><label>محاذاة</label>
   <div class="seg" id="alSeg"><button data-v="center" class="sel">وسط</button><button data-v="start">بداية</button></div>
   <button id="mirror">عكس النص: لا</button></div>
+ <div class="row"><label>لوك سينمائي</label><button id="cine">لوك سينمائي: لا</button></div>
+ <div class="row" style="font-size:12px;opacity:.75">يسجل بـ24 فريم مع ألوان دافئة وتعتيم أطراف. مو نفس النمط السينمائي بتطبيق الكاميرا (طمس الخلفية)، هذا يحتاج التطبيق الأصلي.</div>
  <button class="gold big" id="go">فتح الكاميرا</button>
 </div>
 
@@ -92,7 +94,7 @@ video#live{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 <script>
 const $=id=>document.getElementById(id);
-const S=Object.assign({text:'',size:44,speed:30,dim:35,cam:'environment',dir:'rtl',al:'center',mirror:false},JSON.parse(localStorage.getItem('tp')||'{}'));
+const S=Object.assign({text:'',size:44,speed:30,dim:35,cam:'environment',dir:'rtl',al:'center',mirror:false,cine:false},JSON.parse(localStorage.getItem('tp')||'{}'));
 const save=()=>{S.text=$('txt').value;localStorage.setItem('tp',JSON.stringify(S))};
 const pxs=v=>Math.pow(1.06,v); // px/sec: 1 (very slow) .. ~339
 function seg(id,key){const el=$(id);el.querySelectorAll('button').forEach(b=>{b.classList.toggle('sel',b.dataset.v===S[key]);b.onclick=()=>{S[key]=b.dataset.v;el.querySelectorAll('button').forEach(x=>x.classList.toggle('sel',x===b));save();apply()}})}
@@ -102,10 +104,12 @@ function ui(){
  $('speed2').value=S.speed;
  $('speed2').oninput=e=>{S.speed=+e.target.value;$('speed').value=S.speed;$('speedV').textContent=S.speed;save()};
  seg('camSeg','cam');seg('dirSeg','dir');seg('alSeg','al');
+ $('cine').onclick=()=>{S.cine=!S.cine;save();apply()};
  $('mirror').onclick=()=>{S.mirror=!S.mirror;save();apply()};
  $('txt').oninput=save;
 }
 function apply(){
+ $('cine').textContent='لوك سينمائي: '+(S.cine?'نعم':'لا');
  $('mirror').textContent='عكس النص: '+(S.mirror?'نعم':'لا');
  const c=$('content');c.style.fontSize=S.size+'px';c.style.textAlign=S.al;
  c.style.transform='';c.dataset.m=S.mirror?1:0;
@@ -120,10 +124,10 @@ function apply(){
 let pos=0,playing=false,last=0,raf=0;
 const area=()=>$('prompt').clientHeight, hgt=()=>$('content').scrollHeight;
 function render(){$('content').style.transform=`translateY(${pos}px)`}
-function rewind(){pos=area()*0.3;render()}
+function rewind(){pos=area()*0.18;render()}
 function tick(t){
  if(playing){const dt=Math.min(0.1,(t-last)/1000);pos-=pxs(S.speed)*dt;render();
-  if(pos<-hgt()+area()*0.3){setPlaying(false)}}
+  if(pos<-hgt()+area()*0.18){setPlaying(false)}}
  last=t;raf=requestAnimationFrame(tick)
 }
 function setPlaying(p){playing=p;$('pp').textContent=p?'إيقاف النص':'تشغيل النص'}
@@ -161,6 +165,18 @@ let mr=null,chunks=[],t0=0,tmr=0,blob=null,mime='';
 function pickMime(){return ['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4','video/webm;codecs=vp9,opus','video/webm'].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported(m))||''}
 const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0');
 function countdown(){return new Promise(r=>{const c=$('count');let n=3;c.style.display='flex';c.textContent=n;const i=setInterval(()=>{n--;if(n<=0){clearInterval(i);c.style.display='none';r()}else c.textContent=n},1000)})}
+let fxOn=false;
+function startFx(){
+ const v=$('live'),W=v.videoWidth||1080,H=v.videoHeight||1920,c=document.createElement('canvas');c.width=W;c.height=H;
+ const x=c.getContext('2d');fxOn=true;let lt=0;
+ const g=x.createRadialGradient(W/2,H/2,Math.min(W,H)*0.35,W/2,H/2,Math.max(W,H)*0.7);
+ g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,0.5)');
+ (function d(t){if(!fxOn)return;requestAnimationFrame(d);if(t-lt<41)return;lt=t;
+  x.globalCompositeOperation='source-over';x.drawImage(v,0,0,W,H);
+  x.globalCompositeOperation='soft-light';x.fillStyle='rgba(255,170,70,0.28)';x.fillRect(0,0,W,H);
+  x.globalCompositeOperation='source-over';x.fillStyle=g;x.fillRect(0,0,W,H)})(0);
+ const o=c.captureStream(24);stream.getAudioTracks().forEach(a=>o.addTrack(a));return o}
+function stopFx(){fxOn=false}
 let busy=false;
 $('rec').onclick=async()=>{
  if(busy)return;
@@ -169,9 +185,11 @@ $('rec').onclick=async()=>{
  if(!window.MediaRecorder){msg('هالمتصفح ما يدعم التسجيل. حدّث iOS (يحتاج iOS 14.3 أو أحدث).');return}
  busy=true;setPlaying(false);rewind();await countdown();busy=false;
  chunks=[];mime=pickMime();
- try{mr=new MediaRecorder(stream,mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6})}catch(e){mr=new MediaRecorder(stream)}
+ let rs=stream;stopFx();
+ if(S.cine)rs=startFx();
+ try{mr=new MediaRecorder(rs,mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6})}catch(e){mr=new MediaRecorder(rs)}
  mr.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
- mr.onstop=()=>{clearInterval(tmr);$('rec').classList.remove('on');$('timer').classList.remove('rec');setPlaying(false);
+ mr.onstop=()=>{stopFx();clearInterval(tmr);$('rec').classList.remove('on');$('timer').classList.remove('rec');setPlaying(false);
   const type=(mr.mimeType||mime||'video/mp4').split(';')[0];blob=new Blob(chunks,{type});
   $('pv').src=URL.createObjectURL(blob);show('res')};
  mr.start(1000);t0=Date.now();$('rec').classList.add('on');$('timer').classList.add('rec');
