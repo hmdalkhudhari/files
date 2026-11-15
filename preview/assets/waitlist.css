@@ -1,0 +1,17 @@
+/* waitlist (system) */
+#buy .wl{position:relative;width:100%;text-align:right;display:grid;gap:12px;background:#2A3680;border:1px solid rgba(242,194,48,.35);border-radius:18px;padding:20px}
+#buy .wl h3{margin:0;font-size:20px;color:#fff}
+#buy .wl p.sub{margin:0;color:#C3C9E6;font-size:15px}
+.wl label{display:grid;gap:6px;font-weight:700;font-size:15px;color:#fff}
+.wl input,.wl select{width:100%;min-width:0;background:#141C4D;color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:13px 14px;font:inherit;font-weight:500}
+.wl input:focus,.wl select:focus{outline:2px solid #F2C230;outline-offset:1px}
+.wl [aria-invalid=true]{border-color:#DD3C3C}
+.wl .tel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:8px;direction:ltr}
+.wl .tel input{direction:ltr;text-align:left}
+.wl .hp{position:absolute;inset-inline-start:0;top:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);opacity:0;pointer-events:none}
+.wl button{position:relative;overflow:hidden;border:0;cursor:pointer;background:#F2C230;color:#141C4D;font:inherit;font-weight:800;font-size:18px;padding:15px;border-radius:14px}
+.wl button[disabled]{opacity:.6}
+.wl .err{color:#ff8f8f;font-size:14px;margin:0}
+.wl .ok{display:none;text-align:center;padding:10px 0}
+.wl .ok b{display:block;font-size:20px;color:#F2C230;margin-bottom:6px}
+.wl.done form{display:none}.wl.done .ok{display:block}

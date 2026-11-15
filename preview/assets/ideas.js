@@ -5,11 +5,11 @@ var IDEAS={
  home:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['1','«BUSINESS STATUS» ضخم شفاف ورا الهيدر','يتحرك عكس السكرول'],['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['B','خلفية الرئيسية أغمق شوي','نفس الخلفية بكل الصفحات'],['3','ساعة الكويت الحية','بالهيدر على الكمبيوتر، وفوق العنوان بالجوال'],['4','كلمة وحدة ذهبية بالعنوان','«سوّق أذكى، مو أكثر»']],
  consult:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['6','أرقامك بزوايا [ ] تعدّ','بدل الكروت العادية'],['7','الأقسام تتراكب مثل كروت','وأنت تنزل بالصفحة'],['8','زرين + شريط «احجز» ثابت','الشريط بالجوال فقط'],['K','ستايل الكت كامل','كرات ضوء بالخلفية، كروت الكت، أشرطة ذهبية، عناوين لامعة'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
  system:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['G','كرة أرضية ليلية 3D','الخليج يضوي ذهبي وتغطس مع السكرول'],['3','ساعة حية فوق الكرة','توقيت الكويت بالثواني'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['9','خريطة الخليج تنبض بالخلفية','تغطس شوي مع السكرول'],['10','إضاءة الصفحة تتغير مع كل قسم','ذهبي / أزرق / أبيض'],['11','الأقسام كبطاقات مرقمة DEPT_01','تطلع وحدة وحدة بلمعة'],['12','زر الشراء يفتح واتساب','مؤقت لين رابط الدفع'],['F','توحيد الخط (IBM Plex)','بدل Tajawal']],
- kit:[['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
+ kit:[['M','شريط لوجوات العملاء يتحرك','ملونة، تضغط عليها توقف ثواني'],['A','السهم المتحرك تحت','بكل الصفحات، يختفي بعد أول سكرول'],['H','لمعة تروح وترد على الأزرار المهمة','الأزرار الذهبية بكل الصفحات'],['B','خلفية الرئيسية (الخطوط الصغيرة)','نفس خلفية الهوم بكل الصفحات'],['L','افتتاحية: الشعار ينرسم + «بزنس ستيتس»','ونفس الشعار يتحرك عند أي انتظار أو انتقال'],['13','أشرطة ضوء ذهبية سائلة ورا جسمك','بدل الدائرة، تتبع الماوس'],['14','شبكة خطوط رفيعة مثل مجلة','٦ أعمدة'],['15','«حمد الخضري» ضخم ينزل حرف حرف','+ سطر إنجليزي رفيع'],['16','الباقة اللي تضغطها تلوّن الصفحة','والباقي يخفت'],['F','توحيد الخط (IBM Plex)','بدل Tajawal + Poppins']]
 };
-H.classList.add('pg-'+PAGE); var list=IDEAS[PAGE]||[], KEY='ix-'+PAGE, state={};
+H.classList.add('pg-'+PAGE); var list=IDEAS[PAGE]||[], KEY='ix2-'+PAGE, state={};
 try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
-list.forEach(function(it){ if(!(it[0] in state)) state[it[0]]=true; });
+var OFF={home:['M'],consult:['M'],system:['M','12'],kit:['13']}[PAGE]||[]; list.forEach(function(it){ if(!(it[0] in state)) state[it[0]]=(OFF.indexOf(it[0])<0); });
 function apply(){ list.forEach(function(it){ H.classList.toggle('i'+it[0], !!state[it[0]]); }); try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){} }
 apply();
 function el(tag,cls,html){var e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;}
@@ -28,7 +28,7 @@ var LOGOS=[['dozzie.webp','Dozzie'],['ghrelin.webp','Ghrelin'],['hair-affair.web
 var tiles=LOGOS.map(function(l){ return l[0]? '<span class="t"><img src="../assets/logos/'+l[0]+'" alt="'+l[1]+'"></span>' : '<span class="t txt">'+l[1]+'</span>'; }).join('');
 var mq=el('section','ix-mq','<div class="lbl">اشتغلنا مع</div><div class="track">'+tiles+tiles+'</div>');
 var anchor=document.querySelector('.hero, header.hero'); if(PAGE==='kit') anchor=document.querySelector('.stats')||anchor;
-if(anchor && PAGE!=='kit') anchor.insertAdjacentElement('afterend',mq);
+if(PAGE==='kit'){ var oldmq=document.querySelector('.mq'); if(oldmq){ oldmq.insertAdjacentElement('afterend',mq); oldmq.remove(); } }
 mq.addEventListener('click',function(){ var tr=mq.querySelector('.track'); tr.style.animationPlayState='paused'; clearTimeout(mq._t); mq._t=setTimeout(function(){ tr.style.animationPlayState='running'; },3000); });
 /* ================= HOME ================= */
 if(PAGE==='home'){
@@ -38,7 +38,7 @@ if(PAGE==='home'){
   var end=document.querySelector('.bsn-end');
   if(end){ var c=el('span','ix-clock','<i></i>الكويت <b>--:--</b>'); end.insertBefore(c,end.firstChild);
     var c2=el('div','ix-clock2','<span><i></i>الكويت <b>--:--</b></span>'); var hb=document.querySelector('header.bsn'); if(hb) hb.insertBefore(c2,hb.firstChild);
-    function tick(){ try{ var v=kwt(false); c.querySelector('b').textContent=v; c2.querySelector('b').textContent=v; }catch(e){} } tick(); setInterval(tick,1000); }
+    function tick(){ try{ var v=kwt(true); c.querySelector('b').textContent=v; c2.querySelector('b').textContent=v; }catch(e){} } tick(); setInterval(tick,1000); }
   var h1=document.querySelector('.hero h1 .ar');
   if(h1){ var orig=h1.innerHTML; var alt='سوّق <em class="ix-gw">أذكى</em>، مو أكثر.';
     function setH(){ h1.innerHTML = H.classList.contains('i4')?alt:orig; } setH(); document.addEventListener('ix-change',setH); }
@@ -55,8 +55,8 @@ if(PAGE==='consult'){
     cv.addEventListener('pointermove',wipe); cv.addEventListener('pointerdown',wipe);
     setInterval(function(){ if(!noise||!H.classList.contains('i5')) return; ctx.globalCompositeOperation='source-over'; ctx.globalAlpha=.035; ctx.drawImage(noise,0,0); ctx.globalAlpha=1; },90); }
   /* 6: count-up on .stats b (Arabic digits) */
-  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) return; io.unobserve(en.target); var b=en.target, tn=b.firstChild; if(!tn||tn.nodeType!==3) return; var txt=tn.nodeValue, m=txt.match(/[٠-٩\d]+/); if(!m) return; var target=parseInt(m[0].replace(/[٠-٩]/g,function(c){return AR.indexOf(c)}),10), t0=performance.now();
-    (function f(now){ var k=Math.min(1,(now-t0)/1400), e=1-Math.pow(1-k,3); tn.nodeValue=txt.replace(m[0],ar(Math.round(target*e))); if(k<1) requestAnimationFrame(f); })(t0); }); },{threshold:.4});
+  var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) return; io.unobserve(en.target); var b=en.target, tn=b.firstChild; if(!tn||tn.nodeType!==3) return; var txt=tn.nodeValue, m=txt.match(/[٠-٩\d][٠-٩\d٬,]*/); if(!m) return; var target=parseInt(m[0].replace(/[٬,]/g,'').replace(/[٠-٩]/g,function(c){return AR.indexOf(c)}),10), t0=performance.now();
+    (function f(now){ var k=Math.min(1,(now-t0)/1400), e=1-Math.pow(1-k,3); tn.nodeValue=txt.replace(m[0],ar(String(Math.round(target*e)).replace(/\B(?=(\d{3})+(?!\d))/g,'٬'))); if(k<1) requestAnimationFrame(f); })(t0); }); },{threshold:.4});
   document.querySelectorAll('.stats b').forEach(function(b){ io.observe(b); });
   /* S: scroll story */
   if(img){ var story=el('section','ix-story','<div class="st"><div class="sc sc1"><img alt=""><h2>ساعة وحدة <em>معي</em></h2></div><div class="sc sc2"><div class="nums"><div><b>+٣٩</b><span>ألف متابع</span></div><div><b>+١٠</b><span>سنوات خبرة</span></div><div><b>٦٠</b><span>دقيقة أونلاين</span></div></div></div><div class="sc sc3"><h2>تطلع <em>بحلول تطبّقها</em></h2><p>مو كلام عام. خطة لمشروعك أنت.</p><a class="cta" href="#book">احجز موعدك المجاني ←</a></div><div class="bar"><i></i></div></div>');
@@ -68,9 +68,9 @@ if(PAGE==='consult'){
   if(ph){ var rib2=el('div','ix-rib','<svg viewBox="0 0 600 700" preserveAspectRatio="none"><defs><linearGradient id="ixrg2" x1="0" x2="1"><stop offset="0" stop-color="#F2C230" stop-opacity="0"/><stop offset=".35" stop-color="#F2C230"/><stop offset=".65" stop-color="#FFE58A"/><stop offset="1" stop-color="#F2C230" stop-opacity="0"/></linearGradient></defs><path class="r1" d="M-60,420 C120,300 220,520 380,400 C500,310 560,360 680,300"/><path class="r2" d="M-60,520 C100,420 260,600 400,470 C520,360 580,420 680,380"/><path class="r3" d="M-60,330 C140,250 240,430 400,330 C520,260 580,300 680,240"/></svg>'); ph.insertBefore(rib2,ph.firstChild);
     addEventListener('pointermove',function(e){ H.style.setProperty('--ixx',((e.clientX/innerWidth-.5)*40)+'px'); H.style.setProperty('--ixy',((e.clientY/innerHeight-.5)*30)+'px'); },{passive:true}); }
   /* 8: sticky bar */
-  var bar=el('div','ix-bar','<a href="#book">احجز الحين <span>←</span></a>'); document.body.appendChild(bar);
+  var bar=el('div','ix-bar','<a href="#book">احجز موعدك المجاني <span>←</span></a>'); document.body.appendChild(bar);
   var hh=document.querySelector('.hero'), bk=document.getElementById('book');
-  function barChk(){ var past=hh? (hh.getBoundingClientRect().bottom<0):(scrollY>500); var inb=bk? (bk.getBoundingClientRect().top<innerHeight*0.6):false; bar.classList.toggle('on',past&&!inb); }
+  function barChk(){ var past=hh? (hh.getBoundingClientRect().bottom<0):(scrollY>500); var br=bk&&bk.getBoundingClientRect(); var inb=bk? (br.top<innerHeight*0.6 && br.bottom>innerHeight*0.25):false; bar.classList.toggle('on',past&&!inb); }
   addEventListener('scroll',barChk,{passive:true}); barChk();
 }
 /* ================= SYSTEM ================= */
@@ -123,18 +123,18 @@ if(PAGE==='system'){
       var hubRing=ring(KW[0],KW[1],1.2); hubRing.t=0; pins.push(hubRing);
       dests.forEach(function(dst,k){ var a=ll(KW[0],KW[1],R), b=ll(dst[0],dst[1],R), dist=a.distanceTo(b), mid=a.clone().add(b).multiplyScalar(.5).normalize().multiplyScalar(R+dist*.22);
         var curve=new T.QuadraticBezierCurve3(a,mid,b), pts=curve.getPoints(120);
-        /* steady data line */
-        grp.add(new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:0xF2C230,transparent:true,opacity:.28})));
-        /* packets: short bright segments streaming along the line */
-        var pk=[]; for(var j=0;j<3;j++){ var g=new T.BufferGeometry().setFromPoints(pts); g.setDrawRange(0,0); var ln=new T.Line(g,new T.LineBasicMaterial({color:0xFFE58A,transparent:true,opacity:.95})); grp.add(ln); pk.push({g:g,ph:j/3}); }
-        var dot=new T.Mesh(new T.SphereGeometry(.014,10,10),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.9})); dot.position.copy(ll(dst[0],dst[1],R*1.004)); grp.add(dot);
-        arcs.push({pk:pk,n:pts.length,dot:dot,spd:.22+Math.random()*.12,off:Math.random()}); });
+        /* spreading signal lines: grow out from Kuwait, hold, fade (no bullets) */
+        grp.add(new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:0xF2C230,transparent:true,opacity:.09})));
+        var g2=new T.BufferGeometry().setFromPoints(pts); g2.setDrawRange(0,0); var m2=new T.LineBasicMaterial({color:0xFFD24A,transparent:true,opacity:0}); grp.add(new T.Line(g2,m2));
+        var dot=new T.Mesh(new T.SphereGeometry(.014,10,10),new T.MeshBasicMaterial({color:0xF2C230,transparent:true,opacity:.25})); dot.position.copy(ll(dst[0],dst[1],R*1.004)); grp.add(dot);
+        arcs.push({g:g2,m:m2,n:pts.length,dot:dot,spd:.15+Math.random()*.06,off:k/dests.length+Math.random()*.04}); });
       grp.rotation.y=-(48+180)*Math.PI/180+Math.PI/2; grp.rotation.x=.3;
       var t0=performance.now();
       (function loop(now){ var dt=Math.max(0,(now-t0)/1000); grp.rotation.y+=0.0011;
         var hk=(dt%2.4)/2.4; hubRing.r.scale.setScalar(1+hk*3); hubRing.r.material.opacity=.45*(1-hk);
-        arcs.forEach(function(A){ A.pk.forEach(function(P){ var u=(dt*A.spd+A.off+P.ph)%1, e=Math.floor(u*A.n), L=10, st=Math.max(0,e-L); P.g.setDrawRange(st,Math.max(0,e-st)); });
-          A.dot.material.opacity=.55+.45*Math.sin(dt*3+A.off*6); });
+        arcs.forEach(function(A){ var u=(dt*A.spd+A.off)%1, gr=.5, p=u<gr?u/gr:1, e=1-Math.pow(1-p,2.2), hit=u>=gr?(u-gr)/(1-gr):0;
+          A.g.setDrawRange(0,Math.max(2,Math.floor(A.n*e))); A.m.opacity=u<gr?.15+.6*e:.75*(1-hit);
+          A.dot.scale.setScalar(1+(u>=gr?2.4*Math.sin(Math.PI*Math.min(1,hit*1.8)):0)); A.dot.material.opacity=u<gr?.25:.95*(1-hit*.6); });
         var sy=Math.min(1,scrollY/600); grp.position.y=-sy*1.4; ren.render(scene,cam); requestAnimationFrame(loop); })(t0);
       addEventListener('resize',function(){ var W=gl.clientWidth, Hh=gl.clientHeight; cam.aspect=W/Hh; cam.updateProjectionMatrix(); ren.setSize(W,Hh); }); }; document.head.appendChild(sc); }
     startGlobe(); document.addEventListener('ix-change',startGlobe); }
@@ -155,10 +155,10 @@ if(PAGE==='kit'){
 }
 /* clock on every design (Hamad 11-08) */
 if(PAGE==='consult'||PAGE==='kit'){ H.classList.add('i3'); var ck=el('div','ix-clock2','<span><i></i>الكويت <b>--:--</b></span>'); var hb2=document.querySelector('header.bsn'); if(hb2) hb2.insertBefore(ck,hb2.firstChild); else { var wr=document.querySelector('.wrap'); if(wr) wr.insertBefore(ck,wr.firstChild); ck.classList.add('ix-static'); }
-  (function tk(){ try{ ck.querySelector('b').textContent=kwt(false); }catch(e){} setTimeout(tk,1000); })(); }
+  (function tk(){ try{ ck.querySelector('b').textContent=kwt(true); }catch(e){} setTimeout(tk,1000); })(); }
 /* top button to the product/packages on every page (Hamad 11-08) */
 (function(){ if(PAGE==='kit'){ var tp=document.querySelector('.top'), lg=tp&&tp.querySelector('.lang'); if(tp&&lg&&!tp.querySelector('.ix-jump')){ var j=el('a','ix-jump','<span class="ar-only">الباقات</span><span class="en-only">Packages</span>'); j.href='#packages'; tp.insertBefore(j,lg); } }
-  var bc=document.querySelector('.bsn-end>.bsn-cta'); if(bc){ bc.classList.add('ix-topcta'); if(PAGE==='system'){ bc.setAttribute('href','#buy'); bc.textContent='اشترِ الآن'; } } })();
+  var bc=document.querySelector('.bsn-end>.bsn-cta'); if(bc){ bc.classList.add('ix-topcta'); if(PAGE==='system'){ bc.setAttribute('href','#buy'); bc.textContent='احصل على النظام'; bc.classList.add('ix-blink'); } } })();
 /* direct jump to product/packages (Hamad 11-08: no scrolling animation) */
 document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href^="#"]'); if(!a) return; var id=a.getAttribute('href').slice(1); if(!id) return; var t=document.getElementById(id); if(!t) return; e.preventDefault(); var hb=document.querySelector('header.bsn'), off=hb&&getComputedStyle(hb).position!=='static'?hb.offsetHeight:0; window.scrollTo({top:t.getBoundingClientRect().top+scrollY-off-8,behavior:'instant'}); },true);
 /* ================= A: arrow ================= */
@@ -168,7 +168,7 @@ addEventListener('scroll',function(){ H.classList.toggle('ix-scrolled',scrollY>1
 var intro=el('div','ix-intro','<svg viewBox="0 0 64 64"><path class="p1" d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z"/><rect class="p2" x="31" y="8" width="25" height="25" rx="8"/></svg><div class="w">Business Status</div><div class="w2">بزنس ستيتس</div><i></i>');
 document.body.appendChild(intro);
 var seen=false; /* Hamad 11-08: logo intro on every page */
-if(H.classList.contains('iL') && !seen){ intro.classList.add('play'); try{ sessionStorage.setItem('ix-intro','1'); }catch(e){} setTimeout(function(){ intro.classList.remove('play'); intro.classList.add('done'); },2100); } else { intro.classList.add('done'); }
+if(H.classList.contains('iL') && !seen){ intro.classList.add('play'); H.classList.remove('ix-pre'); try{ sessionStorage.setItem('ix-intro','1'); }catch(e){} setTimeout(function(){ intro.classList.remove('play'); intro.classList.add('done'); },2100); } else { intro.classList.add('done'); H.classList.remove('ix-pre'); }
 H.classList.add('ix-ready');
 document.addEventListener('click',function(e){ var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!H.classList.contains('iL')) return; var href=a.getAttribute('href'); if(!href||href.charAt(0)==='#'||a.target==='_blank'||/^(https?:|mailto:|tel:|wa\.me)/.test(href)&&!/hmdalkhudhari\.github\.io\/files\/preview/.test(href)) return; e.preventDefault(); intro.classList.remove('done'); intro.classList.add('out'); setTimeout(function(){ location.href=a.href; },700); });
 addEventListener('pageshow',function(ev){ if(ev.persisted||intro.classList.contains('out')){ intro.classList.remove('out'); intro.classList.add('done'); } });
@@ -178,7 +178,7 @@ var btn=el('button','ixp-btn','✦ الأفكار <span>('+list.length+')</span>
 var p=el('div','ixp'); p.innerHTML='<div class="nav">'+pages.map(function(q){return '<a href="../'+q[0]+'/" class="'+(q[0]===PAGE?'cur':'')+'">'+q[1]+'</a>'}).join('')+'</div><h4>أفكار هالصفحة</h4><p>شغّل وطفّي وشوف الفرق على طول. اللي يعجبك خلّه شغال، وبعدين اضغط «انسخ اختياري» ودزه لي.</p>'+
  list.map(function(it){return '<label><span>'+it[1]+'<small>'+it[2]+'</small></span><input type="checkbox" data-k="'+it[0]+'"'+(state[it[0]]?' checked':'')+'><span class="sw"></span></label>'}).join('')+
  '<div class="row"><button type="button" data-a="all">شغّل الكل</button><button type="button" data-a="none">طفّي الكل</button><button type="button" class="g" data-a="copy">انسخ اختياري</button></div><div class="out"></div>';
-document.body.appendChild(btn); document.body.appendChild(p);
+document.body.appendChild(btn); document.body.appendChild(p); if(!/[?&]ideas/.test(location.search)){ btn.style.display='none'; p.style.display='none'; }
 btn.addEventListener('click',function(){ p.classList.toggle('open'); });
 document.addEventListener('click',function(e){ if(p.classList.contains('open') && !p.contains(e.target) && e.target!==btn && !btn.contains(e.target)) p.classList.remove('open'); });
 p.addEventListener('change',function(e){ var k=e.target.getAttribute('data-k'); if(!k) return; state[k]=e.target.checked; apply(); document.dispatchEvent(new Event('ix-change')); });
