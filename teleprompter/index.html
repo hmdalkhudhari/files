@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1E2A66">
+<title>تلبرومبتر حمد</title>
+<style>
+:root{--gold:#F2C230;--navy:#1E2A66;--white:#fff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0b1030;color:var(--white);font-family:-apple-system,"SF Arabic","Geeza Pro",Tajawal,sans-serif;overscroll-behavior:none}
+.screen{position:fixed;inset:0;display:none}
+.screen.on{display:flex;flex-direction:column}
+/* editor */
+#edit{padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));gap:12px;overflow:auto;background:var(--navy)}
+h1{margin:0;font-size:22px;color:var(--gold)}
+textarea{flex:1;min-height:220px;width:100%;border-radius:14px;border:2px solid var(--gold);background:#fff;color:#111;font-size:20px;line-height:1.6;padding:12px;font-family:inherit}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.row label{font-size:15px;min-width:90px}
+.row input[type=range]{flex:1;min-width:120px;accent-color:var(--gold)}
+.row .v{width:44px;text-align:center;color:var(--gold);font-weight:700}
+button,select{font:inherit;border:0;border-radius:14px;padding:12px 16px;font-weight:700;background:rgba(255,255,255,.15);color:#fff}
+button.gold{background:var(--gold);color:var(--navy)}
+button.big{font-size:20px;padding:16px}
+.seg{display:flex;gap:6px}.seg button{padding:10px 14px}.seg button.sel{background:var(--gold);color:var(--navy)}
+/* camera */
+#cam{background:#000}
+video#live{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#prompt{position:absolute;left:0;right:0;top:max(60px,calc(env(safe-area-inset-top) + 50px));height:48%;overflow:hidden;touch-action:none;
+ -webkit-mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(transparent,#000 12%,#000 88%,transparent)}
+#bg{position:absolute;inset:0;background:#000}
+#content{position:absolute;left:0;right:0;top:0;padding:0 18px;will-change:transform;font-weight:700;line-height:1.55;text-shadow:0 1px 4px #000}
+#content p{margin:0 0 .7em;white-space:pre-wrap}
+#line{position:absolute;left:0;right:0;top:30%;height:0;border-top:2px solid var(--gold);opacity:.8;pointer-events:none}
+#top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:max(10px,env(safe-area-inset-top)) 12px 8px;z-index:3}
+#top button{padding:8px 12px;background:rgba(30,42,102,.85)}
+#timer{background:rgba(0,0,0,.6);padding:6px 12px;border-radius:12px;font-variant-numeric:tabular-nums;font-weight:700}
+#timer.rec{background:#d11}
+#bottom{position:absolute;left:0;right:0;bottom:0;padding:12px 16px max(18px,env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(0,0,0,.75));display:flex;flex-direction:column;gap:10px;z-index:3}
+#spd{display:flex;align-items:center;gap:10px}
+#spd input{flex:1;accent-color:var(--gold);height:34px}
+#spd button{width:46px;height:46px;padding:0;font-size:26px;line-height:1}
+#ctl{display:flex;justify-content:space-around;align-items:center}
+#rec{width:74px;height:74px;border-radius:50%;border:5px solid #fff;background:transparent;padding:0;position:relative}
+#rec::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#e22;transition:.2s}
+#rec.on::after{inset:20px;border-radius:8px}
+#count{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:140px;font-weight:800;color:var(--gold);z-index:5;background:rgba(0,0,0,.45)}
+#msg{position:absolute;top:45%;left:20px;right:20px;text-align:center;z-index:6;background:rgba(0,0,0,.8);padding:16px;border-radius:14px;display:none}
+/* result */
+#res{background:var(--navy);padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom));gap:12px;align-items:stretch}
+#res video{flex:1;min-height:0;width:100%;background:#000;border-radius:14px;object-fit:contain}
+#hint{font-size:13px;opacity:.8;text-align:center}
+</style>
+</head>
+<body>
+
+<div id="edit" class="screen on">
+ <h1>تلبرومبتر حمد</h1>
+ <textarea id="txt" placeholder="الصق النص هنا..." dir="auto"></textarea>
+ <div class="row"><label>حجم الخط</label><input type="range" id="size" min="24" max="90" value="44"><span class="v" id="sizeV"></span></div>
+ <div class="row"><label>سرعة النص</label><input type="range" id="speed" min="0" max="100" value="30"><span class="v" id="speedV"></span></div>
+ <div class="row"><label>غمق الخلفية</label><input type="range" id="dim" min="0" max="90" value="35"><span class="v" id="dimV"></span></div>
+ <div class="row"><label>الكاميرا</label>
+  <div class="seg" id="camSeg"><button data-v="environment" class="sel">الخلفية</button><button data-v="user">السيلفي</button></div></div>
+ <div class="row"><label>اتجاه النص</label>
+  <div class="seg" id="dirSeg"><button data-v="rtl" class="sel">عربي</button><button data-v="auto">تلقائي</button><button data-v="ltr">إنجليزي</button></div></div>
+ <div class="row"><label>محاذاة</label>
+  <div class="seg" id="alSeg"><button data-v="center" class="sel">وسط</button><button data-v="start">بداية</button></div>
+  <button id="mirror">عكس النص: لا</button></div>
+ <button class="gold big" id="go">فتح الكاميرا</button>
+</div>
+
+<div id="cam" class="screen">
+ <video id="live" playsinline muted autoplay></video>
+ <div id="top"><button id="back">رجوع</button><span id="timer">00:00</span><button id="flip">قلب الكاميرا</button></div>
+ <div id="prompt"><div id="bg"></div><div id="content"></div><div id="line"></div></div>
+ <div id="count"></div>
+ <div id="msg"></div>
+ <div id="bottom">
+  <div id="spd"><button id="slow">−</button><input type="range" id="speed2" min="0" max="100"><button id="fast">+</button></div>
+  <div id="ctl"><button id="rew">للبداية</button><button id="rec" aria-label="تسجيل"></button><button id="pp">إيقاف النص</button></div>
+ </div>
+</div>
+
+<div id="res" class="screen">
+ <video id="pv" controls playsinline></video>
+ <button class="gold big" id="save">حفظ في الاستوديو</button>
+ <div id="hint">يطلع لك خيار «حفظ الفيديو» في قائمة المشاركة. أو اضغط مطولاً على الفيديو.</div>
+ <button id="again">تسجيل جديد</button>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const S=Object.assign({text:'',size:44,speed:30,dim:35,cam:'environment',dir:'rtl',al:'center',mirror:false},JSON.parse(localStorage.getItem('tp')||'{}'));
+const save=()=>{S.text=$('txt').value;localStorage.setItem('tp',JSON.stringify(S))};
+const pxs=v=>Math.pow(1.06,v); // px/sec: 1 (very slow) .. ~339
+function seg(id,key){const el=$(id);el.querySelectorAll('button').forEach(b=>{b.classList.toggle('sel',b.dataset.v===S[key]);b.onclick=()=>{S[key]=b.dataset.v;el.querySelectorAll('button').forEach(x=>x.classList.toggle('sel',x===b));save();apply()}})}
+function ui(){
+ $('txt').value=S.text;
+ for(const [id,k] of [['size','size'],['speed','speed'],['dim','dim']]){const e=$(id);e.value=S[k];$(id+'V').textContent=S[k];e.oninput=()=>{S[k]=+e.value;$(id+'V').textContent=S[k];if(k==='speed')$('speed2').value=S[k];save();apply()}}
+ $('speed2').value=S.speed;
+ $('speed2').oninput=e=>{S.speed=+e.target.value;$('speed').value=S.speed;$('speedV').textContent=S.speed;save()};
+ seg('camSeg','cam');seg('dirSeg','dir');seg('alSeg','al');
+ $('mirror').onclick=()=>{S.mirror=!S.mirror;save();apply()};
+ $('txt').oninput=save;
+}
+function apply(){
+ $('mirror').textContent='عكس النص: '+(S.mirror?'نعم':'لا');
+ const c=$('content');c.style.fontSize=S.size+'px';c.style.textAlign=S.al;
+ c.style.transform='';c.dataset.m=S.mirror?1:0;
+ $('bg').style.opacity=S.dim/100;
+ $('prompt').style.transform=S.mirror?'scaleX(-1)':'';
+ c.innerHTML='';
+ (S.text||'').split('\n').forEach(l=>{const p=document.createElement('p');p.dir=S.dir;p.textContent=l||' ';c.appendChild(p)});
+ $('live').style.transform=S.cam==='user'?'scaleX(-1)':'';
+ render();
+}
+// scrolling
+let pos=0,playing=false,last=0,raf=0;
+const area=()=>$('prompt').clientHeight, hgt=()=>$('content').scrollHeight;
+function render(){$('content').style.transform=`translateY(${pos}px)`}
+function rewind(){pos=area()*0.3;render()}
+function tick(t){
+ if(playing){const dt=Math.min(0.1,(t-last)/1000);pos-=pxs(S.speed)*dt;render();
+  if(pos<-hgt()+area()*0.3){setPlaying(false)}}
+ last=t;raf=requestAnimationFrame(tick)
+}
+function setPlaying(p){playing=p;$('pp').textContent=p?'إيقاف النص':'تشغيل النص'}
+$('pp').onclick=()=>setPlaying(!playing);
+$('rew').onclick=()=>{setPlaying(false);rewind()};
+const step=d=>{S.speed=Math.max(0,Math.min(100,S.speed+d));$('speed2').value=S.speed;$('speed').value=S.speed;$('speedV').textContent=S.speed;save()};
+$('slow').onclick=()=>step(-2);$('fast').onclick=()=>step(2);
+// touch drag / tap on prompt
+(()=>{let y0=0,p0=0,moved=false,sc=1;const el=$('prompt');
+ el.addEventListener('touchstart',e=>{y0=e.touches[0].clientY;p0=pos;moved=false},{passive:true});
+ el.addEventListener('touchmove',e=>{const d=e.touches[0].clientY-y0;if(Math.abs(d)>8)moved=true;if(moved){pos=p0+d;render()}},{passive:true});
+ el.addEventListener('touchend',()=>{if(!moved)setPlaying(!playing)});
+})();
+// camera
+let stream=null;
+function msg(t){const m=$('msg');m.textContent=t;m.style.display=t?'block':'none'}
+async function openCam(){
+ stopCam();
+ const base={audio:{echoCancellation:true,noiseSuppression:true}};
+ const tries=[{video:{facingMode:{ideal:S.cam},width:{ideal:1080},height:{ideal:1920},frameRate:{ideal:30}}},{video:{facingMode:{ideal:S.cam}}},{video:true}];
+ for(const v of tries){
+  try{stream=await navigator.mediaDevices.getUserMedia({...base,...v});break}catch(e){err=e}
+ }
+ if(!stream){msg('ما قدرت أفتح الكاميرا. تأكد إنك سمحت للكاميرا والمايك لسفاري، وافتح الصفحة من سفاري مو من داخل تطبيق ثاني.');return}
+ msg('');$('live').srcObject=stream;try{await $('live').play()}catch(e){}
+ apply();
+}
+let err;
+function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}}
+// wake lock
+let wl=null;async function lock(){try{wl=await navigator.wakeLock.request('screen')}catch(e){}}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&$('cam').classList.contains('on'))lock()});
+// recording
+let mr=null,chunks=[],t0=0,tmr=0,blob=null,mime='';
+function pickMime(){return ['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4','video/webm;codecs=vp9,opus','video/webm'].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported(m))||''}
+const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0');
+function countdown(){return new Promise(r=>{const c=$('count');let n=3;c.style.display='flex';c.textContent=n;const i=setInterval(()=>{n--;if(n<=0){clearInterval(i);c.style.display='none';r()}else c.textContent=n},1000)})}
+let busy=false;
+$('rec').onclick=async()=>{
+ if(busy)return;
+ if(mr&&mr.state==='recording'){mr.stop();return}
+ if(!stream){await openCam();if(!stream)return}
+ if(!window.MediaRecorder){msg('هالمتصفح ما يدعم التسجيل. حدّث iOS (يحتاج iOS 14.3 أو أحدث).');return}
+ busy=true;setPlaying(false);rewind();await countdown();busy=false;
+ chunks=[];mime=pickMime();
+ try{mr=new MediaRecorder(stream,mime?{mimeType:mime,videoBitsPerSecond:8e6}:{videoBitsPerSecond:8e6})}catch(e){mr=new MediaRecorder(stream)}
+ mr.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+ mr.onstop=()=>{clearInterval(tmr);$('rec').classList.remove('on');$('timer').classList.remove('rec');setPlaying(false);
+  const type=(mr.mimeType||mime||'video/mp4').split(';')[0];blob=new Blob(chunks,{type});
+  $('pv').src=URL.createObjectURL(blob);show('res')};
+ mr.start(1000);t0=Date.now();$('rec').classList.add('on');$('timer').classList.add('rec');
+ tmr=setInterval(()=>$('timer').textContent=fmt((Date.now()-t0)/1000),250);
+ setPlaying(true);
+};
+$('save').onclick=async()=>{
+ if(!blob)return;
+ const ext=blob.type.includes('mp4')?'mp4':'webm';
+ const f=new File([blob],`teleprompter-${Date.now()}.${ext}`,{type:blob.type});
+ try{
+  if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f]});return}
+ }catch(e){if(e.name==='AbortError')return}
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=f.name;document.body.appendChild(a);a.click();a.remove();
+};
+$('again').onclick=()=>{$('pv').removeAttribute('src');blob=null;show('cam');$('timer').textContent='00:00';openCam();rewind()};
+$('flip').onclick=()=>{if(mr&&mr.state==='recording')return;S.cam=S.cam==='user'?'environment':'user';save();seg('camSeg','cam');openCam()};
+$('back').onclick=()=>{if(mr&&mr.state==='recording')return;setPlaying(false);stopCam();show('edit')};
+$('go').onclick=async()=>{save();show('cam');apply();rewind();lock();await openCam();rewind()};
+function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id))}
+ui();apply();raf=requestAnimationFrame(tick);
+</script>
+</body>
+</html>
