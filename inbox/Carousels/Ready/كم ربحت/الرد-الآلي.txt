@@ -1,6 +1,5 @@
 أوتوميشن زورتشا (brand/team/قالب-الأوتوميشن-زورتشا.md): Duplicate من «ملف - ChatGPT درس ولدي».
 الكلمة: ملف
-رابط زر «افتح الملف»: https://hmdalkhudhari.github.io/files/profit/ (صفحة حسبة ربح القطعة، القالب البسيط، GitHub Pages — تشتغل بعد دمج الـPR)
-بديل لين يندمج الـPR: https://claude.ai/artifact/4N9tRN9Ti9ktuku9Cm8gSv (الصفحة القديمة، عامة، نفس المحتوى)
+رابط زر «افتح الملف»: https://hmdalkhudhari.github.io/files/profit/ (صفحة حسبة ربح القطعة، القالب البسيط، GitHub Pages، PR files#57 مدموج ١٩ نوفمبر بأمر حمد «ادمجهم انت»)
 زر «⭕ خصم ٢٥%» → https://bznstatus.com/consult/
 الرسالة الأخيرة تبقى مثل الماستر («البوست» بدل «الفيديو»).
