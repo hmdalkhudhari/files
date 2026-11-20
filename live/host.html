@@ -88,7 +88,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   const toast = t => { const el = $('#toast'); el.textContent = t; el.style.display = 'block'; clearTimeout(toast.h); toast.h = setTimeout(() => el.style.display = 'none', 2200); };
   document.querySelectorAll('[data-m]').forEach(b => b.onclick = () => setState({ mode: b.dataset.m }));
   $('#reset').onclick = () => modal(`<h2 style="margin-top:0">إعدادات</h2>
-    <p>مسح كل شي (الفرق، الأجوبة، الصور، الكأس) قبل بداية الدورة. اكتب <b>مسح</b> للتأكيد.</p>
+    <p>مسح كل شي (المشاركين، الأجوبة، الصور، الكأس) قبل بداية الدورة. اكتب <b>مسح</b> للتأكيد.</p>
     <input class="field" id="cf" placeholder="مسح"><button class="cbtn r" id="doit">امسح الكل</button> <button class="cbtn g" id="cl">إلغاء</button>`, () => {
       $('#cl').onclick = closeModal;
       $('#doit').onclick = async () => { if ($('#cf').value.trim() !== 'مسح') return; await db.set('', { state: { mode: 'lobby' } }); closeModal(); toast('انمسح كل شي'); };
@@ -123,8 +123,8 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
     const counts = {}; Object.values(S.players).forEach(p => counts[p.team] = (counts[p.team] || 0) + 1);
     const url = CFG.joinUrl || location.href.replace(/host\.html.*$/, '');
     stage.innerHTML = `<div class="lobby"><div><div class="qr"><img src="qr.png" alt=""></div><div class="url">${E(url.replace(/^https?:\/\//, ''))}</div></div>
-      <div><h1 style="font-size:44px;margin:0 0 6px">امسح وادخل بفريقك</h1><p class="sub" style="font-size:22px">${Object.keys(S.players).length} مشارك · ${Object.keys(S.teams).length} فرق</p>
-      <div class="tgrid">${Object.entries(S.teams).map(([id, t]) => `<div class="tcard">${E(t.name)}<small>${counts[id] || 0} أعضاء</small></div>`).join('')}</div></div></div>`;
+      <div><h1 style="font-size:44px;margin:0 0 6px">امسح وادخل باسمك</h1><p class="sub" style="font-size:22px">${Object.keys(S.players).length} مشارك</p>
+      <div class="tgrid">${Object.entries(S.teams).map(([id, t]) => `<div class="tcard">${E(t.name)}</div>`).join('')}</div></div></div>`;
   }
 
   // ---------- QUIZ ----------
@@ -149,8 +149,8 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
     const tops = Object.entries(sc.players).sort((a, b) => b[1] - a[1]).slice(0, 5);
     stage.innerHTML = head + `<h1 style="font-size:40px;margin:6px 0 14px">${last ? 'النتيجة النهائية 🏁' : 'الترتيب'}</h1>
       <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:30px" class="board">
-        <div><div class="sub" style="font-size:20px">الفرق (متوسط نقاط الأعضاء)</div>${sc.teams.map((t, i) => `<div class="rank"><span class="n">${i + 1}</span>${E(t.name)}<span class="p">${t.avg}</span></div>`).join('')}</div>
-        <div><div class="sub" style="font-size:20px">أسرع 5 أشخاص</div>${tops.map(([pid, p], i) => `<div class="rank" style="font-size:20px"><span class="n">${i + 1}</span>${E((S.players[pid] || {}).name || '؟')}<small style="color:#C9CEE6">&nbsp;${E(tname(teamOf(pid)))}</small><span class="p">${p}</span></div>`).join('')}</div>
+        <div><div class="sub" style="font-size:20px">أعلى 5</div>${sc.teams.slice(0, 5).map((t, i) => `<div class="rank"><span class="n">${i + 1}</span>${E(t.name)}<span class="p">${t.avg}</span></div>`).join('')}</div>
+        <div><div class="sub" style="font-size:20px">بعدهم</div>${sc.teams.slice(5, 10).map((t, i) => `<div class="rank"><span class="n">${i + 6}</span>${E(t.name)}<span class="p">${t.avg}</span></div>`).join('')}${[].map(([pid, p], i) => `<div class="rank" style="font-size:20px"><span class="n">${i + 1}</span>${E((S.players[pid] || {}).name || '؟')}<small style="color:#C9CEE6">&nbsp;${E(tname(teamOf(pid)))}</small><span class="p">${p}</span></div>`).join('')}</div>
       </div>
       <div class="ctrl"><span style="flex:1"></span>${last ? `<button class="cbtn" id="cupit">اعتمد نقاط الكأس (3·2·1)</button><button class="cbtn g" id="done">رجوع</button>` : `<button class="cbtn" id="next">السؤال الجاي ←</button>`}</div>`;
     if (!last) $('#next').onclick = () => nextQ(st.set, st.qi + 1);
@@ -192,7 +192,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
     const ph = st.wphase;
     stage.innerHTML = `<div style="display:flex;align-items:baseline;gap:16px"><h1 style="font-size:38px;margin:0">${E(st.wtitle)}</h1><span class="meta">${ph === 'upload' ? 'استقبال المشاركات' : ph === 'vote' ? 'التصويت شغّال' : 'سكّر التصويت'} · ${posts.length} مشاركة · ${Object.keys(votes).length} صوت</span></div>
       <div class="hwall" style="margin-top:16px">${sorted.map(([k, p, c], i) => `<div class="post" ${ph === 'closed' && i === 0 ? 'style="outline:5px solid var(--gold)"' : ''}>${p.img ? `<img src="${p.img}">` : `<div class="tx">${E(p.text)}</div>`}
-        <div class="meta"><span>${E(p.cap || tname(p.team))} <small style="color:var(--muted)">· ${E(tname(p.team))}</small></span>${ph !== 'upload' ? `<span class="cnt-like">♥ ${c}</span>` : ''}</div></div>`).join('')}</div>
+        <div class="meta"><span>${E(tname(p.team))}${p.cap ? ` <small style="color:var(--muted)">· ${E(p.cap)}</small>` : ''}</span>${ph !== 'upload' ? `<span class="cnt-like">♥ ${c}</span>` : ''}</div></div>`).join('')}</div>
       <div class="ctrl"><span style="flex:1"></span>
         ${ph === 'upload' ? `<button class="cbtn" id="next">افتح التصويت ←</button>` : ph === 'vote' ? `<button class="cbtn" id="next">سكّر وأعلن الفايز</button>` : `<button class="cbtn" id="cupit">اعتمد نقاط الكأس (3·2·1)</button>`}
         <button class="cbtn g" id="clr">مسح الجدار</button><button class="cbtn g" id="back">جدار ثاني</button></div>`;
@@ -212,7 +212,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   let evSel = 'redteam';
   function cup() {
     const L = LIVE.cupTotals(S.cup, S.teams), max = Math.max(1, ...L.map(t => t.pts));
-    stage.innerHTML = `<h1 style="font-size:44px;margin:0 0 10px">كأس أذكى فريق 🏆</h1>
+    stage.innerHTML = `<h1 style="font-size:44px;margin:0 0 10px">كأس أذكى مشارك 🏆</h1>
       <div class="bars">${L.map((t, i) => `<div class="rowb"><span class="nm">${i + 1}. ${E(t.name)}</span><span class="bb"><i style="width:${t.pts / max * 100}%"></i></span><span class="pp">${t.pts}</span></div>`).join('')}</div>
       <details style="margin-top:18px"><summary class="sub" style="cursor:pointer;font-size:18px">نقاط يدوية (للمسابقات اللي بدون جوال)</summary>
         <div style="margin-top:10px"><select class="sel" id="ev">${EVENTS.map(([k, t]) => `<option value="${k}" ${k === evSel ? 'selected' : ''}>${t}</option>`).join('')}</select></div>

@@ -47,3 +47,7 @@ h2{font-size:21px;margin:6px 0 10px;line-height:1.35}
 .rank.me{outline:3px solid var(--gold)}
 .preview{width:100%;border-radius:12px;margin:8px 0;display:block}
 .off{position:fixed;bottom:0;inset-inline:0;background:var(--bad);color:#fff;text-align:center;padding:8px;font-weight:700;display:none}
+.emogrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:6px 0 14px;border-radius:14px;transition:box-shadow .2s}
+.emogrid.need{box-shadow:0 0 0 3px var(--gold)}
+.emo{font-size:28px;padding:10px 0;border-radius:12px;background:var(--card);border:2px solid transparent}
+.emo.on{border-color:var(--gold);background:#2B3A85;transform:scale(1.08)}

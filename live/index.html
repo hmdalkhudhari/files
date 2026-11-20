@@ -61,35 +61,32 @@
     return waitView();
   }
 
+  const EMOJIS = ['🦁','🐯','🦅','🐺','🦊','🐼','🐬','🦈','🐉','🦄','🚀','⚡','🔥','💎','🎯','🧠','🤖','👾','🏆','⭐','🌙','☕','🎮','🛠️'];
   function joinView() {
     if (document.activeElement && document.activeElement.id === 'nm') return; // don't wipe while typing
-    const tl = Object.entries(S.teams);
-    app.innerHTML = `<h1>هلا فيك 👋</h1><p class="sub">اكتب اسمك واختر فريقك. كل نقاطك تنحسب لفريقك طول الدورة.</p>
-      <input class="field" id="nm" placeholder="اسمك" maxlength="24" value="${E(localStorage.getItem('live-name') || '')}">
-      ${tl.length ? '<div class="sub" style="margin:4px 0">اختر فريقك:</div><div class="teams">' + tl.map(([id, t]) => `<button class="team ${S.joinTeam === id ? 'on' : ''}" data-t="${id}">${E(t.name)}</button>`).join('') + '</div>' : ''}
-      <input class="field" id="nt" placeholder="${tl.length ? 'أو اكتب اسم فريق جديد' : 'اسم فريقك'}" maxlength="20">
+    let emo = localStorage.getItem('live-emoji') || '';
+    app.innerHTML = `<h1>هلا فيك 👋</h1><p class="sub">١. اكتب اسمك</p>
+      <input class="field" id="nm" placeholder="اسمك" maxlength="20" value="${E(localStorage.getItem('live-name') || '')}">
+      <p class="sub">٢. اختر إيموجي يمثلك</p>
+      <div class="emogrid">${EMOJIS.map(e => `<button class="emo${e === emo ? ' on' : ''}" data-e="${e}">${e}</button>`).join('')}</div>
       <button class="btn" id="go">ادخل</button>`;
-    app.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { S.joinTeam = b.dataset.t; localStorage.setItem('live-name', $('#nm').value); joinView(); });
+    app.querySelectorAll('.emo').forEach(b => b.onclick = () => { emo = b.dataset.e; app.querySelectorAll('.emo').forEach(x => x.classList.toggle('on', x === b)); });
     $('#go').onclick = async () => {
-      const name = $('#nm').value.trim(), nt = $('#nt').value.trim();
-      if (!name) return $('#nm').focus();
-      let tid = S.joinTeam;
-      if (nt) {
-        const ex = Object.entries(S.teams).find(([, t]) => t.name.trim() === nt);
-        tid = ex ? ex[0] : db.push('teams', { name: nt, ts: db.TS });
-      }
-      if (!tid) return $('#nt').focus();
-      localStorage.setItem('live-name', name);
-      await db.set('players/' + pid, { name, team: tid, ts: db.TS });
+      const nm = $('#nm').value.trim();
+      if (!nm) return $('#nm').focus();
+      if (!emo) { const g = $('.emogrid'); g.classList.add('need'); setTimeout(() => g.classList.remove('need'), 900); return; }
+      localStorage.setItem('live-name', nm); localStorage.setItem('live-emoji', emo);
+      const name = emo + ' ' + nm;
+      await db.update('', { ['teams/' + pid]: { name, emoji: emo, ts: db.TS }, ['players/' + pid]: { name, emoji: emo, team: pid, ts: db.TS } });
     };
   }
 
   function teamPts() { const t = LIVE.cupTotals(S.cup, S.teams).find(x => x.tid === S.me.team); return t ? t.pts : 0; }
 
   function waitView() {
-    app.innerHTML = `<div class="center"><h1>أنت داخل ✅</h1><p class="sub">فريق <b>${E(myTeamName())}</b>. خل الصفحة مفتوحة، أول ما يبدأ المدرب اللعبة تطلع لك هني.</p>
-      <div class="big">${teamPts()}</div><p class="sub">نقاط فريقك بالكأس</p>
-      <button class="btn ghost" id="chg">غيّر فريقي</button></div>`;
+    app.innerHTML = `<div class="center"><h1>أنت داخل ✅</h1><p class="sub">باسم <b>${E(myTeamName())}</b>. خل الصفحة مفتوحة، أول ما يبدأ المدرب اللعبة تطلع لك هني.</p>
+      <div class="big">${teamPts()}</div><p class="sub">نقاطك بالكأس</p>
+      <button class="btn ghost" id="chg">غيّر اسمي</button></div>`;
     $('#chg').onclick = () => db.remove('players/' + pid);
   }
 
@@ -133,10 +130,10 @@
     if (st.wphase === 'upload') {
       if (S.sending) return;
       const allowText = st.wkind === 'text';
-      app.innerHTML = `<h1>${E(title)}</h1><p class="sub">${allowText ? 'اكتب برومبت فريقك وأرسله.' : 'صوّر رسمتك وارفعها. تطلع على الشاشة على طول.'}</p>
+      app.innerHTML = `<h1>${E(title)}</h1><p class="sub">${allowText ? 'اكتب برومبتك وأرسله.' : 'صوّر رسمتك وارفعها. تطلع على الشاشة على طول.'}</p>
         ${my ? `<div class="note">وصلت مشاركتك ✓ تقدر ترسل وحدة ثانية وتستبدلها.</div>` + (my.img ? `<img class="preview" src="${my.img}">` : `<div class="expl" style="white-space:pre-wrap">${E(my.text)}</div>`) : ''}
         ${allowText ? `<textarea class="field" id="tx" rows="7" maxlength="1500" placeholder="البرومبت…"></textarea>`
-          : `<label class="btn ghost" style="text-align:center">📷 <span id="phl">صوّر أو اختر صورة</span><input type="file" accept="image/*" capture="environment" id="ph" style="display:none" onchange="document.getElementById('phl').textContent='✓ '+(this.files[0]?this.files[0].name:'')"></label>`}
+          : `<label class="btn ghost" style="text-align:center">📷 <span id="phl">صوّر أو اختر صورة</span><input type="file" accept="image/*" id="ph" style="display:none" onchange="document.getElementById('phl').textContent='✓ '+(this.files[0]?this.files[0].name:'')"></label>`}
         <input class="field" id="cap" maxlength="40" placeholder="اسم المشاركة (اختياري)">
         <button class="btn" id="send">${my ? 'استبدل مشاركتي' : 'أرسل'}</button>`;
       $('#send').onclick = async () => {
@@ -149,7 +146,7 @@
     }
     const counts = {}; Object.values(S.votes || {}).forEach(v => counts[v] = (counts[v] || 0) + 1);
     if (st.wphase === 'vote') {
-      app.innerHTML = `<h1>صوّت 💛</h1><p class="sub">قلب واحد لأفضل مشاركة. ما تقدر تصوّت لفريقك، وتقدر تغيّر صوتك.</p>
+      app.innerHTML = `<h1>صوّت 💛</h1><p class="sub">قلب واحد لأفضل مشاركة. ما تقدر تصوّت لنفسك، وتقدر تغيّر صوتك.</p>
         <div class="wall">${posts.map(([k, p]) => { const own = p.team === S.me.team; return `<div class="post">${p.img ? `<img src="${p.img}" loading="lazy">` : `<div class="tx">${E(p.text)}</div>`}
         <div class="meta"><span>${E(p.cap || (S.teams[p.team] || {}).name || '')}</span><button class="like ${myVote === k ? 'on' : ''}" data-v="${k}" ${own ? 'disabled' : ''}>♥ ${counts[k] || 0}</button></div></div>`; }).join('') || '<p class="sub">ما فيه مشاركات بعد</p>'}</div>`;
       app.querySelectorAll('[data-v]').forEach(b => b.onclick = () => db.set('votes/' + st.wall + '/' + pid, myVote === b.dataset.v ? null : b.dataset.v));
@@ -161,7 +158,7 @@
 
   function cupView() {
     const L = LIVE.cupTotals(S.cup, S.teams);
-    app.innerHTML = `<h1>كأس أذكى فريق 🏆</h1>` + L.map((t, i) => `<div class="rank ${t.tid === S.me.team ? 'me' : ''}"><span class="n">${i + 1}</span>${E(t.name)}<span class="p">${t.pts}</span></div>`).join('');
+    app.innerHTML = `<h1>كأس أذكى مشارك 🏆</h1>` + L.map((t, i) => `<div class="rank ${t.tid === S.me.team ? 'me' : ''}"><span class="n">${i + 1}</span>${E(t.name)}<span class="p">${t.pts}</span></div>`).join('');
   }
 })();
 </script>
