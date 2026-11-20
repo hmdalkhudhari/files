@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141C47">
+<title>ابنِ وكيلك الذكي · لايف</title>
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script src="common.js"></script>
+</head>
+<body>
+<div class="top"><span class="brand">ابنِ وكيلك الذكي · لايف</span><span class="chip" id="who">…</span></div>
+<div class="wrap" id="app"><p class="sub">يحمّل…</p></div>
+<div class="off" id="off">انقطع الاتصال… يحاول يرجع</div>
+<script>
+(async () => {
+  const db = await LIVE.db(), E = LIVE.esc, $ = s => document.querySelector(s), app = $('#app');
+  const qp = new URLSearchParams(location.search).get('pid');
+  let pid = qp || localStorage.getItem('live-pid');
+  if (!pid) { pid = 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); localStorage.setItem('live-pid', pid); }
+  let off = 0; db.offset(o => off = o);
+  db.conn(c => $('#off').style.display = c ? 'none' : 'block');
+  const S = { state: null, teams: {}, me: null, players: {}, cup: {}, starts: {}, myAns: {}, wall: {}, votes: {}, pick: null, sending: false, joinTeam: null };
+  const now = () => Date.now() + off;
+  let subs = [];
+  const watch = (p, k) => subs.push(db.on(p, v => { S[k] = v || {}; render(); }));
+  db.on('state', v => { S.state = v || { mode: 'lobby' }; resub(); render(); });
+  db.on('teams', v => { S.teams = v || {}; render(); });
+  db.on('players/' + pid, v => { S.me = v; render(); });
+  db.on('cup', v => { S.cup = v || {}; render(); });
+  let subKey = '';
+  function resub() {
+    const st = S.state, key = st.mode + '|' + (st.set || '') + '|' + (st.wall || '');
+    if (key === subKey) return; subKey = key;
+    subs.forEach(u => typeof u === 'function' && u()); subs = [];
+    if (st.mode === 'quiz' && st.set) { watch('starts/' + st.set, 'starts'); watch('mine/' + st.set + '/' + pid, 'myAns'); watch('players', 'players'); }
+    if (st.mode === 'wall' && st.wall) { watch('wall/' + st.wall, 'wall'); watch('votes/' + st.wall, 'votes'); }
+  }
+  setInterval(() => { if (S.state && S.state.mode === 'quiz' && S.state.phase === 'q') tick(); }, 250);
+
+  function tick() {
+    const st = S.state, t0 = S.starts[st.qi]; const bar = $('#tbar');
+    if (!bar || !t0) return;
+    const left = Math.max(0, LIVE.T - (now() - t0) / 1000);
+    bar.style.width = (left / LIVE.T * 100) + '%';
+    const n = $('#tleft'); if (n) n.textContent = Math.ceil(left);
+    if (left <= 0 && !$('#locked')) render();
+  }
+
+  function myTeamName() { return S.me && S.teams[S.me.team] ? S.teams[S.me.team].name : ''; }
+
+  function render() {
+    const st = S.state; if (!st) return;
+    $('#who').textContent = S.me ? (S.me.name + ' · ' + myTeamName()) : 'ضيف';
+    if (!S.me || !S.teams[S.me.team]) return joinView();
+    if (st.mode === 'quiz') return quizView();
+    if (st.mode === 'wall') return wallView();
+    if (st.mode === 'cup') return cupView();
+    return waitView();
+  }
+
+  function joinView() {
+    if (document.activeElement && document.activeElement.id === 'nm') return; // don't wipe while typing
+    const tl = Object.entries(S.teams);
+    app.innerHTML = `<h1>هلا فيك 👋</h1><p class="sub">اكتب اسمك واختر فريقك. كل نقاطك تنحسب لفريقك طول الدورة.</p>
+      <input class="field" id="nm" placeholder="اسمك" maxlength="24" value="${E(localStorage.getItem('live-name') || '')}">
+      ${tl.length ? '<div class="sub" style="margin:4px 0">اختر فريقك:</div><div class="teams">' + tl.map(([id, t]) => `<button class="team ${S.joinTeam === id ? 'on' : ''}" data-t="${id}">${E(t.name)}</button>`).join('') + '</div>' : ''}
+      <input class="field" id="nt" placeholder="${tl.length ? 'أو اكتب اسم فريق جديد' : 'اسم فريقك'}" maxlength="20">
+      <button class="btn" id="go">ادخل</button>`;
+    app.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { S.joinTeam = b.dataset.t; localStorage.setItem('live-name', $('#nm').value); joinView(); });
+    $('#go').onclick = async () => {
+      const name = $('#nm').value.trim(), nt = $('#nt').value.trim();
+      if (!name) return $('#nm').focus();
+      let tid = S.joinTeam;
+      if (nt) {
+        const ex = Object.entries(S.teams).find(([, t]) => t.name.trim() === nt);
+        tid = ex ? ex[0] : db.push('teams', { name: nt, ts: db.TS });
+      }
+      if (!tid) return $('#nt').focus();
+      localStorage.setItem('live-name', name);
+      await db.set('players/' + pid, { name, team: tid, ts: db.TS });
+    };
+  }
+
+  function teamPts() { const t = LIVE.cupTotals(S.cup, S.teams).find(x => x.tid === S.me.team); return t ? t.pts : 0; }
+
+  function waitView() {
+    app.innerHTML = `<div class="center"><h1>أنت داخل ✅</h1><p class="sub">فريق <b>${E(myTeamName())}</b>. خل الصفحة مفتوحة، أول ما يبدأ المدرب اللعبة تطلع لك هني.</p>
+      <div class="big">${teamPts()}</div><p class="sub">نقاط فريقك بالكأس</p>
+      <button class="btn ghost" id="chg">غيّر فريقي</button></div>`;
+    $('#chg').onclick = () => db.remove('players/' + pid);
+  }
+
+  function quizView() {
+    const st = S.state, set = window.LIVE_SETS[st.set]; if (!set) return waitView();
+    const q = set.qs[st.qi]; if (!q) return waitView();
+    const mine = S.myAns[st.qi], t0 = S.starts[st.qi];
+    const head = `<div class="sub" style="margin:0">${E(set.title)} · سؤال ${st.qi + 1} من ${set.qs.length}</div>`;
+    if (st.phase === 'q') {
+      const left = t0 ? LIVE.T - (now() - t0) / 1000 : LIVE.T;
+      if (mine || left <= 0) {
+        app.innerHTML = head + `<h2>${E(q.q)}</h2>` + (mine ? `<div class="res none" id="locked"><div class="t">وصل جوابك ✓</div><p class="sub" style="margin:8px 0 0">اخترت ${LIVE.LETTERS[mine.a]}: ${E(q.a[mine.a])}</p></div>`
+          : `<div class="res none" id="locked"><div class="t">خلص الوقت ⏱</div></div>`) + `<p class="sub center" style="margin-top:14px">انتظر النتيجة على الشاشة</p>`;
+        return;
+      }
+      app.innerHTML = head + `<h2>${E(q.q)}</h2><div class="timer"><i id="tbar" style="width:100%"></i></div><div class="sub center" style="margin:0"><span id="tleft">${LIVE.T}</span> ثانية</div>
+        <div class="opts">${q.a.map((a, i) => `<button class="opt" style="background:${LIVE.COLORS[i]}" data-a="${i}"><b>${LIVE.LETTERS[i]}</b><span>${E(a)}</span></button>`).join('')}</div>`;
+      app.querySelectorAll('[data-a]').forEach(b => b.onclick = async () => {
+        if (S.myAns[st.qi]) return;
+        const a = +b.dataset.a; S.myAns[st.qi] = { a, t: now() }; render();
+        const rec = { a, t: db.TS };
+        await db.update('', { ['ans/' + st.set + '/' + st.qi + '/' + pid]: rec, ['mine/' + st.set + '/' + pid + '/' + st.qi]: rec });
+      });
+      tick(); return;
+    }
+    if (st.phase === 'reveal') {
+      const ok = mine && mine.a === q.c, pts = mine && t0 ? LIVE.points(mine.t - t0, ok) : 0;
+      app.innerHTML = head + `<div class="res ${!mine ? 'none' : ok ? 'ok' : 'bad'}"><div class="t">${!mine ? 'ما جاوبت' : ok ? 'صح! 🎉' : 'مو صح'}</div>
+        ${ok ? `<div class="big" style="color:#fff">+${pts}</div>` : ''}</div>
+        <div class="expl"><b>الجواب الصح: ${LIVE.LETTERS[q.c]} · ${E(q.a[q.c])}</b><br>${E(q.e)}</div>`;
+      return;
+    }
+    // board / end: my rank
+    let total = 0; set.qs.forEach((qq, i) => { const m = S.myAns[i]; if (m && S.starts[i]) total += LIVE.points(m.t - S.starts[i], m.a === qq.c); });
+    app.innerHTML = head + `<div class="center"><h1>${st.phase === 'end' ? 'خلصت اللعبة 🏁' : 'الترتيب على الشاشة'}</h1><div class="big">${total}</div><p class="sub">نقاطك بهاللعبة لين الحين</p></div>`;
+  }
+
+  function wallView() {
+    const st = S.state, posts = Object.entries(S.wall || {}), my = S.wall && S.wall[pid], myVote = S.votes && S.votes[pid];
+    const title = st.wtitle || 'الجدار';
+    if (st.wphase === 'upload') {
+      if (S.sending) return;
+      const allowText = st.wkind === 'text';
+      app.innerHTML = `<h1>${E(title)}</h1><p class="sub">${allowText ? 'اكتب برومبت فريقك وأرسله.' : 'صوّر رسمتك وارفعها. تطلع على الشاشة على طول.'}</p>
+        ${my ? `<div class="note">وصلت مشاركتك ✓ تقدر ترسل وحدة ثانية وتستبدلها.</div>` + (my.img ? `<img class="preview" src="${my.img}">` : `<div class="expl" style="white-space:pre-wrap">${E(my.text)}</div>`) : ''}
+        ${allowText ? `<textarea class="field" id="tx" rows="7" maxlength="1500" placeholder="البرومبت…"></textarea>`
+          : `<label class="btn ghost" style="text-align:center">📷 <span id="phl">صوّر أو اختر صورة</span><input type="file" accept="image/*" capture="environment" id="ph" style="display:none" onchange="document.getElementById('phl').textContent='✓ '+(this.files[0]?this.files[0].name:'')"></label>`}
+        <input class="field" id="cap" maxlength="40" placeholder="اسم المشاركة (اختياري)">
+        <button class="btn" id="send">${my ? 'استبدل مشاركتي' : 'أرسل'}</button>`;
+      $('#send').onclick = async () => {
+        const rec = { team: S.me.team, name: S.me.name, cap: $('#cap').value.trim(), ts: db.TS };
+        if (allowText) { const t = $('#tx').value.trim(); if (!t) return; rec.text = t; }
+        else { const f = $('#ph').files[0]; if (!f) return $('#ph').click(); S.sending = true; $('#send').textContent = 'يرفع…'; $('#send').disabled = true; try { rec.img = await LIVE.shrink(f); } catch (e) { S.sending = false; return render(); } }
+        await db.set('wall/' + st.wall + '/' + pid, rec); S.sending = false; render();
+      };
+      return;
+    }
+    const counts = {}; Object.values(S.votes || {}).forEach(v => counts[v] = (counts[v] || 0) + 1);
+    if (st.wphase === 'vote') {
+      app.innerHTML = `<h1>صوّت 💛</h1><p class="sub">قلب واحد لأفضل مشاركة. ما تقدر تصوّت لفريقك، وتقدر تغيّر صوتك.</p>
+        <div class="wall">${posts.map(([k, p]) => { const own = p.team === S.me.team; return `<div class="post">${p.img ? `<img src="${p.img}" loading="lazy">` : `<div class="tx">${E(p.text)}</div>`}
+        <div class="meta"><span>${E(p.cap || (S.teams[p.team] || {}).name || '')}</span><button class="like ${myVote === k ? 'on' : ''}" data-v="${k}" ${own ? 'disabled' : ''}>♥ ${counts[k] || 0}</button></div></div>`; }).join('') || '<p class="sub">ما فيه مشاركات بعد</p>'}</div>`;
+      app.querySelectorAll('[data-v]').forEach(b => b.onclick = () => db.set('votes/' + st.wall + '/' + pid, myVote === b.dataset.v ? null : b.dataset.v));
+      return;
+    }
+    const best = posts.map(([k, p]) => [k, p, counts[k] || 0]).sort((a, b) => b[2] - a[2])[0];
+    app.innerHTML = `<div class="center"><h1>سكّر التصويت 🏆</h1>${best ? `<p class="sub">الفايز: <b>${E((S.teams[best[1].team] || {}).name || '')}</b> بـ ${best[2]} ♥</p>${best[1].img ? `<img class="preview" src="${best[1].img}">` : `<div class="expl" style="white-space:pre-wrap;text-align:right">${E(best[1].text)}</div>`}` : ''}</div>`;
+  }
+
+  function cupView() {
+    const L = LIVE.cupTotals(S.cup, S.teams);
+    app.innerHTML = `<h1>كأس أذكى فريق 🏆</h1>` + L.map((t, i) => `<div class="rank ${t.tid === S.me.team ? 'me' : ''}"><span class="n">${i + 1}</span>${E(t.name)}<span class="p">${t.pts}</span></div>`).join('');
+  }
+})();
+</script>
+</body>
+</html>
