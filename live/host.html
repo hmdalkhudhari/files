@@ -207,7 +207,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   }
 
   // ---------- CUP ----------
-  const EVENTS = [['bridge', 'كمّل الجسر'], ['day1', 'كاهوت اليوم الأول'], ['exact', 'التعليمات الدقيقة'], ['battle', 'معركة البرومبت'], ['agent', 'كاهوت الوكيل'], ['redteam', 'تحدي الحصن'], ['final', 'كاهوت النهائي']];
+  const EVENTS = [['bridge', 'كمّل الجسر'], ['day1', 'مسابقة اليوم الأول'], ['exact', 'التعليمات الدقيقة'], ['battle', 'معركة البرومبت'], ['agent', 'مسابقة الوكيل'], ['redteam', 'تحدي الحصن'], ['final', 'مسابقة النهائي']];
   let evSel = 'redteam';
   function cup() {
     const L = LIVE.cupTotals(S.cup, S.teams), max = Math.max(1, ...L.map(t => t.pts));
