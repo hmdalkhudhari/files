@@ -57,6 +57,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
 .modal .box{background:#fff;color:var(--ink);border-radius:16px;padding:24px;width:420px}
 .toast{position:fixed;bottom:20px;inset-inline-start:20px;background:var(--ok);color:#fff;padding:12px 18px;border-radius:10px;font-weight:700;display:none}
 .mode-local{position:fixed;bottom:8px;inset-inline-end:10px;font-size:12px;color:#8F96BF}
+.hwall .post .meta>span:first-child{color:#1E2A66}
 </style>
 </head>
 <body>
@@ -176,7 +177,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   }
 
   // ---------- WALL ----------
-  const WALLS = { bridge: { t: 'تحدي كمّل الجسر', kind: 'img' }, exact: { t: 'تحدي التعليمات الدقيقة', kind: 'img' }, battle: { t: 'معركة البرومبت', kind: 'text' } };
+  const WALLS = { draw: { t: 'كمّل الرسمة · رسمتك', kind: 'img' }, drawai: { t: 'كمّل الرسمة · نسخة Claude', kind: 'img' }, exact: { t: 'تحدي التعليمات الدقيقة', kind: 'img' }, battle: { t: 'معركة البرومبت', kind: 'text' } };
   function wall() {
     const st = S.state;
     if (!st.wall) {
@@ -207,7 +208,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   }
 
   // ---------- CUP ----------
-  const EVENTS = [['bridge', 'كمّل الجسر'], ['day1', 'مسابقة اليوم الأول'], ['exact', 'التعليمات الدقيقة'], ['battle', 'معركة البرومبت'], ['agent', 'مسابقة الوكيل'], ['redteam', 'تحدي الحصن'], ['final', 'مسابقة النهائي']];
+  const EVENTS = [['draw', 'كمّل الرسمة'], ['drawai', 'رسمة Claude'], ['day1', 'مسابقة اليوم الأول'], ['exact', 'التعليمات الدقيقة'], ['battle', 'معركة البرومبت'], ['agent', 'مسابقة الوكيل'], ['redteam', 'تحدي الحصن'], ['final', 'مسابقة النهائي']];
   let evSel = 'redteam';
   function cup() {
     const L = LIVE.cupTotals(S.cup, S.teams), max = Math.max(1, ...L.map(t => t.pts));
