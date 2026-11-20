@@ -61,6 +61,7 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--gold)}
 .cta::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 26%,rgba(226,232,240,.8) 50%,transparent 74%);translate:-135% 0;animation:beam2 3.8s ease-in-out infinite}
 @keyframes beam2{0%{translate:-135% 0}50%{translate:135% 0}100%{translate:-135% 0}}
 .cta:disabled{opacity:.6}
+.req{display:inline-block;width:9px;height:9px;border-radius:50%;background:#FF3B3B;margin-inline-start:8px;vertical-align:middle}
 .err{color:#FF8A8A;font-weight:700;margin:0;text-align:center}
 .thanks{display:none;text-align:center;padding:50px 0 80px}
 .thanks .tick{width:72px;height:72px;border-radius:50%;background:rgba(59,196,122,.18);color:var(--green);display:grid;place-items:center;margin:0 auto 18px;font-size:36px;font-weight:900}
@@ -115,7 +116,7 @@ footer{padding:18px 0 34px;text-align:center;color:var(--muted);font-size:13px;b
     <h1>شلون كانت <em>تجربتك</em> معنا؟</h1>
     <p class="lede">٣ أسئلة وخانة تكتب فيها رأيك بكلماتك. أقل من دقيقة، ورأيك يساعدنا نتطور.</p>
     <form id="fb" novalidate>
-      <div class="q"><h2><b>١</b>قيّم تجربتك معنا</h2>
+      <div class="q"><h2><b>١</b>قيّم تجربتك معنا<i class="req" title="مطلوب" aria-label="مطلوب"></i></h2>
         <div class="stars" id="stars" role="radiogroup" aria-label="التقييم">
           <input type="radio" name="rating" id="s5" value="5"><label for="s5" data-v="5">★</label>
           <input type="radio" name="rating" id="s4" value="4"><label for="s4" data-v="4">★</label>
@@ -125,7 +126,7 @@ footer{padding:18px 0 34px;text-align:center;color:var(--muted);font-size:13px;b
         </div>
         <div class="scale"><span>رائع</span><span>جيد</span></div>
       </div>
-      <div class="q"><h2><b>٢</b>شنو أكثر شي عجبك؟</h2>
+      <div class="q"><h2><b>٢</b>شنو أكثر شي عجبك؟<i class="req" title="مطلوب" aria-label="مطلوب"></i></h2>
         <div class="opts">
           <label><input type="radio" name="liked" value="النتيجة"> النتيجة اللي حصلتها</label>
           <label><input type="radio" name="liked" value="الشرح والوضوح"> وضوح الشرح</label>
@@ -133,14 +134,14 @@ footer{padding:18px 0 34px;text-align:center;color:var(--muted);font-size:13px;b
           <label><input type="radio" name="liked" value="القيمة مقابل السعر"> القيمة مقابل السعر</label>
         </div>
       </div>
-      <div class="q"><h2><b>٣</b>هل تنصح غيرك فينا؟</h2>
+      <div class="q"><h2><b>٣</b>هل تنصح غيرك فينا؟<i class="req" title="مطلوب" aria-label="مطلوب"></i></h2>
         <div class="opts">
           <label><input type="radio" name="recommend" value="أكيد"> أكيد</label>
           <label><input type="radio" name="recommend" value="ممكن"> ممكن</label>
           <label><input type="radio" name="recommend" value="لا"> لا</label>
         </div>
       </div>
-      <div class="q"><h2><b>✎</b>اكتب لنا رأيك بكلماتك <span style="color:#FF8A8A">*</span></h2>
+      <div class="q"><h2><b>✎</b>اكتب لنا رأيك بكلماتك <i class="req" title="مطلوب" aria-label="مطلوب"></i></h2>
         <textarea name="comment" maxlength="800" required aria-required="true" placeholder="شنو كانت تجربتك؟ شنو استفدت؟ (مطلوب)"></textarea>
         <input type="text" name="name" maxlength="60" placeholder="اسمك (مطلوب)" required style="margin-top:10px">
         <input type="text" name="company" maxlength="80" placeholder="اسم الشركة" style="margin-top:10px">
