@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>رأيك يهمنا · Business Status</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B1036">
+<link rel="icon" href="/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--bg:#1A2460;--card:#25317A;--card2:#2A3680;--line:rgba(255,255,255,.12);--fg:#fff;--muted:#C3C9E6;--gold:#F5B800;--red:#DD3C3C;--green:#3BC47A;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:#0B1036}
+body{margin:0;background:transparent;color:var(--fg);font-family:"Tajawal",system-ui,"Segoe UI",sans-serif;font-size:17px;line-height:1.75;overflow-x:hidden;min-height:100svh}
+.bzbg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:
+  radial-gradient(900px 560px at 85% -10%,rgba(245,184,0,.09),transparent 60%),
+  radial-gradient(800px 640px at 0% 100%,rgba(24,36,96,.38),transparent 65%),
+  linear-gradient(180deg,#0A0F33 0%,#0F1540 100%)}
+.bzbg::before{content:"";position:absolute;inset:0;opacity:.6;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 120% 90% at 50% 30%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 120% 90% at 50% 30%,#000 45%,transparent 100%)}
+.bzbg i{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3}
+.bzbg i:nth-child(1){width:520px;height:520px;background:#1E2A66;top:-180px;right:-160px}
+.bzbg i:nth-child(2){width:420px;height:420px;background:rgba(245,184,0,.30);top:45%;left:-200px}
+.bzbg i:nth-child(3){width:460px;height:460px;background:#1E2A66;bottom:-220px;right:-140px;opacity:.32}
+.top{position:sticky;top:0;z-index:5;background:rgba(14,20,64,.78);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top-in{max-width:640px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;padding-inline:max(18px,env(safe-area-inset-left,0px))}
+.brand{display:flex;align-items:center;gap:10px;font-family:"Inter","Tajawal",system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em;direction:ltr;color:#fff;text-decoration:none}
+.brand svg{width:28px;height:28px}
+.pill{color:var(--fg);text-decoration:none;font-size:14px;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:99px;padding:6px 14px}
+.col{max-width:640px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px))}
+.intro{display:flex;align-items:center;gap:14px;margin:26px 0 8px}
+.ph{position:relative;flex:none;width:76px;height:76px}
+.ph::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:1.5px dashed rgba(245,184,0,.5)}
+.ph img{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:50% 0;display:block;border:2px solid rgba(245,184,0,.75);background:#1E2A66}
+.tag{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:2px 12px;border-radius:4px}
+h1{margin:14px 0 8px;font-weight:900;font-size:clamp(30px,8.5vw,44px);line-height:1.2;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(90deg,#F5B800,#F5B800,#F5B800);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gs 4s linear infinite}
+@keyframes gs{to{background-position:200% center}}
+.lede{margin:0 0 22px;color:var(--muted)}
+form{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;padding-bottom:60px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px}
+.q h2{margin:0 0 12px;font-size:18px;font-weight:800;display:flex;gap:10px;align-items:center}
+.q h2 b{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-size:14px;font-weight:900}
+.stars{display:flex;gap:6px;direction:ltr;justify-content:center}
+.stars input{position:absolute;opacity:0}
+.stars label{font-size:min(40px,10.5vw);line-height:1;color:rgba(255,255,255,.22);cursor:pointer;padding:2px;transition:transform .15s,color .15s}
+.stars label.on{color:var(--gold)}
+.stars label:active{transform:scale(1.15)}
+.scale{display:flex;justify-content:space-between;direction:ltr;margin-top:6px;padding:0 4px;color:var(--muted);font-weight:800;font-size:15px}
+.opts{display:grid;gap:8px}
+.opts label{display:flex;gap:10px;align-items:center;background:rgba(0,0,0,.18);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;font-weight:700}
+.opts input{accent-color:var(--gold);width:18px;height:18px}
+.opts label:has(input:checked){border-color:var(--gold);background:rgba(245,184,0,.1)}
+textarea,input[type=text]{width:100%;background:rgba(0,0,0,.22);border:1.5px solid var(--line);border-radius:12px;color:var(--fg);font:inherit;padding:12px 14px}
+textarea{min-height:130px;resize:vertical}
+textarea:focus,input[type=text]:focus{outline:none;border-color:var(--gold)}
+.consent{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:15px}
+.consent input{accent-color:var(--gold);width:18px;height:18px;margin-top:6px;flex:none}
+.cta{position:relative;overflow:hidden;width:100%;background:var(--gold);color:#141C4D;border:0;font:inherit;font-weight:800;font-size:19px;padding:16px;border-radius:99px;cursor:pointer;box-shadow:0 10px 30px -10px rgba(245,184,0,.6)}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 26%,rgba(226,232,240,.8) 50%,transparent 74%);translate:-135% 0;animation:beam2 3.8s ease-in-out infinite}
+@keyframes beam2{0%{translate:-135% 0}50%{translate:135% 0}100%{translate:-135% 0}}
+.cta:disabled{opacity:.6}
+.err{color:#FF8A8A;font-weight:700;margin:0;text-align:center}
+.thanks{display:none;text-align:center;padding:50px 0 80px}
+.thanks .tick{width:72px;height:72px;border-radius:50%;background:rgba(59,196,122,.18);color:var(--green);display:grid;place-items:center;margin:0 auto 18px;font-size:36px;font-weight:900}
+.thanks h2{font-size:30px;margin:0 0 8px}
+.thanks p{color:var(--muted);margin:0}
+.links{display:grid;gap:10px;max-width:320px;margin:26px auto 0}
+.lnk{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:#fff;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:14px;padding:12px 16px}
+.lnk svg{width:20px;height:20px;flex:none}
+.lnk.ig{background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF);border-color:transparent}
+footer{padding:18px 0 34px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){h1 em,.cta::after{animation:none!important}}
+</style>
+<style id="v3ui-css">
+.bzc{position:relative;display:inline-flex;align-items:center}
+.bzc-b{height:40px;padding:0 14px;border-radius:11px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font:700 14.5px "Tajawal","Poppins",system-ui,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.bzc-b:hover{border-color:#F5B800}
+.bzc-b svg{width:18px;height:18px;flex:none}
+.bzc-m{position:absolute;top:calc(100% + 8px);inset-inline-end:0;min-width:210px;background:#1A2460;border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:6px;box-shadow:0 18px 40px -12px rgba(0,0,0,.75);display:none;z-index:3000}
+.bzc.open .bzc-m{display:block}
+.bzc-m a{display:flex!important;align-items:center;gap:10px;padding:11px 12px;border-radius:10px;color:#fff!important;text-decoration:none;font:700 15px "Tajawal","Poppins",sans-serif;white-space:nowrap}
+.bzc-m a:hover{background:rgba(255,255,255,.09)}
+.bzc-m a svg{width:20px;height:20px;flex:none}
+.bzc-m a.wa svg{color:#25D366}
+@media (max-width:560px){.bzc-b{padding:0 11px;height:36px}.bzc-b span{display:none}.bzc-m{inset-inline-end:-8px}}
+.bzf{position:fixed;inset-inline-start:16px;bottom:18px;z-index:70;display:inline-flex;align-items:center;gap:8px;background:#F5B800;color:#141C4D!important;font:800 16px "Tajawal","Poppins",sans-serif;padding:13px 22px;border-radius:99px;text-decoration:none;box-shadow:0 12px 30px -10px rgba(245,184,0,.7);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s;overflow:hidden}
+.bzf.on{opacity:1;pointer-events:auto;transform:none}
+.bzf::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 26%,rgba(226,232,240,.8) 50%,transparent 74%);translate:-135% 0;animation:bzbeam 3.8s ease-in-out infinite}
+@keyframes bzbeam{0%{translate:-135% 0}50%{translate:135% 0}100%{translate:-135% 0}}
+@media (prefers-reduced-motion:reduce){.bzf::after{animation:none}}
+.bz-live{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 11px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff;font:600 13px "Poppins","Tajawal",sans-serif;white-space:nowrap;direction:ltr}
+.bz-live i{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 0 rgba(61,220,132,.7);animation:bzpl2 1.8s infinite}
+.bz-live small{font:700 12.5px "Tajawal","Poppins",sans-serif;opacity:.8}
+.bz-live time{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+@keyframes bzpl2{70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+@media (max-width:480px){.bz-live small{display:none}.bz-live{height:34px;padding:0 9px;font-size:12px}}
+.bz-dn{position:fixed;left:50%;bottom:18px;translate:-50% 0;z-index:60;width:44px;height:44px;border-radius:50%;background:rgba(30,42,102,.85);border:1.5px solid rgba(245,184,0,.7);display:flex;align-items:center;justify-content:center;color:#F5B800;cursor:pointer;animation:bzbob 1.8s ease-in-out infinite;transition:opacity .3s}
+.bz-dn svg{width:22px;height:22px}
+.bz-dn.hide{opacity:0;pointer-events:none}
+@keyframes bzbob{50%{transform:translateY(5px)}}
+@media (prefers-reduced-motion:reduce){.bz-dn{animation:none}}
+</style>
+</head>
+<body>
+<div class="bzbg" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="top"><div class="top-in">
+  <a class="brand" href="/" aria-label="Business Status"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M17 19h10a3 3 0 013 3v4a12 12 0 0012 12h3a3 3 0 013 3v4a11 11 0 01-11 11H17A11 11 0 016 45V30a11 11 0 0111-11z" fill="#fff"/><rect x="31" y="8" width="25" height="25" rx="8" fill="#F5B800"/></svg>Business Status</a>
+  <a class="pill" href="/">الرئيسية</a>
+</div></header>
+<div class="col">
+  <div id="formWrap">
+    <div class="intro"><div class="ph"><img src="../consult/hamad.webp" alt="حمد الخضري"></div><div><span class="tag">جلسة خاصة · رأيك يهمنا</span></div></div>
+    <h1>شلون كانت <em>تجربتك</em> معنا؟</h1>
+    <p class="lede">٣ أسئلة وخانة تكتب فيها رأيك بكلماتك. أقل من دقيقة، ورأيك يساعدنا نتطور.</p>
+    <form id="fb" novalidate>
+      <div class="q"><h2><b>١</b>قيّم تجربتك معنا</h2>
+        <div class="stars" id="stars" role="radiogroup" aria-label="التقييم">
+          <input type="radio" name="rating" id="s5" value="5"><label for="s5" data-v="5">★</label>
+          <input type="radio" name="rating" id="s4" value="4"><label for="s4" data-v="4">★</label>
+          <input type="radio" name="rating" id="s3" value="3"><label for="s3" data-v="3">★</label>
+          <input type="radio" name="rating" id="s2" value="2"><label for="s2" data-v="2">★</label>
+          <input type="radio" name="rating" id="s1" value="1"><label for="s1" data-v="1">★</label>
+        </div>
+        <div class="scale"><span>رائع</span><span>جيد</span></div>
+      </div>
+      <div class="q"><h2><b>٢</b>شنو أكثر شي عجبك؟</h2>
+        <div class="opts">
+          <label><input type="radio" name="liked" value="النتيجة"> النتيجة اللي حصلتها</label>
+          <label><input type="radio" name="liked" value="الشرح والوضوح"> وضوح الشرح</label>
+          <label><input type="radio" name="liked" value="السرعة والتجاوب"> السرعة والتجاوب</label>
+          <label><input type="radio" name="liked" value="القيمة مقابل السعر"> القيمة مقابل السعر</label>
+        </div>
+      </div>
+      <div class="q"><h2><b>٣</b>هل تنصح غيرك فينا؟</h2>
+        <div class="opts">
+          <label><input type="radio" name="recommend" value="أكيد"> أكيد</label>
+          <label><input type="radio" name="recommend" value="ممكن"> ممكن</label>
+          <label><input type="radio" name="recommend" value="لا"> لا</label>
+        </div>
+      </div>
+      <div class="q"><h2><b>✎</b>اكتب لنا رأيك بكلماتك <span style="color:#FF8A8A">*</span></h2>
+        <textarea name="comment" maxlength="800" required aria-required="true" placeholder="شنو كانت تجربتك؟ شنو استفدت؟ (مطلوب)"></textarea>
+        <input type="text" name="name" maxlength="60" placeholder="اسمك (مطلوب)" required style="margin-top:10px">
+        <input type="text" name="company" maxlength="80" placeholder="اسم الشركة" style="margin-top:10px">
+      </div>
+      <label class="consent"><input type="checkbox" name="publish" value="نعم"><span>أوافق على نشر تعليقي</span></label>
+      <p class="err" id="err" hidden></p>
+      <button class="cta" type="submit" id="send">أرسل رأيي</button>
+    </form>
+  </div>
+  <div class="thanks" id="thanks">
+    <div class="tick">✓</div>
+    <h2>مشكور على وقتك 🤍</h2>
+    <p>شكراً على عمل الاستبيان، وتذكّر إننا بخدمتك دايماً.</p>
+    <div class="links">
+      <a class="lnk ig" href="https://www.instagram.com/bznstatus" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span dir="ltr">@bznstatus</span></a>
+      <a class="lnk" href="https://bznstatus.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><span dir="ltr">bznstatus.com</span></a>
+    </div>
+  </div>
+</div>
+<footer><div class="col">بزنس ستيتس · شركة مرخّصة في دولة الكويت</div></footer>
+<script>
+(function(){
+var ENDPOINT="https://script.google.com/macros/s/AKfycbw2gJUS7_nDwOSdCSCBbV7eF4j4kjRlxblMczYSpjOZh6CuDnVlrDhmS9oarSC3NcOy/exec";
+var form=document.getElementById('fb'),err=document.getElementById('err'),btn=document.getElementById('send');
+var labels=[].slice.call(document.querySelectorAll('#stars label'));
+function paint(v){labels.forEach(function(l){l.classList.toggle('on',+l.dataset.v<=v)})}
+labels.forEach(function(l){
+  l.addEventListener('mouseenter',function(){paint(+l.dataset.v)});
+  l.addEventListener('click',function(){setTimeout(function(){paint(+l.dataset.v)})});
+});
+document.getElementById('stars').addEventListener('mouseleave',function(){var c=form.querySelector('[name=rating]:checked');paint(c?+c.value:0)});
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=new FormData(form);
+  if(!f.get('rating')||!f.get('liked')||!f.get('recommend')){err.textContent='جاوب على الأسئلة الثلاثة أول';err.hidden=false;return}
+  if(!(f.get('comment')||'').trim()){err.textContent='اكتب رأيك بالخانة أول، هذا اللي يهمنا / Please write your feedback in the box first';err.hidden=false;form.querySelector('[name=comment]').focus();return}
+  if(!(f.get('name')||'').trim()){err.textContent='اكتب اسمك أول';err.hidden=false;form.querySelector('[name=name]').focus();return}
+  err.hidden=true;btn.disabled=true;btn.textContent='جاري الإرسال…';
+  var data={type:'feedback',rating:f.get('rating'),liked:f.get('liked'),recommend:f.get('recommend'),comment:(f.get('comment')||'').trim(),name:(f.get('name')||'').trim(),company:(f.get('company')||'').trim(),publish:f.get('publish')?'نعم':'لا'};
+  fetch(ENDPOINT,{method:'POST',mode:'no-cors',body:new URLSearchParams(data)}).then(function(){
+    document.getElementById('formWrap').style.display='none';document.getElementById('thanks').style.display='block';window.scrollTo(0,0);
+  }).catch(function(){btn.disabled=false;btn.textContent='أرسل رأيي';err.textContent='صار خطأ بالإرسال. جرّب مرة ثانية';err.hidden=false});
+});
+})();
+</script>
+<script id="v3ui-js">
+(function(){
+  var EN=function(){return /[?&]lang=en/.test(location.search)||document.documentElement.lang==='en'};
+  var L=function(a,e){return EN()?e:a};
+  var ICON_CHAT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12Z"/></svg>',ICON_WA='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 001.9-1.3 2.3 2.3 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>',ICON_MAIL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+  function contact(){
+    var host=document.querySelector('.bsn-end')||document.querySelector('.top .tr')||document.querySelector('.top-in');
+    if(!host||host.querySelector('.bzc'))return;
+    var w=document.createElement('div');w.className='bzc';w.setAttribute('data-noi18n','');
+    w.innerHTML='<button type="button" class="bzc-b" aria-haspopup="true" aria-expanded="false">'+ICON_CHAT+'<span>'+L('تواصل معنا','Contact us')+'</span></button><div class="bzc-m" role="menu"><a class="wa" role="menuitem" href="https://wa.me/96590000937" target="_blank" rel="noopener">'+ICON_WA+'<span>'+L('واتساب','WhatsApp')+'</span></a><a role="menuitem" href="mailto:info@bznstatus.com">'+ICON_MAIL+'<span>'+L('إيميل','Email')+'</span></a></div>';
+    var cta=host.querySelector('.bsn-cta');host.insertBefore(w,cta||host.querySelector('.bsn-burger')||null);
+    var b=w.querySelector('.bzc-b');
+    b.addEventListener('click',function(e){e.stopPropagation();var o=!w.classList.contains('open');w.classList.toggle('open',o);b.setAttribute('aria-expanded',o)});
+    document.addEventListener('click',function(){w.classList.remove('open');b.setAttribute('aria-expanded','false')});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')w.classList.remove('open')});
+  }
+  function clock(){
+    var host=document.querySelector('.top-in');if(!host||host.querySelector('.bz-live'))return;
+    var el=document.createElement('span');el.className='bz-live';el.setAttribute('data-noi18n','');el.setAttribute('aria-label','توقيت الكويت');
+    el.innerHTML='<i></i><small></small><time></time>';var lb=el.querySelector('small'),t=el.querySelector('time');
+    function tick(){var v;try{v=new Date().toLocaleTimeString('en-US',{timeZone:'Asia/Kuwait',hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true})}catch(e){v=new Date().toLocaleTimeString('en-US')}v=v.replace('AM','ص').replace('PM','م');t.textContent=v;lb.textContent='الكويت'}
+    tick();setInterval(tick,1000);
+    var pill=host.querySelector('.pill');host.insertBefore(el,pill||null);
+  }
+  
+  function down(){
+    if(document.querySelector('.bz-down,.bz-dn'))return;
+    var b=document.createElement('button');b.type='button';b.className='bz-dn';b.setAttribute('aria-label','انزل');
+    b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+    b.addEventListener('click',function(){scrollBy({top:innerHeight*.8,behavior:'smooth'})});
+    document.body.appendChild(b);
+    addEventListener('scroll',function(){b.classList.toggle('hide',scrollY>120)},{passive:true});
+  }
+  function boot(){setTimeout(function(){contact();clock();down();},80)}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+<style id="v3-depth">html body .card,html body .pk,html body .camp,html body .rv,html body .req,html body .price,html body .box,html body .stats li,html body .door,html body .bx,html body .why>div,html body .vs-row,html body .mock,html body details,html body .gets li,html body .wa,html body .quote,html body .about,html body .guar,html body .q,html body .dm{box-shadow:0 22px 44px -20px rgba(4,8,30,.85),0 8px 18px -10px rgba(4,8,30,.6),inset 0 1px 0 rgba(255,255,255,.07)}html body .card.bz-tilt:hover,html body .pk.bz-tilt:hover,html body .camp.bz-tilt:hover,html body .rv.bz-tilt:hover,html body .req.bz-tilt:hover,html body .price.bz-tilt:hover,html body .box.bz-tilt:hover,html body .stats li.bz-tilt:hover,html body .door.bz-tilt:hover,html body .bx.bz-tilt:hover,html body .why>div.bz-tilt:hover,html body .vs-row.bz-tilt:hover,html body .mock.bz-tilt:hover,html body details.bz-tilt:hover,html body .gets li.bz-tilt:hover,html body .wa.bz-tilt:hover,html body .quote.bz-tilt:hover,html body .about.bz-tilt:hover,html body .guar.bz-tilt:hover,html body .q.bz-tilt:hover,html body .dm.bz-tilt:hover{box-shadow:0 30px 60px -22px rgba(4,8,30,.95),0 10px 22px -10px rgba(4,8,30,.7),0 0 0 1px rgba(245,184,0,.35) inset}html body .bzf{right:auto!important;left:22px!important}html body .trust-h,html body .lgx-h,html body .trust-head .eyebrow{color:#F5B800!important;opacity:1!important}html body .logos{direction:ltr!important;overflow:hidden!important;border-block:1px solid rgba(255,255,255,.16)!important;padding:14px 0!important}html body .logos .ltrack{animation:lmq 70s linear infinite!important;animation-play-state:running!important;direction:ltr!important}html body .logos .lg,html body .logos.held .lg{opacity:1!important;transform:none!important}html body .logos .lg img{max-width:none!important}html body .logos .lg img.tile{height:56px!important;width:auto!important;border-radius:12px!important;object-fit:contain}html body .logos .lg img.small{height:30px!important}html body .logos .lg img.xs{height:24px!important}html body .logos .lg img.tall{height:62px!important}html body .logos .lg img.xl{height:84px!important;margin:-14px 0}@media (max-width:760px){html body .bzbg i{display:none!important}html body h1{line-height:1.32!important}}html body h1 em,html body h1 .g{-webkit-box-decoration-break:clone;box-decoration-break:clone;padding-block:.16em .06em}html body .req,html body .req.bz-tilt,html body .bz-tilt:has(form,input,textarea,select),html body .q,html body form{transform:none!important;rotate:none!important}</style></body>
+</html>
