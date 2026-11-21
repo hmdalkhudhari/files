@@ -63,3 +63,14 @@ footer h2{margin:0 0 4px;color:#fff}footer p{margin:0 0 16px;color:#D9DBE6;font-
 .mp a{padding:10px 12px;border-radius:8px;color:var(--navy);text-decoration:none;font-weight:700}
 .mp a:hover{background:#F1F0EC}
 @media print{.bar{display:none}}
+/* خلفية بيضاء لكل الصفحة (حمد ٢١ نوفمبر) */
+body{background:#fff}
+header{background:#fff;color:var(--navy);border-bottom:1px solid var(--line)}
+header p{color:var(--soft)}.tag{color:var(--soft)}
+h1 em{color:var(--navy);background:linear-gradient(transparent 62%,var(--y) 62%)}
+.gl{background:#fff;border-color:#FF5A5F}.gl b{color:var(--navy)}.gl span{background:var(--navy);color:#fff}
+.card,.ask{background:#fff}
+footer{background:#fff;color:var(--navy);border-top:1px solid var(--line)}
+footer h2{color:var(--navy)}footer p{color:var(--soft)}
+.btn.ig{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.fine{color:var(--soft)}

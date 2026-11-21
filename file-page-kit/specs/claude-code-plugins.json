@@ -4,13 +4,7 @@
  "title": "٥ بلوقنز مجانية لـClaude Code",
  "kicker": "ملف مجاني",
  "h1_html": "٥ بلوقنز مجانية لـ<em>Claude Code</em>",
- "sub": "أوامر التنصيب جاهزة بزر نسخ، وكلود يمشي معك خطوة خطوة.",
- "claude_prompt": "أنا أبي أنزل ٥ إضافات مجانية على Claude Code. امشِ معي خطوة خطوة، خطوة وحدة كل مرة، وانتظر لين أقول لك خلصت قبل ما تعطيني اللي بعدها. وإذا علقت برسل لك سكرين.\n\nقبل لا نبدأ اسألني: هل Claude Code منصّب عندي؟ وهل Node.js منصّب؟ (لأن اثنتين منها تنزل من الترمنال).\n\nالإضافات وأوامرها:\n1. Claude Mem (ذاكرة بين الجلسات) — داخل Claude Code:\n/plugin marketplace add thedotmack/claude-mem\n/plugin install claude-mem\nبعدها أعيد تشغيل Claude Code.\n2. Find Skills — بالترمنال:\nnpx skills add vercel-labs/skills --skill find-skills\n3. AnyDoc — بالترمنال:\nnpx skills add firecrawl/anydoc\n4. Claude Code Setup — داخل Claude Code:\n/plugin install claude-code-setup@claude-plugins-official\n5. Agent Skills — داخل Claude Code:\n/plugin marketplace add addyosmani/agent-skills\n/plugin install agent-skills@addy-agent-skills\n\nعند كل واحدة قول لي وين أكتب الأمر (داخل Claude Code أو بالترمنال) وكيف أتأكد إنها اشتغلت. لا تخترع أوامر غير هذي.",
- "claude_steps": [
-  "انسخ",
-  "افتح Claude",
-  "الصق وأرسل"
- ],
+ "sub": "أوامر التنصيب جاهزة بزر نسخ، وخطوة بخطوة.",
  "list_title": "الخمس إضافات",
  "list_lead": "الأوامر اللي تبدأ بـ/ تكتبها داخل Claude Code. اللي تبدأ بـnpx تكتبها بالترمنال، وتحتاج Node.js.",
  "items": [
