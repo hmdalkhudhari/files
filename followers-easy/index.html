@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>منو ما يتابعك على انستغرام · Claude</title>
+<style>
+:root{--gold:#F2C230;--navy:#1E2A66;--line:#e6e8f2;--mute:#6b7399}
+*{box-sizing:border-box}
+body{margin:0;background:#f6f7fb;color:#16204f;font-family:Tajawal,"Segoe UI",Tahoma,sans-serif;line-height:1.7}
+header{background:var(--navy);color:#fff;padding:26px 18px 40px;text-align:center}
+header h1{margin:0 0 6px;font-size:24px}
+header h1 b{color:var(--gold)}
+header p{margin:0;color:#c9cfee;font-size:14px}
+main{max-width:640px;margin:-22px auto 40px;padding:0 14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(30,42,102,.05)}
+.step{display:flex;gap:12px}
+.n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;display:flex;align-items:center;justify-content:center}
+.step h2{margin:0 0 4px;font-size:17px}
+.step p{margin:0;font-size:14.5px;color:#39406b}
+code,.path{background:#eef0f8;border-radius:6px;padding:1px 6px;font-family:Consolas,monospace;direction:ltr;unicode-bidi:isolate;font-size:13px}
+.prompt{background:#eef0f8;border-radius:12px;padding:12px;margin-top:10px;font-size:14.5px;white-space:pre-wrap}
+button{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:10px 16px;font-size:15px;font-family:inherit;cursor:pointer;margin-top:10px}
+button.done{background:#2a8a4a}
+.warn{border-right:4px solid var(--gold)}
+.warn p{margin:0;font-size:13.5px;color:#39406b}
+footer{text-align:center;color:var(--mute);font-size:12px;padding-bottom:30px}
+</style>
+</head>
+<body>
+<header>
+<h1>منو ما يتابعك على <b>انستغرام</b></h1>
+<p>٣ خطوات، بدون باسوورد وبدون سكيل</p>
+</header>
+<main>
+
+<div class="card step"><div class="n">1</div><div>
+<h2>اطلب ملف حسابك من انستغرام</h2>
+<p>من التطبيق:</p><div class="path" style="display:block;margin-top:6px;padding:8px 10px;line-height:1.9">More → Settings → Meta Account → Your information and permissions → Export your information → Create export</div>
+<p style="margin-top:6px">اختار حسابك، وبعدها التصدير لجهازك. حدد <b>Followers and following</b> بس، والصيغة <b>JSON</b>، والفترة <b>All time</b>.</p>
+</div></div>
+
+<div class="card step"><div class="n">2</div><div>
+<h2>نزّل الملف لما يجهز</h2>
+<p>يوصلك إشعار وإيميل. الرابط يظل شغال ٤ أيام، فنزّله على طول. وافتح الزيب (Unzip) على جهازك.</p>
+</div></div>
+
+<div class="card step"><div class="n">3</div><div>
+<h2>ارفعه على Claude والصق الأمر</h2>
+<p>ارفع ملفين: ملف المتابعين <span class="path">followers</span> وملف اللي تتابعهم <span class="path">following</span>. بعدها الصق هالأمر:</p>
+<div class="prompt" id="p">هذي ملفات المتابعين واللي أتابعهم من تصدير انستغرام الرسمي.
+طلّع لي كل حساب أتابعه وما يتابعني، بجدول فيه الاسم والرابط.
+استخدم الملفين بس، وإذا ما لقيت ملف أو الأرقام ما تطابق قول لي بدل ما تخمّن.</div>
+<button id="b">انسخ الأمر</button>
+</div></div>
+
+<div class="card warn">
+<p><b>انتبه:</b> انستغرام يقول إن الملف ممكن ياخذ من دقايق لين ٣٠ يوم. وقبل ما تشيل متابعة أحد، راجع القائمة بنفسك.</p>
+</div>
+
+</main>
+<footer>المصدر: مركز مساعدة انستغرام، «Review and export a copy of your Instagram information»</footer>
+<script>
+document.getElementById('b').onclick=function(){
+ var t=document.getElementById('p').innerText,b=this;
+ function ok(){b.textContent='اننسخ ✓';b.className='done';setTimeout(function(){b.textContent='انسخ الأمر';b.className=''},2000)}
+ function old(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){}document.body.removeChild(a)}
+ if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,old)}else old();
+};
+</script>
+</body>
+</html>
