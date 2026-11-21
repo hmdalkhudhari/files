@@ -6,7 +6,7 @@ import json, re, sys, html, pathlib
 H = pathlib.Path(__file__).parent
 ROOT = H.parent
 ar = (ROOT/'arabic-rtl/index.html').read_text(encoding='utf8')  # نأخذ شعار حمد من القالب المعتمد
-LOGO = re.search(r'\.logo\{[^}]*\}', ar).group(0)
+LOGO = ".logo{width:150px;height:42px;margin:0 auto 4px;background:url('data:image/png;base64,"+(H/'logo-navy.b64').read_text().strip()+"') center/contain no-repeat}"
 CSS = (H/'style.css').read_text(encoding='utf8')
 PHOTO = (H/'photo.b64').read_text().strip()
 CP = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
@@ -27,7 +27,10 @@ for i, it in enumerate(S['items'], 1):
         f'<div class="bi"><span class="a">{E_(it["ar"])}</span><span class="e" dir="ltr">{E_(it["en"])}</span></div>'
         f'{cmds}{note}<a class="src" href="{E_(it["src"])}"><span>المصدر الرسمي: {E_(it["src_label"])}</span></a></li>')
 
-steps = ''.join(f'<div><b>{n}</b>{E_(t)}</div>' for n, t in enumerate(S['claude_steps'], 1))
+claude_block = ''
+if S.get('claude_prompt'):
+    claude_block = f'<button class="big" type="button" data-t="{E_(S["claude_prompt"])}">{CP}<span>انسخ لكلود</span></button><div class="three">'+''.join(f'<div><b>{n}</b>{E_(t)}</div>' for n, t in enumerate(S.get('claude_steps', []), 1))+'</div>'
+steps = ''
 pdf = f'<a class="pdf" href="{E_(S["slug"])}.pdf" download>حمّل الملف PDF</a>' if S.get('pdf') else ''
 fix = ''
 if S.get('fixes'):
@@ -46,15 +49,14 @@ page = f'''<!doctype html>
 {CSS.replace(re.search(r".logo\{[^}]*\}", CSS).group(0), LOGO) if re.search(r".logo\{[^}]*\}", CSS) else CSS}
 </style></head><body>
 <nav class="bar"><div class="wrap"><a class="me" href="https://www.instagram.com/hmdalkhudhari/"><img src="data:image/jpeg;base64,{PHOTO}" alt="حمد الخضري" width="36" height="36"><b>حمد الخضري</b></a>
-<details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="https://wa.me/message/D6QAVYNNKNQZA1">واتساب</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>
+<details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>
 <header><div class="wrap">
 <div class="logo" role="img" aria-label="Hamad Alkhudhari"></div><div class="tag">Business &amp; AI</div>
 <span class="kick">{E_(S["kicker"])}</span>
 <h1>{S["h1_html"]}</h1>
 <p>{E_(S["sub"])}</p>
 <a class="gl" href="https://bznstatus.com/consult/"><b>لكم خصم خاص<i>٢٥٪</i></b><span>اضغط هنا ←</span></a>
-<button class="big" type="button" data-t="{E_(S["claude_prompt"])}">{CP}<span>انسخ لكلود</span></button>
-<div class="three">{steps}</div>
+{claude_block}
 </div></header>
 <main class="wrap">
 <h2>{E_(S["list_title"])}</h2>
