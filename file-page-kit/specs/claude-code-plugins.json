@@ -1,0 +1,117 @@
+{
+ "slug": "claude-code-plugins",
+ "pdf": true,
+ "title": "٥ بلوقنز مجانية لـClaude Code",
+ "kicker": "ملف مجاني",
+ "h1_html": "٥ بلوقنز مجانية لـ<em>Claude Code</em>",
+ "sub": "أوامر التنصيب جاهزة بزر نسخ، وكلود يمشي معك خطوة خطوة.",
+ "claude_prompt": "أنا أبي أنزل ٥ إضافات مجانية على Claude Code. امشِ معي خطوة خطوة، خطوة وحدة كل مرة، وانتظر لين أقول لك خلصت قبل ما تعطيني اللي بعدها. وإذا علقت برسل لك سكرين.\n\nقبل لا نبدأ اسألني: هل Claude Code منصّب عندي؟ وهل Node.js منصّب؟ (لأن اثنتين منها تنزل من الترمنال).\n\nالإضافات وأوامرها:\n1. Claude Mem (ذاكرة بين الجلسات) — داخل Claude Code:\n/plugin marketplace add thedotmack/claude-mem\n/plugin install claude-mem\nبعدها أعيد تشغيل Claude Code.\n2. Find Skills — بالترمنال:\nnpx skills add vercel-labs/skills --skill find-skills\n3. AnyDoc — بالترمنال:\nnpx skills add firecrawl/anydoc\n4. Claude Code Setup — داخل Claude Code:\n/plugin install claude-code-setup@claude-plugins-official\n5. Agent Skills — داخل Claude Code:\n/plugin marketplace add addyosmani/agent-skills\n/plugin install agent-skills@addy-agent-skills\n\nعند كل واحدة قول لي وين أكتب الأمر (داخل Claude Code أو بالترمنال) وكيف أتأكد إنها اشتغلت. لا تخترع أوامر غير هذي.",
+ "claude_steps": [
+  "انسخ",
+  "افتح Claude",
+  "الصق وأرسل"
+ ],
+ "list_title": "الخمس إضافات",
+ "list_lead": "الأوامر اللي تبدأ بـ/ تكتبها داخل Claude Code. اللي تبدأ بـnpx تكتبها بالترمنال، وتحتاج Node.js.",
+ "items": [
+  {
+   "name": "Claude Mem",
+   "ar": "ذاكرة بين كل الجلسات، الجلسة الجاية تبدأ من حيث وقفت",
+   "en": "Memory across sessions",
+   "where": "داخل Claude Code، واحد واحد، وبعدها أعد تشغيله",
+   "cmds": [
+    "/plugin marketplace add thedotmack/claude-mem",
+    "/plugin install claude-mem"
+   ],
+   "note": "نزّله بهالأوامر بس. أمر npm install -g claude-mem ما يركب البلوقن.",
+   "src": "https://github.com/thedotmack/claude-mem",
+   "src_label": "github.com/thedotmack/claude-mem"
+  },
+  {
+   "name": "Find Skills",
+   "ar": "تقول له شنو تبني ويدور لك على المهارات ويركبها",
+   "en": "Search and install skills",
+   "where": "بالترمنال (Skill من Vercel)",
+   "cmds": [
+    "npx skills add vercel-labs/skills --skill find-skills"
+   ],
+   "src": "https://skills.sh/vercel-labs/skills/find-skills",
+   "src_label": "skills.sh/vercel-labs/skills/find-skills"
+  },
+  {
+   "name": "AnyDoc",
+   "ar": "يحول Word وPowerPoint وExcel وPDF لملفات Markdown يقراها كلود",
+   "en": "Office files to Markdown",
+   "where": "بالترمنال (Skill من Firecrawl)",
+   "cmds": [
+    "npx skills add firecrawl/anydoc"
+   ],
+   "src": "https://github.com/firecrawl/anydoc",
+   "src_label": "github.com/firecrawl/anydoc"
+  },
+  {
+   "name": "Claude Code Setup",
+   "ar": "بلوقن رسمي من Anthropic، يفحص مشروعك ويقترح المهارات والـHooks. يقترح بس، ما يعدّل ملفاتك",
+   "en": "Official Anthropic recommender",
+   "where": "داخل Claude Code",
+   "cmds": [
+    "/plugin install claude-code-setup@claude-plugins-official"
+   ],
+   "src": "https://claude.com/plugins/claude-code-setup",
+   "src_label": "claude.com/plugins/claude-code-setup"
+  },
+  {
+   "name": "Agent Skills",
+   "ar": "حزمة مهارات تمشي بمشروعك: خطة، بناء، اختبار، مراجعة، نشر",
+   "en": "Spec, plan, build, review, ship",
+   "where": "داخل Claude Code، واحد واحد",
+   "cmds": [
+    "/plugin marketplace add addyosmani/agent-skills",
+    "/plugin install agent-skills@addy-agent-skills"
+   ],
+   "src": "https://github.com/addyosmani/agent-skills",
+   "src_label": "github.com/addyosmani/agent-skills"
+  }
+ ],
+ "fixes": [
+  [
+   "بعد Claude Mem أعد تشغيل Claude Code",
+   "Restart Claude Code after claude-mem"
+  ],
+  [
+   "Agent Skills يعطيك خطأ SSH؟ استعمل رابط HTTPS الكامل: /plugin marketplace add https://github.com/addyosmani/agent-skills.git",
+   "If SSH fails, use the full HTTPS URL"
+  ],
+  [
+   "أوامر npx ما تشتغل؟ ركّب Node.js (نسخة LTS) من nodejs.org",
+   "npx needs Node.js (LTS) from nodejs.org"
+  ]
+ ],
+ "sources": [
+  [
+   "Claude Mem — README",
+   "https://github.com/thedotmack/claude-mem"
+  ],
+  [
+   "Find Skills — skills.sh",
+   "https://skills.sh/vercel-labs/skills/find-skills"
+  ],
+  [
+   "Skills CLI — Vercel",
+   "https://github.com/vercel-labs/skills"
+  ],
+  [
+   "AnyDoc — Firecrawl",
+   "https://github.com/firecrawl/anydoc"
+  ],
+  [
+   "Claude Code Setup — Anthropic",
+   "https://claude.com/plugins/claude-code-setup"
+  ],
+  [
+   "Agent Skills — addyosmani",
+   "https://github.com/addyosmani/agent-skills"
+  ]
+ ],
+ "fine": "جربنا الأوامر ضد المصادر الرسمية. آخر تأكد: ٢١ نوفمبر ٢٠٢٦."
+}
