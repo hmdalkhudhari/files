@@ -1,0 +1,369 @@
+[
+ {
+  "name": "Meta AI",
+  "url": "https://www.meta.ai",
+  "headline": "يسوي لك خطة شهر كاملة وداشبورد من أرقامك الحقيقية بانستقرام",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "يقرأ أرقامك الحقيقية من Insights ويبني عليها، مو يخمّن. مجاني ويفهم العربي."
+  ],
+  "steps": [
+   [
+    "افتح meta.ai أو تطبيق Meta AI وسجّل بحساب فيسبوك المرتبط بانستقرامك المهني",
+    "Open meta.ai or the Meta AI app and sign in with the Facebook account linked to your business Instagram"
+   ],
+   [
+    "تأكد إن انستقرام وفيسبوك بنفس Accounts Center (إعدادات انستقرام ← Accounts Center)",
+    "Make sure Instagram and Facebook are in the same Accounts Center (Instagram settings → Accounts Center)"
+   ],
+   [
+    "الصق البرومبت",
+    "Paste the prompt"
+   ],
+   [
+    "إذا قال ما يقدر يوصل لحسابك: افتح Insights بانستقرام، صوّر شاشة آخر ٣٠ يوم وارفعها له، وخلّه يشتغل عليها بس",
+    "If it can't reach your account: open Instagram Insights, screenshot the last 30 days, upload it and let it work on that"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت الداشبورد وخطة الشهر",
+    "text": "من أرقام حسابي بانستقرام [@يوزرك] الحقيقية بـInsights لآخر ٣٠ يوم (وصول، مشاهدات، حفظ، مشاركات، تعليقات، زيارات البروفايل، متابعين جدد). قاعدة: لا تخمّن ولا تخترع أرقام، وإذا ما توصل لحسابي قل لي وش أرفع لك.\nأبي:\n١) داشبورد بجدول واحد: كل رقم، قيمته هالشهر، والتغير عن الشهر اللي قبله.\n٢) أفضل ٥ منشورات وأسوأ ٥ (ريل / كاروسيل / بوست) وليش.\n٣) أهم ٥ أخطاء أسويها مع الدليل من أرقامي.\n٤) خطة ٣٠ يوم: جدول أسبوعي فيه عدد الريلز والكاروسيلات والبوستات، المواضيع، أفضل أوقات النشر من أرقامي، والرقم اللي أقيس فيه كل أسبوع.\nاكتب بلهجة بسيطة وبدون مجاملات."
+   }
+  ],
+  "go": "افتح Meta AI ←"
+ },
+ {
+  "name": "Google Ads Transparency",
+  "url": "https://adstransparency.google.com",
+  "headline": "يعرض لك كل إعلانات منافسك بالكويت على قوقل ويوتيوب، ببلاش",
+  "who": [
+   "لصاحب المشروع"
+  ],
+  "bullets": [
+   "كل إعلان نزّله منافسك بآخر سنة على قوقل ويوتيوب. مجاني بدون تسجيل."
+  ],
+  "steps": [
+   [
+    "افتح adstransparency.google.com، فوق اختر Ads In Kuwait",
+    "Open adstransparency.google.com and choose Ads in Kuwait at the top"
+   ],
+   [
+    "اكتب اسم منافسك أو موقعه (البحث بالموقع أدق: يجمع كل حساباته)",
+    "Type your competitor's name or website (website is more accurate: it groups all their accounts)"
+   ],
+   [
+    "فلتر بالتاريخ (آخر ٣٠ يوم) والمنصة (YouTube / Search)، وافتح الإعلانات اللي تتكرر",
+    "Filter by date (last 30 days) and platform (YouTube / Search), then open the ads that repeat"
+   ],
+   [
+    "صوّر ٣ إلى ٥ إعلانات، ارفعها بـChatGPT أو Claude مع البرومبت",
+    "Screenshot 3 to 5 ads and upload them to ChatGPT or Claude with the prompt"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت تحليل إعلانات قوقل",
+    "text": "هذي إعلانات منافسي [اسم المنافس] على قوقل ويوتيوب بالكويت (الصور المرفقة). نشاطي [النشاط].\n١) شنو العرض أو الرسالة اللي يكررها بأغلب إعلاناته؟\n٢) لمن يكلّم بالضبط؟ (نوع العميل، المشكلة، الوقت)\n٣) شنو الشي اللي ما يقوله، وأقدر أنا أتميز فيه؟\n٤) اكتب لي ٣ أفكار إعلانات مختلفة عنه بالكويتي، كل فكرة بعنوان وجملة وزر.\nاعتمد بس على اللي بالصور، ولا تخمّن أرقام ولا ميزانيات."
+   }
+  ],
+  "go": "افتح Google Ads Transparency ←"
+ },
+ {
+  "name": "Meta Ad Library",
+  "url": "https://www.facebook.com/ads/library/",
+  "headline": "يعرض لك إعلانات منافسك الشغالة الحين بانستقرام وفيسبوك",
+  "who": [
+   "لصاحب المشروع"
+  ],
+  "bullets": [
+   "كل إعلان شغال الحين لأي صفحة، بنصه وصورته ومن متى. الإعلان الشغال من شهور يعني يجيب نتائج."
+  ],
+  "steps": [
+   [
+    "افتح facebook.com/ads/library",
+    "Open facebook.com/ads/library"
+   ],
+   [
+    "اختر الدولة: الكويت، والتصنيف: All ads",
+    "Choose country: Kuwait, and category: All ads"
+   ],
+   [
+    "اكتب اسم المنافس أو كلمة من مجالك، وافتح الإعلانات الأقدم (شغالة من أطول مدة)",
+    "Type the competitor's name or a keyword from your field, and open the oldest ads (running the longest)"
+   ],
+   [
+    "صوّر ٥ إعلانات والصقها مع البرومبت بـChatGPT أو Claude",
+    "Screenshot 5 ads and paste them with the prompt into ChatGPT or Claude"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت تحليل إعلانات ميتا",
+    "text": "هذي ٥ إعلانات شغالة عند منافسيني من مكتبة إعلانات ميتا (النص + العرض + من متى شغالة): [الصق النصوص أو ارفع الصور].\nمنتجي: [المنتج/الخدمة]، سعري: [السعر]، أقوى ميزة عندي: [الميزة].\n١) وش الوعد المشترك اللي يبيعون فيه؟ ووش نقطة الضعف اللي العميل ممكن يشك فيها؟\n٢) اكتب لي ٣ إعلانات تضرب على نقطة ضعفهم بدون ما أذكرهم: وحدة بالنتيجة، وحدة بالضمان، وحدة بالسرعة. كل واحد: هوك + ٣ أسطر + زر.\n٣) اقترح ميزانية تجربة لأسبوع وكيف أعرف أي إعلان الفائز (الرقم اللي أقارن فيه).\nلا تكتب وعود ما أقدر أوفي فيها."
+   }
+  ],
+  "go": "افتح Meta Ad Library ←"
+ },
+ {
+  "name": "trends24",
+  "url": "https://trends24.in/kuwait/",
+  "headline": "يعطيك ترند الكويت الحين وفكرة ريل عليه خلال دقيقتين",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "ترندات الكويت لآخر ٢٤ ساعة، والـAI يختار اللي يناسبك ويعطيك فكرة ريل. مجاني."
+  ],
+  "steps": [
+   [
+    "افتح trends24.in/kuwait",
+    "Open trends24.in/kuwait"
+   ],
+   [
+    "انسخ أول ٢٠ ترند من آخر ساعة",
+    "Copy the top 20 trends from the last hour"
+   ],
+   [
+    "الصقها بـChatGPT أو Claude مع البرومبت",
+    "Paste them into ChatGPT or Claude with the prompt"
+   ],
+   [
+    "صوّر فكرة وحدة بس اليوم، ما تحتاج أكثر",
+    "Film just one idea today, you don't need more"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت ربط الترند بنشاطك",
+    "text": "هذي ترندات الكويت الحين: [الصق الترندات]. نشاطي [النشاط] وجمهوري [الجمهور].\n١) شيل أي ترند حزين أو سياسي أو حساس.\n٢) من الباقي، اختار لي أكثر ٣ ترندات أقدر أربطها بنشاطي بشكل طبيعي.\n٣) لكل وحد: فكرة ريل، وأول جملة أقولها، وليش بيشتغل بجملة.\nإذا ما فيه ولا ترند يناسب، قول لي بصراحة ولا تجبر الربط."
+   }
+  ],
+  "go": "افتح trends24 ←"
+ },
+ {
+  "name": "Meedro",
+  "url": "https://meedro.com",
+  "headline": "يطلع لك أقوى ١٠٠ ريل عند أي حساب بمجالك ويكتب لك سكربتات مثلها",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "يرتّب ريلز أي حساب بالمشاهدات، ومكتبة ٥٠٠ ألف فيديو فايرال. تجربة ٣ أيام مجانية."
+  ],
+  "steps": [
+   [
+    "سجّل بـmeedro.com وافتح Viral Finder",
+    "Sign up at meedro.com and open Viral Finder"
+   ],
+   [
+    "اكتب يوزر ٣ منافسين ورتّب بالمشاهدات، خذ أعلى ١٠ ريلز لكل واحد",
+    "Enter 3 competitors' usernames, sort by views and take the top 10 reels of each"
+   ],
+   [
+    "افتح Viral Script والصق البرومبت مع الهوكات اللي جمعتها",
+    "Open Viral Script and paste the prompt with the hooks you collected"
+   ],
+   [
+    "صوّر السكربت كما هو (وجهك أول ٣ ثواني)",
+    "Film the script as is (your face in the first 3 seconds)"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت السكربت (داخل Meedro أو Claude)",
+    "text": "هذي هوكات ومواضيع أقوى ١٠ ريلز عند منافسيني بمجال [المجال] بالكويت: [الصق الهوكات + المشاهدات].\nمشروعي: [وش يميزني]. جمهوري: [وصف الجمهور].\n١) استخرج النمط المشترك: نوع الهوك، طول الفيديو، الزاوية.\n٢) اكتب لي ٤ سكربتات ريلز (٣٠-٤٥ ثانية) بنفس الأنماط بس عن مشروعي، بلهجة كويتية بسيطة: هوك (أقل من ١٢ كلمة) ← فكرة وحدة ← مثال حقيقي ← خاتمة تطلب من المشاهد يكتب كلمة بالكومنت.\n٣) لكل سكربت: كلمة الكومنت، ونص الكابشن بسطرين.\nلا تنسخ كلامهم، انسخ البنية."
+   }
+  ],
+  "go": "افتح Meedro ←"
+ },
+ {
+  "name": "Similarweb",
+  "url": "https://www.similarweb.com/website/",
+  "headline": "يكشف لك كم زائر عند موقع منافسك ومن وين يجون",
+  "who": [
+   "لصاحب المشروع"
+  ],
+  "bullets": [
+   "الزيارات الشهرية لأي موقع، من أي دول، ومن وين يجون. مجاني (المواقع الصغيرة جداً قد ما تظهر)."
+  ],
+  "steps": [
+   [
+    "افتح similarweb.com واكتب رابط موقع منافسك بخانة البحث",
+    "Open similarweb.com and type your competitor's website in the search box"
+   ],
+   [
+    "شوف Monthly Visits وTop Countries وTraffic Sources",
+    "Check Monthly Visits, Top Countries and Traffic Sources"
+   ],
+   [
+    "كرر لـ٣ منافسين وصوّر الشاشات",
+    "Repeat for 3 competitors and screenshot the screens"
+   ],
+   [
+    "الصق الأرقام مع البرومبت بـChatGPT أو Claude",
+    "Paste the numbers with the prompt into ChatGPT or Claude"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت قراءة أرقام المنافسين",
+    "text": "هذي أرقام زيارات مواقع ٣ منافسين من Similarweb: [الصق الأرقام أو ارفع الصور]. مشروعي [النشاط] بالكويت، وعندي [موقع / ما عندي موقع].\n١) من وين يجي أغلب زوارهم (بحث، سوشال، إعلانات، مباشر)؟ ووش يعني هذا عن طريقة بيعهم؟\n٢) وين الفجوة اللي أقدر أدخل منها أنا بأقل تكلفة؟\n٣) إذا ما عندي موقع: أحتاج واحد ولا أركّز على انستقرام والواتساب؟ قرر وعلل.\n٤) ٣ خطوات أنفذها هالشهر مرتبة بالأثر.\nلا تخترع أرقام، واشتغل على اللي قدامك."
+   }
+  ],
+  "go": "افتح Similarweb ←"
+ },
+ {
+  "name": "ChatGPT",
+  "url": "https://chatgpt.com",
+  "headline": "يرسل لك تقرير كل صبح عن مجالك ومنافسينك بدون ما تفتحه",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "ميزة Scheduled: تكتب له مرة وحدة، ويرسل لك التقرير كل يوم بالوقت اللي تحدده."
+  ],
+  "steps": [
+   [
+    "افتح chatgpt.com من المتصفح",
+    "Open chatgpt.com in your browser"
+   ],
+   [
+    "اضغط Scheduled بالقائمة الجانبية (أو اكتب بالمحادثة: «سوي هذي مهمة مجدولة»)",
+    "Click Scheduled in the side menu (or type in the chat: \"make this a scheduled task\")"
+   ],
+   [
+    "الصق البرومبت وحدد الوقت",
+    "Paste the prompt and set the time"
+   ],
+   [
+    "يوصلك تنبيه وإيميل كل ما يخلص، وتعدله أو توقفه من نفس الصفحة",
+    "You get a notification and email each time it runs; edit or stop it from the same page"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت التقرير الصباحي",
+    "text": "كل يوم الساعة ٧ الصبح بتوقيت الكويت: دور على أهم ٣ أخبار عن [مجالك] بالكويت والخليج من آخر ٢٤ ساعة. لكل خبر سطرين بالكويتي، والرابط، وشنو يعني لمشروعي بجملة وحدة. وأضف سطر: أي عرض أو إعلان جديد ظهر عند [أسماء منافسينك]. إذا ما فيه شي مهم قول «ما فيه شي اليوم» ولا تحط أخبار قديمة."
+   }
+  ],
+  "go": "افتح ChatGPT ←"
+ },
+ {
+  "name": "Claude",
+  "url": "https://claude.ai",
+  "headline": "يراجع لك أرقام الشهر ويقول لك وين تخسر ووش تسعّر",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "ترفع كشف المبيعات والمصاريف ويطلع لك التسرب والتسعير الصح. Projects مجانية."
+  ],
+  "steps": [
+   [
+    "افتح claude.ai ← Projects ← New Project باسم مشروعك",
+    "Open claude.ai → Projects → New Project named after your business"
+   ],
+   [
+    "ارفع ملف المبيعات والمصاريف (Excel / CSV / صور الفواتير) من زر المرفقات",
+    "Upload your sales and expenses file (Excel / CSV / invoice photos) with the attach button"
+   ],
+   [
+    "الصق البرومبت",
+    "Paste the prompt"
+   ],
+   [
+    "الشهر الجاي ارفع الملف الجديد بنفس الـProject واطلب المقارنة",
+    "Next month upload the new file to the same Project and ask for a comparison"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت المراجعة المالية",
+    "text": "مرفق مبيعات ومصاريف مشروعي [نوع المشروع] لشهر [الشهر]. تكلفة المنتج/الخدمة الواحدة تقريباً: [التكلفة]، وسعر البيع: [السعر]، وعدد العملاء بالشهر: [العدد].\nاشتغل على الأرقام المرفقة فقط، وإذا ناقصك رقم اسألني ولا تفترضه.\nأبي:\n١) ملخص بسطرين: ربحت ولا خسرت وكم.\n٢) أكبر ٣ بنود مصاريف وهل فيها شي ينقص بدون ما يأثر على الجودة.\n٣) هامش الربح لكل منتج/خدمة، وأي واحد لازم أوقفه أو أرفع سعره.\n٤) سعر مقترح جديد مع السبب، وجملة أقولها للعميل تبرر السعر.\n٥) توقع الكاش للشهرين الجايين إذا استمريت بنفس الأرقام، ومتى أحتاج أنتبه.\n٦) ٣ قرارات أنفذها هالأسبوع مرتبة بالأثر على الكاش.\nاكتب بجداول قصيرة وبدون مصطلحات محاسبية معقدة."
+   }
+  ],
+  "go": "افتح Claude ←"
+ },
+ {
+  "name": "NotebookLM",
+  "url": "https://notebooklm.google",
+  "headline": "يحوّل ملفاتك لموظف يجاوب أسئلة العملاء ويدرّب الجدد",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "ترفع ملفاتك ويجاوب منها بس مع المصدر، وبضغطة ملخص صوتي بالعربي. مجاني."
+  ],
+  "steps": [
+   [
+    "افتح notebooklm.google وسوي Notebook باسم مشروعك",
+    "Open notebooklm.google and create a Notebook named after your business"
+   ],
+   [
+    "ارفع ملفاتك: الأسعار، سياسة الإرجاع، أسئلة العملاء المتكررة، الكتالوج (PDF / Docs / نص / رابط)",
+    "Upload your files: prices, return policy, customer FAQs, catalog (PDF / Docs / text / link)"
+   ],
+   [
+    "بالشات الصق البرومبت",
+    "Paste the prompt in the chat"
+   ],
+   [
+    "من Studio اضغط Audio Overview واختر العربية، وارسل الملف الصوتي لموظفك",
+    "In Studio click Audio Overview, choose Arabic, and send the audio file to your employee"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت دليل التدريب",
+    "text": "من الملفات المرفوعة فقط، اكتب لي دليل تدريب لموظف جديد بـ[نوع المشروع]:\n١) ٢٠ سؤال يسألها العميل عادة، مع الجواب الصحيح من ملفاتي ومصدره.\n٢) ٥ أخطاء ممنوع الموظف يسويها (أسعار، وعود، مواعيد) حسب سياساتي.\n٣) سكربت رد على الواتساب: ترحيب، سؤال الاحتياج، تقديم السعر، الإغلاق.\nإذا سؤال ما له جواب بملفاتي، اكتب «غير موجود بالملفات» ولا تخترع."
+   }
+  ],
+  "go": "افتح NotebookLM ←"
+ },
+ {
+  "name": "Zorcha",
+  "url": "https://zorcha.com",
+  "headline": "يرسل الملف أو الكتالوج تلقائي للي يكتب كلمة بالكومنت",
+  "who": [
+   "لصاحب المشروع",
+   "لصانع المحتوى"
+  ],
+  "bullets": [
+   "كلمة بالكومنت ← دايركت تلقائي بالرابط، ويقدر يطلب المتابعة أول. خطة مجانية. هذي الطريقة اللي وصلتك فيها هالهدية."
+  ],
+  "steps": [
+   [
+    "سجّل بـzorcha.com واربط انستقرام المهني",
+    "Sign up at zorcha.com and connect your business Instagram"
+   ],
+   [
+    "Automations ← New ← اختر الريل والكلمة (مثلاً: ملف)",
+    "Automations → New → choose the reel and the keyword (e.g. file)"
+   ],
+   [
+    "اكتب رد الكومنت العام + رسالة الدايركت بالرابط + فعّل «يتابع أول»",
+    "Write the public comment reply + the DM with the link + enable \"must follow first\""
+   ],
+   [
+    "جرّب بنفسك بتعليق قبل ما تنشر الريل",
+    "Test it yourself with a comment before publishing the reel"
+   ]
+  ],
+  "prompts": [
+   {
+    "label": "برومبت رسائل الأوتوميشن (ChatGPT)",
+    "text": "اكتب لي نصوص أوتوميشن لريل عن [موضوع الريل] يقدم [الملف/الكتالوج/العرض] للي يكتب «[الكلمة]» بالكومنت:\n١) رد عام على الكومنت (سطر واحد، يشكره ويقول شوف الدايركت).\n٢) رسالة أولى بالدايركت تطلب يتابعني أول بأسلوب لطيف.\n٣) رسالة التسليم بالرابط [الرابط] + سؤال واحد يفتح محادثة بيع.\n٤) رسالة متابعة بعد يومين للي ما رد.\nلهجة كويتية قصيرة، رموز تعبيرية قليلة."
+   }
+  ],
+  "go": "افتح Zorcha ←"
+ }
+]
