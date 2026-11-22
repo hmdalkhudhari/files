@@ -26,16 +26,43 @@ section{scroll-margin-top:120px}
 .tg{display:inline-block;font-size:12px;font-weight:800;background:var(--y);color:var(--navy);border-radius:999px;padding:1px 10px}
 .eff{display:flex;align-items:center;gap:10px}.eff .t{flex:1;min-width:0}
 .eff b.t1{display:block;font-family:var(--fl);font-size:16px;color:var(--navy)}
+.back{display:inline-block;margin:14px 0 0;color:var(--soft);font-weight:700;font-size:14px;text-decoration:none}
+.acts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px}
+.acts a,.acts button{display:block;text-align:center;border:1.5px solid var(--navy);background:#fff;color:var(--navy);font:800 14px 'Tajawal',sans-serif;padding:10px 4px;border-radius:12px;text-decoration:none;cursor:pointer}
+.acts .cl{background:var(--y);border-color:var(--y)}
+.acts .ok{background:#1FA855;color:#fff;border-color:#1FA855}
+.sub{margin-top:34px;background:#F4F5FA;border:1px solid var(--line);border-radius:16px;padding:18px}
+.sub h2{margin:0 0 4px;font-size:20px}.sub p{margin:0 0 12px;color:var(--soft);font-size:14.5px}
+.sub input{display:block;width:100%;margin-top:8px;font:600 16px 'Tajawal',sans-serif;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;color:var(--navy);direction:ltr;text-align:right}
+.sub button{display:block;width:100%;margin-top:12px;border:0;background:var(--navy);color:#fff;font:800 16px 'Tajawal',sans-serif;padding:13px;border-radius:12px;cursor:pointer}
+.sub .msg{margin-top:10px;font-weight:700;font-size:14px;color:#1FA855}
+.sub .fn{font-size:12px;color:var(--soft);margin-top:8px}
+@media print{.sub,.acts,.jump,.back{display:none!important}}
+.hubq{width:100%;font:600 16px 'Tajawal',sans-serif;border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:6px}
+.chp{display:flex;gap:8px;overflow-x:auto;padding:12px 0;scrollbar-width:none}.chp button{flex:none;border:1px solid var(--line);background:#fff;color:var(--navy);font:800 14px 'Tajawal',sans-serif;padding:6px 14px;border-radius:999px;cursor:pointer}
+.chp button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+a.hc{display:block;text-decoration:none;color:inherit}.hc .card{display:grid;gap:4px}.hc b{font-size:17px;color:var(--navy)}.hc span.d{color:var(--soft);font-size:14px}.hc .tg{justify-self:start}
 """
 CP = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
+HUB='../hub/'
 BAR = f'''<nav class="bar"><div class="wrap"><a class="me" href="https://www.instagram.com/hmdalkhudhari/"><img src="data:image/jpeg;base64,{PHOTO}" alt="حمد الخضري" width="36" height="36"><b>حمد الخضري</b></a>
-<details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>'''
+<details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="{HUB}">كل الملفات المجانية</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>'''
 JS = """<script>
 document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{const t=b.dataset.t;try{await navigator.clipboard.writeText(t)}catch(e){const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}const l=b.querySelector('span'),o=l.textContent;b.classList.add('ok');l.textContent='انتسخ ✓';setTimeout(()=>{b.classList.remove('ok');l.textContent=o},1600)});
 document.querySelectorAll('.mo').forEach(m=>{const pr=m.previousElementSibling,p=pr.querySelector('p');if(p.scrollHeight<=p.clientHeight+2){m.hidden=true;return}m.onclick=()=>{const o=pr.classList.toggle('open');m.textContent=o?'صغّره ▴':'اعرض كامل ▾'}});
 const j=document.getElementById('jump');if(j)j.onchange=()=>{const s=document.getElementById(j.value);if(s)s.scrollIntoView({behavior:'auto'});j.selectedIndex=0};
+var sh=document.getElementById('shr');if(sh)sh.onclick=()=>{const d={title:document.title,url:location.href.split('#')[0]};if(navigator.share)navigator.share(d).catch(()=>{});else{navigator.clipboard&&navigator.clipboard.writeText(d.url);sh.textContent='انتسخ الرابط ✓';setTimeout(()=>sh.textContent='مشاركة',1600)}};
+var SUB_ENDPOINT='';
+var f=document.getElementById('sub');if(f)f.onsubmit=function(e){e.preventDefault();var em=f.email.value.trim(),ph=f.phone.value.trim(),m=document.getElementById('submsg');m.hidden=false;
+if(!em&&!ph){m.style.color='#C0392B';m.textContent='اكتب إيميلك أو رقمك.';return}
+if(em&&!/^[^@ ]+@[^@ ]+[.][^@ ]+$/.test(em)){m.style.color='#C0392B';m.textContent='الإيميل مو صحيح.';return}
+m.style.color='#1FA855';
+if(!SUB_ENDPOINT){m.textContent='معاينة: الحفظ يشتغل بعد ربط الجدول.';return}
+fetch(SUB_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({kind:'subscriber',email:em,phone:ph,page:location.pathname})}).then(function(){m.textContent='تم، شكراً لك ✓';f.reset()}).catch(function(){m.style.color='#C0392B';m.textContent='صار خطأ، جرب مرة ثانية.'})};
 </script>"""
 
+BASEURL='https://hmdalkhudhari.github.io/files/'
+def CPR(slug): return ('ساعدني أنفذ الخطوات اللي بهالصفحة خطوة خطوة، وانتظر مني بعد كل خطوة. اشرح لي بالعربي بشكل بسيط، وإذا علقت أرسل لك سكرين.\nHelp me follow the steps on this page one at a time and wait for me after each step. Explain in simple Arabic; if I get stuck I will send a screenshot.\n'+BASEURL+slug+'/')
 def pbox(text, code=False):
     return (f'<div class="pr{" code" if code else ""}"><p dir="auto">{"<br>".join(E_(l) for l in text.split(chr(10)))}</p>'
             f'<button class="cp" type="button" data-t="{E_(text)}">{CP}<span>نسخ</span></button></div><button class="mo" type="button">اعرض كامل ▾</button>')
@@ -43,7 +70,7 @@ def steps(rows):
     return ''.join(f'<div class="stp"><b class="n">{i}</b><span class="a">{E_(a)}</span><i></i><span class="e" dir="ltr">{E_(e)}</span></div>' for i,(a,e) in enumerate(rows,1))
 AR = lambda n: str(n).translate(str.maketrans('0123456789','٠١٢٣٤٥٦٧٨٩'))
 
-def page(title, kicker, h1, sub, sects, body_sections, fine, extra_top=''):
+def page(title, kicker, h1, sub, sects, body_sections, fine, slug='', cprompt=''):
     opts = ''.join(f'<option value="{i}">{E_(t)}</option>' for i,t in sects)
     return f'''<!doctype html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8">
@@ -55,12 +82,17 @@ def page(title, kicker, h1, sub, sects, body_sections, fine, extra_top=''):
 {BAR}
 <header><div class="wrap">
 <div class="logo" role="img" aria-label="Hamad Alkhudhari"></div><div class="tag">Business &amp; AI</div>
+<a class="back" href="../hub/">→ كل الملفات المجانية</a><br>
 <span class="kick">{E_(kicker)}</span>
 <h1>{h1}</h1><p>{E_(sub)}</p>
+<div class="acts"><button class="cl cp" type="button" data-t="{E_(cprompt)}">{CP}<span>انسخ لكلود</span></button><a href="{slug}.pdf" download>PDF</a><button type="button" id="shr">مشاركة</button></div>
 <a class="gl" href="https://bznstatus.com/consult/"><b>لكم خصم خاص<i>٢٥٪</i></b><span>اضغط هنا ←</span></a>
 </div></header>
 <div class="jump"><div class="wrap"><select id="jump" aria-label="قفز لقسم"><option>قفز لقسم ↓ ({len(sects)})</option>{opts}</select></div></div>
-<main class="wrap">{body_sections}</main>
+<main class="wrap">{body_sections}
+<form class="sub" id="sub" novalidate><h2>توصلك آخر التحديثات والعروض</h2><p>اكتب إيميلك أو رقمك (أو الاثنين) وأرسل لك جديد الملفات والعروض. تقدر تلغي بأي وقت.</p>
+<input type="email" name="email" placeholder="الإيميل · Email" autocomplete="email"><input type="tel" name="phone" placeholder="رقم الواتساب · WhatsApp number" autocomplete="tel">
+<button type="submit">اشتراك</button><div class="msg" id="submsg" hidden></div><div class="fn">نستخدم بياناتك لإرسال التحديثات والعروض فقط، وما نشاركها مع أحد.</div></form></main>
 <footer><div class="wrap">
 <h2>جربها وعطني رايك</h2><p>كل يوم أنزل شي جديد بالبزنس والـAI.</p>
 <div class="btns"><a class="btn ig" href="https://www.instagram.com/hmdalkhudhari/">تابعني بانستقرام</a><a class="btn wa" href="https://wa.me/message/D6QAVYNNKNQZA1">كلمني واتساب</a></div>
@@ -82,7 +114,7 @@ for i,s in enumerate(sites,1):
 owner = page('هدية الـ٤٠ ألف: خزينة ١٠ مواقع','هدية الـ40,000 متابع','خزينة <em>١٠ مواقع</em> تحتاجها',
   'شكراً على الـ٤٠ ألف. ١٠ مواقع أستخدمها فعلاً، لكل واحد خطوات (عربي وإنجليزي) وبرومبت جاهز.',secs,
   '<p class="lead" style="margin-top:22px">ابدأ بالأول. ٨ منها مجانية. اختر الموقع من القائمة فوق.</p>'+body,
-  'الخطوات من المواقع نفسها. © حمد الخضري @hmdalkhudhari')
+  'الخطوات من المواقع نفسها. © حمد الخضري @hmdalkhudhari',slug='owner-kit',cprompt=CPR('owner-kit'))
 
 # ---------------- montage ----------------
 raw = json.load(open(H/'specs/montage.raw.json'))
@@ -109,6 +141,44 @@ body=(f'<section id="how"><h2>شلون تستخدم هالملف؟</h2>{lst(raw[
  f'<section id="fx"><h2>التأثيرات: سطر واحد لكل تأثير</h2><p class="lead">الكلام بين [ ] فراغ: امسحه واكتب معلومة مشروعك مكانه.</p><ol>{"".join(mcard(i,c) for i,c in enumerate(raw["cards"][4:],4))}</ol></section>')
 mont = page('لا تدفع للمونتير: ٢٢ تأثير بسطر واحد','ملف مجاني','لا تدفع للمونتير: <em>٢٢ تأثير بسطر واحد</em>',
   'كل تأثير سطر تلصقه بـClaude Code ويمنتج فيديوك. بدون برنامج مونتاج.',secs,body,
-  'طريقة التثبيت من code.claude.com/docs. التأثيرات جربناها كلها على فيديو حقيقي قبل لا نرسلها.')
+  'طريقة التثبيت من code.claude.com/docs. التأثيرات جربناها كلها على فيديو حقيقي قبل لا نرسلها.',slug='claude-montage-fx',cprompt=CPR('claude-montage-fx'))
 for name,pg in (('owner-kit',owner),('claude-montage-fx',mont)):
     d=OUT/name; d.mkdir(parents=True,exist_ok=True); (d/'index.html').write_text(pg,encoding='utf8'); print('wrote',d/'index.html',len(pg))
+
+# ---------------- hub ----------------
+FILES=[('claude-instagram-13','Claude يشتغل على انستقرامك: ١٣ أمر','ريل وكابشن وكاروسيل وخطة أسبوعك بأوامر جاهزة','Claude'),
+('claude-montage-fx','لا تدفع للمونتير: ٢٢ تأثير','تأثيرات مونتاج بسطر واحد داخل Claude Code','Claude'),
+('claude-code-plugins','٥ بلوقنز مجانية لـClaude Code','أوامر تنصيب جاهزة بزر نسخ','Claude'),
+('unslop','سكيل unslop: شيل شكل الـAI','يدور علامات الـAI بتصميمك ويصلحها','Claude'),
+('claude-3-sites-15min','Claude سوّى ٣ مواقع بـ١٥ دقيقة','من فكرة لموقع شغال خطوة بخطوة','Claude'),
+('claude-cowork','١٠ مهام تعطيها Claude Cowork','مهام يومية يسويها لك','Claude'),
+('claude-phone','خلّ Claude يتصل ويحجز عنك','٣ خطوات','Claude'),
+('claude-speed','خل Claude يفحص جهازك ونتك','فحص سرعة بأمر واحد','Claude'),
+('claude-watch-earshot','خل Claude يشوف ويسمع','يحلل فيديو وصوت','Claude'),
+('kuwaiti-skill','كاتب المحتوى الكويتي','سكيل يكتب بلهجتك','Claude'),
+('montage-skill','منتج فيديوك بـClaude','سكيل مونتاج جاهز','Claude'),
+('claude-carousel','Claude يصمم كاروسيلك كامل','كاروسيل من فكرة لسلايدات','Claude'),
+('claude-whatsapp','عطِ Claude رقم واتساب','يرد ويرتب لك','Claude'),
+('arabic-rtl','خل ChatGPT يكتب عربي مرتب','أوامر تصلح اتجاه العربي','ChatGPT'),
+('chatgpt-shortcuts','+1000 اختصار و٤٠ برومبت لـChatGPT','اختصارات جاهزة','ChatGPT'),
+('chatgpt-memory','شوف شنو ChatGPT مخزن عنك','خصوصية وذاكرة','ChatGPT'),
+('chatgpt-business-hub','سجّل مشروعك داخل ChatGPT','٥ خطوات','ChatGPT'),
+('truth-prompt','خل ChatGPT يقول لك الحقيقة','برومبت يكشف المجاملة','ChatGPT'),
+('face-lock','خلّ ChatGPT ما يغيّر ملامح وجهك','صور بنفس وجهك','ChatGPT'),
+('products-hacker','خل ChatGPT يهكر لك المنتجات','أفكار منتجات رابحة','ChatGPT'),
+('owner-kit','هدية الـ٤٠ ألف: خزينة ١٠ مواقع','مواقع لصاحب المشروع وصانع المحتوى','مشاريع'),
+('profit','حسبة ربح القطعة الحقيقية','احسب ربحك صح','مشاريع'),
+('sales-mistakes','٣ أخطاء تقتل مبيعات منتجك','وكيف تصلحها','مشاريع'),
+('ad-templates','٥ قوالب تطلع لك إعلانك','قوالب جاهزة','مشاريع'),
+('ai-agent-vs-automation','AI Agent ولا Automation؟','وش تختار لمشروعك','مشاريع')]
+cats=['الكل','Claude','ChatGPT','مشاريع']
+hbody=('<p class="lead" style="margin-top:22px">كل ملفاتي المجانية بمكان واحد. ابحث أو اختر قسم.</p>'
+ '<input class="hubq" id="hq" type="search" placeholder="ابحث · Search" autocomplete="off">'
+ '<div class="chp" id="chp">'+''.join(f'<button type="button" class="{"on" if c=="الكل" else ""}" data-c="{c}">{c}</button>' for c in cats)+'</div>'
+ '<ul id="hl">'+''.join(f'<li data-c="{c}" data-s="{E_(t+" "+d)}"><a class="hc" href="../../../{sl}/"><div class="card"><span class="tg">{c}</span><b>{E_(t)}</b><span class="d">{E_(d)}</span></div></a></li>' for sl,t,d,c in FILES)+'</ul>'
+ '<script>(function(){var c="الكل",q="",li=[].slice.call(document.querySelectorAll("#hl li"));function ap(){li.forEach(function(x){x.hidden=!((c=="الكل"||x.dataset.c==c)&&(!q||x.dataset.s.toLowerCase().indexOf(q)>-1))})}'
+ 'document.getElementById("hq").oninput=function(){q=this.value.trim().toLowerCase();ap()};document.querySelectorAll("#chp button").forEach(function(b){b.onclick=function(){c=b.dataset.c;document.querySelectorAll("#chp button").forEach(function(z){z.classList.toggle("on",z===b)});ap()}})})()</script>')
+hubp = page('كل ملفاتي المجانية','ملفات مجانية','كل <em>ملفاتي المجانية</em>','ChatGPT وClaude ومشاريع: أوامر جاهزة بزر نسخ.',[],hbody,'حمد الخضري @hmdalkhudhari',slug='hub',cprompt=CPR('hub'))
+hubp = hubp.replace('<div class="acts">','<div class="acts" hidden>',1).replace('<a class="back" href="../hub/">→ كل الملفات المجانية</a><br>','').replace('<div class="jump">','<div class="jump" hidden>',1)
+hubp = re.sub(r'<form class="sub".*?</form>','',hubp,flags=re.S) if False else hubp
+(OUT/'hub').mkdir(parents=True,exist_ok=True); (OUT/'hub'/'index.html').write_text(hubp,encoding='utf8'); print('wrote hub')
