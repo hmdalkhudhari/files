@@ -46,7 +46,7 @@ a.hc{display:block;text-decoration:none;color:inherit}.hc .card{display:grid;gap
 CP = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
 HUB='../hub/'
 BAR = f'''<nav class="bar"><div class="wrap"><a class="me" href="https://www.instagram.com/hmdalkhudhari/"><img src="data:image/jpeg;base64,{PHOTO}" alt="حمد الخضري" width="36" height="36"><b>حمد الخضري</b></a>
-<details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="{HUB}">كل الملفات المجانية</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>'''
+<details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="{HUB}">مكتبة الملفات المجانية</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>'''
 JS = """<script>
 document.querySelectorAll('.cp').forEach(b=>b.onclick=async()=>{const t=b.dataset.t;try{await navigator.clipboard.writeText(t)}catch(e){const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}const l=b.querySelector('span'),o=l.textContent;b.classList.add('ok');l.textContent='انتسخ ✓';setTimeout(()=>{b.classList.remove('ok');l.textContent=o},1600)});
 document.querySelectorAll('.mo').forEach(m=>{const pr=m.previousElementSibling,p=pr.querySelector('p');if(p.scrollHeight<=p.clientHeight+2){m.hidden=true;return}m.onclick=()=>{const o=pr.classList.toggle('open');m.textContent=o?'صغّره ▴':'اعرض كامل ▾'}});
@@ -82,7 +82,7 @@ def page(title, kicker, h1, sub, sects, body_sections, fine, slug='', cprompt=''
 {BAR}
 <header><div class="wrap">
 <div class="logo" role="img" aria-label="Hamad Alkhudhari"></div><div class="tag">Business &amp; AI</div>
-<a class="back" href="../hub/">→ كل الملفات المجانية</a><br>
+<a class="back" href="../hub/">→ مكتبة الملفات المجانية</a><br>
 <span class="kick">{E_(kicker)}</span>
 <h1>{h1}</h1><p>{E_(sub)}</p>
 <div class="acts"><button class="cl cp" type="button" data-t="{E_(cprompt)}">{CP}<span>انسخ لكلود</span></button><a href="{slug}.pdf" download>PDF</a><button type="button" id="shr">مشاركة</button></div>
@@ -172,13 +172,30 @@ FILES=[('claude-instagram-13','Claude يشتغل على انستقرامك: ١٣
 ('ad-templates','٥ قوالب تطلع لك إعلانك','قوالب جاهزة','مشاريع'),
 ('ai-agent-vs-automation','AI Agent ولا Automation؟','وش تختار لمشروعك','مشاريع')]
 cats=['الكل','Claude','ChatGPT','مشاريع']
-hbody=('<p class="lead" style="margin-top:22px">كل ملفاتي المجانية بمكان واحد. ابحث أو اختر قسم.</p>'
+hbody=('<p class="lead" style="margin-top:22px">مكتبة الملفات المجانية بمكان واحد. ابحث أو اختر قسم.</p>'
  '<input class="hubq" id="hq" type="search" placeholder="ابحث · Search" autocomplete="off">'
  '<div class="chp" id="chp">'+''.join(f'<button type="button" class="{"on" if c=="الكل" else ""}" data-c="{c}">{c}</button>' for c in cats)+'</div>'
  '<ul id="hl">'+''.join(f'<li data-c="{c}" data-s="{E_(t+" "+d)}"><a class="hc" href="../../../{sl}/"><div class="card"><span class="tg">{c}</span><b>{E_(t)}</b><span class="d">{E_(d)}</span></div></a></li>' for sl,t,d,c in FILES)+'</ul>'
  '<script>(function(){var c="الكل",q="",li=[].slice.call(document.querySelectorAll("#hl li"));function ap(){li.forEach(function(x){x.hidden=!((c=="الكل"||x.dataset.c==c)&&(!q||x.dataset.s.toLowerCase().indexOf(q)>-1))})}'
  'document.getElementById("hq").oninput=function(){q=this.value.trim().toLowerCase();ap()};document.querySelectorAll("#chp button").forEach(function(b){b.onclick=function(){c=b.dataset.c;document.querySelectorAll("#chp button").forEach(function(z){z.classList.toggle("on",z===b)});ap()}})})()</script>')
-hubp = page('كل ملفاتي المجانية','ملفات مجانية','كل <em>ملفاتي المجانية</em>','ChatGPT وClaude ومشاريع: أوامر جاهزة بزر نسخ.',[],hbody,'حمد الخضري @hmdalkhudhari',slug='hub',cprompt=CPR('hub'))
-hubp = hubp.replace('<div class="acts">','<div class="acts" hidden>',1).replace('<a class="back" href="../hub/">→ كل الملفات المجانية</a><br>','').replace('<div class="jump">','<div class="jump" hidden>',1)
+hubp = page('مكتبة الملفات المجانية','ملفات مجانية','<em>مكتبة الملفات المجانية</em>','كل أوامرنا الجاهزة بزر نسخ، بمكان واحد.',[],hbody,'حمد الخضري @hmdalkhudhari',slug='hub',cprompt=CPR('hub'))
+
+HUBCSS = """<style>
+header{position:relative;overflow:hidden;color:#fff;border-bottom:0;background:#1E2A66}
+header::before{content:"";position:absolute;inset:-40%;background:radial-gradient(40% 35% at 25% 30%,rgba(242,194,48,.55),transparent 70%),radial-gradient(45% 40% at 75% 25%,rgba(95,120,255,.55),transparent 70%),radial-gradient(50% 45% at 55% 85%,rgba(242,194,48,.28),transparent 70%);filter:blur(28px);animation:mesh 14s ease-in-out infinite alternate}
+@keyframes mesh{to{transform:translate3d(6%,4%,0) rotate(12deg) scale(1.08)}}
+header::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,20,64,.15),rgba(14,20,64,.55))}
+header .wrap{position:relative;z-index:1}
+header h1,header .back{color:#fff}header h1 em{background:none;color:#F2C230}header p,header .tag{color:#D9DBE6}
+.logo{filter:brightness(0) invert(1)}.acts[hidden]{display:none}
+.kick{box-shadow:0 0 24px rgba(242,194,48,.45)}
+.hc .card{transition:transform .25s,box-shadow .25s,border-color .25s;opacity:0;animation:rise .55s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hc:hover .card{transform:translateY(-3px);box-shadow:0 12px 28px rgba(30,42,102,.14);border-color:#F2C230}
+#hl li:nth-child(2) .card{animation-delay:.05s}#hl li:nth-child(3) .card{animation-delay:.1s}#hl li:nth-child(4) .card{animation-delay:.15s}#hl li:nth-child(5) .card{animation-delay:.2s}#hl li:nth-child(n+6) .card{animation-delay:.25s}
+@media (prefers-reduced-motion:reduce){header::before,.hc .card{animation:none;opacity:1}}
+</style>"""
+hubp = hubp.replace('</head>',HUBCSS+'</head>',1)
+hubp = hubp.replace('<div class="acts">','<div class="acts" hidden>',1).replace('<a class="back" href="../hub/">→ مكتبة الملفات المجانية</a><br>','').replace('<div class="jump">','<div class="jump" hidden>',1)
 hubp = re.sub(r'<form class="sub".*?</form>','',hubp,flags=re.S) if False else hubp
 (OUT/'hub').mkdir(parents=True,exist_ok=True); (OUT/'hub'/'index.html').write_text(hubp,encoding='utf8'); print('wrote hub')
