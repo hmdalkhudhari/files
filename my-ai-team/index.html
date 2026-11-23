@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ابنِ فريق موظفينك بـ Claude · Build your AI team</title>
+<meta property="og:title" content="ابنِ فريق موظفينك بـ Claude">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1E2A66;--y:#F2C230;--paper:#F6F5F1;--soft:#5B5F73;--line:#E4E2DC}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--navy);font-family:'Tajawal',system-ui,sans-serif;font-size:16px;line-height:1.75}
+.wrap{max-width:600px;margin:0 auto;padding:0 18px}
+header{background:var(--navy);color:#fff;padding:30px 0 34px;text-align:center}
+header h1{margin:0 0 6px;font-size:27px;font-weight:900;line-height:1.35}
+header h1 b{color:var(--y)}
+header p{margin:0;color:#D6D9EA;font-size:15px}
+.en{font-family:'Poppins',system-ui,sans-serif;direction:ltr;text-align:left;color:var(--soft);font-size:14px;line-height:1.6}
+header .en{text-align:center;color:#B9BEDB;margin-top:4px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+.step h2{margin:0 0 6px;font-size:19px;font-weight:800;display:flex;gap:10px;align-items:center}
+.n{background:var(--y);color:var(--navy);width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:900;flex:none}
+.step p{margin:6px 0}
+.tabs{display:flex;gap:8px;margin:10px 0 8px}
+.tab{flex:1;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;padding:8px;font:800 15px 'Tajawal';cursor:pointer}
+.tab.on{background:var(--navy);color:#fff}
+pre{white-space:pre-wrap;word-break:break-word;background:#F1F2F8;border:1px solid #D9DCEC;border-radius:12px;padding:14px;margin:0;font:500 14px/1.8 'Tajawal',system-ui,sans-serif;max-height:340px;overflow:auto}
+pre.ltr{direction:ltr;text-align:left;font-family:'Poppins',system-ui,sans-serif;font-size:13px}
+.copy{display:block;width:100%;margin-top:10px;background:var(--y);color:var(--navy);border:0;border-radius:12px;padding:14px;font:900 18px 'Tajawal';cursor:pointer}
+.copy.done{background:#1FA855;color:#fff}
+.note{background:#FFF7DB;border:1px solid #F0DB93;border-radius:12px;padding:12px 14px;margin:14px 0;font-size:15px}
+.hide{display:none}
+ul{margin:6px 0;padding-inline-start:20px}
+a{color:var(--navy);font-weight:700}
+footer{padding:18px 0 40px;font-size:13px;color:var(--soft)}
+footer a{display:block;margin:2px 0;font-weight:500}
+</style></head><body>
+<header><div class="wrap">
+<h1>ابنِ فريق <b>موظفينك</b> بـ Claude</h1>
+<p>انسخ الأمر، جاوب أسئلة قليلة، ويطلع لك فريق: اسم كل موظف وتخصصه وشنو يسوي</p>
+<div class="en">Copy one prompt, answer a few questions, and get a team: each employee's name, specialty and job</div>
+</div></header>
+
+<div class="wrap">
+
+<div class="note">الموظفين هنا أدوار داخل Claude يشتغل فيها حسب طلبك، مو برامج منفصلة تشتغل لحالها بالليل. وهذا يكفي تبدأ اليوم.
+<div class="en">The employees are roles inside Claude that it plays when you ask. They are not separate programs running on their own overnight. That is enough to start today.</div></div>
+
+<section class="step">
+<h2><span class="n">١</span> افتح محادثة جديدة بـ Claude وانسخ الأمر</h2>
+<div class="en">1 · Open a new Claude chat and paste the prompt</div>
+<div class="tabs"><button class="tab on" data-t="ar">عربي</button><button class="tab" data-t="en">English</button></div>
+<div id="p-ar"><pre id="ar">أنت المدير التنفيذي لشركتي. مهمتك تبني لي فريق موظفين بالذكاء الاصطناعي يشتغلون بدالي.
+
+الخطوة ١: اسألني الأسئلة التالية، سؤال واحد كل مرة، وانتظر جوابي قبل ما تسأل اللي بعده:
+1. شنو شركتي أو مشروعي، وشنو أبيع، ولمن؟
+2. شنو أكثر ٣ شغلات تاخذ وقتي كل أسبوع؟
+3. شنو الأدوات اللي أستخدمها (واتساب، إنستقرام، إكسل، موقع...)؟
+4. كم موظف أبي؟ إذا ما أعرف، اقترح ٩.
+
+الخطوة ٢: بعد ما أجاوب، ابنِ لي الفريق بجدول، وكل موظف له:
+- الاسم: اسم عربي قصير يناسب دوره
+- التخصص
+- شنو يسوي بالضبط: ٣ مهام محددة
+- شنو يستلم، ومن منو
+- شنو يسلّم، ولمن
+واحد منهم يكون المدير، وهو اللي يستلم طلباتي ويوزعها على الباقين.
+
+الخطوة ٣: اكتب لي «تعليمات المشروع» جاهزة للنسخ بلوك واحد، فيه:
+- وصف شركتي بسطرين
+- قائمة الموظفين وتخصصاتهم
+- قاعدة: إذا طلبت شي، اختر الموظف المناسب، وابدأ الرد باسمه. وإذا الطلب يحتاج أكثر من موظف، نفّذه بالتسلسل واكتب مين سلّم لمين.
+
+الخطوة ٤: أعطني ٣ أمثلة طلبات أجرب بها الفريق مباشرة.
+
+قواعد:
+- لا تخترع معلومات أو أرقام عن شركتي. إذا ناقصك شي، اسألني.
+- اكتب بعربي بسيط وجمل قصيرة.</pre></div>
+<div id="p-en" class="hide"><pre id="en" class="ltr">You are the CEO of my company. Your job is to build me a team of AI employees who work in my place.
+
+Step 1: Ask me the questions below, one at a time, and wait for my answer before the next one:
+1. What is my company or project, what do I sell, and to whom?
+2. What are the 3 things that take most of my time every week?
+3. Which tools do I use (WhatsApp, Instagram, Excel, a website...)?
+4. How many employees do I want? If I don't know, suggest 9.
+
+Step 2: After I answer, build the team as a table. Each employee has:
+- Name: a short name that fits the role
+- Specialty
+- What they do exactly: 3 specific tasks
+- What they receive, and from whom
+- What they hand over, and to whom
+One of them is the manager: they receive my requests and distribute them to the others.
+
+Step 3: Write "project instructions" ready to copy as one block, containing:
+- My company in two lines
+- The list of employees and their specialties
+- A rule: when I ask for something, pick the right employee and start the reply with their name. If the request needs more than one employee, run them in sequence and say who handed over to whom.
+
+Step 4: Give me 3 example requests to test the team right away.
+
+Rules:
+- Do not invent facts or numbers about my company. If something is missing, ask me.
+- Write in simple, short sentences.</pre></div>
+<button class="copy" id="c1">انسخ الأمر · Copy prompt</button>
+<p>جاوب أسئلته. بالنهاية يعطيك بلوك «تعليمات المشروع». انسخه للخطوة الجاية.</p>
+<div class="en">Answer its questions. At the end it gives you a "project instructions" block. Copy it for the next step.</div>
+</section>
+
+<section class="step">
+<h2><span class="n">٢</span> حط الفريق بمشروع عشان يبقى عندك</h2>
+<div class="en">2 · Save the team in a Project so it stays</div>
+<ul>
+<li>افتح claude.ai/projects واضغط «+ New Project»، وسمّه مثلاً «شركتي».
+<div class="en">Open claude.ai/projects, click "+ New Project", and name it, e.g. "My company".</div></li>
+<li>اضغط «Set project instructions»، الصق البلوك اللي طلع لك بالخطوة ١، واضغط «Save instructions».
+<div class="en">Click "Set project instructions", paste the block from step 1, then click "Save instructions".</div></li>
+<li>أي محادثة جديدة داخل هالمشروع تستخدم نفس الفريق.
+<div class="en">Every new chat inside this project uses the same team.</div></li>
+</ul>
+<p>ملاحظة: المحادثات داخل المشروع ما تشارك بعضها، فالفريق يعيش بالتعليمات. أي شي تبيه يتذكره دايماً ضيفه للتعليمات أو لملفات المشروع.</p>
+<div class="en">Note: chats inside a project don't share context with each other, so the team lives in the instructions. Add anything you want it to always remember to the instructions or the project files.</div>
+</section>
+
+<section class="step">
+<h2><span class="n">٣</span> جرّب الفريق</h2>
+<div class="en">3 · Test the team</div>
+<p>افتح محادثة داخل المشروع وجرب واحد من الأمثلة الثلاثة اللي أعطاك إياها. إذا موظف جاوب غلط، قل له شنو الغلط، واطلب منه يحدّث «تعليمات المشروع»، وانسخ النسخة الجديدة مكان القديمة.</p>
+<div class="en">Open a chat inside the project and try one of the 3 example requests. If an employee gets something wrong, tell it what was wrong, ask it to update the project instructions, and paste the new version over the old one.</div>
+</section>
+
+<section class="step">
+<h2><span class="n">+</span> للمتقدمين: نسخة Claude Code</h2>
+<div class="en">Advanced · Claude Code version</div>
+<p>إذا تستخدم Claude Code، كل موظف يصير «subagent»: ملف Markdown بمجلد <b dir="ltr">.claude/agents/</b> فيه اسم ووصف، وClaude يوزع عليهم الشغل حسب الوصف. المدير يكون ملف <b dir="ltr">CLAUDE.md</b> يقرأه Claude بأول كل جلسة. افتح Claude Code بمجلد جديد والصق هذا الأمر:</p>
+<div class="en">In Claude Code, each employee becomes a "subagent": a Markdown file in <b>.claude/agents/</b> with a name and a description, and Claude delegates to them by description. The manager is the <b>CLAUDE.md</b> file Claude reads at the start of every session. Open Claude Code in a new folder and paste this prompt:</div>
+<pre id="cc" style="margin-top:10px">أبي أبني فريق موظفين AI داخل هذا المجلد. أنا المالك، وأبي أكلّم Claude بس، وهو يوزّع الشغل على الموظفين.
+
+1. اسألني أول، سؤال واحد كل مرة: شنو مشروعي، شنو الشغل اللي يتكرر عندي كل أسبوع، وشنو الأدوات اللي أستخدمها. بعدها اقترح من ٣ إلى ٩ موظفين، لكل واحد اسم عربي قصير وتخصص وسطرين عن شغله، وانتظر موافقتي.
+2. بعد موافقتي، سوِّ لكل موظف ملف Markdown في .claude/agents/ فيه:
+   - name: بالإنجليزي وحروف صغيرة وشرطات
+   - description: سطر واحد قصير يقول متى يُستخدم هالموظف بالضبط
+   - system prompt بالجسم: تخصصه، ٣ مهام محددة، شنو يستلم ومن منو، شنو يسلّم ولمن
+3. اكتب ملف CLAUDE.md بجذر المجلد فيه: وصف شركتي بسطرين، قائمة الموظفين، وقواعد المدير:
+   - كل طلب مني تختار له الموظف المناسب، وإذا يحتاج أكثر من واحد نفّذهم بالتسلسل.
+   - ابدأ كل رد بذكر اسم الموظف اللي اشتغل.
+   - أي نشر أو إرسال أو دفع أو تغيير إعدادات يكون بموافقتي أنا بكلامي، لكل مرة لحالها.
+   - لا تخترع معلومات أو أرقام، وإذا ناقصك شي اسألني.
+   - أي تصحيح مني تحوّله لقاعدة مكتوبة بـ CLAUDE.md.
+4. في النهاية اعطني ٣ طلبات أجرب بها الفريق.</pre>
+<button class="copy" id="c2">انسخ الأمر · Copy prompt</button>
+<pre id="cc-en" class="ltr" style="margin-top:12px">I want to build a team of AI employees inside this folder. I am the owner, I only talk to Claude, and Claude delegates the work to the employees.
+
+1. Ask me first, one question at a time: what is my project, what work repeats every week, and which tools I use. Then propose 3 to 9 employees, each with a short name, a specialty and two lines about their job, and wait for my approval.
+2. After I approve, create one Markdown file per employee in .claude/agents/ with:
+   - name: lowercase English with hyphens
+   - description: one short line saying exactly when to use this employee
+   - a system prompt in the body: their specialty, 3 specific tasks, what they receive and from whom, what they hand over and to whom
+3. Write a CLAUDE.md file at the folder root with: my company in two lines, the list of employees, and the manager rules:
+   - For every request, pick the right employee; if it needs more than one, run them in sequence.
+   - Start every reply by naming the employee who did the work.
+   - Any publishing, sending, payment or settings change needs my own words of approval, each time separately.
+   - Do not invent facts or numbers; if something is missing, ask me.
+   - Turn any correction from me into a written rule in CLAUDE.md.
+4. At the end, give me 3 requests to test the team.</pre>
+<button class="copy" id="c3">Copy English prompt</button>
+</section>
+
+<footer>
+<div>المصادر الرسمية · Official sources</div>
+<a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Claude Help Center · Create and manage projects</a>
+<a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code docs · CLAUDE.md memory</a>
+<a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Claude Code docs · Create custom subagents</a>
+</footer>
+</div>
+<script>
+function cp(id,btn){var t=document.getElementById(id).innerText;var done=function(){var o=btn.textContent;btn.textContent='تم النسخ ✓ · Copied';btn.classList.add('done');setTimeout(function(){btn.textContent=o;btn.classList.remove('done')},2000)};
+ if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,fb)}else fb();
+ function fb(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()}}
+var cur='ar';
+document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){cur=b.dataset.t;document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});document.getElementById('p-ar').classList.toggle('hide',cur!=='ar');document.getElementById('p-en').classList.toggle('hide',cur!=='en')}});
+document.getElementById('c1').onclick=function(){cp(cur,this)};
+document.getElementById('c2').onclick=function(){cp('cc',this)};
+document.getElementById('c3').onclick=function(){cp('cc-en',this)};
+</script></body></html>
