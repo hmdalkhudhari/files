@@ -128,21 +128,46 @@ Rules:
 </section>
 
 <section class="step">
-<h2><span class="n">+</span> للمتقدمين: موظفين حقيقيين بـ Claude Code</h2>
-<div class="en">Advanced · Real subagents in Claude Code</div>
-<p>إذا تستخدم Claude Code، كل موظف يصير «subagent»: ملف Markdown بمجلد <b dir="ltr">.claude/agents/</b> فيه اسم ووصف وأدوات، وClaude يوزع عليهم الشغل حسب الوصف. الصق هذا الأمر بـ Claude Code بعد ما يطلع لك فريقك من الخطوة ١:</p>
-<div class="en">If you use Claude Code, each employee becomes a "subagent": a Markdown file in <b>.claude/agents/</b> with a name, description and tools, and Claude delegates to them by description. Paste this into Claude Code after your team is ready from step 1:</div>
-<pre id="cc" class="ltr" style="margin-top:10px">Create one subagent for each employee in the team below, as a separate Markdown file in .claude/agents/.
-Each file needs: name (lowercase, hyphens), description (one short line saying exactly when to use this employee), and a system prompt in the body with their specialty, their 3 tasks, what they receive and what they hand over.
-Keep descriptions short. Do not give any employee tools they do not need.
+<h2><span class="n">+</span> للمتقدمين: نسخة Claude Code</h2>
+<div class="en">Advanced · Claude Code version</div>
+<p>إذا تستخدم Claude Code، كل موظف يصير «subagent»: ملف Markdown بمجلد <b dir="ltr">.claude/agents/</b> فيه اسم ووصف، وClaude يوزع عليهم الشغل حسب الوصف. المدير يكون ملف <b dir="ltr">CLAUDE.md</b> يقرأه Claude بأول كل جلسة. افتح Claude Code بمجلد جديد والصق هذا الأمر:</p>
+<div class="en">In Claude Code, each employee becomes a "subagent": a Markdown file in <b>.claude/agents/</b> with a name and a description, and Claude delegates to them by description. The manager is the <b>CLAUDE.md</b> file Claude reads at the start of every session. Open Claude Code in a new folder and paste this prompt:</div>
+<pre id="cc" style="margin-top:10px">أبي أبني فريق موظفين AI داخل هذا المجلد. أنا المالك، وأبي أكلّم Claude بس، وهو يوزّع الشغل على الموظفين.
 
-[PASTE YOUR TEAM TABLE HERE]</pre>
-<button class="copy" id="c2">انسخ · Copy</button>
+1. اسألني أول، سؤال واحد كل مرة: شنو مشروعي، شنو الشغل اللي يتكرر عندي كل أسبوع، وشنو الأدوات اللي أستخدمها. بعدها اقترح من ٣ إلى ٩ موظفين، لكل واحد اسم عربي قصير وتخصص وسطرين عن شغله، وانتظر موافقتي.
+2. بعد موافقتي، سوِّ لكل موظف ملف Markdown في .claude/agents/ فيه:
+   - name: بالإنجليزي وحروف صغيرة وشرطات
+   - description: سطر واحد قصير يقول متى يُستخدم هالموظف بالضبط
+   - system prompt بالجسم: تخصصه، ٣ مهام محددة، شنو يستلم ومن منو، شنو يسلّم ولمن
+3. اكتب ملف CLAUDE.md بجذر المجلد فيه: وصف شركتي بسطرين، قائمة الموظفين، وقواعد المدير:
+   - كل طلب مني تختار له الموظف المناسب، وإذا يحتاج أكثر من واحد نفّذهم بالتسلسل.
+   - ابدأ كل رد بذكر اسم الموظف اللي اشتغل.
+   - أي نشر أو إرسال أو دفع أو تغيير إعدادات يكون بموافقتي أنا بكلامي، لكل مرة لحالها.
+   - لا تخترع معلومات أو أرقام، وإذا ناقصك شي اسألني.
+   - أي تصحيح مني تحوّله لقاعدة مكتوبة بـ CLAUDE.md.
+4. في النهاية اعطني ٣ طلبات أجرب بها الفريق.</pre>
+<button class="copy" id="c2">انسخ الأمر · Copy prompt</button>
+<pre id="cc-en" class="ltr" style="margin-top:12px">I want to build a team of AI employees inside this folder. I am the owner, I only talk to Claude, and Claude delegates the work to the employees.
+
+1. Ask me first, one question at a time: what is my project, what work repeats every week, and which tools I use. Then propose 3 to 9 employees, each with a short name, a specialty and two lines about their job, and wait for my approval.
+2. After I approve, create one Markdown file per employee in .claude/agents/ with:
+   - name: lowercase English with hyphens
+   - description: one short line saying exactly when to use this employee
+   - a system prompt in the body: their specialty, 3 specific tasks, what they receive and from whom, what they hand over and to whom
+3. Write a CLAUDE.md file at the folder root with: my company in two lines, the list of employees, and the manager rules:
+   - For every request, pick the right employee; if it needs more than one, run them in sequence.
+   - Start every reply by naming the employee who did the work.
+   - Any publishing, sending, payment or settings change needs my own words of approval, each time separately.
+   - Do not invent facts or numbers; if something is missing, ask me.
+   - Turn any correction from me into a written rule in CLAUDE.md.
+4. At the end, give me 3 requests to test the team.</pre>
+<button class="copy" id="c3">Copy English prompt</button>
 </section>
 
 <footer>
 <div>المصادر الرسمية · Official sources</div>
 <a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Claude Help Center · Create and manage projects</a>
+<a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Claude Code docs · CLAUDE.md memory</a>
 <a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Claude Code docs · Create custom subagents</a>
 </footer>
 </div>
@@ -154,4 +179,5 @@ var cur='ar';
 document.querySelectorAll('.tab').forEach(function(b){b.onclick=function(){cur=b.dataset.t;document.querySelectorAll('.tab').forEach(function(x){x.classList.toggle('on',x===b)});document.getElementById('p-ar').classList.toggle('hide',cur!=='ar');document.getElementById('p-en').classList.toggle('hide',cur!=='en')}});
 document.getElementById('c1').onclick=function(){cp(cur,this)};
 document.getElementById('c2').onclick=function(){cp('cc',this)};
+document.getElementById('c3').onclick=function(){cp('cc-en',this)};
 </script></body></html>
