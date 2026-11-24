@@ -177,11 +177,11 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   }
 
   // ---------- WALL ----------
-  const WALLS = { draw: { t: 'كمّل الرسمة · رسمتك', kind: 'img' }, drawai: { t: 'كمّل الرسمة · نسخة Claude', kind: 'img' }, exact: { t: 'تحدي التعليمات الدقيقة', kind: 'img' }, battle: { t: 'معركة البرومبت', kind: 'text' } };
+  const WALLS = { draw: { t: 'كمّل الرسمة · رسمتك', kind: 'img' }, drawai: { t: 'كمّل الرسمة · نسخة Claude', kind: 'img' }, exact: { t: 'تحدي التعليمات الدقيقة', kind: 'img' }, battle: { t: 'معركة البرومبت', kind: 'text' }, vision: { t: 'الكويت 2035 بعين مهندس', kind: 'imgtext' }, game: { t: 'لعبتي بأمر واحد', kind: 'img' } };
   function wall() {
     const st = S.state;
     if (!st.wall) {
-      stage.innerHTML = `<h1 style="font-size:40px">اختر الجدار</h1><div class="tgrid">${Object.entries(WALLS).map(([k, w]) => `<button class="tcard" style="text-align:right;color:#fff" data-w="${k}">${w.t}<small>${w.kind === 'text' ? 'نص' : 'صور'}</small></button>`).join('')}</div>`;
+      stage.innerHTML = `<h1 style="font-size:40px">اختر الجدار</h1><div class="tgrid">${Object.entries(WALLS).map(([k, w]) => `<button class="tcard" style="text-align:right;color:#fff" data-w="${k}">${w.t}<small>${w.kind === 'text' ? 'نص' : w.kind === 'imgtext' ? 'صورة + برومبت' : 'صور'}</small></button>`).join('')}</div>`;
       stage.querySelectorAll('[data-w]').forEach(b => b.onclick = () => setState({ wall: b.dataset.w, wtitle: WALLS[b.dataset.w].t, wkind: WALLS[b.dataset.w].kind, wphase: 'upload' }));
       return;
     }
@@ -191,7 +191,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
     if (st.wphase !== 'upload') sorted.sort((a, b) => b[2] - a[2]);
     const ph = st.wphase;
     stage.innerHTML = `<div style="display:flex;align-items:baseline;gap:16px"><h1 style="font-size:38px;margin:0">${E(st.wtitle)}</h1><span class="meta">${ph === 'upload' ? 'استقبال المشاركات' : ph === 'vote' ? 'التصويت شغّال' : 'سكّر التصويت'} · ${posts.length} مشاركة · ${Object.keys(votes).length} صوت</span></div>
-      <div class="hwall" style="margin-top:16px">${sorted.map(([k, p, c], i) => `<div class="post" ${ph === 'closed' && i === 0 ? 'style="outline:5px solid var(--gold)"' : ''}>${p.img ? `<img src="${p.img}">` : `<div class="tx">${E(p.text)}</div>`}
+      <div class="hwall" style="margin-top:16px">${sorted.map(([k, p, c], i) => `<div class="post" ${ph === 'closed' && i === 0 ? 'style="outline:5px solid var(--gold)"' : ''}>${p.img ? `<img src="${p.img}">${p.text ? `<div class="tx" style="font-size:14px">${E(p.text)}</div>` : ''}` : `<div class="tx">${E(p.text)}</div>`}
         <div class="meta"><span>${E(tname(p.team))}${p.cap ? ` <small style="color:var(--muted)">· ${E(p.cap)}</small>` : ''}</span>${ph !== 'upload' ? `<span class="cnt-like">♥ ${c}</span>` : ''}</div></div>`).join('')}</div>
       <div class="ctrl"><span style="flex:1"></span>
         ${ph === 'upload' ? `<button class="cbtn" id="next">افتح التصويت ←</button>` : ph === 'vote' ? `<button class="cbtn" id="next">سكّر وأعلن الفايز</button>` : `<button class="cbtn" id="cupit">اعتمد نقاط الكأس (3·2·1)</button>`}
@@ -208,7 +208,7 @@ select.sel{padding:11px;border-radius:10px;font-size:17px;border:0}
   }
 
   // ---------- CUP ----------
-  const EVENTS = [['draw', 'كمّل الرسمة'], ['drawai', 'رسمة Claude'], ['day1', 'مسابقة اليوم الأول'], ['exact', 'التعليمات الدقيقة'], ['battle', 'معركة البرومبت'], ['agent', 'مسابقة الوكيل'], ['redteam', 'تحدي الحصن'], ['final', 'مسابقة النهائي']];
+  const EVENTS = [['draw', 'كمّل الرسمة'], ['drawai', 'رسمة Claude'], ['day1', 'مسابقة اليوم الأول'], ['exact', 'التعليمات الدقيقة'], ['battle', 'معركة البرومبت'], ['vision', 'الكويت 2035'], ['game', 'لعبة بأمر واحد'], ['agent', 'مسابقة الوكيل'], ['redteam', 'تحدي الحصن'], ['final', 'مسابقة النهائي']];
   let evSel = 'redteam';
   function cup() {
     const L = LIVE.cupTotals(S.cup, S.teams), max = Math.max(1, ...L.map(t => t.pts));
