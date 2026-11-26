@@ -62,24 +62,31 @@ C1 = ('كل يوم الساعة ٩ الصبح سوّ التالي:\n'
       'Every day at 9 AM: 1) find 10 new [country/industry] companies not already in [sheet name]; 2) open each website and take the official email from the contact page only; '
       '3) write each one a short email with an idea based on their own business, not one template; 4) attach my account stats and send from my email; '
       '5) log each company in the sheet: name, email, date, status; 6) if there is no official email, skip it, never guess.')
-C2 = ('الموضوع: فكرة لـ[اسم الشركة]\n\n'
-      'مرحباً [الاسم]،\n\n'
-      'أنا [اسمك] وأصنع محتوى عن [مجالك]، ومتابعيني [عدد] متابع.\n'
-      'شفت [شي محدد من شغلهم]، وخطرت لي فكرة ريل: [الفكرة بسطرين].\n'
-      'مرفق إحصائيات حسابي. إذا الفكرة تناسبكم أرتب لكم التفاصيل بأي وقت.\n\n'
-      'تحياتي،\n[اسمك] · [رابط حسابك]\n\n'
-      'Subject: An idea for [Company]\n\n'
-      'Hi [Name],\n\n'
-      "I'm [your name]. I create content about [your niche] and have [number] followers.\n"
-      'I noticed [something specific about their business] and had an idea for a reel: [the idea in two lines].\n'
-      'My account stats are attached. If it fits, I am happy to share the details whenever suits you.\n\n'
-      'Best,\n[Your name] · [your profile link]')
+C2 = ('Subject: [Company] x @[your handle]: [your best number] in 30 days, let\'s work together\n\n'
+      'Hi [Company] team,\n\n'
+      "I'm [your name], a [country] [your niche] content creator (@[your handle]). In the last 30 days my reels reached [views] views and [viewers] viewers, with [shares] shares and [saves] saves. [One line about your audience, e.g. its location.]\n\n"
+      '[One sentence about their product and why your audience wants it.]\n\n'
+      "I'd love to create something that gets your product in front of this audience: an Arabic tutorial reel, a collab post and a story, with a direct link to you.\n\n"
+      'Attached: my official Instagram insights (last 30 days). My Media Kit with formats and past work: [your media kit link]\n\n'
+      'If you prefer another way of collaborating, just let us know and we will make it work.\n\n'
+      'If it sounds interesting, reply with a good time for a quick call and I will send a concrete idea for [Company].\n\n'
+      'Best regards,\n[Your name] | @[your handle]\n\n'
+      '---\n\n'
+      'الموضوع: [الشركة] × [اسمك]: [أفضل رقم] بـ٣٠ يوم، خلنا نشتغل مع بعض\n\n'
+      'هلا فريق [الشركة]،\n\n'
+      'أنا [اسمك]، صانع محتوى [مجالك] من [بلدك] (@[حسابك]). آخر ٣٠ يوم وصلت ريلاتي [عدد] مشاهدة و[عدد] شخص، مع [عدد] مشاركة و[عدد] حفظ. [جملة عن جمهورك.]\n\n'
+      '[جملة تناسب الشركة: ليش جمهوري يبي منتجكم.]\n\n'
+      'أبي أسوي لكم شي يوصّل منتجكم لهالجمهور: ريل شرح، وCollab وستوري فيها رابط مباشر لكم.\n\n'
+      'مرفق ملف إحصائيات انستقرام الرسمي (آخر ٣٠ يوم)، وهذا الميديا كت فيه الصيغ وشغلنا السابق: [رابط الميديا كت]\n\n'
+      'إذا تبون طريقة تعاون ثانية قولوا لنا ونرتبها.\n\n'
+      'إذا عجبتكم الفكرة، عطونا وقت لمكالمة قصيرة وأرسل لكم فكرة جاهزة خاصة بـ[الشركة].\n\n'
+      'تحياتي،\n[اسمك] | @[حسابك]')
 body2 = (
  '<p class="lead" style="margin-top:22px">خليت Claude موظف مبيعات: يلقط الشركات والإيميلات ويكتب ويرسل ويسجل بجدول. ٣ خطوات وقالب إيميل.</p>'
  + sec(1, 'جهّز الموصلات والجدول', B.steps(T1) + go('https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities', 'دليل الموصلات من Claude ←'))
  + sec(2, 'جرب أول دفعة', B.steps(T2) + pr('الأمر · The command', C1, 'بدّل اللي بين [ ] بمعلوماتك. ابدأ بمسودات وراجعها قبل الإرسال.'))
  + sec(3, 'خلّه يشتغل كل يوم', B.steps(T3))
- + sec(4, 'قالب الإيميل', pr('القالب · Email template', C2, 'قصير، وكل إيميل مخصص للشركة. بدّل اللي بين [ ].')))
+ + sec(4, 'قالب الإيميل (إنجليزي + عربي)', pr('القالب · Email template', C2, 'بدّل اللي بين [ ] بأرقامك ومعلوماتك، وجملة واحدة تناسب كل شركة.')))
 sects2 = [('s1', '١. الموصلات والجدول'), ('s2', '٢. أول دفعة'), ('s3', '٣. كل يوم'), ('s4', '٤. قالب الإيميل')]
 pg = B.page('خليت Claude موظف مبيعات بدالي', 'ملف مجاني', 'خليت Claude <em>موظف مبيعات</em> بدالي',
             'الخطوات الثلاث وقالب الإيميل. عربي وإنجليزي وزر نسخ.', sects2, body2,
