@@ -44,7 +44,7 @@ section{scroll-margin-top:120px}
 a.hc{display:block;text-decoration:none;color:inherit}.hc .card{display:grid;gap:4px}.hc b{font-size:17px;color:var(--navy)}.hc span.d{color:var(--soft);font-size:14px}.hc .tg{justify-self:start}
 """
 CP = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>'
-HUB='../hub/'
+HUB='../../../library/'
 BAR = f'''<nav class="bar"><div class="wrap"><a class="me" href="https://www.instagram.com/hmdalkhudhari/"><img src="data:image/jpeg;base64,{PHOTO}" alt="حمد الخضري" width="36" height="36"><b>حمد الخضري</b></a>
 <details class="menu"><summary aria-label="القائمة">☰</summary><div class="mp"><a href="https://www.instagram.com/hmdalkhudhari/">انستقرام</a><a href="{HUB}">مكتبة الملفات المجانية</a><a href="https://bznstatus.com/consult/">احجز استشارة</a></div></details></div></nav>'''
 JS = """<script>
@@ -82,7 +82,7 @@ def page(title, kicker, h1, sub, sects, body_sections, fine, slug='', cprompt=''
 {BAR}
 <header><div class="wrap">
 <div class="logo" role="img" aria-label="Hamad Alkhudhari"></div><div class="tag">Business &amp; AI</div>
-<a class="back" href="../hub/">→ مكتبة الملفات المجانية</a><br>
+<a class="back" href="../../../library/">→ مكتبة الملفات المجانية</a><br>
 <span class="kick">{E_(kicker)}</span>
 <h1>{h1}</h1><p>{E_(sub)}</p>
 <div class="acts"><button class="cl cp" type="button" data-t="{E_(cprompt)}">{CP}<span>انسخ لكلود</span></button><a href="{slug}.pdf" download>PDF</a><button type="button" id="shr">مشاركة</button></div>
@@ -196,6 +196,6 @@ header h1,header .back{color:#fff}header h1 em{background:none;color:#F2C230}hea
 @media (prefers-reduced-motion:reduce){header::before,.hc .card{animation:none;opacity:1}}
 </style>"""
 hubp = hubp.replace('</head>',HUBCSS+'</head>',1)
-hubp = hubp.replace('<div class="acts">','<div class="acts" hidden>',1).replace('<a class="back" href="../hub/">→ مكتبة الملفات المجانية</a><br>','').replace('<div class="jump">','<div class="jump" hidden>',1)
+hubp = hubp.replace('<div class="acts">','<div class="acts" hidden>',1).replace('<a class="back" href="../../../library/">→ مكتبة الملفات المجانية</a><br>','').replace('<div class="jump">','<div class="jump" hidden>',1)
 hubp = re.sub(r'<form class="sub".*?</form>','',hubp,flags=re.S) if False else hubp
 (OUT/'hub').mkdir(parents=True,exist_ok=True); (OUT/'hub'/'index.html').write_text(hubp,encoding='utf8'); print('wrote hub')
