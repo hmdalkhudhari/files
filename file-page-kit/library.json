@@ -1,5 +1,19 @@
 [
  {
+  "slug": "followers-7000",
+  "title": "٧٠٠٠ متابع بأقل من شهر بالـAI",
+  "desc": "اربط ميدرو ومتريكول بـClaude وانسخ الأمرين",
+  "cat": "منصات وإنستقرام",
+  "new": true
+ },
+ {
+  "slug": "claude-sales-employee",
+  "title": "Claude موظف مبيعات بدالك",
+  "desc": "٣ خطوات وقالب إيميل",
+  "cat": "Claude",
+  "new": true
+ },
+ {
   "slug": "anthropic-plugins",
   "title": "١٧ بلوجن رسمي من Anthropic لـClaude",
   "desc": "شنو يسوي كل واحد وأمر التثبيت",
