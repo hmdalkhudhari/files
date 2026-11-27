@@ -1,0 +1,275 @@
+[
+ {
+  "slug": "followers-7000",
+  "title": "٧٠٠٠ متابع بأقل من شهر بالـAI",
+  "desc": "اربط ميدرو ومتريكول بـClaude وانسخ الأمرين",
+  "cat": "منصات وإنستقرام",
+  "new": true
+ },
+ {
+  "slug": "claude-sales-employee",
+  "title": "Claude موظف مبيعات بدالك",
+  "desc": "٣ خطوات وقالب إيميل",
+  "cat": "Claude",
+  "new": true
+ },
+ {
+  "slug": "anthropic-plugins",
+  "title": "١٧ بلوجن رسمي من Anthropic لـClaude",
+  "desc": "شنو يسوي كل واحد وأمر التثبيت",
+  "cat": "Claude",
+  "new": true
+ },
+ {
+  "slug": "mowjaz-shortcuts",
+  "title": "اختصارات موجز: ١٦٠ اختصار و٥٠ أمر",
+  "desc": "اختصارات جاهزة بزر نسخ",
+  "cat": "منصات وإنستقرام",
+  "new": true
+ },
+ {
+  "slug": "claude-instagram-13",
+  "title": "Claude يشتغل على انستقرامك: ١٣ أمر",
+  "desc": "ريل وكابشن وكاروسيل وخطة أسبوعك",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-montage-fx",
+  "title": "لا تدفع للمونتير: ٢٢ تأثير بسطر واحد",
+  "desc": "تأثيرات مونتاج داخل Claude Code",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-code-plugins",
+  "title": "٥ بلوقنز مجانية لـClaude Code",
+  "desc": "أوامر تنصيب جاهزة بزر نسخ",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "unslop",
+  "title": "سكيل unslop: شيل شكل الـAI من موقعك",
+  "desc": "يدور علامات الـAI بتصميمك ويصلحها",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-3-sites-15min",
+  "title": "Claude سوّى ٣ مواقع بـ١٥ دقيقة",
+  "desc": "من فكرة لموقع شغال خطوة بخطوة",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-apps",
+  "title": "Claude يسوي لك تطبيق على جهازك",
+  "desc": "تطبيق بسيط بدون برمجة",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-cowork",
+  "title": "١٠ مهام تعطيها Claude Cowork",
+  "desc": "مهام يومية يسويها لك",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-phone",
+  "title": "خلّ Claude يتصل ويحجز عنك",
+  "desc": "٣ خطوات",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-speed",
+  "title": "خل Claude يفحص جهازك ونتك",
+  "desc": "فحص سرعة بأمر واحد",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-watch-earshot",
+  "title": "خل Claude يشوف ويسمع",
+  "desc": "يحلل فيديو وصوت",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-whatsapp",
+  "title": "عطِ Claude رقم واتساب",
+  "desc": "يرد ويرتب لك",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "claude-carousel",
+  "title": "Claude يصمم كاروسيلك كامل",
+  "desc": "من فكرة لسلايدات",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "kuwaiti-skill",
+  "title": "كاتب المحتوى الكويتي",
+  "desc": "سكيل يكتب بلهجتك",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "montage-skill",
+  "title": "منتج فيديوك بـClaude",
+  "desc": "سكيل مونتاج جاهز",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "my-ai-team",
+  "title": "ابنِ فريق موظفينك بـClaude",
+  "desc": "موظفين AI لمشروعك",
+  "cat": "Claude",
+  "new": false
+ },
+ {
+  "slug": "chatgpt-shortcuts",
+  "title": "+١٢٠٠ اختصار و٤٠ برومبت لـChatGPT",
+  "desc": "اختصارات جاهزة",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "arabic-rtl",
+  "title": "خل ChatGPT يكتب عربي مرتب",
+  "desc": "أوامر تصلح اتجاه العربي",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "chatgpt-memory",
+  "title": "شوف شنو ChatGPT مخزن عنك",
+  "desc": "خصوصية وذاكرة",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "chatgpt-business-hub",
+  "title": "سجّل مشروعك داخل ChatGPT",
+  "desc": "٥ خطوات",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "truth-prompt",
+  "title": "خل ChatGPT يقول لك الحقيقة",
+  "desc": "برومبت يكشف المجاملة",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "face-lock",
+  "title": "خلّ ChatGPT ما يغيّر ملامح وجهك",
+  "desc": "صور بنفس وجهك",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "products-hacker",
+  "title": "خل ChatGPT يهكر لك المنتجات",
+  "desc": "أفكار منتجات رابحة",
+  "cat": "ChatGPT",
+  "new": false
+ },
+ {
+  "slug": "owner-kit",
+  "title": "هدية الـ٤٠ ألف: خزينة ١٠ مواقع",
+  "desc": "مواقع لصاحب المشروع وصانع المحتوى",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "five-tools",
+  "title": "٥ أدوات بدون اشتراك لصاحب المشروع",
+  "desc": "أدوات مجانية",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "margin-calculator",
+  "title": "حاسبة هامش الربح ونقطة التعادل",
+  "desc": "احسب ربح منتجك",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "quote-maker",
+  "title": "اصنع عرض سعر احترافي بدقيقة",
+  "desc": "أداة مجانية",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "whatsapp-link",
+  "title": "مولد رابط واتساب برسالة جاهزة",
+  "desc": "أداة مجانية",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "content-planner",
+  "title": "مخطط محتوى ٣٠ يوم تفاعلي",
+  "desc": "أداة مجانية",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "profit",
+  "title": "حسبة ربح القطعة الحقيقية",
+  "desc": "احسب ربحك صح",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "ad-templates",
+  "title": "٥ قوالب تطلع لك إعلانك",
+  "desc": "قوالب جاهزة",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "sales-mistakes",
+  "title": "٣ أخطاء تقتل مبيعات منتجك",
+  "desc": "وكيف تصلحها",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "ai-agent-vs-automation",
+  "title": "AI Agent ولا Automation؟",
+  "desc": "وش تختار لمشروعك",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "ikea-effect-ideas",
+  "title": "١٥ فكرة تخلي عميلك يشارك",
+  "desc": "أفكار تفاعل",
+  "cat": "أدوات المشاريع",
+  "new": false
+ },
+ {
+  "slug": "instagram-hidden-secrets",
+  "title": "٣ أسرار مخفية في رسائل انستقرام",
+  "desc": "حيل بالرسائل",
+  "cat": "منصات وإنستقرام",
+  "new": false
+ },
+ {
+  "slug": "shoot-and-post",
+  "title": "صوّر ونزّل",
+  "desc": "خطوات جاهزة للتصوير والنشر",
+  "cat": "منصات وإنستقرام",
+  "new": false
+ }
+]
