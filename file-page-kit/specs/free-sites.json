@@ -1,0 +1,20 @@
+{
+ "slug": "free-sites",
+ "title": "٥ مواقع مجانية جاهزة",
+ "kicker": "ملف مجاني",
+ "h1_html": "٥ مواقع <em>مجانية</em> تبدأ منها",
+ "sub": "افتح صفحة الموقع، انسخ البرومبت، والصقه بـClaude أو ChatGPT.",
+ "list_title": "الخمس مواقع",
+ "list_lead": "كل موقع له برومبت مجاني كامل على getlayers.ai، بدون بطاقة. افتح الرابط وانسخ البرومبت من الصفحة، وبعدها قول للذكاء يخليه لمشروعك بالبرومبت الأخير تحت.",
+ "items": [
+  {"name":"Soda","ar":"لو تبيع منتج","en":"For a product brand","where":"رابط الصفحة، افتحه وانسخ البرومبت","cmds":["https://www.getlayers.ai/layer/soda"],"note":"","src":"https://www.getlayers.ai/layer/soda","src_label":"getlayers.ai/layer/soda"},
+  {"name":"Lumora","ar":"لو عندك شركة خدمات","en":"For a services company","where":"رابط الصفحة، افتحه وانسخ البرومبت","cmds":["https://www.getlayers.ai/layer/lumora"],"note":"","src":"https://www.getlayers.ai/layer/lumora","src_label":"getlayers.ai/layer/lumora"},
+  {"name":"Ascend","ar":"لو عندك تطبيق أو خدمة أونلاين","en":"For an app or online service","where":"رابط الصفحة، افتحه وانسخ البرومبت","cmds":["https://www.getlayers.ai/layer/ascend"],"note":"","src":"https://www.getlayers.ai/layer/ascend","src_label":"getlayers.ai/layer/ascend"},
+  {"name":"Laocoon","ar":"لو تبيع شي فاخر أو تبي معرض أعمال","en":"For luxury or a portfolio","where":"رابط الصفحة، افتحه وانسخ البرومبت","cmds":["https://www.getlayers.ai/layer/laocoon"],"note":"","src":"https://www.getlayers.ai/layer/laocoon","src_label":"getlayers.ai/layer/laocoon"},
+  {"name":"Kimi","ar":"لو تبي صفحة شخصية","en":"For a personal page","where":"رابط الصفحة، افتحه وانسخ البرومبت","cmds":["https://www.getlayers.ai/layer/kimi"],"note":"","src":"https://www.getlayers.ai/layer/kimi","src_label":"getlayers.ai/layer/kimi"},
+  {"name":"خله لمشروعي","ar":"بعد ما تلصق برومبت الموقع، ارسل له هالرسالة","en":"Send this after pasting the site prompt","where":"بنفس المحادثة، بعد البرومبت","cmds":["خل الموقع لمشروعي: اسم المشروع [اكتب اسمك]، وألواني [اكتبها]، وكلامي [اكتب وش تبيع وش تقدم]. غيّر كل النصوص والصور للمشروع، وأعطني ملف HTML واحد جاهز للنشر."],"note":"المجاني مسموح تستخدمه بشغلك التجاري، بس طوّر عليه ولا تنشره مثل ما هو.","src":"https://www.getlayers.ai/pricing","src_label":"getlayers.ai/pricing (الرخصة التجارية)"}
+ ],
+ "fixes": [["ما طلع لك ملف HTML؟ قول له: أعطني الكود كامل بملف واحد","If no HTML file: ask for the full code in a single file"]],
+ "sources": [["GetLayers — المواقع المجانية","https://www.getlayers.ai/templates"],["GetLayers — الأسعار والرخصة","https://www.getlayers.ai/pricing"]],
+ "fine": "تأكدنا من الروابط والرخصة من الموقع الرسمي: ٢٨ نوفمبر ٢٠٢٦."
+}
